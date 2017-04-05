@@ -49,11 +49,17 @@ ASEBA_INCLUDE = $$PWD/dashel $$PWD
 QMAKE_CXXFLAGS += $$ASEBA_CXXFLAGS
 DEFINES += $$ASEBA_DEFINES
 CONFIG += c++11
-HEADERS += $$PWD/aseba.h
+HEADERS += $$PWD/aseba.h \
+    $$PWD/zpdes.h \
+    $$PWD/activity.h \
+    $$PWD/explorationgraph.h
 SOURCES += \
 	$$ASEBA_SOURCES \
 	$$PWD/aseba.cpp \
-	$$PWD/thymio-vpl2.cpp
+	$$PWD/thymio-vpl2.cpp \
+    $$PWD/zpdes.cpp \
+    $$PWD/activity.cpp \
+    $$PWD/explorationgraph.cpp
 lupdate_only{
 SOURCES = \
 	$$PWD/*.qml \
@@ -66,3 +72,6 @@ RESOURCES += $$PWD/thymio-vpl2.qrc
 DEPENDPATH += $$ASEBA_INCLUDE
 INCLUDEPATH += $$ASEBA_INCLUDE
 LIBS += $$ASEBA_LIBS
+
+DISTFILES += \
+    $$PWD/GameInterface.qml

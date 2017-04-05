@@ -1,7 +1,9 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QTranslator>
+#include <QQmlContext>
 #include "thymio-vpl2.h"
+#include "zpdes.h"
 
 int main(int argc, char *argv[])
 {
@@ -18,8 +20,13 @@ int main(int argc, char *argv[])
 
 	thymioVPL2Init();
 
-	QQmlApplicationEngine engine;
-	engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    QQmlApplicationEngine engine;
+    Zpdes* zpdes{new Zpdes()};
+    engine.rootContext()->setContextProperty("zpdes", zpdes);
+
+    engine.load(QUrl(QStringLiteral("qrc:/Startup.qml")));
+
+
 
 	return app.exec();
 }
