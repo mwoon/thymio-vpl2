@@ -29,7 +29,10 @@ ApplicationWindow {
             }
             Button {
                 text: "Game"
-                onClicked: stack.push(gameWindow)
+                onClicked: {
+                    stack.push(gameWindow)
+                    zpdes.generateActivity();
+                }
 
             }
             Text {

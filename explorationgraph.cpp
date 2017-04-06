@@ -7,18 +7,18 @@ ExplorationGraph::ExplorationGraph()
 
 std::shared_ptr<Activity> ExplorationGraph::getActivityFromId(std::string id)
 {
-    return std::make_shared<Activity>(activities.find(id)->second);
+    return activities.find(id)->second;
 }
 
 void ExplorationGraph::addActivity(Activity a)
 {
-    activities.insert(std::make_pair(a.id, a));
+    activities.insert(std::make_pair(a.id, std::make_shared<Activity>(a)));
 
     if(a.successor) {
         auto it = nodes.begin();
         for(; it != nodes.end(); it++) {
-            if((*it).front().id == a.successor.get()->id) {
-                (*it).push_front(a);
+            if((*it).front().get()->id == a.successor.get()->id) {
+                (*it).push_front(getActivityFromId(a.id));
                 break;
             }
         }
@@ -28,9 +28,11 @@ void ExplorationGraph::addActivity(Activity a)
         }
     } else {
         //no successor
-        nodes.push_front(std::list<Activity>());
-        nodes.front().push_front(a);
+        nodes.push_front(std::list<std::shared_ptr<Activity> >());
+        nodes.front().push_front(getActivityFromId(a.id));
     }
+
+
 }
 
 //initialization with all exercises of same difficulty level
@@ -39,6 +41,6 @@ void ExplorationGraph::initializeZPD()
     zpd.clear();
 
     for(auto it = nodes.begin(); it != nodes.end(); it++) {
-        zpd.push_back(std::make_shared<Activity>((*it).front()));
+        zpd.push_back(getActivityFromId((*it).front().get()->id));
     }
 }

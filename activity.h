@@ -8,7 +8,7 @@ class Activity
 {
 public:
     //constants
-    const double beta = 0.7;
+    const double beta = 1;
     const double eta = 0.3;
 
     //constructors

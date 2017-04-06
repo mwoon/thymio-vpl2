@@ -20,8 +20,8 @@ public:
 
 private:
 
-    std::list<std::list <Activity> > nodes;
-    std::map<std::string, Activity> activities;
+    std::list<std::list <std::shared_ptr<Activity> > > nodes;
+    std::map<std::string, std::shared_ptr<Activity>> activities;
 };
 
 #endif // EXPLORATIONGRAPH_H

@@ -10,8 +10,6 @@ Page {
     title: qsTr("Thymio game WIP")
     visible: true
 
-    signal advanced(string text)
-
     Column {
 
         anchors.fill: parent
@@ -26,6 +24,7 @@ Page {
         }
 
         ListView {
+            id:lView
             clip: true //apparently this can affect performance
             model: textOutput
             height: parent.height - returnButton.height - 20 - answersList.height
@@ -46,7 +45,47 @@ Page {
             spacing: 20
 
             Button {
-                text: qsTr("yes")
+                text: qsTr("1.0")
+                onClicked: {
+                    //gameWindow.advanced(text)
+                    zpdes.updateZpd(1.0);
+                }
+            }
+
+            Button {
+                text: qsTr("0.9")
+                onClicked: {
+                    //gameWindow.advanced(text)
+                    zpdes.updateZpd(0.9);
+                }
+            }
+
+            Button {
+                text: qsTr("0.8")
+                onClicked: {
+                    //gameWindow.advanced(text)
+                    zpdes.updateZpd(0.8);
+                }
+            }
+
+            Button {
+                text: qsTr("0.7")
+                onClicked: {
+                    //gameWindow.advanced(text)
+                    zpdes.updateZpd(0.7);
+                }
+            }
+
+            Button {
+                text: qsTr("0.6")
+                onClicked: {
+                    //gameWindow.advanced(text)
+                    zpdes.updateZpd(0.6);
+                }
+            }
+
+            Button {
+                text: qsTr("0.5")
                 onClicked: {
                     //gameWindow.advanced(text)
                     zpdes.updateZpd(0.5);
@@ -54,32 +93,65 @@ Page {
             }
 
             Button {
-                text: qsTr("no")
+                text: qsTr("0.4")
                 onClicked: {
-                    gameWindow.advanced(text)
+                    //gameWindow.advanced(text)
+                    zpdes.updateZpd(0.4);
+                }
+            }
+
+            Button {
+                text: qsTr("0.3")
+                onClicked: {
+                    //gameWindow.advanced(text)
+                    zpdes.updateZpd(0.3);
+                }
+            }
+
+            Button {
+                text: qsTr("0.2")
+                onClicked: {
+                    //gameWindow.advanced(text)
+                    zpdes.updateZpd(0.2);
+                }
+            }
+
+            Button {
+                text: qsTr("0.1")
+                onClicked: {
+                    //gameWindow.advanced(text)
+                    zpdes.updateZpd(0.1);
+                }
+            }
+
+            Button {
+                text: qsTr("0.0")
+                onClicked: {
+                    zpdes.updateZpd(0.0);
                 }
             }
         }
-    }
-
-    onAdvanced: {
-        textOutput.append({"output": text})
     }
 
     Connections {
         target: zpdes
         onActivityGenerated: {
             textOutput.append({"output": newText})
+            lView.positionViewAtEnd()
+        }
+    }
+
+    Connections {
+        target: zpdes
+        onRewarded: {
+            textOutput.append({"output": newText})
+            lView.positionViewAtEnd()
         }
     }
 
     //example list, remove later
     ListModel {
         id: textOutput
-
-        ListElement {
-            output: "Hello World"
-        }
     }
 
 }
