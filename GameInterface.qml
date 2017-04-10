@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.3
 Page {
 
     property StackView view
+    property var storyStack: new Array()
 
     id: gameWindow
     title: qsTr("Thymio game WIP")
@@ -130,13 +131,27 @@ Page {
                     zpdes.updateZpd(0.0);
                 }
             }
+
+            Button {
+                text: qsTr("Next")
+                onClicked: {
+                    if(storyStack.length > 0) {
+                        textOutput.append({"output": storyStack.shift()})
+                        lView.positionViewAtEnd()
+                    }
+                }
+            }
         }
     }
 
     Connections {
         target: zpdes
         onActivityGenerated: {
-            textOutput.append({"output": newText})
+            var newStorySequence = JSON.parse(newText);
+            storyStack.push(newStorySequence.story0);
+            storyStack.push(newStorySequence.story1);
+            storyStack.push(newStorySequence.activity);
+            storyStack.push(newStorySequence.story2);
             lView.positionViewAtEnd()
         }
     }
@@ -148,6 +163,7 @@ Page {
             lView.positionViewAtEnd()
         }
     }
+
 
     //example list, remove later
     ListModel {

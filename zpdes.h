@@ -4,7 +4,11 @@
 #include <QObject>
 #include <random>
 #include <vector>
+#include <sstream>
+#include <iostream>
+#include <QtDebug>
 #include "activity.h"
+#include "storygenerator.h"
 #include "explorationgraph.h"
 
 class Zpdes : public QObject
@@ -31,9 +35,12 @@ public slots:
 
 private:
     ExplorationGraph exGraph;
+    StoryGenerator storyGen;
     std::list<std::pair<std::string, double> > mostRecentActivities;
     std::string lastActivityId;
+
     void initializeActivities();
+    std::string getJsonStory(std::list<std::string> story, std::string activityDesc);
 
 };
 

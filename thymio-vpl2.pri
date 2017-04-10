@@ -52,14 +52,18 @@ CONFIG += c++11
 HEADERS += $$PWD/aseba.h \
     $$PWD/zpdes.h \
     $$PWD/activity.h \
-    $$PWD/explorationgraph.h
+    $$PWD/explorationgraph.h \
+    $$PWD/storygenerator.h \
+    $$PWD/storycomponent.h
 SOURCES += \
 	$$ASEBA_SOURCES \
 	$$PWD/aseba.cpp \
 	$$PWD/thymio-vpl2.cpp \
     $$PWD/zpdes.cpp \
     $$PWD/activity.cpp \
-    $$PWD/explorationgraph.cpp
+    $$PWD/explorationgraph.cpp \
+    $$PWD/storygenerator.cpp \
+    $$PWD/storycomponent.cpp
 lupdate_only{
 SOURCES = \
 	$$PWD/*.qml \

@@ -1,13 +1,8 @@
 #include "zpdes.h"
-#include <sstream>
-#include <iostream>
-#include <QtDebug>
-
 Zpdes::Zpdes(QObject *parent) : QObject(parent)
 {
     //initialize all activities
     initializeActivities();
-
 }
 
 
@@ -72,7 +67,12 @@ void Zpdes::generateActivity()
     strs << banditLevel;
     std::string str = strs.str();
 
-    emit activityGenerated(QString::fromStdString(description + ", bandit level: " + str));
+    std::list<std::string> story = storyGen.generateStory(lastActivityId);
+
+    std::string jsonStory = getJsonStory(story, description);
+
+    //emit activityGenerated(QString::fromStdString(description + ", bandit level: " + str));
+    emit activityGenerated(QString::fromStdString(jsonStory));
 }
 
 void Zpdes::updateZpd(const double result){
@@ -112,6 +112,23 @@ void Zpdes::updateZpd(const double result){
     last.get()->banditLevel = last.get()->beta * last.get()->banditLevel + last.get()->eta * reward;
 
 
+    //TODO update ZPD
+
     generateActivity();
 }
 
+std::string Zpdes::getJsonStory(std::list<std::string> story, std::string activityDesc) {
+    std::ostringstream json;
+    json << "{ ";
+    unsigned counter{0};
+    for(auto it = story.begin(); it != story.end(); it++) {
+        json << "\"story" << counter << "\": \"" << *it << "\", ";
+        counter++;
+    }
+    json << "\"activity\": \"" << activityDesc << "\"";
+    json << " }";
+    std::string jsonStr = json.str();
+
+    qDebug() << QString::fromStdString(jsonStr);
+    return jsonStr;
+}
