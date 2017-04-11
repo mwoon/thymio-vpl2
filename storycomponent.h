@@ -34,6 +34,15 @@ enum class Location { //numbering refers to island, maybe don't need so many? is
 
 };
 
+enum class StoryType {
+    Main,
+    Side,
+    Transition,
+    Stationary,
+    Unlock
+
+};
+
 
 class StoryComponent
 {
