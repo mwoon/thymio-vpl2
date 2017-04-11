@@ -11,7 +11,7 @@ Page {
     title: qsTr("Thymio game WIP")
     visible: true
 
-    Column {
+    ColumnLayout {
 
         anchors.fill: parent
         spacing: 10
@@ -28,15 +28,15 @@ Page {
             id:lView
             clip: true //apparently this can affect performance
             model: textOutput
-            height: parent.height - returnButton.height - 20 - answersList.height
-            width: parent.width
-            delegate: Row {
-                Text {
-                    font.pointSize: 24
-                    text: "> " + output
-                    anchors.topMargin: 10
-                    anchors.bottomMargin: 10
-                }
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            delegate: Text {
+                font.pointSize: 24
+                text: "> " + output
+                anchors.topMargin: 10
+                anchors.bottomMargin: 10
+                width: parent.width
+                wrapMode: Text.WordWrap
             }
         }
 
