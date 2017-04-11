@@ -5,6 +5,36 @@
 #include <utility>
 #include <vector>
 
+enum class Location { //numbering refers to island, maybe don't need so many? is it better to add them as needed?
+    None,
+    StartOne,
+    ForestOne,
+    RiverOne,
+    LakeOne,
+    CaveOne,
+    EdgeOne,
+    HutOne,
+
+    VillageTwo,
+    LakeTwo,
+    StoneSlabTwo,
+    MountainTwo,
+    MetalHouseTwo,
+    CliffTwo,
+
+    OutsideLabThree,
+    EdgeThree,
+    EntranceThree,
+    CompilerRoomThree,
+    DataRoomThree,
+    ArchivesThree,
+
+    PortalFour,
+    EdgeFour
+
+};
+
+
 class StoryComponent
 {
 public:
@@ -14,11 +44,11 @@ public:
     StoryComponent(std::string id, std::string descBefore, std::string descAfter):
         id(id),
         description(descBefore, descAfter) { }
-    StoryComponent(std::string id, std::string descBefore, std::string descAfter, unsigned prec):
+    StoryComponent(std::string id, std::string descBefore, std::string descAfter, Location prec):
         id(id),
         description(descBefore, descAfter),
         preCondition(prec) { }
-    StoryComponent(std::string id, std::string descBefore, std::string descAfter, unsigned prec, unsigned postc):
+    StoryComponent(std::string id, std::string descBefore, std::string descAfter, Location prec, Location postc):
         id(id),
         description(descBefore, descAfter),
         preCondition(prec),
@@ -26,8 +56,8 @@ public:
 
     std::string id;
     std::pair<std::string, std::string> description;
-    unsigned preCondition;
-    unsigned postCondition;
+    Location preCondition;
+    Location postCondition;
     unsigned storyType; //unused for now
 
 };

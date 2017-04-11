@@ -22,7 +22,7 @@ private:
     //1: starting location, 2: foresty area, 3: river, 4: lake, 5: island edge
     //0: not specified / no constraint
     //1 -> 2,3; 2 -> 3,4,5; 3 -> 1,2,4,5; 4 -> 2,3; 5 -> 2,3;
-    unsigned sLocation;
+    Location sLocation;
 };
 
 #endif // STORYGENERATOR_H
