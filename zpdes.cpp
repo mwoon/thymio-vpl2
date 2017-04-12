@@ -129,6 +129,6 @@ std::string Zpdes::getJsonStory(std::list<std::string> story, std::string activi
     json << " }";
     std::string jsonStr = json.str();
 
-    qDebug() << QString::fromStdString(jsonStr);
+    //qDebug() << QString::fromStdString(jsonStr);
     return jsonStr;
 }

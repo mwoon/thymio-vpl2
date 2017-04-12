@@ -16,7 +16,11 @@ public:
 private:
     void initializeStory();
 
-    std::list<std::shared_ptr<StoryComponent> > storySections;
+    std::list<std::shared_ptr<StoryComponent> > storyTrsSections; //transitions
+    std::list<std::shared_ptr<StoryComponent> > storyStnSections; //stationaries
+    std::vector<std::shared_ptr<StoryComponent> > storyMainSections; //main story
+
+    unsigned mainIndex; //where the main story is at
 
     //state variables
     //1: starting location, 2: foresty area, 3: river, 4: lake, 5: island edge
