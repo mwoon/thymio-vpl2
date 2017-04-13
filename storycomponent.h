@@ -2,8 +2,10 @@
 #define STORYCOMPONENT_H
 
 #include <string>
+#include <list>
 #include <utility>
 #include <vector>
+#include <memory>
 
 enum class Location { //numbering refers to island, maybe don't need so many? is it better to add them as needed?
     None,
@@ -50,32 +52,31 @@ public:
     StoryComponent();
     StoryComponent(std::string id):
         id(id) { }
-    StoryComponent(std::string id, StoryType type, std::string descBefore, std::string descAfter):
+    StoryComponent(std::string id, StoryType type, std::shared_ptr<std::pair<std::list<std::string>, std::list<std::string> > > desc):
         id(id),
         storyType(type),
-        description(descBefore, descAfter) { }
-    StoryComponent(std::string id, StoryType type, std::string descBefore, std::string descAfter, Location prec):
+        description(desc) { }
+    StoryComponent(std::string id, StoryType type, std::shared_ptr<std::pair<std::list<std::string>, std::list<std::string> > > desc, Location prec):
         id(id),
         storyType(type),
-        description(descBefore, descAfter),
+        description(desc),
         preCondition(prec) { }
-    StoryComponent(std::string id, StoryType type, std::string descBefore, std::string descAfter, Location prec, Location postc):
+    StoryComponent(std::string id, StoryType type, std::shared_ptr<std::pair<std::list<std::string>, std::list<std::string> > > desc, Location prec, Location postc):
         id(id),
         storyType(type),
-        description(descBefore, descAfter),
+        description(desc),
         preCondition(prec),
         postCondition(postc) { }
 
     Location getPrec();
     Location getPostc();
     StoryType getType();
-    std::string getPart1();
-    std::string getPart2();
+    std::shared_ptr<std::pair<std::list<std::string>, std::list<std::string> > > getStory();
 
 private:
     std::string id;
     StoryType storyType;
-    std::pair<std::string, std::string> description;
+    std::shared_ptr<std::pair<std::list<std::string>, std::list<std::string> > > description;
     Location preCondition;
     Location postCondition;
 

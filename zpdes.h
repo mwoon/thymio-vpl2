@@ -40,7 +40,7 @@ private:
     std::string lastActivityId;
 
     void initializeActivities();
-    std::string getJsonStory(std::list<std::string> story, std::string activityDesc);
+    std::string getJsonStory(std::list<std::string> beforeAc, std::list<std::string> afterAc, std::string activityDesc);
 
 };
 

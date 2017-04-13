@@ -17,12 +17,8 @@ StoryType StoryComponent::getType()
     return storyType;
 }
 
-std::string StoryComponent::getPart1()
-{
-    return description.first;
-}
 
-std::string StoryComponent::getPart2()
+std::shared_ptr<std::pair<std::list<std::string>, std::list<std::string> > > StoryComponent::getStory()
 {
-    return description.second;
+    return description;
 }

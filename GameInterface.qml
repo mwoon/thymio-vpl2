@@ -148,10 +148,16 @@ Page {
         target: zpdes
         onActivityGenerated: {
             var newStorySequence = JSON.parse(newText);
-            storyStack.push(newStorySequence.story0);
-            storyStack.push(newStorySequence.story1);
+            for(var i = 0; i < newStorySequence.story0.length; i++) {
+                storyStack.push(newStorySequence.story0[i]);
+            }
+
             storyStack.push(newStorySequence.activity);
-            storyStack.push(newStorySequence.story2);
+
+            for(var i = 0; i < newStorySequence.story1.length; i++) {
+                storyStack.push(newStorySequence.story1[i]);
+            }
+
             lView.positionViewAtEnd()
         }
     }

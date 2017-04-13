@@ -67,9 +67,9 @@ void Zpdes::generateActivity()
     strs << banditLevel;
     std::string str = strs.str();
 
-    std::list<std::string> story = storyGen.generateStory(lastActivityId);
+    std::shared_ptr<std::pair<std::list<std::string>, std::list<std::string> > > story = storyGen.generateStory(lastActivityId);
 
-    std::string jsonStory = getJsonStory(story, description);
+    std::string jsonStory = getJsonStory(story.get()->first, story.get()->second, description);
 
     //emit activityGenerated(QString::fromStdString(description + ", bandit level: " + str));
     emit activityGenerated(QString::fromStdString(jsonStory));
@@ -117,18 +117,31 @@ void Zpdes::updateZpd(const double result){
     generateActivity();
 }
 
-std::string Zpdes::getJsonStory(std::list<std::string> story, std::string activityDesc) {
+std::string Zpdes::getJsonStory(std::list<std::string> beforeAc, std::list<std::string> afterAc, std::string activityDesc) {
     std::ostringstream json;
     json << "{ ";
-    unsigned counter{0};
-    for(auto it = story.begin(); it != story.end(); it++) {
-        json << "\"story" << counter << "\": \"" << *it << "\", ";
-        counter++;
+    json << "\"story0\" : [";
+    for(auto it = beforeAc.begin(); it != beforeAc.end(); it++) {
+        if(it != beforeAc.begin()) {
+            json << ", ";
+        }
+        json << "\""<< *it << "\"";
     }
+    json << "], ";
+
+    json << "\"story1\" : [";
+    for(auto it = afterAc.begin(); it != afterAc.end(); it++) {
+        if(it != afterAc.begin()) {
+            json << ", ";
+        }
+        json << "\""<< *it << "\"";
+    }
+    json << "], ";
+
     json << "\"activity\": \"" << activityDesc << "\"";
     json << " }";
     std::string jsonStr = json.str();
 
-    //qDebug() << QString::fromStdString(jsonStr);
+    qDebug() << QString::fromStdString(jsonStr);
     return jsonStr;
 }

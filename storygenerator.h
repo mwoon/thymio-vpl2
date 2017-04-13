@@ -10,8 +10,8 @@
 class StoryGenerator
 {
 public:
-    StoryGenerator();
-    std::list<std::string> generateStory(std::string activityId);
+   StoryGenerator();
+   std::shared_ptr<std::pair<std::list<std::string>, std::list<std::string> > > generateStory(std::string activityId);
 
 private:
     void initializeStory();
