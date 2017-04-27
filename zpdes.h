@@ -15,13 +15,6 @@ class Zpdes : public QObject
 {
     Q_OBJECT
 public:
-    //constants are currently arbitrary
-    const double theta = 0.6; //
-    const double omega = 0.7; //success rate threshold
-    const int eye = 1; //number of activities to activate
-    const double gamma = 0.7; //exploration rate
-    const unsigned d = 5; // half the number of most recent activities to consider when calculating the reward
-
     //constructor
     explicit Zpdes(QObject *parent = 0);
 
@@ -34,6 +27,11 @@ public slots:
     void generateActivity();
 
 private:
+    //constants are currently arbitrary
+    const double gamma = 0.7; //exploration rate
+    const unsigned d = 5; // half the number of most recent activities to consider when calculating the reward
+    unsigned numExercises = 0;
+
     ExplorationGraph exGraph;
     StoryGenerator storyGen;
     std::list<std::pair<std::string, double> > mostRecentActivities;

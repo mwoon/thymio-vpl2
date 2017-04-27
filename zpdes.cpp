@@ -29,6 +29,14 @@ void Zpdes::initializeActivities() {
     ///////////////////////////////////////////////////////////////////
 
     exGraph.initializeZPD();
+
+    std::ostringstream strs;
+    strs << "ZPD contains: ";
+    for(auto it = exGraph.zpd.begin(); it != exGraph.zpd.end(); it++) {
+        strs << (*it).get()->id;
+        strs << ", ";
+    }
+    qDebug() << (QString::fromStdString(strs.str()));
 }
 
 void Zpdes::generateActivity()
@@ -69,7 +77,7 @@ void Zpdes::generateActivity()
 
     std::shared_ptr<std::pair<std::list<std::string>, std::list<std::string> > > story = storyGen.generateStory(lastActivityId);
 
-    std::string jsonStory = getJsonStory(story.get()->first, story.get()->second, description);
+    std::string jsonStory = getJsonStory(story.get()->first, story.get()->second, std::to_string(++numExercises) + ". "+ description);
 
     //emit activityGenerated(QString::fromStdString(description + ", bandit level: " + str));
     emit activityGenerated(QString::fromStdString(jsonStory));
@@ -101,19 +109,31 @@ void Zpdes::updateZpd(const double result){
         prevSuccess += (*it).second;
     }
 
+    //reward used to update ZPD
     double reward = (curSuccess - prevSuccess) / d;
 
+    //debug printing
     std::ostringstream strs;
     strs << reward;
     std::string str = strs.str();
-    emit rewarded(QString::fromStdString("reward: " + str));
+    emit rewarded(QString::fromStdString(std::to_string(numExercises) + ". reward: " + str));
 
+    //update bandit level
     auto last = exGraph.getActivityFromId(lastActivityId);
     last.get()->banditLevel = last.get()->beta * last.get()->banditLevel + last.get()->eta * reward;
 
 
     //TODO update ZPD
+    exGraph.updateZPD(lastActivityId, result);
 
+    //debug printing
+    strs.clear();
+    strs.str("");
+    strs << "ZPD contains: ";
+    for(auto it = exGraph.zpd.begin(); it != exGraph.zpd.end(); it++) {
+        strs << (*it).get()->id << ", ";
+    }
+    emit rewarded(QString::fromStdString(strs.str()));
     generateActivity();
 }
 

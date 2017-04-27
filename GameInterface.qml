@@ -16,27 +16,59 @@ Page {
         anchors.fill: parent
         spacing: 10
 
-        Button {
-            id: returnButton
-            anchors.left: parent.left
-            anchors.leftMargin: 5
-            text: qsTr("‹ return")
-            onClicked: view.pop()
+        RowLayout {
+
+            Button {
+                id: returnButton
+                text: qsTr("‹ return")
+                onClicked: view.pop()
+            }
+
+            Button {
+                id: graphButton
+                text: qsTr("ZPD")
+                onClicked: gView.visible = !gView.visible
+            }
+
+            Button {
+                id: logsButton
+                text: qsTr("logs")
+                onClicked: view.pop()
+            }
+
         }
 
-        ListView {
-            id:lView
-            clip: true //apparently this can affect performance
-            model: textOutput
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-            delegate: Text {
-                font.pointSize: 24
-                text: "> " + output
-                anchors.topMargin: 10
-                anchors.bottomMargin: 10
-                width: parent.width
-                wrapMode: Text.WordWrap
+        RowLayout {
+            ListView {
+                id:lView
+                clip: true //apparently this can affect performance
+                model: textOutput
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                delegate: Text {
+                    font.pointSize: 24
+                    text: "> " + output
+                    anchors.topMargin: 10
+                    anchors.bottomMargin: 10
+                    width: parent.width
+                    wrapMode: Text.WordWrap
+                }
+            }
+
+            ListView {
+                id:gView
+                clip: true
+                model: graphLog
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                delegate: Text {
+                    font.pointSize: 24
+                    text: "> " + output
+                    anchors.topMargin: 10
+                    anchors.bottomMargin: 10
+                    width: parent.width
+                    wrapMode: Text.WordWrap
+                }
             }
         }
 
@@ -242,15 +274,19 @@ Page {
     Connections {
         target: zpdes
         onRewarded: {
-            textOutput.append({"output": newText})
+            graphLog.append({"output": newText})
             lView.positionViewAtEnd()
         }
     }
 
 
-    //example list, remove later
+
     ListModel {
         id: textOutput
+    }
+
+    ListModel {
+        id: graphLog
     }
 
 }

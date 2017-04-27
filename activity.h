@@ -24,6 +24,7 @@ public:
     double activationThreshold;
     std::string description;
     std::shared_ptr<Activity> successor; //for now only one successor allowed
+    std::pair<double, unsigned> successRate = std::make_pair<double, unsigned>(0,0); //total success and over how many activities
 
 
     void updateBanditLevel(double reward);

@@ -41,6 +41,51 @@ void ExplorationGraph::initializeZPD()
     zpd.clear();
 
     for(auto it = nodes.begin(); it != nodes.end(); it++) {
-        zpd.push_back(getActivityFromId((*it).front().get()->id));
+        unsigned counter{0};
+        for(auto it2 = (*it).begin(); it2 != (*it).end() && counter < eye; it2++) {
+            zpd.push_back(getActivityFromId((*it2).get()->id));
+            counter++;
+        }
     }
 }
+
+void ExplorationGraph::updateZPD(std::string id, double newSuccess) {
+    //the last activity, it will be updated
+    auto ua = getActivityFromId(id);
+
+    //update the successrate
+    ua.get()->successRate.second++;
+    ua.get()->successRate.first += newSuccess;
+
+    double successRate = ua.get()->successRate.first / ua.get()->successRate.second;
+
+    //if success is higher than omega and bandit level smaller theta expression
+    //remove current activity and add new activities
+    //activate new activities
+
+    if(successRate > omega) {
+        if(!ua.get()->successor || (ua.get()->banditLevel < ua.get()->successor.get()->banditLevel*theta)) {
+            ua.get()->banditLevel = 0;
+            zpd.remove(ua);
+
+            //get the activity to be added and its successor
+            auto prev = ua;
+            unsigned counter{0};
+            while(counter < eye) {
+                counter++;
+                if(ua.get()->successor) {
+                    prev = ua;
+                    ua = ua.get()->successor;
+                } else {
+                    break;
+                }
+            }
+
+            if(counter == eye) { //i+Ith activity found
+                ua.get()->banditLevel = prev.get()->banditLevel;
+                zpd.push_back(ua);
+            }
+        }
+    }
+}
+
