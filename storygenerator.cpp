@@ -94,6 +94,7 @@ void StoryGenerator::initializeStory() {
                 std::list<std::string>{"\\\"Hello! I'm Ada.\\\" She says."})),
                 Location::StartOne, Location::StartOne
     )));
+
     storyMainSections.push_back(
         std::make_shared<StoryComponent>(
             StoryComponent(
@@ -106,8 +107,10 @@ void StoryGenerator::initializeStory() {
                 std::list<std::string>{"In a clearing nearby, a white robot sits against the roots of a tree. The sounds are coming from there.",
                                        "Ada is unsure if she should go closer. She waits for a while, observing the robot.",
                                        "Then she walks up to it, ready to run away should anything happen."})),
-                Location::StartOne, Location::StartOne
+                Location::EdgeOne, Location::StartOne
     )));
+
+    /*
     storyMainSections.push_back(
         std::make_shared<StoryComponent>(
             StoryComponent(
@@ -299,6 +302,7 @@ void StoryGenerator::initializeStory() {
                 Location::StartOne, Location::StartOne
     )));
     //main story END
+    */
 
 }
 
@@ -311,37 +315,67 @@ std::shared_ptr<std::pair<std::list<std::string>, std::list<std::string> > > Sto
     // 4. ouput activity
     // 5. successful conclusion of story
     // 6. unsuccessful conclusion of story (not now)
-    // for now:
-    // 1. describe location
-    // 2. story description before activity
-    // 3. activity
-    // 4. conclusion
 
     //Find a story component that fits
     //find a lead-in that matches story chosen
     //find a lead-out that matches story
+
+    //TODO: Add lead in and closing selection
 
     std::shared_ptr<std::pair<std::list<std::string>, std::list<std::string> > > sequence;
 
     //Find Matching story components
     //find all the components that fit, choose one at random
     std::vector<std::shared_ptr<StoryComponent> > matchesStn;
+    std::vector<std::shared_ptr<StoryComponent> > matchesTrs;
 
     std::random_device rd;
     std::mt19937 gen(rd());
 
+    StoryType storyType = StoryType::Main;
+    bool sideStoryCompatible = false; //TODO
+    bool otherMainStoryCondition = true;
+
     //check if main story can be advanced
     //TODO: this needs to be changed once it's clear how Knowledge components update
+
     if(mainIndex < storyMainSections.size()) {
-        bool mainStoryCanAdvance = storyMainSections[mainIndex].get()->getPrec() == Location::None || storyMainSections[mainIndex].get()->getPrec() == sLocation;
-        if (mainStoryCanAdvance) {
-            sequence = storyMainSections[mainIndex].get()->getStory();
-            mainIndex++;
+        bool stateCompatible = storyMainSections[mainIndex].get()->getPrec() == Location::None || storyMainSections[mainIndex].get()->getPrec() == sLocation;
+
+        if(otherMainStoryCondition) {
+            if (stateCompatible) {
+                qDebug() << QString::fromStdString("main");
+                storyType = StoryType::Main;
+            } else {
+                qDebug() << QString::fromStdString("transition");
+                storyType = StoryType::Transition;
+            }
+        } else {
+            if(stateCompatible) {
+                qDebug() << QString::fromStdString("stn");
+                storyType = StoryType::Stationary;
+            } else if (sideStoryCompatible) {
+                qDebug() << QString::fromStdString("side");
+                storyType = StoryType::Side;
+            } else {
+                qDebug() << QString::fromStdString("transition");
+                storyType = StoryType::Transition;
+            }
         }
-    } else {
-        //TODO: also add stationaries in here later
-        //Auto choose transition section START
-        std::vector<std::shared_ptr<StoryComponent> > matchesTrs;
+    } else { //TODO: Exit condition when main story is done
+        storyType = StoryType::Transition;
+    }
+
+
+    switch (storyType) {
+    case StoryType::Main:
+    {
+        sequence = storyMainSections[mainIndex].get()->getStory();
+        mainIndex++;
+    }
+        break;
+    case StoryType::Transition:
+    {
         for(auto it = storyTrsSections.begin(); it != storyTrsSections.end(); it++) {
             if((*it).get()->getPrec() == Location::None || (*it).get()->getPrec() == sLocation) {
                 matchesTrs.push_back(*it);
@@ -357,9 +391,77 @@ std::shared_ptr<std::pair<std::list<std::string>, std::list<std::string> > > Sto
         sLocation = matchesTrs[index].get()->getPostc();
 
         sequence = (matchesTrs[index].get()->getStory());
-        //Auto choose transition section END
+    }
+        break;
+    case StoryType::Stationary:
+    {
+    }
+        break;
+    case StoryType::Side:
+    {
+    }
+        break;
+    case StoryType::Unlock:
+    {
+    }
+        break;
+    default:
+    {
+        for(auto it = storyTrsSections.begin(); it != storyTrsSections.end(); it++) {
+            if((*it).get()->getPrec() == Location::None || (*it).get()->getPrec() == sLocation) {
+                matchesTrs.push_back(*it);
+            }
+        }
+
+        std::uniform_int_distribution<> dis(0, matchesTrs.size() - 1);
+
+        //index of chosen story
+        int index = dis(gen);
+
+        //update location
+        sLocation = matchesTrs[index].get()->getPostc();
+
+        sequence = (matchesTrs[index].get()->getStory());
+    }
+        break;
     }
 
-
     return sequence;
+}
+
+
+void StoryGenerator::advanceScript(){
+
+ if(script[mainIndex].type == "story") {
+    //previous was a story -> continue story
+    mainIndex++;
+    //send next story back to front end
+    std::string next = makeJsonArray("story0", script[mainIndex].content); //property name is temporary
+ } else {
+    //previous was an exercise block
+    //check if number of successfully completed exercises sufficient
+    // if yes, advance story: increment mainIndex and dish out new story,
+    // if no, draw another exercise
+ }
+
+}
+
+
+//turns the string into an array of strings that can be added to a json
+//content has to be a list of json objects
+std::string StoryGenerator::makeJsonArray(std::string propertyName, std::list<std::string> content) {
+    std::ostringstream json;
+    json << "\"" << propertyName << "\" : [";
+    for(auto it = content.begin(); it != content.end(); it++) {
+        if(it != content.begin()) {
+            json << ", ";
+        }
+        json << *it ;
+    }
+    json << "] ";
+    std::string jsonStr = json.str();
+
+
+
+    return "";
 }

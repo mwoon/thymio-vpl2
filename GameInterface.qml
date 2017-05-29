@@ -248,23 +248,29 @@ Page {
         onActivityGenerated: {
             var newStorySequence = JSON.parse(newText);
             var part;
-            for(var i = 0; i < newStorySequence.story0.length; i++) {
+            if(newStorySequence.story0) {
+                for(var i = 0; i < newStorySequence.story0.length; i++) {
+                    part = {};
+                    part.type = "story";
+                    part.content = newStorySequence.story0[i];
+                    storyStack.push(part);
+                }
+            }
+
+            if(newStorySequence.activity)  {
                 part = {};
-                part.type = "story";
-                part.content = newStorySequence.story0[i];
+                part.type = "activity";
+                part.content = newStorySequence.activity;
                 storyStack.push(part);
             }
 
-            part = {};
-            part.type = "activity";
-            part.content = newStorySequence.activity;
-            storyStack.push(part);
-
-            for(var i = 0; i < newStorySequence.story1.length; i++) {
-                part = {};
-                part.type = "story";
-                part.content = newStorySequence.story1[i]
-                storyStack.push(part);
+            if(newStorySequence.story1) {
+                for(var i = 0; i < newStorySequence.story1.length; i++) {
+                    part = {};
+                    part.type = "story";
+                    part.content = newStorySequence.story1[i]
+                    storyStack.push(part);
+                }
             }
 
             lView.positionViewAtEnd()
