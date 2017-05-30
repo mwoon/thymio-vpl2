@@ -201,6 +201,7 @@ Page {
                 id: nextButton
                 text: qsTr("Next")
                 onClicked: {
+                    stote.advanceScript();
                     updateStory();
                 }
             }
@@ -244,8 +245,8 @@ Page {
     }
 
     Connections {
-        target: zpdes
-        onActivityGenerated: {
+        target: stote
+        onSegmentGenerated: {
             var newStorySequence = JSON.parse(newText);
             var part;
             if(newStorySequence.story0) {

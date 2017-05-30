@@ -55,7 +55,8 @@ HEADERS += $$PWD/aseba.h \
     $$PWD/explorationgraph.h \
     $$PWD/storygenerator.h \
     $$PWD/storycomponent.h \
-    $$PWD/scriptblock.h
+    $$PWD/scriptblock.h \
+    $$PWD/storyteller.h
 SOURCES += \
 	$$ASEBA_SOURCES \
 	$$PWD/aseba.cpp \
@@ -65,7 +66,8 @@ SOURCES += \
     $$PWD/explorationgraph.cpp \
     $$PWD/storygenerator.cpp \
     $$PWD/storycomponent.cpp \
-    $$PWD/scriptblock.cpp
+    $$PWD/scriptblock.cpp \
+    $$PWD/storyteller.cpp
 lupdate_only{
 SOURCES = \
 	$$PWD/*.qml \

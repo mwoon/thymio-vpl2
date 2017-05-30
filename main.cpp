@@ -4,6 +4,7 @@
 #include <QQmlContext>
 #include "thymio-vpl2.h"
 #include "zpdes.h"
+#include "storyteller.h"
 
 int main(int argc, char *argv[])
 {
@@ -23,6 +24,9 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     Zpdes* zpdes{new Zpdes()};
     engine.rootContext()->setContextProperty("zpdes", zpdes);
+
+    StoryTeller* stote{new StoryTeller()};
+    engine.rootContext()->setContextProperty("stote", stote);
 
     engine.load(QUrl(QStringLiteral("qrc:/Startup.qml")));
 
