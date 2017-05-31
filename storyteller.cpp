@@ -8,18 +8,44 @@ StoryTeller::StoryTeller(QObject *parent) : QObject(parent)
 
 void StoryTeller::initializeScript() {
     script.push_back(ScriptBlock("story", std::list<std::string>{"\"dummy\""}));
-    script.push_back(ScriptBlock("story", std::list<std::string>{"\"1\""}));
-    script.push_back(ScriptBlock("exercise", std::list<std::string>{"\"1\""}));
-    script.push_back(ScriptBlock("story", std::list<std::string>{"\"2\""}));
-    script.push_back(ScriptBlock("story", std::list<std::string>{"\"3\""}));
-    script.push_back(ScriptBlock("exercise", std::list<std::string>{"\"1\""}));
-    script.push_back(ScriptBlock("story", std::list<std::string>{"\"4\""}));
-    script.push_back(ScriptBlock("story", std::list<std::string>{"\"5\""}));
-    script.push_back(ScriptBlock("exercise", std::list<std::string>{"\"1\""}));
-    script.push_back(ScriptBlock("story", std::list<std::string>{"\"6\""}));
-    script.push_back(ScriptBlock("story", std::list<std::string>{"\"7\""}));
-    script.push_back(ScriptBlock("story", std::list<std::string>{"\"8\""}));
-    script.push_back(ScriptBlock("story", std::list<std::string>{"\"9\""}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story1\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E01", "E02"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story2\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E03", "E04", "E05"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story3\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E06", "E08", "E11", "E9", "E10"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story4\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E11", "E13", "E14", "E15"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story5\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E14", "E15", "E16", "E17", "E18", "E19", "E20", "E21", "E22", "E23"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story6\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E16", "E17", "E24", "E20", "E21", "E14", "E15", "E22", "E25", "E26", "E27"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story7\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E28", "E29", "E30", "E31", "E32", "E33", "E11", "E13", "E14", "E15"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story8\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E28", "E29", "E30", "E31", "E32", "E33", "E34", "E35"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story9\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E36", "E37", "E38", "E39", "E28", "E29", "E30", "E31", "E32", "E33", "E34", "E35", "E11", "E13", "E14", "E15"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story10\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E17", "E40", "E21", "E23", "E22"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story11\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E16", "E17", "E24", "E20", "E21", "E14", "E15", "E22", "E25", "E26", "E27", "E40"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story12\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E41", "E42", "E43", "E44", "E28", "E36"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story13\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E36", "E37", "E38", "E39", "E34", "E35", "E28", "E29", "E30", "E31", "E32", "E33"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story14\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E36", "E37", "E38", "E39", "E34", "E35"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story15\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E16", "E17", "E24", "E45", "E21", "E14", "E15", "E22", "E25", "E26", "E27", "E40", "E46", "E36", "E37", "E38", "E39", "E34", "E35"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story16\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E36", "E37", "E39", "E38", "E34", "E35", "E28", "E29", "E30", "E31", "E32", "E33"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story17\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E41", "E42", "E43", "E44", "E28", "E36", "E47"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story18\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E41", "E42", "E43", "E44", "E28", "E36"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story19\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E36", "E37", "E39", "E38", "E34", "E35", "E28", "E29", "E30", "E31", "E32", "E33"}));
 
 
 }
@@ -39,9 +65,13 @@ void StoryTeller::advanceScript(){
         //check if number of successfully completed exercises sufficient
         // TODO if yes, advance story: increment mainIndex and dish out new story,
         // if no, draw another exercise
-
-        //FIXME for now just increment
-        mainIndex++;
+        if(exerciseCounter < 3) {
+            exerciseCounter++;
+        } else {
+            //FIXME for now just increment
+            exerciseCounter = 0;
+            mainIndex++;
+        }
     }
  }
 
@@ -52,17 +82,21 @@ void StoryTeller::advanceScript(){
  }
 
  //check current segment type
+ std::string next;
  if(script[mainIndex].type == "story") {
      qDebug() << QString::fromStdString("make story");
 
     //send next story back to front end
-    std::string next = makeJsonArray("story0", script[mainIndex].content); //property name is temporary
+    next = makeJsonArray("story0", script[mainIndex].content); //property name is temporary
     qDebug() << QString::fromStdString(next);
     emit segmentGenerated(QString::fromStdString("{" + next + "}"));
 
  } else {
      qDebug() << QString::fromStdString("make exercise");
-     emit segmentGenerated("{\"story0\":[\"an exercise\"]}");
+     //call zpdes to pick an exercise here
+     std::string chosen = its.chooseActivity(script[mainIndex].content);
+     next = makeJsonArray("story0", std::list<std::string>{chosen});
+     emit segmentGenerated(QString::fromStdString("{" + next + "}"));
  }
 
 }

@@ -8,8 +8,8 @@ class Activity
 {
 public:
     //constants
-    const double beta = 1;
-    const double eta = 0.3;
+    const double beta = 0.3;
+    const double eta = 0.7;
 
     //constructors
     Activity(): banditLevel(0.5), activationThreshold(0){ }

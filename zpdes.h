@@ -18,6 +18,7 @@ public:
     //constructor
     explicit Zpdes(QObject *parent = 0);
 
+    std::string chooseActivity(std::list<std::string> availables);
 signals:
     void activityGenerated(const QString& newText);
     void rewarded(const QString& newText);
@@ -32,14 +33,20 @@ private:
     const unsigned d = 5; // half the number of most recent activities to consider when calculating the reward
     unsigned numExercises = 0;
 
-    ExplorationGraph exGraph;
-    StoryGenerator storyGen;
-    std::list<std::pair<std::string, double> > mostRecentActivities;
+    //ExplorationGraph exGraph;
+    //StoryGenerator storyGen;
+    //std::list<std::pair<std::string, double> > mostRecentActivities;
     std::string lastActivityId;
+
 
     void initializeActivities();
     std::string getJsonStory(std::list<std::string> beforeAc, std::list<std::string> afterAc, std::string activityDesc);
 
+
+
+    // ---------- 20.05.2017 changes -------------
+    //first activity in the list is a dummy, the id contains the ids of all subsequent exercise
+    std::list<std::list<std::shared_ptr<Activity>> > activities;
 };
 
 #endif // ZPDES_H

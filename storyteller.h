@@ -6,6 +6,7 @@
 #include <sstream>
 #include <string>
 #include "scriptblock.h"
+#include "zpdes.h"
 
 class StoryTeller : public QObject
 {
@@ -31,9 +32,11 @@ private:
     // The script of the story
     // use mainIndex to keep track of where the story is at
     unsigned mainIndex;
+    unsigned exerciseCounter; //temp
     std::vector<ScriptBlock> script;
-    void initializeScript();
+    Zpdes its;
 
+    void initializeScript();
     std::string makeJsonArray(std::string propertyName, std::list<std::string> content);
 };
 

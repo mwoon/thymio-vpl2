@@ -5,7 +5,7 @@ Zpdes::Zpdes(QObject *parent) : QObject(parent)
     initializeActivities();
 }
 
-
+/*
 void Zpdes::initializeActivities() {
     //TODO (later): search database for activities, for now just an example exploration graph
 
@@ -82,8 +82,161 @@ void Zpdes::generateActivity()
     //emit activityGenerated(QString::fromStdString(description + ", bandit level: " + str));
     emit activityGenerated(QString::fromStdString(jsonStory));
 }
+*/
 
-void Zpdes::updateZpd(const double result){
+///////////////////////////////
+//Section with new structure
+
+void Zpdes::initializeActivities() {
+    //block 1
+    activities.push_back(std::list<std::shared_ptr<Activity>>{
+                             std::make_shared<Activity>(Activity("E01E02E03", 0.0, "\"dummy1\"")),
+                             std::make_shared<Activity>(Activity("E01", 0.5, "\"E01\"")),
+                             std::make_shared<Activity>(Activity("E02", 0.5, "\"E02\""))
+                         });
+
+    //block 2
+    activities.push_back(std::list<std::shared_ptr<Activity>>{
+                             std::make_shared<Activity>(Activity("E03E04E05", 0.0, "\"dummy2\"")),
+                             std::make_shared<Activity>(Activity("E03", 0.5, "\"E03\"")),
+                             std::make_shared<Activity>(Activity("E04", 0.5, "\"E04\"")),
+                             std::make_shared<Activity>(Activity("E05", 0.5, "\"E05\""))
+                         });
+
+    //block 3
+    activities.push_back(std::list<std::shared_ptr<Activity>>{
+                             std::make_shared<Activity>(Activity("E06", 0.0, "\"dummy3\"")),
+                             std::make_shared<Activity>(Activity("E06", 0.5, "\"E06\"")),
+                             std::make_shared<Activity>(Activity("E08", 0.5, "\"E08\""))
+                         });
+    //block 4
+    activities.push_back(std::list<std::shared_ptr<Activity>>{
+                             std::make_shared<Activity>(Activity("E11E09E10", 0.0, "\"dummy4\"")),
+                             std::make_shared<Activity>(Activity("E11", 0.5, "\"E11\"")),
+                             std::make_shared<Activity>(Activity("E09", 0.5, "\"E09\"")),
+                             std::make_shared<Activity>(Activity("E10", 0.5, "\"E10\""))
+                         });
+    //block 5
+    activities.push_back(std::list<std::shared_ptr<Activity>>{
+                             std::make_shared<Activity>(Activity("E13E14E15", 0.0, "\"dummy5\"")),
+                             std::make_shared<Activity>(Activity("E13", 0.5, "\"E13\"")),
+                             std::make_shared<Activity>(Activity("E14", 0.5, "\"E14\"")),
+                             std::make_shared<Activity>(Activity("E15", 0.5, "\"E15\""))
+                         });
+
+    //block 6
+    activities.push_back(std::list<std::shared_ptr<Activity>>{
+                             std::make_shared<Activity>(Activity("E26E32E34E35E31E27E25E33", 0.0, "\"dummy6\"")),
+                             std::make_shared<Activity>(Activity("E26E32E34E35E31", 0.5, "\"E26 E32 E34 E35 E31\"")),
+                             std::make_shared<Activity>(Activity("E27", 0.5, "\"E27\"")),
+                             std::make_shared<Activity>(Activity("E25E33", 0.5, "\"E25 E33\""))
+                         });
+    //block 7
+    activities.push_back(std::list<std::shared_ptr<Activity>>{
+                             std::make_shared<Activity>(Activity("E28E29E30", 0.0, "\"dummy7\"")),
+                             std::make_shared<Activity>(Activity("E28", 0.5, "\"E28\"")),
+                             std::make_shared<Activity>(Activity("E29E30", 0.5, "\"E29 E30\""))
+                         });
+    //block 8
+    activities.push_back(std::list<std::shared_ptr<Activity>>{
+                             std::make_shared<Activity>(Activity("E36E37E39E38", 0.0, "\"dummy8\"")),
+                             std::make_shared<Activity>(Activity("E36E37E39", 0.5, "\"E36 E37 E39\"")),
+                             std::make_shared<Activity>(Activity("E38", 0.5, "\"E38\""))
+                         });
+    //block 9
+    activities.push_back(std::list<std::shared_ptr<Activity>>{
+                             std::make_shared<Activity>(Activity("E16E20E17E45E18E41E42E19E44E24E43E22E46E21E40E47E23", 0.0, "\"dummy9\"")),
+                             std::make_shared<Activity>(Activity("E16", 0.5, "\"E16\"")),
+                             std::make_shared<Activity>(Activity("E20E17E45", 0.5, "\"E20 E17 E45\"")),
+                             std::make_shared<Activity>(Activity("E18E41E42", 0.5, "\"E18 E41 E42\"")),
+                             std::make_shared<Activity>(Activity("E19E44", 0.5, "\"E19 E44\"")),
+                             std::make_shared<Activity>(Activity("E24E43", 0.5, "\"E24 E43\"")),
+                             std::make_shared<Activity>(Activity("E22E46", 0.5, "\"E22 E46\"")),
+                             std::make_shared<Activity>(Activity("E21E40E47", 0.5, "\"E21 E40 E47\"")),
+                             std::make_shared<Activity>(Activity("E23", 0.5, "\"E23\""))
+                         });
+
+}
+
+std::string Zpdes::chooseActivity(std::list<std::string> availables) {
+    std::list<std::shared_ptr<Activity>> zpd;
+
+    //look for availables in activities list
+    for(auto it = availables.begin(); it != availables.end(); it++) {
+        for(auto it2 = activities.begin(); it2 != activities.end(); it2++) {
+            if((it2->front()).get()->id.find(*it) != std::string::npos) {
+                for(auto it3 = ++(it2->begin()); it3 != it2->end(); it3++) {
+                    if((*it3).get()->id.find(*it) != std::string::npos) {
+                        //add available activities to current zpd
+                        //TODO add activity only if previous was activated before
+                        //check sub activities and add the subs
+                        //qDebug() << QString::fromStdString((*it3).get()->id) << " " << QString::fromStdString(*it);
+                        zpd.push_back(*it3);
+                    }
+                }
+            }
+        }
+    }
+
+    //TODO make sure all activities in zpd are activated
+
+    //debug print all activities in zpd to console
+    for(auto it = zpd.begin(); it != zpd.end(); it++) {
+        //qDebug() << QString::fromStdString((*it).get()->description) << " ";
+    }
+    qDebug() << " ";
+
+
+
+    //calculate total bandit level
+    double totalBanditLevel{0};
+    for(auto it = zpd.begin(); it != zpd.end(); it++) {
+        totalBanditLevel += (*it).get()->banditLevel;
+    }
+
+    //for each activity in the zpd calculate the probability
+    std::vector<double> probs(zpd.size());
+    int numActivity{0};
+    for(auto it = zpd.begin(); it != zpd.end(); it++) {
+        double wa = (*it).get()->banditLevel;
+        probs[numActivity] = wa * (1 - gamma) + gamma * totalBanditLevel / zpd.size();
+        numActivity++;
+    }
+
+    // sample a proportional to probs
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::discrete_distribution<unsigned> d(probs.begin(), probs.end());
+
+    std::string description;
+    double banditLevel;
+
+    unsigned index = d(gen);
+    if(zpd.size() > index) {
+        auto it = zpd.begin();
+        std::advance(it, index);
+        description = (*it).get()->description;
+        banditLevel = (*it).get()->banditLevel;
+        lastActivityId = (*it).get()->id;
+    }
+
+    return description;
+}
+
+void Zpdes::generateActivity()
+{
+
+}
+
+///////////////////////////////
+
+
+
+
+
+
+
+void Zpdes::updateZpd(const double result){/*
     //TODO update banditlevel of activity
 
     //keep record of last few activities
@@ -134,7 +287,7 @@ void Zpdes::updateZpd(const double result){
         strs << (*it).get()->id << ", ";
     }
     emit rewarded(QString::fromStdString(strs.str()));
-    generateActivity();
+    generateActivity();*/
 }
 
 std::string Zpdes::getJsonStory(std::list<std::string> beforeAc, std::list<std::string> afterAc, std::string activityDesc) {
