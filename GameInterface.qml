@@ -83,7 +83,7 @@ Page {
                 text: qsTr("1.0")
                 onClicked: {
                     //gameWindow.advanced(text)
-                    zpdes.updateZpd(1.0);
+                    stote.completeExercise(1.0);
                     updateStory();
                 }
             }
@@ -94,7 +94,7 @@ Page {
                 text: qsTr("0.9")
                 onClicked: {
                     //gameWindow.advanced(text)
-                    zpdes.updateZpd(0.9);
+                    stote.completeExercise(0.9);
                     updateStory();
                 }
             }
@@ -105,7 +105,7 @@ Page {
                 text: qsTr("0.8")
                 onClicked: {
                     //gameWindow.advanced(text)
-                    zpdes.updateZpd(0.8);
+                    stote.completeExercise(0.8);
                     updateStory();
                 }
             }
@@ -116,7 +116,7 @@ Page {
                 text: qsTr("0.7")
                 onClicked: {
                     //gameWindow.advanced(text)
-                    zpdes.updateZpd(0.7);
+                    stote.completeExercise(0.7);
                     updateStory();
                 }
             }
@@ -127,7 +127,7 @@ Page {
                 text: qsTr("0.6")
                 onClicked: {
                     //gameWindow.advanced(text)
-                    zpdes.updateZpd(0.6);
+                    stote.completeExercise(0.6);
                     updateStory();
                 }
             }
@@ -138,7 +138,7 @@ Page {
                 text: qsTr("0.5")
                 onClicked: {
                     //gameWindow.advanced(text)
-                    zpdes.updateZpd(0.5);
+                    stote.completeExercise(0.5);
                     updateStory();
                 }
             }
@@ -149,7 +149,7 @@ Page {
                 text: qsTr("0.4")
                 onClicked: {
                     //gameWindow.advanced(text)
-                    zpdes.updateZpd(0.4);
+                    stote.completeExercise(0.4);
                     updateStory();
                 }
             }
@@ -160,7 +160,7 @@ Page {
                 text: qsTr("0.3")
                 onClicked: {
                     //gameWindow.advanced(text)
-                    zpdes.updateZpd(0.3);
+                    stote.completeExercise(0.3);
                     updateStory();
                 }
             }
@@ -171,7 +171,7 @@ Page {
                 text: qsTr("0.2")
                 onClicked: {
                     //gameWindow.advanced(text)
-                    zpdes.updateZpd(0.2);
+                    stote.completeExercise(0.2);
                     updateStory();
                 }
             }
@@ -182,7 +182,7 @@ Page {
                 text: qsTr("0.1")
                 onClicked: {
                     //gameWindow.advanced(text)
-                    zpdes.updateZpd(0.1);
+                    stote.completeExercise(0.1);
                     updateStory();
                 }
             }
@@ -192,7 +192,7 @@ Page {
                 visible: false
                 text: qsTr("0.0")
                 onClicked: {
-                    zpdes.updateZpd(0.0);
+                    stote.completeExercise(0.0);
                     updateStory();
                 }
             }
@@ -201,7 +201,6 @@ Page {
                 id: nextButton
                 text: qsTr("Next")
                 onClicked: {
-                    stote.advanceScript();
                     updateStory();
                 }
             }
@@ -241,6 +240,9 @@ Page {
             }
 
             lView.positionViewAtEnd();
+        } else {
+            stote.advanceScript();
+            updateStory();
         }
     }
 
@@ -259,10 +261,12 @@ Page {
             }
 
             if(newStorySequence.activity)  {
-                part = {};
-                part.type = "activity";
-                part.content = newStorySequence.activity;
-                storyStack.push(part);
+                for(var i = 0; i < newStorySequence.activity.length; i++) {
+                    part = {};
+                    part.type = "activity";
+                    part.content = newStorySequence.activity[i];
+                    storyStack.push(part);
+                }
             }
 
             if(newStorySequence.story1) {

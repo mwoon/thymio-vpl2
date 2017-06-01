@@ -19,13 +19,14 @@ public:
     explicit Zpdes(QObject *parent = 0);
 
     std::string chooseActivity(std::list<std::string> availables);
+
+    void updateZpd(const double result);
+
 signals:
     void activityGenerated(const QString& newText);
     void rewarded(const QString& newText);
 
 public slots:
-    void updateZpd(const double result);
-    void generateActivity();
 
 private:
     //constants are currently arbitrary

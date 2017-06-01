@@ -23,7 +23,7 @@ signals:
 
 public slots:
     void advanceScript();
-
+    void completeExercise(const double result);
 
 
 private:
@@ -32,7 +32,7 @@ private:
     // The script of the story
     // use mainIndex to keep track of where the story is at
     unsigned mainIndex;
-    unsigned exerciseCounter; //temp
+    unsigned successfulExercises; //temp
     std::vector<ScriptBlock> script;
     Zpdes its;
 

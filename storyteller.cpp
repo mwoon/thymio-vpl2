@@ -65,11 +65,9 @@ void StoryTeller::advanceScript(){
         //check if number of successfully completed exercises sufficient
         // TODO if yes, advance story: increment mainIndex and dish out new story,
         // if no, draw another exercise
-        if(exerciseCounter < 3) {
-            exerciseCounter++;
-        } else {
+        if(successfulExercises > 2) {
             //FIXME for now just increment
-            exerciseCounter = 0;
+            successfulExercises = 0;
             mainIndex++;
         }
     }
@@ -95,11 +93,27 @@ void StoryTeller::advanceScript(){
      qDebug() << QString::fromStdString("make exercise");
      //call zpdes to pick an exercise here
      std::string chosen = its.chooseActivity(script[mainIndex].content);
-     next = makeJsonArray("story0", std::list<std::string>{chosen});
+     next = makeJsonArray("activity", std::list<std::string>{chosen});
      emit segmentGenerated(QString::fromStdString("{" + next + "}"));
  }
 
 }
+
+
+void StoryTeller::completeExercise(const double result) {
+    //update condition for progressing story after exercise
+    //FIXME Need to tune this condition and see what is good
+    //maybe also add a hard limit on the number of exercises?
+    if(result > 0.5) {
+        successfulExercises++;
+    } else {
+        successfulExercises = 0;
+    }
+
+    //call zpd to update graph
+    its.updateZpd(result);
+}
+
 
 
 //turns the string into an array of strings that can be added to a json

@@ -31,7 +31,7 @@ ApplicationWindow {
                 text: "Game"
                 onClicked: {
                     stack.push(gameWindow)
-                    zpdes.generateActivity();
+                    stote.advanceScript();
                 }
 
             }

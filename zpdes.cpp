@@ -170,21 +170,16 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
                         //add available activities to current zpd
                         //TODO add activity only if previous was activated before
                         //check sub activities and add the subs
-                        //qDebug() << QString::fromStdString((*it3).get()->id) << " " << QString::fromStdString(*it);
+                        qDebug() << QString::fromStdString((*it3).get()->id) << " " << QString::fromStdString(*it);
                         zpd.push_back(*it3);
                     }
                 }
             }
         }
     }
+    qDebug() << " ";
 
     //TODO make sure all activities in zpd are activated
-
-    //debug print all activities in zpd to console
-    for(auto it = zpd.begin(); it != zpd.end(); it++) {
-        //qDebug() << QString::fromStdString((*it).get()->description) << " ";
-    }
-    qDebug() << " ";
 
 
 
@@ -209,23 +204,29 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
     std::discrete_distribution<unsigned> d(probs.begin(), probs.end());
 
     std::string description;
-    double banditLevel;
+   // double banditLevel;
 
     unsigned index = d(gen);
     if(zpd.size() > index) {
-        auto it = zpd.begin();
-        std::advance(it, index);
-        description = (*it).get()->description;
-        banditLevel = (*it).get()->banditLevel;
-        lastActivityId = (*it).get()->id;
+        auto zpd_it = zpd.begin();
+        std::advance(zpd_it, index);
+        //banditLevel = (*zpd_it).get()->banditLevel;
+        lastActivityId = (*zpd_it).get()->id;
+
+
+        auto avail_it = availables.begin();
+        std::advance(avail_it, index);
+        description = "\"" + *avail_it + "\"";
     }
 
     return description;
 }
 
-void Zpdes::generateActivity()
-{
-
+void Zpdes::updateZpd(const double result){
+    //TODO fill out this code
+    //TODO Search for exercise using lastActivityId (which should be the specific exercise)
+        //Split lastactivityid into major and minor i.e. E4.6 = major: E4 and minor: 6
+    //TODO ask activity to update its bandit level using major and minor
 }
 
 ///////////////////////////////
@@ -236,8 +237,8 @@ void Zpdes::generateActivity()
 
 
 
-void Zpdes::updateZpd(const double result){/*
-    //TODO update banditlevel of activity
+/*void Zpdes::updateZpd(const double result){
+    //update banditlevel of activity
 
     //keep record of last few activities
     if(d * 2 <= mostRecentActivities.size()) {
@@ -287,8 +288,8 @@ void Zpdes::updateZpd(const double result){/*
         strs << (*it).get()->id << ", ";
     }
     emit rewarded(QString::fromStdString(strs.str()));
-    generateActivity();*/
-}
+    generateActivity();
+}*/
 
 std::string Zpdes::getJsonStory(std::list<std::string> beforeAc, std::list<std::string> afterAc, std::string activityDesc) {
     std::ostringstream json;

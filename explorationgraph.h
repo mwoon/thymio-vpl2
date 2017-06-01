@@ -1,4 +1,4 @@
-#ifndef EXPLORATIONGRAPH_H
+/*#ifndef EXPLORATIONGRAPH_H
 #define EXPLORATIONGRAPH_H
 
 #include <list>
@@ -31,6 +31,7 @@ private:
 };
 
 #endif // EXPLORATIONGRAPH_H
+*/
 /*
 exploration graph should keep a list of all the activities with the same level
 need this for the 'free exploration' of nodes that
