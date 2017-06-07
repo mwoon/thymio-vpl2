@@ -166,6 +166,27 @@
         <file>Startup.qml</file>
         <file>VplInterface.qml</file>
         <file>GameInterface.qml</file>
+        <file>story/story1.json</file>
+        <file>story/story10.json</file>
+        <file>story/story11.json</file>
+        <file>story/story12.json</file>
+        <file>story/story13.json</file>
+        <file>story/story14.json</file>
+        <file>story/story15.json</file>
+        <file>story/story16.json</file>
+        <file>story/story17.json</file>
+        <file>story/story19.json</file>
+        <file>story/story2.json</file>
+        <file>story/story20.json</file>
+        <file>story/story3.json</file>
+        <file>story/story4.json</file>
+        <file>story/story5.json</file>
+        <file>story/story6.json</file>
+        <file>story/story7.json</file>
+        <file>story/story8.json</file>
+        <file>story/story9.json</file>
+        <file>story/story18.json</file>
+        <file>story/the_end.json</file>
     </qresource>
     <qresource prefix="/">
         <file>Startup.qml</file>

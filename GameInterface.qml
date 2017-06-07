@@ -11,6 +11,13 @@ Page {
     title: qsTr("Thymio game WIP")
     visible: true
 
+
+    Rectangle {
+        id: bgrd
+        color: "steelblue"
+        anchors.fill: parent
+    }
+
     ColumnLayout {
 
         anchors.fill: parent
@@ -82,7 +89,6 @@ Page {
                 visible: false
                 text: qsTr("1.0")
                 onClicked: {
-                    //gameWindow.advanced(text)
                     stote.completeExercise(1.0);
                     updateStory();
                 }
@@ -93,9 +99,7 @@ Page {
                 visible: false
                 text: qsTr("0.9")
                 onClicked: {
-                    //gameWindow.advanced(text)
                     stote.completeExercise(0.9);
-                    updateStory();
                 }
             }
 
@@ -104,9 +108,7 @@ Page {
                 visible: false
                 text: qsTr("0.8")
                 onClicked: {
-                    //gameWindow.advanced(text)
                     stote.completeExercise(0.8);
-                    updateStory();
                 }
             }
 
@@ -115,9 +117,7 @@ Page {
                 visible: false
                 text: qsTr("0.7")
                 onClicked: {
-                    //gameWindow.advanced(text)
                     stote.completeExercise(0.7);
-                    updateStory();
                 }
             }
 
@@ -126,9 +126,7 @@ Page {
                 visible: false
                 text: qsTr("0.6")
                 onClicked: {
-                    //gameWindow.advanced(text)
                     stote.completeExercise(0.6);
-                    updateStory();
                 }
             }
 
@@ -137,9 +135,7 @@ Page {
                 visible: false
                 text: qsTr("0.5")
                 onClicked: {
-                    //gameWindow.advanced(text)
                     stote.completeExercise(0.5);
-                    updateStory();
                 }
             }
 
@@ -148,9 +144,7 @@ Page {
                 visible: false
                 text: qsTr("0.4")
                 onClicked: {
-                    //gameWindow.advanced(text)
                     stote.completeExercise(0.4);
-                    updateStory();
                 }
             }
 
@@ -159,9 +153,7 @@ Page {
                 visible: false
                 text: qsTr("0.3")
                 onClicked: {
-                    //gameWindow.advanced(text)
                     stote.completeExercise(0.3);
-                    updateStory();
                 }
             }
 
@@ -170,9 +162,7 @@ Page {
                 visible: false
                 text: qsTr("0.2")
                 onClicked: {
-                    //gameWindow.advanced(text)
                     stote.completeExercise(0.2);
-                    updateStory();
                 }
             }
 
@@ -181,9 +171,7 @@ Page {
                 visible: false
                 text: qsTr("0.1")
                 onClicked: {
-                    //gameWindow.advanced(text)
                     stote.completeExercise(0.1);
-                    updateStory();
                 }
             }
 
@@ -193,7 +181,6 @@ Page {
                 text: qsTr("0.0")
                 onClicked: {
                     stote.completeExercise(0.0);
-                    updateStory();
                 }
             }
 
@@ -210,8 +197,12 @@ Page {
     function updateStory() {
         if(storyStack.length > 0) {
             var part = storyStack.shift();
-            textOutput.append({"output": part.content});
             if(part.type === "story") {
+                if(part.content.cmd === "text") {
+                    textOutput.append({"output": part.content.text});
+                } else if (part.content.cmd === "bg") {
+                    bgrd.color = part.content.color;
+                }
                 nextButton.visible = true;
                 answer0.visible = false;
                 answer1.visible = false;
@@ -225,6 +216,7 @@ Page {
                 answer9.visible = false;
                 answer10.visible = false;
             } else if (part.type === "activity") {
+                textOutput.append({"output": part.content});
                 nextButton.visible = false;
                 answer0.visible = true;
                 answer1.visible = true;
@@ -242,22 +234,46 @@ Page {
             lView.positionViewAtEnd();
         } else {
             stote.advanceScript();
-            updateStory();
+            //updateStory();
         }
     }
 
     Connections {
         target: stote
         onSegmentGenerated: {
+
             var newStorySequence = JSON.parse(newText);
             var part;
             if(newStorySequence.story0) {
-                for(var i = 0; i < newStorySequence.story0.length; i++) {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
+                        print('HEADERS_RECEIVED')
+                    } else if(xhr.readyState === XMLHttpRequest.DONE) {
+                        print('DONE');
+                        console.log(xhr.status);
+                        console.log(xhr.responseText.toString());
+                        var a = JSON.parse(xhr.responseText.toString());
+                        for(var i = 0; i < a.list.length; i++) {
+                            part = {};
+                            part.type = "story";
+                            part.content = a.list[i];
+                            storyStack.push(part);
+                        }
+                    }
+                }
+                var file = "thymio-vpl2/story/" + newStorySequence.story0[0] + ".json";
+                console.log(file);
+                xhr.open("GET", file);
+                xhr.send();
+/*
+                for(var i = 0; i < a.length; i++) {
                     part = {};
                     part.type = "story";
-                    part.content = newStorySequence.story0[i];
+                    part.content = a[i];
                     storyStack.push(part);
                 }
+                */
             }
 
             if(newStorySequence.activity)  {
@@ -278,7 +294,6 @@ Page {
                 }
             }
 
-            lView.positionViewAtEnd()
         }
     }
 

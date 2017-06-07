@@ -5,6 +5,9 @@
 #include <QtDebug>
 #include <sstream>
 #include <string>
+#include <fstream>
+#include <iostream>
+#include <vector>
 #include "scriptblock.h"
 #include "zpdes.h"
 
@@ -38,6 +41,8 @@ private:
 
     void initializeScript();
     std::string makeJsonArray(std::string propertyName, std::list<std::string> content);
+    std::string makeJsonArray(std::string propertyName, std::string content);
+    std::string readFromFile(const std::string &fileName);
 };
 
 #endif // STORYTELLER_H
