@@ -165,22 +165,23 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
     for(auto it = availables.begin(); it != availables.end(); it++) {
         for(auto it2 = activities.begin(); it2 != activities.end(); it2++) {
             if((it2->front()).get()->id.find(*it) != std::string::npos) {
+                auto prev = it2->begin();
                 for(auto it3 = ++(it2->begin()); it3 != it2->end(); it3++) {
                     if((*it3).get()->id.find(*it) != std::string::npos) {
                         //add available activities to current zpd
                         //TODO add activity only if previous was activated before
-                        //check sub activities and add the subs
-                        qDebug() << QString::fromStdString((*it3).get()->id) << " " << QString::fromStdString(*it);
-                        zpd.push_back(*it3);
+                        if((prev == it2->begin()) || (*prev).get()->activated) {
+                            //TODO check sub activities and add the subs
+                            qDebug() << QString::fromStdString((*it3).get()->id) << " " << QString::fromStdString(*it);
+                            zpd.push_back(*it3);
+                        }
                     }
+                    prev = it3;
                 }
             }
         }
     }
     qDebug() << " ";
-
-    //TODO make sure all activities in zpd are activated
-
 
 
     //calculate total bandit level
@@ -212,7 +213,7 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
         std::advance(zpd_it, index);
         //banditLevel = (*zpd_it).get()->banditLevel;
         lastActivityId = (*zpd_it).get()->id;
-
+        (*zpd_it).get()->activated = true;
 
         auto avail_it = availables.begin();
         std::advance(avail_it, index);
