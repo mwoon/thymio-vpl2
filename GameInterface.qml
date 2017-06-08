@@ -6,11 +6,13 @@ Page {
 
     property StackView view
     property var storyStack: new Array()
+    property bool next: false //signals when a new segment is ready to be read
+    onNextChanged: updateStory();
+
 
     id: gameWindow
     title: qsTr("Thymio game WIP")
     visible: true
-
 
     Rectangle {
         id: bgrd
@@ -90,7 +92,6 @@ Page {
                 text: qsTr("1.0")
                 onClicked: {
                     stote.completeExercise(1.0);
-                    updateStory();
                 }
             }
 
@@ -188,6 +189,7 @@ Page {
                 id: nextButton
                 text: qsTr("Next")
                 onClicked: {
+                    next = true;
                     updateStory();
                 }
             }
@@ -195,7 +197,10 @@ Page {
     }
 
     function updateStory() {
+        if(!next) { return; }
+
         if(storyStack.length > 0) {
+            next = false;
             var part = storyStack.shift();
             if(part.type === "story") {
                 if(part.content.cmd === "text") {
@@ -260,6 +265,7 @@ Page {
                             part.content = a.list[i];
                             storyStack.push(part);
                         }
+                        next = true;
                     }
                 }
                 var file = "thymio-vpl2/story/" + newStorySequence.story0[0] + ".json";
@@ -283,6 +289,7 @@ Page {
                     part.content = newStorySequence.activity[i];
                     storyStack.push(part);
                 }
+                next = true;
             }
 
             if(newStorySequence.story1) {
@@ -293,7 +300,6 @@ Page {
                     storyStack.push(part);
                 }
             }
-
         }
     }
 

@@ -119,6 +119,9 @@ void StoryTeller::completeExercise(const double result) {
 
     //call zpd to update graph
     its.updateZpd(result);
+
+    //after exercise is completed, advance the script
+    advanceScript();
 }
 
 //----------------- Helper functions -----------------
