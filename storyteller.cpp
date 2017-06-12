@@ -194,21 +194,8 @@ std::string StoryTeller::readFromFile(const std::string &fileName)
     return std::string(&bytes[0], length);
 }
 
-
+//tutorial for file io with qt: http://expletive-deleted.com/2015/02/26/file-io-in-qt5/
 void StoryTeller::writeLogToFile(QString fileName) {
-    /*std::ofstream output(fileName);
-
-    if(output) {
-        while(!log.empty()) {
-            output << log.front() << std::endl;
-            log.pop_front();
-        }
-    } else {
-        qDebug() << QString::fromStdString("Could not write to file.");
-    }
-
-    output.close();*/
-
     QFile output(fileName + QString::fromStdString( ".txt"));
 
     if(output.open(QIODevice::WriteOnly)){
