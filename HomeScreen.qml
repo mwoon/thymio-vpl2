@@ -19,5 +19,12 @@ Item {
             }
 
         }
+        Button {
+            text: "Sim"
+            onClicked: {
+                startupWindow.showSim();
+            }
+
+        }
     }
 }

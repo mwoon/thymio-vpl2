@@ -193,5 +193,6 @@
         <file>VplInterface.qml</file>
         <file>GameInterface.qml</file>
         <file>HomeScreen.qml</file>
+        <file>GameSimulator.qml</file>
     </qresource>
 </RCC>

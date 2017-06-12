@@ -1,7 +1,6 @@
 import QtQuick 2.6
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
-import QtGraphicalEffects 1.0
 
 Page {
 
@@ -14,8 +13,6 @@ Page {
     id: gameWindow
     title: qsTr("Thymio game WIP")
     visible: true
-
-
 
     Rectangle {
         id: bgrd
@@ -99,6 +96,7 @@ Page {
                 text: qsTr("1.0")
                 onClicked: {
                     stote.completeExercise(1.0);
+                    next = true;
                 }
             }
 
@@ -329,6 +327,6 @@ Page {
     }
 
     Component.onCompleted: {
-        next = true;
+        //next = true;
     }
 }

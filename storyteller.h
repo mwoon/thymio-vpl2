@@ -3,6 +3,8 @@
 
 #include <QObject>
 #include <QtDebug>
+#include <QFile>
+#include <QTextStream>
 #include <sstream>
 #include <string>
 #include <fstream>
@@ -25,9 +27,11 @@ signals:
 
 
 public slots:
-    void advanceScript();
+    QString advanceScript();
     void resetScript();
     void completeExercise(const double result);
+    QString lastGenerated();
+    void writeLogToFile(QString fileName);
 
 
 private:
@@ -39,6 +43,8 @@ private:
     unsigned successfulExercises; //temp
     std::vector<ScriptBlock> script;
     Zpdes its;
+    QString last;
+    std::list<std::string> log;
 
     void initializeScript();
     std::string makeJsonArray(std::string propertyName, std::list<std::string> content);

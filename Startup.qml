@@ -18,13 +18,16 @@ ApplicationWindow {
 
     }
 
-
     function showHome() {
         screenLoader.source = "HomeScreen.qml"
     }
 
     function showGame() {
         screenLoader.source = "GameInterface.qml"
+    }
+
+    function showSim() {
+        screenLoader.source = "GameSimulator.qml"
     }
 
     function showVPL() {

@@ -50,7 +50,7 @@ void StoryTeller::initializeScript() {
 
 }
 
-void StoryTeller::advanceScript(){
+QString StoryTeller::advanceScript(){
 
  //check previous segment type
  if(mainIndex < script.size()) {
@@ -65,7 +65,7 @@ void StoryTeller::advanceScript(){
         //check if number of successfully completed exercises sufficient
         // TODO if yes, advance story: increment mainIndex and dish out new story,
         // if no, draw another exercise
-        if(successfulExercises > 0) {
+        if(successfulExercises > 1) {
             //FIXME for now just increment
             successfulExercises = 0;
             mainIndex++;
@@ -75,8 +75,10 @@ void StoryTeller::advanceScript(){
 
  //no more story to show
  if(mainIndex >= script.size()) {
-     emit segmentGenerated("{\"story0\":[\"the_end\"]}");
-     return;
+     last = QString::fromStdString("{\"story0\":[\"the_end\"]}");
+     log.push_back("\"the_end\"");
+     emit segmentGenerated(last);
+     return last;
  }
 
  //check current segment type
@@ -85,25 +87,28 @@ void StoryTeller::advanceScript(){
      qDebug() << QString::fromStdString("make story");
 
     //send next story back to front end
-/*
-    std::string file = "qrc:/thymio-vpl2/story/" + *(script[mainIndex].content.begin());
-    qDebug() << QString::fromStdString(file);
-    std::string content = readFromFile(file);
-    next = makeJsonArray("story0", content); //property name is temporary
-*/
     next = makeJsonArray("story0", script[mainIndex].content);
 
-    qDebug() << QString::fromStdString(next);
-    emit segmentGenerated(QString::fromStdString("{" + next + "}"));
+    //Some tracking
+    //qDebug() << QString::fromStdString(next);
+    log.push_back(next);
+    last = QString::fromStdString("{" + next + "}");
+    emit segmentGenerated(last);
 
  } else {
      qDebug() << QString::fromStdString("make exercise");
      //call zpdes to pick an exercise here
      std::string chosen = its.chooseActivity(script[mainIndex].content);
      next = makeJsonArray("activity", std::list<std::string>{chosen});
-     emit segmentGenerated(QString::fromStdString("{" + next + "}"));
+
+     //Tracking
+     last = QString::fromStdString("{" + next + "}");
+     log.push_back(chosen);
+
+     emit segmentGenerated(last);
  }
 
+ return last;
 }
 
 
@@ -121,13 +126,19 @@ void StoryTeller::completeExercise(const double result) {
     its.updateZpd(result);
 
     //after exercise is completed, advance the script
-    advanceScript();
+    //advanceScript();
 }
 
 
 void StoryTeller::resetScript() {
     mainIndex = 0;
 }
+
+
+QString StoryTeller::lastGenerated() {
+    return last;
+}
+
 
 //----------------- Helper functions -----------------
 
@@ -163,6 +174,7 @@ std::string StoryTeller::makeJsonArray(std::string propertyName, std::string con
 }
 
 //from: https://stackoverflow.com/a/525103
+//Should not be needed anymore
 std::string StoryTeller::readFromFile(const std::string &fileName)
 {
     std::ifstream ifs(fileName.c_str(), std::ios::in | std::ios::ate);
@@ -180,4 +192,34 @@ std::string StoryTeller::readFromFile(const std::string &fileName)
     ifs.read(&bytes[0], length);
 
     return std::string(&bytes[0], length);
+}
+
+
+void StoryTeller::writeLogToFile(QString fileName) {
+    /*std::ofstream output(fileName);
+
+    if(output) {
+        while(!log.empty()) {
+            output << log.front() << std::endl;
+            log.pop_front();
+        }
+    } else {
+        qDebug() << QString::fromStdString("Could not write to file.");
+    }
+
+    output.close();*/
+
+    QFile output(fileName + QString::fromStdString( ".txt"));
+
+    if(output.open(QIODevice::WriteOnly)){
+        QTextStream stream(&output);
+
+        while(!log.empty()) {
+            stream << QString::fromStdString(log.front()) << endl;
+            log.pop_front();
+        }
+        output.close();
+    } else {
+        qDebug() << QString::fromStdString("Could not write to file.");
+    }
 }
