@@ -1,6 +1,7 @@
 import QtQuick 2.6
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
+import QtGraphicalEffects 1.0
 
 Page {
 
@@ -14,11 +15,14 @@ Page {
     title: qsTr("Thymio game WIP")
     visible: true
 
+
+
     Rectangle {
         id: bgrd
         color: "steelblue"
         anchors.fill: parent
     }
+
 
     ColumnLayout {
 
@@ -193,7 +197,6 @@ Page {
                 text: qsTr("Next")
                 onClicked: {
                     next = true;
-                    updateStory();
                 }
             }
         }
@@ -327,7 +330,5 @@ Page {
 
     Component.onCompleted: {
         next = true;
-        updateStory();
     }
-
 }
