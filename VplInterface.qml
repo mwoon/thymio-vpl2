@@ -159,7 +159,7 @@ Page {
             blackIcon: "qrc:/thymio-vpl2/icons/ic_invert_colors_black_24px.svg";
         }
         function returnToPreviousView() {
-            view.pop()
+            startupWindow.showHome();
         }
 
     }

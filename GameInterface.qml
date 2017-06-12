@@ -30,7 +30,10 @@ Page {
             Button {
                 id: returnButton
                 text: qsTr("‹ return")
-                onClicked: view.pop()
+                onClicked: {
+                    startupWindow.showHome();
+                    stote.resetScript();
+                }
             }
 
             Button {
@@ -198,6 +201,7 @@ Page {
 
     function updateStory() {
         if(!next) { return; }
+        next = false;
 
         if(storyStack.length > 0) {
             next = false;
@@ -319,6 +323,11 @@ Page {
 
     ListModel {
         id: graphLog
+    }
+
+    Component.onCompleted: {
+        next = true;
+        updateStory();
     }
 
 }

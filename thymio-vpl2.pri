@@ -82,4 +82,5 @@ INCLUDEPATH += $$ASEBA_INCLUDE
 LIBS += $$ASEBA_LIBS
 
 DISTFILES += \
-    $$PWD/GameInterface.qml
+    $$PWD/GameInterface.qml \
+    $$PWD/HomeScreen.qml

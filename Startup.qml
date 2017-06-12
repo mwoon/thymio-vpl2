@@ -11,48 +11,23 @@ ApplicationWindow {
     width: Screen.width
     height: Screen.height
 
-    StackView {
-        id: stack
-        initialItem: mainMenu
+    Loader{
+        id: screenLoader
+        source: "HomeScreen.qml"
         anchors.fill: parent
-    }
-
-    Page {
-        id: mainMenu
-
-        Row {
-            spacing: 10
-            anchors.centerIn: parent
-            Button {
-                text: "VPL"
-                onClicked: stack.push(vplWindow)
-            }
-            Button {
-                text: "Game"
-                onClicked: {
-                    stack.push(gameWindow)
-                    stote.advanceScript();
-                }
-
-            }
-            Text {
-                text: stack.depth
-            }
-        }
 
     }
 
-    Component {
-        id: vplWindow
-        VplInterface {
-            view: stack
-        }
+
+    function showHome() {
+        screenLoader.source = "HomeScreen.qml"
     }
 
-    Component {
-        id: gameWindow
-        GameInterface {
-            view: stack
-        }
+    function showGame() {
+        screenLoader.source = "GameInterface.qml"
+    }
+
+    function showVPL() {
+        screenLoader.source = "VplInterface.qml"
     }
 }

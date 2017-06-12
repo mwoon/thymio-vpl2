@@ -8,7 +8,7 @@ StoryTeller::StoryTeller(QObject *parent) : QObject(parent)
 
 void StoryTeller::initializeScript() {
     script.push_back(ScriptBlock("story", std::list<std::string>{"{\"cmd\": \"text\", \"text\": \"dummy\"}", "{\"cmd\": \"bg\", \"color\": \"#00B000\"}"}));
-    /*script.push_back(ScriptBlock("story", std::list<std::string>{"\"story1\""}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story1\""}));
     script.push_back(ScriptBlock("exercise", std::list<std::string>{"E01", "E02"}));
     script.push_back(ScriptBlock("story", std::list<std::string>{"\"story2\""}));
     script.push_back(ScriptBlock("exercise", std::list<std::string>{"E03", "E04", "E05"}));
@@ -42,7 +42,7 @@ void StoryTeller::initializeScript() {
     script.push_back(ScriptBlock("exercise", std::list<std::string>{"E36", "E37", "E39", "E38", "E34", "E35", "E28", "E29", "E30", "E31", "E32", "E33"}));
     script.push_back(ScriptBlock("story", std::list<std::string>{"\"story17\""}));
     script.push_back(ScriptBlock("exercise", std::list<std::string>{"E41", "E42", "E43", "E44", "E28", "E36", "E47"}));
-    */script.push_back(ScriptBlock("story", std::list<std::string>{"\"story18\""}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story18\""}));
     script.push_back(ScriptBlock("exercise", std::list<std::string>{"E41", "E42", "E43", "E44", "E28", "E36"}));
     script.push_back(ScriptBlock("story", std::list<std::string>{"\"story19\""}));
     script.push_back(ScriptBlock("exercise", std::list<std::string>{"E36", "E37", "E39", "E38", "E34", "E35", "E28", "E29", "E30", "E31", "E32", "E33"}));
@@ -122,6 +122,11 @@ void StoryTeller::completeExercise(const double result) {
 
     //after exercise is completed, advance the script
     advanceScript();
+}
+
+
+void StoryTeller::resetScript() {
+    mainIndex = 0;
 }
 
 //----------------- Helper functions -----------------

@@ -26,6 +26,7 @@ signals:
 
 public slots:
     void advanceScript();
+    void resetScript();
     void completeExercise(const double result);
 
 
