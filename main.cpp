@@ -22,8 +22,6 @@ int main(int argc, char *argv[])
 	thymioVPL2Init();
 
     QQmlApplicationEngine engine;
-    Zpdes* zpdes{new Zpdes()};
-    engine.rootContext()->setContextProperty("zpdes", zpdes);
 
     StoryTeller* stote{new StoryTeller()};
     engine.rootContext()->setContextProperty("stote", stote);
