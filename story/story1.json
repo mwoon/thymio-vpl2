@@ -1,1 +1,35 @@
-{"list": [{"cmd": "text", "text": "story1"}, {"cmd": "bg", "color": "#00B000"}]}
+{
+   "list": 
+      [
+         {
+            "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story1.1"
+                  },
+                  { 
+                     "cmd": "bg", 
+                     "color": "#00B000"
+                  }
+               ]
+         },
+         {
+            "cmd": "text", 
+            "text": "story1.2"
+         }, 
+         {
+            "cmd": "bg", 
+            "color": "steelblue"
+         },
+         {
+            "cmd": "text", 
+            "text": "story1.3"
+         }, 
+         {
+            "cmd": "bg", 
+            "color": "#00B000"
+         }
+      ]
+}

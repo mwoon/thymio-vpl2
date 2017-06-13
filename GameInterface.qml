@@ -28,6 +28,7 @@ Page {
     Rectangle {
         //Box for displaying text and dialogue
         id: textBox
+        visible: false
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 50
         anchors.horizontalCenter: parent.horizontalCenter
@@ -211,14 +212,16 @@ Page {
         next = false;
 
         if(storyStack.length > 0) {
-            next = false;
             var part = storyStack.shift();
             if(part.type === "story") {
                 if(part.content.cmd === "text") {
-                    textOutput.append({"output": part.content.text});
+                    handleText(part.content.text)
                 } else if (part.content.cmd === "bg") {
-                    bgrd.color = part.content.color;
+                    handleBgColor(part.content.color);
+                } else if (part.content.cmd === "multi") {
+                    handleScene(part.content.scene);
                 }
+
                 nextButton.visible = true;
                 answer0.visible = false;
                 answer1.visible = false;
@@ -250,7 +253,6 @@ Page {
             lView.positionViewAtEnd();
         } else {
             stote.advanceScript();
-            //updateStory();
         }
     }
 
@@ -359,5 +361,25 @@ Page {
         }
     }
 
+/*-------------------------- Functions to Update Story --------------------------------------*/
+
+    function handleText(text) {
+        //TODO this will change later when the list is removed
+        textOutput.append({"output": text});
+    }
+
+    function handleBgColor(color) {
+        bgrd.color = color;
+    }
+
+    function handleScene(scene) {
+        for(var i = 0; i < scene.length; i++) {
+            if(scene[i].cmd === "text") {
+                handleText(scene[i].text);
+            } else if (scene[i].cmd === "bg") {
+                handleBgColor(scene[i].color);
+            }
+        }
+    }
 
 }
