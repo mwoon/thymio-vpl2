@@ -19,11 +19,54 @@ Page {
     visible: true
 
     Rectangle {
+        //Box to hold the background
         id: bgrd
         color: "steelblue"
         anchors.fill: parent
     }
 
+    Rectangle {
+        //Box for displaying text and dialogue
+        id: textBox
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 50
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        height: parent.height / 3
+        width: parent.width - 80
+        radius: 20
+
+        color: "#30ffffff"
+        border.color: "#50ffffff"
+        border.width: 3
+
+        ColumnLayout {
+            anchors.fill: parent
+
+            Text {
+                id: speakerName
+
+                Layout.leftMargin: 25
+                Layout.rightMargin: 25
+                Layout.topMargin: 25
+                height: 150
+
+                text: "Placeholder Name"
+                font.pointSize: 16
+            }
+            Text {
+                id: dialogueBox
+
+                Layout.leftMargin: 25
+                Layout.rightMargin: 25
+                Layout.topMargin: 25
+                Layout.fillHeight: true
+
+                text: "Placeholder Speech"
+                font.pointSize: 16
+            }
+        }
+    }
 
     ColumnLayout {
 
