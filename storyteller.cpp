@@ -4,6 +4,7 @@ StoryTeller::StoryTeller(QObject *parent) : QObject(parent)
 {
     initializeScript();
     mainIndex = 0;
+    successfulExercises = 0;
 }
 
 void StoryTeller::initializeScript() {
@@ -90,7 +91,6 @@ QString StoryTeller::advanceScript(){
     next = makeJsonArray("story0", script[mainIndex].content);
 
     //Some tracking
-    //qDebug() << QString::fromStdString(next);
     log.push_back(next);
     last = QString::fromStdString("{" + next + "}");
     emit segmentGenerated(last);
@@ -121,17 +121,15 @@ void StoryTeller::completeExercise(const double result) {
     } else {
         successfulExercises = 0;
     }
-
     //call zpd to update graph
     its.updateZpd(result);
 
-    //after exercise is completed, advance the script
-    //advanceScript();
 }
 
 
 void StoryTeller::resetScript() {
     mainIndex = 0;
+    its.resetZpdes();
 }
 
 

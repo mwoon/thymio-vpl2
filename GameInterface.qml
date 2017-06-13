@@ -7,7 +7,11 @@ Page {
     property StackView view
     property var storyStack: new Array()
     property bool next: false //signals when a new segment is ready to be read
-    onNextChanged: updateStory();
+    onNextChanged: {
+        if(next) {
+            updateStory();
+        }
+    }
 
 
     id: gameWindow
@@ -27,51 +31,10 @@ Page {
         spacing: 10
 
         RowLayout {
-
-            Button {
-                id: returnButton
-                text: qsTr("‹ return")
-                onClicked: {
-                    startupWindow.showHome();
-                    stote.resetScript();
-                }
-            }
-
-            Button {
-                id: graphButton
-                text: qsTr("ZPD")
-                onClicked: gView.visible = !gView.visible
-            }
-
-            Button {
-                id: logsButton
-                text: qsTr("logs")
-                onClicked: view.pop()
-            }
-
-        }
-
-        RowLayout {
             ListView {
                 id:lView
                 clip: true //apparently this can affect performance
                 model: textOutput
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-                delegate: Text {
-                    font.pointSize: 24
-                    text: "> " + output
-                    anchors.topMargin: 10
-                    anchors.bottomMargin: 10
-                    width: parent.width
-                    wrapMode: Text.WordWrap
-                }
-            }
-
-            ListView {
-                id:gView
-                clip: true
-                model: graphLog
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 delegate: Text {
@@ -308,25 +271,50 @@ Page {
         }
     }
 
-    Connections {
-        target: zpdes
-        onRewarded: {
-            graphLog.append({"output": newText})
-            lView.positionViewAtEnd()
-        }
-    }
-
 
 
     ListModel {
         id: textOutput
     }
 
-    ListModel {
-        id: graphLog
+    Component.onCompleted: {
+        next = true;
     }
 
-    Component.onCompleted: {
-        //next = true;
+
+/*-------------------------- Title Bar & Drawer Menu --------------------------------------*/
+
+    header: gameTB
+
+    GameTitleBar {
+        id: gameTB
+        visible: true
+        onOpenDrawer: {
+            drawer.open()
+        }
     }
+
+    MenuDrawer {
+        id: drawer
+        drawerModel: gameMenu
+    }
+
+
+
+
+
+    ListModel {
+        id: gameMenu
+        ListElement {
+            title: "Return to Home";
+            callback: "showHome";
+        }
+
+        function showHome() {
+            startupWindow.showHome();
+            stote.resetScript();
+        }
+    }
+
+
 }

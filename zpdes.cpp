@@ -230,6 +230,16 @@ void Zpdes::updateZpd(const double result){
     //TODO ask activity to update its bandit level using major and minor
 }
 
+
+void Zpdes::resetZpdes() {
+    //Loop through all activities and deactivate them
+    for(auto it = activities.begin(); it != activities.end(); it++) {
+        for(auto it2 = ++(it->begin()); it2 != it->end(); it2++) {
+            it2->get()->activated = false;
+        }
+    }
+}
+
 ///////////////////////////////
 
 

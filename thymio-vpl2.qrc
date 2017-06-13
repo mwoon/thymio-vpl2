@@ -194,5 +194,8 @@
         <file>GameInterface.qml</file>
         <file>HomeScreen.qml</file>
         <file>GameSimulator.qml</file>
+        <file>SimulatorTitleBar.qml</file>
+        <file>GameTitleBar.qml</file>
+        <file>MenuDrawer.qml</file>
     </qresource>
 </RCC>

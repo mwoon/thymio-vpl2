@@ -2,7 +2,8 @@ import QtQuick 2.0
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
 
-Item {
+Page {
+
     ColumnLayout {
         spacing: 16
 
@@ -91,5 +92,36 @@ Item {
         }
 
         popup.open();
+    }
+
+/*-------------------------- Title Bar & Drawer Menu --------------------------------------*/
+
+
+    header: simTB
+
+    SimulatorTitleBar {
+        id: simTB
+        visible: true
+        onOpenDrawer: {
+            drawer.open()
+        }
+    }
+
+    MenuDrawer {
+        id: drawer
+        drawerModel: simMenu
+    }
+
+
+    ListModel {
+        id: simMenu
+        ListElement {
+            title: "Return to Home";
+            callback: "showHome";
+        }
+
+        function showHome() {
+            startupWindow.showHome();
+        }
     }
 }

@@ -21,6 +21,7 @@ public:
     std::string chooseActivity(std::list<std::string> availables);
 
     void updateZpd(const double result);
+    void resetZpdes();
 
 signals:
     void activityGenerated(const QString& newText);

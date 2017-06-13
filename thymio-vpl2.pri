@@ -83,4 +83,7 @@ LIBS += $$ASEBA_LIBS
 
 DISTFILES += \
     $$PWD/GameInterface.qml \
-    $$PWD/HomeScreen.qml
+    $$PWD/HomeScreen.qml \
+    $$PWD/SimulatorTitleBar.qml \
+    $$PWD/GameTitleBar.qml \
+    $$PWD/MenuDrawer.qml
