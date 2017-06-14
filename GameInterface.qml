@@ -25,48 +25,8 @@ Page {
         anchors.fill: parent
     }
 
-    Rectangle {
-        //Box for displaying text and dialogue
-        id: textBox
-        visible: false
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 50
-        anchors.horizontalCenter: parent.horizontalCenter
-
-        height: parent.height / 3
-        width: parent.width - 80
-        radius: 20
-
-        color: "#30ffffff"
-        border.color: "#50ffffff"
-        border.width: 3
-
-        ColumnLayout {
-            anchors.fill: parent
-
-            Text {
-                id: speakerName
-
-                Layout.leftMargin: 25
-                Layout.rightMargin: 25
-                Layout.topMargin: 25
-                height: 150
-
-                text: "Placeholder Name"
-                font.pointSize: 16
-            }
-            Text {
-                id: dialogueBox
-
-                Layout.leftMargin: 25
-                Layout.rightMargin: 25
-                Layout.topMargin: 25
-                Layout.fillHeight: true
-
-                text: "Placeholder Speech"
-                font.pointSize: 16
-            }
-        }
+    DialogueBox {
+        id: dialogueBox
     }
 
     ColumnLayout {
@@ -337,6 +297,9 @@ Page {
         onOpenDrawer: {
             drawer.open()
         }
+        z: 1
+        x: 10
+        y: 10
     }
 
     MenuDrawer {
@@ -344,21 +307,101 @@ Page {
         drawerModel: gameMenu
     }
 
-
-
-
-
     ListModel {
         id: gameMenu
+
         ListElement {
             title: "Return to Home";
             callback: "showHome";
+        }
+
+        ListElement {
+            title: "Test Functions";
+            callback: "showFunction";
         }
 
         function showHome() {
             startupWindow.showHome();
             stote.resetScript();
         }
+
+        //This function should be adapted whenever something needs to be tested on button press
+        function showFunction() {
+            exercisePopup.open();
+            dialogueBox.visible = false;
+        }
+    }
+
+/*-------------------------- Exercise Popup --------------------------------------*/
+
+    Popup {
+
+        id: exercisePopup
+        modal: true
+        closePolicy: Popup.NoAutoClose
+
+        leftMargin: (parent.width - width) / 2;
+        topMargin: (parent.height - height) / 2;
+        width: parent.width
+        height:parent.height
+
+        background: Rectangle {
+            color: "transparent"
+        }
+
+        ColumnLayout {
+            anchors.fill: parent
+
+
+            RowLayout {
+                Layout.fillHeight: parent
+                anchors.horizontalCenter: parent.horizontalCenter
+                spacing: (parent.height < parent.width ? parent.height : parent.width) / 9
+
+                Rectangle {
+                    width: (parent.height < parent.width ? parent.height : parent.width) * 2 / 3
+                    height: (parent.height < parent.width ? parent.height : parent.width) * 2 / 3
+                    color: "green"
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            console.log("green");
+
+                            stote.completeExercise(1.0);
+                            next = true;
+
+                            dialogueBox.visible = true;
+                            exercisePopup.close();
+                        }
+                    }
+                }
+
+                Rectangle {
+                    width: (parent.height < parent.width ? parent.height : parent.width) * 2 / 3
+                    height: (parent.height < parent.width ? parent.height : parent.width) * 2 / 3
+                    color: "blue"
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            console.log("blue");
+
+                            stote.completeExercise(0.5);
+                            next = true;
+
+                            dialogueBox.visible = true;
+                            exercisePopup.close();
+                        }
+                    }
+                }
+            }
+
+            DialogueBox {
+                id: exerciseDialogue
+                speakerName: ""
+                dialogue: "Which one is correct?"
+            }
+        }
+
     }
 
 /*-------------------------- Functions to Update Story --------------------------------------*/

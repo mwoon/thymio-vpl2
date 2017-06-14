@@ -197,5 +197,6 @@
         <file>SimulatorTitleBar.qml</file>
         <file>GameTitleBar.qml</file>
         <file>MenuDrawer.qml</file>
+        <file>DialogueBox.qml</file>
     </qresource>
 </RCC>

@@ -22,6 +22,7 @@ Drawer {
             model: null
 
             delegate: ItemDelegate {
+                width: parent.width - (parent.width / 8)
                 contentItem: Row {
                     spacing: 24
                     Text {
