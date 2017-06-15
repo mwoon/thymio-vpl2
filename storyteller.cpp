@@ -5,6 +5,7 @@ StoryTeller::StoryTeller(QObject *parent) : QObject(parent)
     initializeScript();
     mainIndex = 0;
     successfulExercises = 0;
+    totalExInBlock = 0;
 }
 
 void StoryTeller::initializeScript() {
@@ -66,9 +67,10 @@ QString StoryTeller::advanceScript(){
         //check if number of successfully completed exercises sufficient
         // TODO if yes, advance story: increment mainIndex and dish out new story,
         // if no, draw another exercise
-        if(successfulExercises > 1) {
+        if((successfulExercises > succExLimit - 1) || (totalExInBlock > totalExLimit - 1)) {
             //FIXME for now just increment
             successfulExercises = 0;
+            totalExInBlock = 0;
             mainIndex++;
         }
     }
@@ -116,6 +118,8 @@ void StoryTeller::completeExercise(const double result) {
     //update condition for progressing story after exercise
     //FIXME Need to tune this condition and see what is good
     //maybe also add a hard limit on the number of exercises?
+    totalExInBlock++;
+
     if(result > 0.5) {
         successfulExercises++;
     } else {

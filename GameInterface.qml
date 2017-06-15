@@ -73,6 +73,7 @@ Page {
                 text: qsTr("0.9")
                 onClicked: {
                     stote.completeExercise(0.9);
+                    next = true;
                 }
             }
 
@@ -82,6 +83,7 @@ Page {
                 text: qsTr("0.8")
                 onClicked: {
                     stote.completeExercise(0.8);
+                    next = true;
                 }
             }
 
@@ -91,6 +93,7 @@ Page {
                 text: qsTr("0.7")
                 onClicked: {
                     stote.completeExercise(0.7);
+                    next = true;
                 }
             }
 
@@ -100,6 +103,7 @@ Page {
                 text: qsTr("0.6")
                 onClicked: {
                     stote.completeExercise(0.6);
+                    next = true;
                 }
             }
 
@@ -109,6 +113,7 @@ Page {
                 text: qsTr("0.5")
                 onClicked: {
                     stote.completeExercise(0.5);
+                    next = true;
                 }
             }
 
@@ -118,6 +123,7 @@ Page {
                 text: qsTr("0.4")
                 onClicked: {
                     stote.completeExercise(0.4);
+                    next = true;
                 }
             }
 
@@ -127,6 +133,7 @@ Page {
                 text: qsTr("0.3")
                 onClicked: {
                     stote.completeExercise(0.3);
+                    next = true;
                 }
             }
 
@@ -136,6 +143,7 @@ Page {
                 text: qsTr("0.2")
                 onClicked: {
                     stote.completeExercise(0.2);
+                    next = true;
                 }
             }
 
@@ -145,6 +153,7 @@ Page {
                 text: qsTr("0.1")
                 onClicked: {
                     stote.completeExercise(0.1);
+                    next = true;
                 }
             }
 
@@ -154,6 +163,7 @@ Page {
                 text: qsTr("0.0")
                 onClicked: {
                     stote.completeExercise(0.0);
+                    next = true;
                 }
             }
 

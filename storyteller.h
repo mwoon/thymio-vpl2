@@ -40,7 +40,12 @@ private:
     // The script of the story
     // use mainIndex to keep track of where the story is at
     unsigned mainIndex;
-    unsigned successfulExercises; //temp
+    unsigned successfulExercises;
+    unsigned totalExInBlock;
+
+    const unsigned succExLimit = 3;
+    const unsigned totalExLimit = 10;
+
     std::vector<ScriptBlock> script;
     Zpdes its;
     QString last;
