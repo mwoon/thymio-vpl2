@@ -218,6 +218,7 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
         auto avail_it = availables.begin();
         std::advance(avail_it, index);
         description = "\"" + *avail_it + "\"";
+        lastActivitySpecific  = *avail_it;
     }
 
     return description;
@@ -225,7 +226,18 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
 
 void Zpdes::updateZpd(const double result){
     //TODO fill out this code
-    //TODO Search for exercise using lastActivityId (which should be the specific exercise)
+
+    //Search for exercise using lastActivityId
+    std::shared_ptr<Activity> lastActivity;
+
+    for(auto it = activities.begin(); it != activities.end(); it++) {
+        for(auto it2 = ++(it->begin()); it2 != it->end(); it2++) {
+            if(lastActivityId == it2->get()->id) {
+                lastActivity = *it2;
+            }
+        }
+    }
+
         //Split lastactivityid into major and minor i.e. E4.6 = major: E4 and minor: 6
     //TODO ask activity to update its bandit level using major and minor
 }

@@ -19,6 +19,14 @@ public:
     Activity(std::string id): id(id), banditLevel(0.5), activationThreshold(0){ }
     Activity(std::string id, double at): id(id), banditLevel(0.5), activationThreshold(at) { }
     Activity(std::string id, double at, std::string desc): id(id), banditLevel(0.5), activationThreshold(at), description(desc) { }
+    Activity(std::string id, double at, std::string desc, std::list<std::string> exs): id(id), banditLevel(0.5), activationThreshold(at), description(desc), exercises(exs){
+        unsigned numEx = exs.size();
+        for(unsigned i = 0; i < numEx; i++) {
+            prevResults.push_back(std::list<double>{});
+            bLevels.push_back(banditLevel);
+        }
+
+    }
     //Activity(std::string id, double at, std::string desc, std::shared_ptr<Activity> a): id(id), banditLevel(0.5), activationThreshold(at), description(desc), successor(a) { }
 
 
@@ -38,9 +46,8 @@ public:
     //store all previous results from using this activity for each difficulty
     std::vector<std::list<double> > prevResults;
 
-    //list of exercise scripts contained within this activity (what images loaded, what blocks needed etc.)
-    //including all the different sub activities with the 6 difficulties
-    std::list<std::vector<std::string> > exercises;
+    //contains the name of each exercise (to find the file)
+    std::list<std::string> exercises;
 
     //Learning rate for 6 difficulties
     std::vector<double> bLevels;

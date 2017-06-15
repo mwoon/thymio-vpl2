@@ -38,7 +38,8 @@ private:
     //ExplorationGraph exGraph;
     //StoryGenerator storyGen;
     //std::list<std::pair<std::string, double> > mostRecentActivities;
-    std::string lastActivityId;
+    std::string lastActivityId; //the group identifier which contains the name of all included exercises
+    std::string lastActivitySpecific; //the actual exercise that was solved
 
 
     void initializeActivities();
