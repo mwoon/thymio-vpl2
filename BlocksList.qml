@@ -1,4 +1,4 @@
-import QtQuick 2.6
+import QtQuick 2.7
 
 ListView {
 	id: blockList
@@ -7,11 +7,12 @@ ListView {
 	property string backImage
 	property bool isLandscape: true
 
-	// scrolling disabled for now: https://github.com/aseba-community/thymio-vpl2/issues/6
+	// scrolling is implemented by hand
+	// otherwise, it prevents block drag and drop from working
 	interactive: false
 
 	anchors.fill: parent
-	clip: true
+	//clip: true
 	orientation: isLandscape ? ListView.Vertical : ListView.Horizontal
 	model: blocks
 
@@ -21,7 +22,18 @@ ListView {
 		width: blockList.isLandscape ? blockList.width : blockList.height + 16
 		height: blockList.isLandscape ? blockList.width + 16 : blockList.height
 
+		property int startPos
+		property bool moved
+		onPressed: {
+			startPos = blockList.isLandscape ? y + mouse.y : x + mouse.x;
+			moved = false;
+		}
+
 		onClicked: {
+			if (moved) {
+				return;
+			}
+
 			// only process in block editor mode
 			if (blockEditor.visible) {
 				blockEditor.setBlockType(definition);
@@ -31,30 +43,42 @@ ListView {
 		// we start the drag when the cursor is outside the area,
 		// otherwise the list scroll does not work
 		onPositionChanged: {
-			// only process if not in block editor mode
-			if (blockEditor.visible) {
-				return;
-			}
-
 			if (this.drag.target !== null) {
 				// already dragging
 				return;
 			}
-			var pos = mapToItem(mainContainer, mouse.x, mouse.y);
-			if (!mainContainer.contains(pos)) {
-				// not inside main container
-				return;
+
+			var blockListPos = mapToItem(blockList, mouse.x, mouse.y);
+			if (blockList.contains(blockListPos)) {
+				moved = true;
+				if (blockList.isLandscape) {
+					if (blockList.contentItem.height > blockList.height) {
+						blockList.contentY = startPos - blockListPos.y;
+					}
+				} else {
+					if (blockList.contentItem.width > blockList.width) {
+						blockList.contentX = startPos - blockListPos.x;
+					}
+				}
 			}
 
-			blockDragPreview.x = pos.x - blockDragPreview.width / 2;
-			blockDragPreview.y = pos.y - blockDragPreview.height / 2;
-			blockDragPreview.params = definition.defaultParams;
-			blockDragPreview.definition = definition;
-			blockDragPreview.Drag.active = true;
-			this.drag.target = blockDragPreview;
+			if (!blockEditor.visible) {
+				// only process if not in block editor mode
+				var mainContainerPos = mapToItem(mainContainer, mouse.x, mouse.y);
+				if (mainContainer.contains(mainContainerPos)) {
+					blockDragPreview.x = mainContainerPos.x - blockDragPreview.width / 2;
+					blockDragPreview.y = mainContainerPos.y - blockDragPreview.height / 2;
+					blockDragPreview.params = definition.defaultParams;
+					blockDragPreview.definition = definition;
+					blockDragPreview.Drag.active = true;
+					this.drag.target = blockDragPreview;
+				}
+			}
 		}
 
 		onReleased: {
+			blockList.returnToBounds();
+
 			if (this.drag.target === null) {
 				// not dragging
 				return;

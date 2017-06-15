@@ -1,4 +1,4 @@
-import QtQuick 2.5
+import QtQuick 2.7
 import ".."
 
 BlockDefinition {
@@ -31,7 +31,7 @@ BlockDefinition {
 	function compile(params) {
 		return {
 			event: "tap",
-			condition: "event == event_tap",
+			condition: "currentEvent == event_tap",
 		};
 	}
 }

@@ -1,6 +1,6 @@
-import QtQuick 2.0
-import QtQuick.Controls 2.0
-import QtQuick.Layouts 1.0
+import QtQuick 2.7
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.3
 
 Label {
 	property Editor vplEditor
@@ -8,10 +8,10 @@ Label {
 	text: {
 		if (!vplEditor)
 			return "!Error no VPL editor defined!";
-		else if (vplEditor.compiler.error === "")
+		else if (vplEditor.compiler.output.error === undefined)
 			return qsTr("Compilation success");
 		else
-			return qsTr("Compilation error: %0").arg(vplEditor.compiler.error);
+			return qsTr("Compilation error: %0").arg(vplEditor.compiler.output.error);
 	}
 
 	horizontalAlignment: Text.AlignLeft

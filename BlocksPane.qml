@@ -1,6 +1,6 @@
-import QtQuick 2.6
-import QtQuick.Controls 2.0
-import QtQuick.Controls.Material 2.0
+import QtQuick 2.7
+import QtQuick.Controls 2.2
+import QtQuick.Controls.Material 2.2
 
 Pane {
 	id: pane
@@ -9,18 +9,11 @@ Pane {
 	property string backImage
 	property bool showTrash: false
 	property bool trashOpen: false
-	property color lightThemeColor
-	property color darkThemeColor
+	property bool isMini
 
-	width: 96
+	width: isMini ? 64 : 96
 	height: parent.height
-
-	background: Rectangle {
-		color: Material.theme === Material.Dark ? darkThemeColor : lightThemeColor
-	}
-
-	// FIXME: this is not working on Qt5.8 Mac ? even with the back
-	//Material.elevation: 30
+	Material.elevation: 6
 
 	BlocksList {
 		id: blocksList

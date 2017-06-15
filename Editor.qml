@@ -1,8 +1,8 @@
-import QtQuick 2.5
+import QtQuick 2.7
 import QtQuick.Window 2.2
 import QtMultimedia 5.5
-import QtQuick.Controls 2.0
-import QtQuick.Controls.Material 2.0
+import QtQuick.Controls 2.2
+import QtQuick.Controls.Material 2.2
 import QtGraphicalEffects 1.0
 import QtQuick.LocalStorage 2.0
 import "blocks"
@@ -31,7 +31,7 @@ Item {
 		"ClapEventBlock",
 		"TimerEventBlock",
 		"MotorActionBlock",
-		//"MotorSimpleActionBlock",
+		"MotorSimpleActionBlock",
 		"PaletteTopColorActionBlock",
 		"PaletteBottomColorActionBlock",
 		"TopColorActionBlock",
@@ -204,11 +204,10 @@ Item {
 		})
 		backImage: "images/eventCenter.svg"
 
-		darkThemeColor: "#301446"
-		lightThemeColor: Material.background // "#ffead9"
-
 		anchors.left: parent.left
 		anchors.leftMargin: isHidden ? -width : 0
+
+		isMini: vplEditor.width <= 460
 
 		//Behavior on anchors.leftMargin { PropertyAnimation {} }
 	}
@@ -222,17 +221,17 @@ Item {
 		})
 		backImage: "images/actionCenter.svg"
 
-		darkThemeColor: "#301446"
-		lightThemeColor: Material.background // "#daeaf2"
-
 		anchors.right: parent.right
 		anchors.rightMargin: isHidden ? -width : 0
+
+		isMini: vplEditor.width <= 460
 
 		//Behavior on anchors.rightMargin { PropertyAnimation {} }
 	}
 
-	Rectangle {
+	Item {
 		id: mainContainer
+		//visible: false
 
 		property real foregroundWidth: parent.width - eventPane.width - actionPane.width
 
@@ -242,10 +241,9 @@ Item {
 
 		width: foregroundWidth
 		height: parent.height
+
 		//opacity: vplEditor.minimized ? 0.5 : 1.0
-		color: Material.theme === Material.Dark ?
-				   "#ff44285a" : //vplEditor.minimized ? "#80200032" : "#ff44285a" // different color for AR, to adapt when reused
-				   Qt.darker(Material.background, 1.2)
+
 		scale: vplEditor.minimized ? 0.5 : 1.0
 		transformOrigin: Item.BottomRight
 

@@ -1,4 +1,4 @@
-import QtQuick 2.5
+import QtQuick 2.7
 import ".."
 
 BlockDefinition {
@@ -30,9 +30,8 @@ BlockDefinition {
 
 	function compile(params) {
 		return {
-			global: "mic.threshold = 250",
 			event: "mic",
-			condition: "event == event_mic",
+			condition: "currentEvent == event_mic",
 		};
 	}
 }

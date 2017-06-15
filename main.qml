@@ -1,8 +1,8 @@
-import QtQuick 2.6
+import QtQuick 2.7
 import QtQuick.Window 2.2
-import QtQuick.Layouts 1.0
-import QtQuick.Controls 2.0
-import QtQuick.Controls.Material 2.0
+import QtQuick.Layouts 1.3
+import QtQuick.Controls 2.2
+import QtQuick.Controls.Material 2.2
 import QtGraphicalEffects 1.0
 import Qt.labs.settings 1.0
 import QtQml 2.2
@@ -17,8 +17,11 @@ ApplicationWindow {
 
 	Material.primary: Material.theme === Material.Dark ? "#200032" : Material.background // "#a3d9db"
 	Material.accent: Material.theme === Material.Dark ? "#9478aa" : "#B290CC" // "#59cbc8"
+	Material.background: Material.theme === Material.Dark ? "#ff44285a" : "white"
 
 	header: vplEditor.blockEditorVisible ? blockEditorTitleBar : vplEditorTitleBar
+
+	readonly property string autosaveName: qsTr("autosave");
 
 	EditorTitleBar {
 		id: vplEditorTitleBar
@@ -52,20 +55,25 @@ ApplicationWindow {
 
 	// improve using: https://appbus.wordpress.com/2016/05/20/one-page-sample-app/
 	FloatingActionButton {
+		property int distToBorders: isMini ? 16 : 24
 		anchors.right: parent.right
-		anchors.rightMargin: 96+24
+		anchors.rightMargin: (isMini ? 64 : 96) + distToBorders
 		anchors.bottom: parent.bottom
-		anchors.bottomMargin: 24
+		anchors.bottomMargin: distToBorders
+		isMini: window.width <= 460
+		/*anchors.top: parent.top
+		anchors.topMargin: -height/2
+		z: 2*/
 		imageSource: !thymio.playing ? "qrc:/thymio-vpl2/icons/ic_play_arrow_white_24px.svg" : "qrc:/thymio-vpl2/icons/ic_stop_white_24px.svg"
 		visible: !vplEditor.blockEditorVisible
 		onClicked: thymio.playing = !thymio.playing
-		enabled: (vplEditor.compiler.error === "") && (thymio.node !== undefined)
-		opacity: enabled ? 1.0 : 0.38
+		enabled: (vplEditor.compiler.output.error === undefined) && (thymio.node !== undefined)
+		//opacity: enabled ? 1.0 : 0.38
 	}
 
 	Connections {
 		target: vplEditor.compiler
-		onScriptChanged: thymio.playing = false
+		onOutputChanged: thymio.playing = false
 	}
 
 	ListModel {
@@ -224,6 +232,8 @@ ApplicationWindow {
 					qsTr("<p>This project is open source under <a href=\"https://github.com/aseba-community/thymio-vpl2/blob/master/LICENSE.txt\">LGPL</a></p>") +
 					qsTr("<p>See file <a href=\"https://github.com/aseba-community/thymio-vpl2/blob/master/AUTHORS.md\">AUTHORS.md</a> in the <a href=\"https://github.com/aseba-community/thymio-vpl2\">source code</a><br/>") +
 					qsTr("for a detailed list of contributions.</p>")
+				color: Material.foreground
+				linkColor: Material.foreground
 				font.pixelSize: 14
 				font.weight: Font.Normal
 				lineHeight: 20
@@ -247,7 +257,7 @@ ApplicationWindow {
 			anchors.fill: parent
 			clip: true
 			Text {
-				text: prettyPrintGeneratedAesl(vplEditor.compiler.script)
+				text: prettyPrintGeneratedAesl(vplEditor.compiler.output.script)
 				color: Material.primaryTextColor
 				font.family: "Monospace"
 				// TODO: move this somewhere
@@ -291,24 +301,30 @@ ApplicationWindow {
 			if (vplEditor === undefined) {
 				return;
 			}
-			vplEditor.compiler.execTransition(data[0], data[1]);
+			vplEditor.compiler.execTransition(data[0]);
 		}
 	}
 
 	Thymio {
 		id: thymio
 		property bool playing: false
-		events: vplEditor ? vplEditor.compiler.events : {}
-		source: playing ? vplEditor.compiler.script : ""
+		events: vplEditor ? vplEditor.compiler.output.events : {}
+		source: playing ? vplEditor.compiler.output.script : ""
 		onNodeChanged: playing = false
 		onPlayingChanged: {
 			vplEditor.compiler.execReset(playing);
 			if (!playing) {
 				setVariable("motor.left.target", 0);
 				setVariable("motor.right.target", 0);
+			} else {
+				vplEditor.saveProgram(autosaveName);
 			}
 		}
-		onErrorChanged: if (error !== "") { vplEditor.compiler.error = error; }
+		onErrorChanged: if (error !== "") { vplEditor.compiler.output.error = error; }
+	}
+
+	Component.onCompleted: {
+		vplEditor.loadProgram(autosaveName);
 	}
 }
 
