@@ -89,14 +89,14 @@ void Zpdes::generateActivity()
 
 void Zpdes::initializeActivities() {
     //block 1
-    activities.push_back(std::list<std::shared_ptr<Activity>>{
+    majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E01E02E03", 0.0, "\"dummy1\"")),
                              std::make_shared<Activity>(Activity("E01", 0.5, "\"E01\"")),
                              std::make_shared<Activity>(Activity("E02", 0.5, "\"E02\""))
                          });
 
     //block 2
-    activities.push_back(std::list<std::shared_ptr<Activity>>{
+    majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E03E04E05", 0.0, "\"dummy2\"")),
                              std::make_shared<Activity>(Activity("E03", 0.5, "\"E03\"")),
                              std::make_shared<Activity>(Activity("E04", 0.5, "\"E04\"")),
@@ -104,20 +104,20 @@ void Zpdes::initializeActivities() {
                          });
 
     //block 3
-    activities.push_back(std::list<std::shared_ptr<Activity>>{
+    majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E06", 0.0, "\"dummy3\"")),
                              std::make_shared<Activity>(Activity("E06", 0.5, "\"E06\"")),
                              std::make_shared<Activity>(Activity("E08", 0.5, "\"E08\""))
                          });
     //block 4
-    activities.push_back(std::list<std::shared_ptr<Activity>>{
+    majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E11E09E10", 0.0, "\"dummy4\"")),
                              std::make_shared<Activity>(Activity("E11", 0.5, "\"E11\"")),
                              std::make_shared<Activity>(Activity("E09", 0.5, "\"E09\"")),
                              std::make_shared<Activity>(Activity("E10", 0.5, "\"E10\""))
                          });
     //block 5
-    activities.push_back(std::list<std::shared_ptr<Activity>>{
+    majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E13E14E15", 0.0, "\"dummy5\"")),
                              std::make_shared<Activity>(Activity("E13", 0.5, "\"E13\"")),
                              std::make_shared<Activity>(Activity("E14", 0.5, "\"E14\"")),
@@ -125,26 +125,26 @@ void Zpdes::initializeActivities() {
                          });
 
     //block 6
-    activities.push_back(std::list<std::shared_ptr<Activity>>{
+    majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E26E32E34E35E31E27E25E33", 0.0, "\"dummy6\"")),
                              std::make_shared<Activity>(Activity("E26E32E34E35E31", 0.5, "\"E26 E32 E34 E35 E31\"")),
                              std::make_shared<Activity>(Activity("E27", 0.5, "\"E27\"")),
                              std::make_shared<Activity>(Activity("E25E33", 0.5, "\"E25 E33\""))
                          });
     //block 7
-    activities.push_back(std::list<std::shared_ptr<Activity>>{
+    majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E28E29E30", 0.0, "\"dummy7\"")),
                              std::make_shared<Activity>(Activity("E28", 0.5, "\"E28\"")),
                              std::make_shared<Activity>(Activity("E29E30", 0.5, "\"E29 E30\""))
                          });
     //block 8
-    activities.push_back(std::list<std::shared_ptr<Activity>>{
+    majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E36E37E39E38", 0.0, "\"dummy8\"")),
                              std::make_shared<Activity>(Activity("E36E37E39", 0.5, "\"E36 E37 E39\"")),
                              std::make_shared<Activity>(Activity("E38", 0.5, "\"E38\""))
                          });
     //block 9
-    activities.push_back(std::list<std::shared_ptr<Activity>>{
+    majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E16E20E17E45E18E41E42E19E44E24E43E22E46E21E40E47E23", 0.0, "\"dummy9\"")),
                              std::make_shared<Activity>(Activity("E16", 0.5, "\"E16\"")),
                              std::make_shared<Activity>(Activity("E20E17E45", 0.5, "\"E20 E17 E45\"")),
@@ -156,14 +156,22 @@ void Zpdes::initializeActivities() {
                              std::make_shared<Activity>(Activity("E23", 0.5, "\"E23\""))
                          });
 
+    //minor activities
+    minorActivities.push_back(std::make_shared<Activity>(Activity("01", 0.8, "Given program, predict function")));
+    minorActivities.push_back(std::make_shared<Activity>(Activity("02", 0.8, "Given behaviour, choose program")));
+    minorActivities.push_back(std::make_shared<Activity>(Activity("03", 0.8, "Given two behaviours, decide what is the difference")));
+    minorActivities.push_back(std::make_shared<Activity>(Activity("04", 0.8, "Given a specification, complete a partial program")));
+    minorActivities.push_back(std::make_shared<Activity>(Activity("05", 0.8, "Given specification, write a program")));
+
 }
 
 std::string Zpdes::chooseActivity(std::list<std::string> availables) {
+    //major
     std::list<std::shared_ptr<Activity>> zpd;
 
     //look for availables in activities list
     for(auto it = availables.begin(); it != availables.end(); it++) {
-        for(auto it2 = activities.begin(); it2 != activities.end(); it2++) {
+        for(auto it2 = majorActivities.begin(); it2 != majorActivities.end(); it2++) {
             if((it2->front()).get()->id.find(*it) != std::string::npos) {
                 auto prev = it2->begin();
                 for(auto it3 = ++(it2->begin()); it3 != it2->end(); it3++) {
@@ -183,19 +191,94 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
     }
     qDebug() << " ";
 
+    unsigned majorIndex = activityFromZpd(zpd);
 
-    //calculate total bandit level
+
+    //minor
+    std::list<std::shared_ptr<Activity>> minorZpd;
+
+    auto prev = minorActivities.begin();
+    for(auto it = minorActivities.begin(); it != minorActivities.end(); it++) {
+        if(it == minorActivities.begin() || prev->get()->activated) {
+            minorZpd.push_back(*it);
+        }
+        prev = it;
+    }
+
+    unsigned minorIndex = activityFromZpd(minorZpd);
+
+    std::string description;
+
+
+    if(zpd.size() > majorIndex) { //safeguard
+        auto zpd_it = zpd.begin();
+        auto minor_it = minorZpd.begin();
+
+        std::advance(zpd_it, majorIndex);
+        std::advance(minor_it, minorIndex);
+
+        lastActivity = *zpd_it;
+        lastActivityMinor = *minor_it;
+        //TODO activate based on result of exercise instead
+        (*zpd_it).get()->activated = true;
+        (*minor_it).get()->activated = true;
+
+        auto avail_it = availables.begin();
+        std::advance(avail_it, majorIndex);
+        lastActivitySpecific  = *avail_it;
+
+
+        //contains exercise in the form of "EXX.XX"
+        description = "\"" + *avail_it + "." + lastActivityMinor.get()->id + "\"";
+    }
+
+
+    return description;
+}
+
+void Zpdes::updateZpd(const double result){
+
+    //find the index of the specific activity
+    unsigned index{0};
+    for(auto it = lastActivity.get()->exercises.begin(); it != lastActivity.get()->exercises.end(); it++) {
+        if(*it == lastActivitySpecific) {
+            break;
+        }
+        index++;
+    }
+
+    //Ask activity to update its bandit level of major and minor
+    //major
+    lastActivity.get()->updateBanditLevel(result);
+
+    //minor
+    lastActivityMinor.get()->updateBanditLevel(result);
+
+}
+
+
+void Zpdes::resetZpdes() {
+    //Loop through all activities and deactivate them
+    for(auto it = majorActivities.begin(); it != majorActivities.end(); it++) {
+        for(auto it2 = ++(it->begin()); it2 != it->end(); it2++) {
+            it2->get()->activated = false;
+        }
+    }
+}
+
+unsigned Zpdes::activityFromZpd(std::list<std::shared_ptr<Activity> > &zpd) {
+
     double totalBanditLevel{0};
     for(auto it = zpd.begin(); it != zpd.end(); it++) {
-        totalBanditLevel += (*it).get()->banditLevel;
+        totalBanditLevel += it->get()->banditLevel;
     }
 
     //for each activity in the zpd calculate the probability
     std::vector<double> probs(zpd.size());
     int numActivity{0};
     for(auto it = zpd.begin(); it != zpd.end(); it++) {
-        double wa = (*it).get()->banditLevel;
-        probs[numActivity] = wa * (1 - gamma) + gamma * totalBanditLevel / zpd.size();
+        double wa = it->get()->banditLevel;
+        probs[numActivity] = wa * (1 - gamma) + gamma * totalBanditLevel / zpd.size(); //transformation of the original equation by * totalBanditLevel
         numActivity++;
     }
 
@@ -204,53 +287,11 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
     std::mt19937 gen(rd());
     std::discrete_distribution<unsigned> d(probs.begin(), probs.end());
 
-    std::string description;
-   // double banditLevel;
-
     unsigned index = d(gen);
-    if(zpd.size() > index) {
-        auto zpd_it = zpd.begin();
-        std::advance(zpd_it, index);
-        //banditLevel = (*zpd_it).get()->banditLevel;
-        lastActivityId = (*zpd_it).get()->id;
-        (*zpd_it).get()->activated = true;
 
-        auto avail_it = availables.begin();
-        std::advance(avail_it, index);
-        description = "\"" + *avail_it + "\"";
-        lastActivitySpecific  = *avail_it;
-    }
-
-    return description;
+    return index;
 }
 
-void Zpdes::updateZpd(const double result){
-    //TODO fill out this code
-
-    //Search for exercise using lastActivityId
-    std::shared_ptr<Activity> lastActivity;
-
-    for(auto it = activities.begin(); it != activities.end(); it++) {
-        for(auto it2 = ++(it->begin()); it2 != it->end(); it2++) {
-            if(lastActivityId == it2->get()->id) {
-                lastActivity = *it2;
-            }
-        }
-    }
-
-        //Split lastactivityid into major and minor i.e. E4.6 = major: E4 and minor: 6
-    //TODO ask activity to update its bandit level using major and minor
-}
-
-
-void Zpdes::resetZpdes() {
-    //Loop through all activities and deactivate them
-    for(auto it = activities.begin(); it != activities.end(); it++) {
-        for(auto it2 = ++(it->begin()); it2 != it->end(); it2++) {
-            it2->get()->activated = false;
-        }
-    }
-}
 
 ///////////////////////////////
 

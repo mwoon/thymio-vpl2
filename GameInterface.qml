@@ -371,7 +371,7 @@ Page {
                 Rectangle {
                     width: (parent.height < parent.width ? parent.height : parent.width) * 2 / 3
                     height: (parent.height < parent.width ? parent.height : parent.width) * 2 / 3
-                    color: "green"
+                    //color: "green"
                     MouseArea {
                         anchors.fill: parent
                         onClicked: {
@@ -383,6 +383,12 @@ Page {
                             dialogueBox.visible = true;
                             exercisePopup.close();
                         }
+                    }
+
+                    Loader {
+                        id: leftExLoader
+                        anchors.fill: parent
+                        source: "blocks/TapEventBlock.qml"
                     }
                 }
 
