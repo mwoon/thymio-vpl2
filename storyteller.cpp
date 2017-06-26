@@ -105,7 +105,7 @@ QString StoryTeller::advanceScript(){
 
      //Tracking
      last = QString::fromStdString("{" + next + "}");
-     log.push_back(chosen);
+     //log.push_back(chosen);
 
      emit segmentGenerated(last);
  }
@@ -125,9 +125,11 @@ void StoryTeller::completeExercise(const double result) {
     } else {
         successfulExercises = 0;
     }
-    //call zpd to update graph
-    its.updateZpd(result);
 
+    //call zpd to update graph
+    std::string toLog = its.updateZpd(result);
+
+    log.push_back(toLog);
 }
 
 

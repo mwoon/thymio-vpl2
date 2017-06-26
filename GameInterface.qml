@@ -29,10 +29,22 @@ Page {
         id: dialogueBox
     }
 
+    MouseArea {
+        anchors.fill: parent
+        z: 2
+
+        onClicked: {
+            next = true;
+        }
+    }
+
     ColumnLayout {
+
+        id: logLayout
 
         anchors.fill: parent
         spacing: 10
+        visible: true
 
         RowLayout {
             ListView {
@@ -183,15 +195,21 @@ Page {
 
         if(storyStack.length > 0) {
             var part = storyStack.shift();
-            if(part.type === "story") {
+
+            if(part.type === "story" || part.type === "activity") {
                 if(part.content.cmd === "text") {
                     handleText(part.content.text)
                 } else if (part.content.cmd === "bg") {
                     handleBgColor(part.content.color);
                 } else if (part.content.cmd === "multi") {
                     handleScene(part.content.scene);
+                } else if (part.content.cmd === "ex") {
+                    handleEx(part.content);
                 }
+            }
 
+
+            if(part.type === "story") {
                 nextButton.visible = true;
                 answer0.visible = false;
                 answer1.visible = false;
@@ -205,7 +223,7 @@ Page {
                 answer9.visible = false;
                 answer10.visible = false;
             } else if (part.type === "activity") {
-                textOutput.append({"output": part.content});
+                //textOutput.append({"output": part.content});
                 nextButton.visible = false;
                 answer0.visible = true;
                 answer1.visible = true;
@@ -232,57 +250,50 @@ Page {
 
             var newStorySequence = JSON.parse(newText);
             var part;
+            var file;
+            var type;
             if(newStorySequence.story0) {
-                var xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
-                        print('HEADERS_RECEIVED')
-                    } else if(xhr.readyState === XMLHttpRequest.DONE) {
-                        print('DONE');
-                        console.log(xhr.status);
-                        console.log(xhr.responseText.toString());
-                        var a = JSON.parse(xhr.responseText.toString());
-                        for(var i = 0; i < a.list.length; i++) {
-                            part = {};
-                            part.type = "story";
-                            part.content = a.list[i];
-                            storyStack.push(part);
-                        }
-                        next = true;
-                    }
-                }
-                var file = "thymio-vpl2/story/" + newStorySequence.story0[0] + ".json";
-                console.log(file);
-                xhr.open("GET", file);
-                xhr.send();
-/*
-                for(var i = 0; i < a.length; i++) {
-                    part = {};
-                    part.type = "story";
-                    part.content = a[i];
-                    storyStack.push(part);
-                }
-                */
+                type = "story";
+                file = "thymio-vpl2/story/" + newStorySequence.story0[0] + ".json";
             }
 
             if(newStorySequence.activity)  {
+                type = "activity";
+                file = "/exercises/" + newStorySequence.activity[0] + ".json";
+
+                /*
                 for(var i = 0; i < newStorySequence.activity.length; i++) {
                     part = {};
                     part.type = "activity";
                     part.content = newStorySequence.activity[i];
                     storyStack.push(part);
                 }
-                next = true;
+                next = true;*/
             }
 
-            if(newStorySequence.story1) {
-                for(var i = 0; i < newStorySequence.story1.length; i++) {
-                    part = {};
-                    part.type = "story";
-                    part.content = newStorySequence.story1[i]
-                    storyStack.push(part);
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
+                    print('HEADERS_RECEIVED')
+                } else if(xhr.readyState === XMLHttpRequest.DONE) {
+                    print('DONE');
+                    console.log(xhr.status);
+                    console.log(xhr.responseText.toString());
+                    var a = JSON.parse(xhr.responseText.toString());
+                    for(var i = 0; i < a.list.length; i++) {
+                        part = {};
+                        part.type = type;
+                        part.content = a.list[i];
+                        storyStack.push(part);
+                    }
+                    next = true;
                 }
             }
+
+            console.log(file);
+            xhr.open("GET", file);
+            xhr.send();
         }
     }
 
@@ -307,7 +318,7 @@ Page {
         onOpenDrawer: {
             drawer.open()
         }
-        z: 1
+        z: 3
         x: 10
         y: 10
     }
@@ -326,13 +337,23 @@ Page {
         }
 
         ListElement {
+            title: "Toggle log";
+            callback: "toggleLog";
+        }
+
+        ListElement {
             title: "Test Functions";
             callback: "showFunction";
         }
 
+
         function showHome() {
             startupWindow.showHome();
             stote.resetScript();
+        }
+
+        function toggleLog() {
+            logLayout.visible = !logLayout.visible;
         }
 
         //This function should be adapted whenever something needs to be tested on button press
@@ -371,7 +392,7 @@ Page {
                 Rectangle {
                     width: (parent.height < parent.width ? parent.height : parent.width) * 2 / 3
                     height: (parent.height < parent.width ? parent.height : parent.width) * 2 / 3
-                    //color: "green"
+                    color: "green"
                     MouseArea {
                         anchors.fill: parent
                         onClicked: {
@@ -385,11 +406,6 @@ Page {
                         }
                     }
 
-                    Loader {
-                        id: leftExLoader
-                        anchors.fill: parent
-                        source: "blocks/TapEventBlock.qml"
-                    }
                 }
 
                 Rectangle {
@@ -438,6 +454,14 @@ Page {
             } else if (scene[i].cmd === "bg") {
                 handleBgColor(scene[i].color);
             }
+        }
+    }
+
+    function handleEx(content) {
+        if(content.type === "type1") {
+            textOutput.append({"output": content.text});
+            exercisePopup.open();
+            dialogueBox.visible = false;
         }
     }
 

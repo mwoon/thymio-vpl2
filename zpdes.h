@@ -20,7 +20,7 @@ public:
 
     std::string chooseActivity(std::list<std::string> availables);
 
-    void updateZpd(const double result);
+    std::string updateZpd(const double result);
     void resetZpdes();
 
 signals:

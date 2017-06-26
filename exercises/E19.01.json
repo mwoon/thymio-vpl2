@@ -1,0 +1,17 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E01.01"
+        },
+        {
+            "cmd": "ex",
+            "type": "type1",
+            "text": "E01.01"
+        },
+        {
+            "cmd": "text",
+            "text": "post E01.01"
+        }
+    ]
+}

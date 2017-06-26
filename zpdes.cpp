@@ -158,10 +158,10 @@ void Zpdes::initializeActivities() {
 
     //minor activities
     minorActivities.push_back(std::make_shared<Activity>(Activity("01", 0.8, "Given program, predict function")));
-    minorActivities.push_back(std::make_shared<Activity>(Activity("02", 0.8, "Given behaviour, choose program")));
-    minorActivities.push_back(std::make_shared<Activity>(Activity("03", 0.8, "Given two behaviours, decide what is the difference")));
-    minorActivities.push_back(std::make_shared<Activity>(Activity("04", 0.8, "Given a specification, complete a partial program")));
-    minorActivities.push_back(std::make_shared<Activity>(Activity("05", 0.8, "Given specification, write a program")));
+    //minorActivities.push_back(std::make_shared<Activity>(Activity("02", 0.8, "Given behaviour, choose program")));
+    //minorActivities.push_back(std::make_shared<Activity>(Activity("03", 0.8, "Given two behaviours, decide what is the difference")));
+    //minorActivities.push_back(std::make_shared<Activity>(Activity("04", 0.8, "Given a specification, complete a partial program")));
+    //minorActivities.push_back(std::make_shared<Activity>(Activity("05", 0.8, "Given specification, write a program")));
 
 }
 
@@ -179,7 +179,6 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
                         //add available activities to current zpd
                         //TODO add activity only if previous was activated before
                         if((prev == it2->begin()) || (*prev).get()->activated) {
-                            //TODO check sub activities and add the subs
                             qDebug() << QString::fromStdString((*it3).get()->id) << " " << QString::fromStdString(*it);
                             zpd.push_back(*it3);
                         }
@@ -236,7 +235,7 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
     return description;
 }
 
-void Zpdes::updateZpd(const double result){
+std::string Zpdes::updateZpd(const double result){
 
     //find the index of the specific activity
     unsigned index{0};
@@ -254,6 +253,9 @@ void Zpdes::updateZpd(const double result){
     //minor
     lastActivityMinor.get()->updateBanditLevel(result);
 
+    std::stringstream logText;
+    logText << lastActivitySpecific << "." << lastActivityMinor.get()->id << ", " << result << ", " << lastActivity.get()->banditLevel << ", " << lastActivityMinor.get()->banditLevel;
+    return logText.str();
 }
 
 
