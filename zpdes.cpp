@@ -90,70 +90,70 @@ void Zpdes::generateActivity()
 void Zpdes::initializeActivities() {
     //block 1
     majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
-                             std::make_shared<Activity>(Activity("E01E02E03", 0.0, "\"dummy1\"")),
-                             std::make_shared<Activity>(Activity("E01", 0.5, "\"E01\"")),
-                             std::make_shared<Activity>(Activity("E02", 0.5, "\"E02\""))
+                             std::make_shared<Activity>(Activity("E01E02", 0.0, "\"dummy1\"")),
+                             std::make_shared<Activity>(Activity("E01", 0.5, "\"E01\"", std::list<std::string>{"E01"})),
+                             std::make_shared<Activity>(Activity("E02", 0.5, "\"E02\"", std::list<std::string>{"E02"}))
                          });
 
     //block 2
     majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E03E04E05", 0.0, "\"dummy2\"")),
-                             std::make_shared<Activity>(Activity("E03", 0.5, "\"E03\"")),
-                             std::make_shared<Activity>(Activity("E04", 0.5, "\"E04\"")),
-                             std::make_shared<Activity>(Activity("E05", 0.5, "\"E05\""))
+                             std::make_shared<Activity>(Activity("E03", 0.5, "\"E03\"", std::list<std::string>{"E03"})),
+                             std::make_shared<Activity>(Activity("E04", 0.5, "\"E04\"", std::list<std::string>{"E04"})),
+                             std::make_shared<Activity>(Activity("E05", 0.5, "\"E05\"", std::list<std::string>{"E05"}))
                          });
 
     //block 3
     majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
-                             std::make_shared<Activity>(Activity("E06", 0.0, "\"dummy3\"")),
-                             std::make_shared<Activity>(Activity("E06", 0.5, "\"E06\"")),
-                             std::make_shared<Activity>(Activity("E08", 0.5, "\"E08\""))
+                             std::make_shared<Activity>(Activity("E06E08", 0.0, "\"dummy3\"")),
+                             std::make_shared<Activity>(Activity("E06", 0.5, "\"E06\"", std::list<std::string>{"E06"})),
+                             std::make_shared<Activity>(Activity("E08", 0.5, "\"E08\"", std::list<std::string>{"E08"}))
                          });
     //block 4
     majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E11E09E10", 0.0, "\"dummy4\"")),
-                             std::make_shared<Activity>(Activity("E11", 0.5, "\"E11\"")),
-                             std::make_shared<Activity>(Activity("E09", 0.5, "\"E09\"")),
-                             std::make_shared<Activity>(Activity("E10", 0.5, "\"E10\""))
+                             std::make_shared<Activity>(Activity("E11", 0.5, "\"E11\"", std::list<std::string>{"E11"})),
+                             std::make_shared<Activity>(Activity("E09", 0.5, "\"E09\"", std::list<std::string>{"E09"})),
+                             std::make_shared<Activity>(Activity("E10", 0.5, "\"E10\"", std::list<std::string>{"E10"}))
                          });
     //block 5
     majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E13E14E15", 0.0, "\"dummy5\"")),
-                             std::make_shared<Activity>(Activity("E13", 0.5, "\"E13\"")),
-                             std::make_shared<Activity>(Activity("E14", 0.5, "\"E14\"")),
-                             std::make_shared<Activity>(Activity("E15", 0.5, "\"E15\""))
+                             std::make_shared<Activity>(Activity("E13", 0.5, "\"E13\"", std::list<std::string>{"E13"})),
+                             std::make_shared<Activity>(Activity("E14", 0.5, "\"E14\"", std::list<std::string>{"E14"})),
+                             std::make_shared<Activity>(Activity("E15", 0.5, "\"E15\"", std::list<std::string>{"E15"}))
                          });
 
     //block 6
     majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E26E32E34E35E31E27E25E33", 0.0, "\"dummy6\"")),
-                             std::make_shared<Activity>(Activity("E26E32E34E35E31", 0.5, "\"E26 E32 E34 E35 E31\"")),
-                             std::make_shared<Activity>(Activity("E27", 0.5, "\"E27\"")),
-                             std::make_shared<Activity>(Activity("E25E33", 0.5, "\"E25 E33\""))
+                             std::make_shared<Activity>(Activity("E26E32E34E35E31", 0.5, "\"E26 E32 E34 E35 E31\"", std::list<std::string>{"E26", "E32", "E34", "E35", "E31"})),
+                             std::make_shared<Activity>(Activity("E27", 0.5, "\"E27\"", std::list<std::string>{"E27"})),
+                             std::make_shared<Activity>(Activity("E25E33", 0.5, "\"E25 E33\"", std::list<std::string>{"E25", "E33"}))
                          });
     //block 7
     majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E28E29E30", 0.0, "\"dummy7\"")),
-                             std::make_shared<Activity>(Activity("E28", 0.5, "\"E28\"")),
-                             std::make_shared<Activity>(Activity("E29E30", 0.5, "\"E29 E30\""))
+                             std::make_shared<Activity>(Activity("E28", 0.5, "\"E28\"", std::list<std::string>{"E28"})),
+                             std::make_shared<Activity>(Activity("E29E30", 0.5, "\"E29 E30\"", std::list<std::string>{"E29", "E30"}))
                          });
     //block 8
     majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E36E37E39E38", 0.0, "\"dummy8\"")),
-                             std::make_shared<Activity>(Activity("E36E37E39", 0.5, "\"E36 E37 E39\"")),
-                             std::make_shared<Activity>(Activity("E38", 0.5, "\"E38\""))
+                             std::make_shared<Activity>(Activity("E36E37E39", 0.5, "\"E36 E37 E39\"", std::list<std::string>{"E36", "E37", "E39"})),
+                             std::make_shared<Activity>(Activity("E38", 0.5, "\"E38\"", std::list<std::string>{"E38"}))
                          });
     //block 9
     majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
                              std::make_shared<Activity>(Activity("E16E20E17E45E18E41E42E19E44E24E43E22E46E21E40E47E23", 0.0, "\"dummy9\"")),
-                             std::make_shared<Activity>(Activity("E16", 0.5, "\"E16\"")),
-                             std::make_shared<Activity>(Activity("E20E17E45", 0.5, "\"E20 E17 E45\"")),
-                             std::make_shared<Activity>(Activity("E18E41E42", 0.5, "\"E18 E41 E42\"")),
-                             std::make_shared<Activity>(Activity("E19E44", 0.5, "\"E19 E44\"")),
-                             std::make_shared<Activity>(Activity("E24E43", 0.5, "\"E24 E43\"")),
-                             std::make_shared<Activity>(Activity("E22E46", 0.5, "\"E22 E46\"")),
-                             std::make_shared<Activity>(Activity("E21E40E47", 0.5, "\"E21 E40 E47\"")),
-                             std::make_shared<Activity>(Activity("E23", 0.5, "\"E23\""))
+                             std::make_shared<Activity>(Activity("E16", 0.5, "\"E16\"", std::list<std::string>{"E16"})),
+                             std::make_shared<Activity>(Activity("E20E17E45", 0.5, "\"E20 E17 E45\"", std::list<std::string>{"E20", "E17", "E45"})),
+                             std::make_shared<Activity>(Activity("E18E41E42", 0.5, "\"E18 E41 E42\"", std::list<std::string>{"E18", "E41", "E42"})),
+                             std::make_shared<Activity>(Activity("E19E44", 0.5, "\"E19 E44\"", std::list<std::string>{"E19", "E44"})),
+                             std::make_shared<Activity>(Activity("E24E43", 0.5, "\"E24 E43\"", std::list<std::string>{"E24", "E43"})),
+                             std::make_shared<Activity>(Activity("E22E46", 0.5, "\"E22 E46\"", std::list<std::string>{"E22", "E46"})),
+                             std::make_shared<Activity>(Activity("E21E40E47", 0.5, "\"E21 E40 E47\"", std::list<std::string>{"E21", "E40", "E47"})),
+                             std::make_shared<Activity>(Activity("E23", 0.5, "\"E23\"", std::list<std::string>{"E23"}))
                          });
 
     //minor activities
