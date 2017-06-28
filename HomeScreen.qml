@@ -4,6 +4,14 @@ import QtQuick.Controls.Material 2.0
 
 Item {
 
+
+    Image {
+        anchors.fill: parent
+        source: "/assets/clouds.png"
+        z:1
+    }
+
+
     Rectangle {
         anchors.fill: parent
 
@@ -22,6 +30,7 @@ Item {
             }
         }
     }
+
 
 
     /*taken from thymio adventure main screen: https://github.com/aseba-community/thymio-adventure/blob/master/Map.qml 13.06.2017*/

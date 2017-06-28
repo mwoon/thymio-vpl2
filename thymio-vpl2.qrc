@@ -676,5 +676,6 @@
         <file>thymio-vpl2.h</file>
         <file>zpdes.cpp</file>
         <file>zpdes.h</file>
+        <file>assets/clouds.png</file>
     </qresource>
 </RCC>
