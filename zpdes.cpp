@@ -260,12 +260,10 @@ std::string Zpdes::updateZpd(const double result){
 
 
 void Zpdes::resetZpdes() {
-    //Loop through all activities and deactivate them
-    for(auto it = majorActivities.begin(); it != majorActivities.end(); it++) {
-        for(auto it2 = ++(it->begin()); it2 != it->end(); it2++) {
-            it2->get()->activated = false;
-        }
-    }
+    //clear all acitivities and reinitialize
+    majorActivities.clear();
+    minorActivities.clear();
+    initializeActivities();
 }
 
 unsigned Zpdes::activityFromZpd(std::list<std::shared_ptr<Activity> > &zpd) {
