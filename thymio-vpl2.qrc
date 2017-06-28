@@ -677,5 +677,7 @@
         <file>zpdes.cpp</file>
         <file>zpdes.h</file>
         <file>assets/clouds.png</file>
+        <file>Type1Exercise.qml</file>
+        <file>assets/exercises/ex04.01.png</file>
     </qresource>
 </RCC>

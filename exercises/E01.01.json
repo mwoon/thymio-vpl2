@@ -7,7 +7,10 @@
         {
             "cmd": "ex",
             "type": "type1",
-            "text": "E01.01"
+            "text": "E01.01",
+	    "answerList": ["Thymio moves forwards.", "Thymio moves backwards.", "Thymio turns left on the spot.", "Thymio turns right on the spot.", "Thymio turns right.", "Thymio turns left."],
+	    "scoreList": [1, 0, 0, 0, 0, 0],
+	    "image": "assets/exercises/ex04.01.png"
         },
         {
             "cmd": "text",

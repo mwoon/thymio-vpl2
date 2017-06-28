@@ -4,6 +4,9 @@ import QtQuick.Layouts 1.3
 
 Page {
 
+    id: gameWindow
+
+
     property StackView view
     property var storyStack: new Array()
     property bool next: false //signals when a new segment is ready to be read
@@ -14,7 +17,6 @@ Page {
     }
 
 
-    id: gameWindow
     title: qsTr("Thymio game WIP")
     visible: true
 
@@ -46,8 +48,7 @@ Page {
         spacing: 10
         visible: true
 
-        RowLayout {
-            ListView {
+        ListView {
                 id:lView
                 clip: true //apparently this can affect performance
                 model: textOutput
@@ -62,7 +63,7 @@ Page {
                     wrapMode: Text.WordWrap
                 }
             }
-        }
+
 
         Row {
 
@@ -380,63 +381,26 @@ Page {
             color: "transparent"
         }
 
-        ColumnLayout {
+        Loader {
+            id: exLoader
             anchors.fill: parent
-
-
-            RowLayout {
-                Layout.fillHeight: parent
-                anchors.horizontalCenter: parent.horizontalCenter
-                spacing: (parent.height < parent.width ? parent.height : parent.width) / 9
-
-                Rectangle {
-                    width: (parent.height < parent.width ? parent.height : parent.width) * 2 / 3
-                    height: (parent.height < parent.width ? parent.height : parent.width) * 2 / 3
-                    color: "green"
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: {
-                            console.log("green");
-
-                            stote.completeExercise(1.0);
-                            next = true;
-
-                            dialogueBox.visible = true;
-                            exercisePopup.close();
-                        }
-                    }
-
-                }
-
-                Rectangle {
-                    width: (parent.height < parent.width ? parent.height : parent.width) * 2 / 3
-                    height: (parent.height < parent.width ? parent.height : parent.width) * 2 / 3
-                    color: "blue"
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: {
-                            console.log("blue");
-
-                            stote.completeExercise(0.5);
-                            next = true;
-
-                            dialogueBox.visible = true;
-                            exercisePopup.close();
-                        }
-                    }
-                }
-            }
-
-            DialogueBox {
-                id: exerciseDialogue
-                speakerName: ""
-                dialogue: "Which one is correct?"
-            }
+            source: "Type1Exercise.qml"
         }
+
+
+
 
     }
 
 /*-------------------------- Functions to Update Story --------------------------------------*/
+
+    function toggleDialogueBox(truefalse) {
+        dialogueBox.visible = truefalse;
+    }
+
+    function closeExerciseWindow() {
+        exercisePopup.close();
+    }
 
     function handleText(text) {
         //TODO this will change later when the list is removed
@@ -462,6 +426,7 @@ Page {
             textOutput.append({"output": content.text});
             exercisePopup.open();
             dialogueBox.visible = false;
+            exLoader.setSource("Type1Exercise.qml", { "answerList": content.answerList, "scoreList": content.scoreList, "imageSource" : content.image })
         }
     }
 

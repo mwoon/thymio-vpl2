@@ -45,6 +45,7 @@ Item {
 
             width: 180
             spacing: 12
+            interactive: false
 
             model: menuList
             delegate: Row {
