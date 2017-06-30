@@ -16,6 +16,8 @@ Item {
 	property BlockEditor blockEditor: blockEditor
 	property alias mainContainerScale: mainContainer.scale
 	property alias scene: sceneLoader.item
+    property alias eventsVisible: eventPane.visible
+    property alias actionsVisible: actionPane.visible
 
 	property alias compiler: compiler
 	Compiler {

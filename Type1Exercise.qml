@@ -2,6 +2,7 @@ import QtQuick 2.0
 import QtQuick.Controls 2.1
 import QtQuick.Window 2.2
 import QtQuick.Layouts 1.3
+import "qrc:/thymio-vpl2"
 
 //Format: show an image of a program, player has to choose the correct answer for describing what it does
 
@@ -20,7 +21,9 @@ Page {
     property var answerList;
     property var scoreList;
 
-    property alias imageSource : img.source
+    //the program to display
+    property var code;
+
 
     padding: 50
 
@@ -30,10 +33,13 @@ Page {
         spacing: 25
 
 
-        Image {
-            id:img
+        Editor {
+            id: vplEditor
             Layout.preferredWidth: parent.width * 2 / 5
             Layout.preferredHeight: width * 2 / 3
+            enabled: false
+            actionsVisible: false
+            eventsVisible: false
         }
 
         ColumnLayout {
@@ -93,7 +99,7 @@ Page {
 
                     var score = scoreList[options.currentIndex];
 
-                    stote.completeExercise(1.0);
+                    stote.completeExercise(score);
                     gameWindow.next = true;
 
                     gameWindow.toggleDialogueBox(true);
@@ -110,7 +116,7 @@ Page {
         for(var i = 0; i < answerList.length; i++) {
             optionsList.append({"name": answerList[i], "callback": "completeExercise"})
         }
-
+        vplEditor.loadCode(code);
     }
 
 

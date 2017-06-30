@@ -10,7 +10,8 @@
             "text": "E01.01",
 	    "answerList": ["Thymio moves forwards.", "Thymio moves backwards.", "Thymio turns left on the spot.", "Thymio turns right on the spot.", "Thymio turns right.", "Thymio turns left."],
 	    "scoreList": [1, 0, 0, 0, 0, 0],
-	    "image": "assets/exercises/ex04.01.png"
+	    "code": {
+"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorActionBlock","params":[200.0000000000001,200.0000000000001]}]]}
         },
         {
             "cmd": "text",

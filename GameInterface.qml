@@ -384,7 +384,7 @@ Page {
         Loader {
             id: exLoader
             anchors.fill: parent
-            source: "Type1Exercise.qml"
+            source: ""
         }
 
 
@@ -426,7 +426,7 @@ Page {
             textOutput.append({"output": content.text});
             exercisePopup.open();
             dialogueBox.visible = false;
-            exLoader.setSource("Type1Exercise.qml", { "answerList": content.answerList, "scoreList": content.scoreList, "imageSource" : content.image })
+            exLoader.setSource("Type1Exercise.qml", { "answerList": content.answerList, "scoreList": content.scoreList, "code" : JSON.stringify(content.code) })
         }
     }
 
