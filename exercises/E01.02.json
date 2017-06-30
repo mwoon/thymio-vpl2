@@ -1,0 +1,32 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E01.02"
+        },
+        {
+            "cmd": "ex",
+            "type": "type2",
+            "text": "E01.02",
+	    "answerList": [
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorActionBlock","params":[200.0000000000001,200.0000000000001]}]]},
+
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorActionBlock","params":[200.0000000000001,200.0000000000001]}]]},
+
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorActionBlock","params":[200.0000000000001,200.0000000000001]}]]},
+
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorActionBlock","params":[200.0000000000001,200.0000000000001]}]]},
+
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorActionBlock","params":[200.0000000000001,200.0000000000001]}]]},
+
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorActionBlock","params":[200.0000000000001,200.0000000000001]}]]}
+
+	    ],
+	    "scoreList": [0, 0, 1, 0, 0, 0]
+        },
+        {
+            "cmd": "text",
+            "text": "post E01.01"
+        }
+    ]
+}

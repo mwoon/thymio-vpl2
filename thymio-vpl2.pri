@@ -88,4 +88,5 @@ DISTFILES += \
     $$PWD/GameTitleBar.qml \
     $$PWD/MenuDrawer.qml \
     $$PWD/DialogueBox.qml \
-    $$PWD/Type1Exercise.qml
+    $$PWD/Type1Exercise.qml \
+    $$PWD/Type2Exercise.qml

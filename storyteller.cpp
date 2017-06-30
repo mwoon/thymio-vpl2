@@ -115,6 +115,9 @@ QString StoryTeller::advanceScript(){
 
 
 void StoryTeller::completeExercise(const double result) {
+    std::ostringstream score;
+    score << "result " << result;
+    qDebug() << QString::fromStdString(score.str());
     //update condition for progressing story after exercise
     //FIXME Need to tune this condition and see what is good
     //maybe also add a hard limit on the number of exercises?

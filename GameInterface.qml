@@ -260,7 +260,8 @@ Page {
 
             if(newStorySequence.activity)  {
                 type = "activity";
-                file = "/exercises/" + newStorySequence.activity[0] + ".json";
+                //file = "/exercises/" + newStorySequence.activity[0] + ".json";
+                file = "/exercises/" + "E01.02" + ".json";
 
                 /*
                 for(var i = 0; i < newStorySequence.activity.length; i++) {
@@ -423,11 +424,14 @@ Page {
 
     function handleEx(content) {
         if(content.type === "type1") {
-            textOutput.append({"output": content.text});
-            exercisePopup.open();
-            dialogueBox.visible = false;
-            exLoader.setSource("Type1Exercise.qml", { "answerList": content.answerList, "scoreList": content.scoreList, "code" : JSON.stringify(content.code) })
+            exLoader.setSource("Type1Exercise.qml", { "answerList": content.answerList, "scoreList": content.scoreList, "code" : JSON.stringify(content.code) });
+        } else if (content.type === "type2") {
+            exLoader.setSource("Type2Exercise.qml", {"answerList": content.answerList, "scoreList": content.scoreList});
         }
+
+        textOutput.append({"output": content.text});
+        exercisePopup.open();
+        dialogueBox.visible = false;
     }
 
 }

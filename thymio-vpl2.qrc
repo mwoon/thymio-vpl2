@@ -438,5 +438,6 @@
         <file>images/logoEPFL.svg</file>
         <file>images/logoETHGTC.svg</file>
         <file>images/logoMobsya.svg</file>
+        <file>Type2Exercise.qml</file>
     </qresource>
 </RCC>
