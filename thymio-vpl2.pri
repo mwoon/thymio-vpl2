@@ -89,4 +89,5 @@ DISTFILES += \
     $$PWD/MenuDrawer.qml \
     $$PWD/DialogueBox.qml \
     $$PWD/Type1Exercise.qml \
-    $$PWD/Type2Exercise.qml
+    $$PWD/Type2Exercise.qml \
+    $$PWD/Type3Exercise.qml

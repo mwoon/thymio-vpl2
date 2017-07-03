@@ -261,7 +261,7 @@ Page {
             if(newStorySequence.activity)  {
                 type = "activity";
                 //file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                file = "/exercises/" + "E01.02" + ".json";
+                file = "/exercises/" + "E01.03" + ".json";
 
                 /*
                 for(var i = 0; i < newStorySequence.activity.length; i++) {
@@ -427,6 +427,8 @@ Page {
             exLoader.setSource("Type1Exercise.qml", { "answerList": content.answerList, "scoreList": content.scoreList, "code" : JSON.stringify(content.code) });
         } else if (content.type === "type2") {
             exLoader.setSource("Type2Exercise.qml", {"answerList": content.answerList, "scoreList": content.scoreList});
+        } else if (content.type === "type3") {
+            exLoader.setSource("Type3Exercise.qml", { "answerList": content.answerList, "scoreList": content.scoreList, "code1" : JSON.stringify(content.code1), "code2" : JSON.stringify(content.code2)  });
         }
 
         textOutput.append({"output": content.text});
