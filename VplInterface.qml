@@ -17,11 +17,14 @@ Page {
 
     Material.primary: Material.theme === Material.Dark ? "#200032" : Material.background // "#a3d9db"
     Material.accent: Material.theme === Material.Dark ? "#9478aa" : "#B290CC" // "#59cbc8"
-    Material.background: Material.theme === Material.Dark ? "#ff44285a" : "white"
+    //Material.background: Material.theme === Material.Dark ? "#ff44285a" : "white"
 
     header: vplEditor.blockEditorVisible ? blockEditorTitleBar : vplEditorTitleBar
 
     readonly property string autosaveName: qsTr("autosave");
+    property alias menu: menuItems
+    property alias editor: vplEditor
+    property var code;
 
     EditorTitleBar {
         id: vplEditorTitleBar
@@ -162,9 +165,17 @@ Page {
                     callback: "returnToPreviousView";
                     whiteIcon: "qrc:/thymio-vpl2/icons/ic_invert_colors_white_24px.svg";
                     blackIcon: "qrc:/thymio-vpl2/icons/ic_invert_colors_black_24px.svg";
-                }
-                function returnToPreviousView() {
-                    startupWindow.showHome();
+        }
+        function returnToPreviousView() {
+            startupWindow.showHome();
+        }
+
+        function completeExercise() {
+            type4Ex.completeExercise();
+        }
+
+        function restartExercise() {
+            vplEditor.loadCode(code);
         }
     }
 

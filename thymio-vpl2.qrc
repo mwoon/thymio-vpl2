@@ -440,5 +440,6 @@
         <file>images/logoMobsya.svg</file>
         <file>Type2Exercise.qml</file>
         <file>Type3Exercise.qml</file>
+        <file>Type4Exercise.qml</file>
     </qresource>
 </RCC>

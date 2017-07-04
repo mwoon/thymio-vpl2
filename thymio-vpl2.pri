@@ -90,4 +90,5 @@ DISTFILES += \
     $$PWD/DialogueBox.qml \
     $$PWD/Type1Exercise.qml \
     $$PWD/Type2Exercise.qml \
-    $$PWD/Type3Exercise.qml
+    $$PWD/Type3Exercise.qml \
+    $$PWD/Type4Exercise.qml
