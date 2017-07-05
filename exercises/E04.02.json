@@ -1,0 +1,33 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E04.02"
+        },
+        {
+            "cmd": "ex",
+            "type": "type2",
+            "text": "E04.02",
+	    "answerList": [
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"right"}]]},
+
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"back"}]]},
+
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"stop"}]]},
+
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"backLeft"}]]},
+
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"front"}]]},
+
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"frontRight"}]]}
+
+	    ],
+	    "scoreList": [0, 0, 0, 0, 1, 0],
+	    "description": "Which program will help Thymio move forwards?"
+        },
+        {
+            "cmd": "text",
+            "text": "post E04.02"
+        }
+    ]
+}

@@ -21,42 +21,54 @@ Page {
     property var answerList: [1,2,3,4,5,6]
     property var scoreList;
 
+    property var question;
+
 
     padding: 50
-
-    GridLayout {
+    ColumnLayout {
         anchors.fill: parent
-        columnSpacing: 25
-        rowSpacing: 25
-        columns: 3
-        rows: 2
 
-        Repeater {
-            model: optionsList
-            Editor {
-                property var program: code
-                property var score: result
-                //enabled: false
-                actionsVisible: false
-                eventsVisible: false
+        Text {
+            Layout.alignment: Qt.AlignCenter
+            text: question
+            font.pointSize: 24
+        }
+        GridLayout {
+            anchors.fill: parent
+            columnSpacing: 25
+            rowSpacing: 25
+            columns: 3
+            rows: 2
 
-                Layout.fillWidth: true
-                Layout.fillHeight: true
+            Repeater {
+                model: optionsList
+                Editor {
+                    property var program: code
+                    property var score: result
+                    //enabled: false
+                    actionsVisible: false
+                    eventsVisible: false
 
-                Component.onCompleted:  {
-                    loadCode(program);
-                }
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
 
-                MouseArea {
-                    anchors.fill: parent
-                    z:1
-                    onClicked: {
-                        completeExercise(score)
+                    Component.onCompleted:  {
+                        loadCode(program);
+                    }
+
+                    MouseArea {
+                        anchors.fill: parent
+                        z:1
+                        onClicked: {
+                            completeExercise(score)
+                        }
                     }
                 }
             }
         }
     }
+
+
 
     ListModel {
         id: optionsList

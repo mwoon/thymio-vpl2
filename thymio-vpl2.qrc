@@ -203,7 +203,6 @@
         <file>exercises/E01.03.json</file>
         <file>exercises/E01.04.json</file>
         <file>exercises/E01.05.json</file>
-        <file>exercises/E02.01json</file>
         <file>exercises/E02.02.json</file>
         <file>exercises/E02.03.json</file>
         <file>exercises/E02.04.json</file>
@@ -441,5 +440,7 @@
         <file>Type2Exercise.qml</file>
         <file>Type3Exercise.qml</file>
         <file>Type4Exercise.qml</file>
+        <file>Type5Exercise.qml</file>
+        <file>exercises/E02.01.json</file>
     </qresource>
 </RCC>

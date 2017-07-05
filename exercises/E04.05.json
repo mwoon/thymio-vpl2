@@ -1,0 +1,19 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E04.05"
+        },
+        {
+            "cmd": "ex",
+            "type": "type5",
+            "text": "E04.05",
+	    "solution": 
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"front"}]]}
+        },
+        {
+            "cmd": "text",
+            "text": "post E04.05"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E04.04"
+        },
+        {
+            "cmd": "ex",
+            "type": "type4",
+            "text": "E04.04",
+	    "solution": 
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"front"}]]},
+	    "code": 
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}]]}
+        },
+        {
+            "cmd": "text",
+            "text": "post E04.04"
+        }
+    ]
+}

@@ -91,4 +91,5 @@ DISTFILES += \
     $$PWD/Type1Exercise.qml \
     $$PWD/Type2Exercise.qml \
     $$PWD/Type3Exercise.qml \
-    $$PWD/Type4Exercise.qml
+    $$PWD/Type4Exercise.qml \
+    $$PWD/Type5Exercise.qml

@@ -90,15 +90,15 @@ void Zpdes::generateActivity()
 void Zpdes::initializeActivities() {
     //block 1
     majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
-                             std::make_shared<Activity>(Activity("E01E02", 0.0, "\"dummy1\"")),
+                             std::make_shared<Activity>(Activity("E01E02E03", 0.0, "\"dummy1\"")),
                              std::make_shared<Activity>(Activity("E01", 0.5, "\"E01\"", std::list<std::string>{"E01"})),
-                             std::make_shared<Activity>(Activity("E02", 0.5, "\"E02\"", std::list<std::string>{"E02"}))
+                             std::make_shared<Activity>(Activity("E02", 0.5, "\"E02\"", std::list<std::string>{"E02"})),
+                             std::make_shared<Activity>(Activity("E03", 0.5, "\"E03\"", std::list<std::string>{"E03"}))
                          });
 
     //block 2
     majorActivities.push_back(std::list<std::shared_ptr<Activity>>{
-                             std::make_shared<Activity>(Activity("E03E04E05", 0.0, "\"dummy2\"")),
-                             std::make_shared<Activity>(Activity("E03", 0.5, "\"E03\"", std::list<std::string>{"E03"})),
+                             std::make_shared<Activity>(Activity("E04E05", 0.0, "\"dummy2\"")),
                              std::make_shared<Activity>(Activity("E04", 0.5, "\"E04\"", std::list<std::string>{"E04"})),
                              std::make_shared<Activity>(Activity("E05", 0.5, "\"E05\"", std::list<std::string>{"E05"}))
                          });

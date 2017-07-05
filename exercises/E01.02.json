@@ -22,7 +22,8 @@
 {"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorActionBlock","params":[200.0000000000001,200.0000000000001]}]]}
 
 	    ],
-	    "scoreList": [0, 0, 1, 0, 0, 0]
+	    "scoreList": [0, 0, 1, 0, 0, 0],
+	    "description": "Which program will help Thymio move forwards?",
         },
         {
             "cmd": "text",

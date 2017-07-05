@@ -170,8 +170,19 @@ Page {
             startupWindow.showHome();
         }
 
-        function completeExercise() {
-            type4Ex.completeExercise();
+        function completeExercise4() {
+            var code = {
+                scene: vplEditor.scene.serialize()
+            };
+            type4Ex.completeExercise(code);
+        }
+
+        function completeExercise5() {
+            var code = {
+                scene: vplEditor.scene.serialize()
+            };
+
+            type5Ex.completeExercise(code);
         }
 
         function restartExercise() {

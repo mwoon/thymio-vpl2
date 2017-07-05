@@ -2,19 +2,19 @@
     "list": [
         {
             "cmd": "text",
-            "text": "pre E03.01"
+            "text": "pre E02.01"
         },
         {
             "cmd": "ex",
             "type": "type4",
-            "text": "E03.01",
+            "text": "E02.01",
 	    "answerList": ["Thymio moves forwards.", "Thymio moves backwards.", "Thymio turns left on the spot.", "Thymio turns right on the spot.", "Thymio turns right.", "Thymio turns left."],
 	    "scoreList": [1, 0, 0, 0, 0, 0],
 	    "code": {"mode":"simple","scene":[[null,{"definition":"MotorSimpleActionBlock","params":"right"},{"definition":"PaletteTopColorActionBlock","params":[32,18,13]},{"definition":"PaletteBottomColorActionBlock","params":[28,0,6]}],[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","ON"]},{"definition":"MotorSimpleActionBlock","params":"frontLeft"}],[{"definition":"TapEventBlock","params":null},{"definition":"PaletteTopColorActionBlock","params":[4,29,32]}],[null,{"definition":"MotorActionBlock","params":[-500,0]}]]}
         },
         {
             "cmd": "text",
-            "text": "post E03.01"
+            "text": "post E02.01"
         }
     ]
 }

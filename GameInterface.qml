@@ -260,8 +260,8 @@ Page {
 
             if(newStorySequence.activity)  {
                 type = "activity";
-                file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                //file = "/exercises/" + "E01.01" + ".json";
+                //file = "/exercises/" + newStorySequence.activity[0] + ".json";
+                file = "/exercises/" + "E04.02" + ".json";
 
                 /*
                 for(var i = 0; i < newStorySequence.activity.length; i++) {
@@ -426,11 +426,13 @@ Page {
         if(content.type === "type1") {
             exLoader.setSource("Type1Exercise.qml", { "answerList": content.answerList, "scoreList": content.scoreList, "code" : JSON.stringify(content.code) });
         } else if (content.type === "type2") {
-            exLoader.setSource("Type2Exercise.qml", {"answerList": content.answerList, "scoreList": content.scoreList});
+            exLoader.setSource("Type2Exercise.qml", {"answerList": content.answerList, "scoreList": content.scoreList, "question": content.description});
         } else if (content.type === "type3") {
             exLoader.setSource("Type3Exercise.qml", { "answerList": content.answerList, "scoreList": content.scoreList, "code1" : JSON.stringify(content.code1), "code2" : JSON.stringify(content.code2)  });
         } else if(content.type === "type4") {
-            exLoader.setSource("Type4Exercise.qml", { "answerList": content.answerList, "scoreList": content.scoreList, "code" : JSON.stringify(content.code) });
+            exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.solution), "code" : JSON.stringify(content.code) });
+        } else if(content.type === "type5") {
+            exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.solution) });
         }
 
         textOutput.append({"output": content.text});

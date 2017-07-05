@@ -71,14 +71,14 @@ Page {
                         implicitWidth: Screen.width / 2
                         text: name
                         background: Rectangle {
-                            color: control.highlighted ? "#30efff16" :"#30ffffff"
-                            border.color: control.highlighted ? "#a0efff16" : "#50ffffff"
+                            color: "#30efff16"
+                            border.color: "#a0efff16"
                             radius: 5
                         }
                         contentItem: Text {
                             text: control.text
                             font: control.font
-                            color: control.highlighted ? "#efff16" : "black"
+                            color: "#efff16"
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
                             elide: Text.ElideRight

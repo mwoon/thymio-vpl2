@@ -2,16 +2,20 @@
     "list": [
         {
             "cmd": "text",
-            "text": "pre E01.01"
+            "text": "pre E04.01"
         },
         {
             "cmd": "ex",
             "type": "type1",
-            "text": "E01.01"
+            "text": "E04.01",
+	    "answerList": ["Thymio moves forwards.", "Thymio moves backwards.", "Thymio turns left on the spot.", "Thymio turns right on the spot.", "Thymio turns right.", "Thymio turns left."],
+	    "scoreList": [1, 0, 0, 0, 0, 0],
+	    "code": 
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"front"}]]}
         },
         {
             "cmd": "text",
-            "text": "post E01.01"
+            "text": "post E04.01"
         }
     ]
 }
