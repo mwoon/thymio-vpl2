@@ -16,7 +16,7 @@ DropArea {
 	property var params
 
 	property bool canDelete: true // whether this block can be deleted
-	property bool canGraph: true // whether this block can create links
+	property bool canGraph: false // whether this block can create links
 	property bool canDrag: canDelete || canGraph;
 
 	property bool isError: false // whether this block is involved in an error
@@ -229,7 +229,7 @@ DropArea {
 				});
 
 				// directly edit block
-				blockEditor.setBlock(newBlock);
+				blockEditor.openBlock(newBlock, newBlock.definition, newBlock.params);
 			}
 		}
 	}
@@ -321,7 +321,7 @@ DropArea {
 		}
 
 		onClicked: {
-			blockEditor.setBlock(block);
+			blockEditor.openBlock(block, block.definition, block.params);
 		}
 	}
 }
