@@ -2,16 +2,20 @@
     "list": [
         {
             "cmd": "text",
-            "text": "pre E01.01"
+            "text": "pre E05.01"
         },
         {
             "cmd": "ex",
             "type": "type1",
-            "text": "E01.01"
+            "text": "E05.01",
+	    "answerList": ["Thymio moves forwards.", "Thymio moves backwards if his middle sensor in front detects something and stops if it doesn't.", "Thymio moves forwards if his middle sensor in front detects something and stops if it doesn't.", "Thymio moves forwards if his middle sensor in front detects nothing and stops if it does .", "Thymio moves forwards if his back sensor detects something and stops if it doesn't.", "Thymio moves backwards"],
+	    "scoreList": [0, 0, 0, 1, 0, 0],
+	    "code": 
+{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","FAR","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"front"}],[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"stop"}]]}
         },
         {
             "cmd": "text",
-            "text": "post E01.01"
+            "text": "post E05.01"
         }
     ]
 }
