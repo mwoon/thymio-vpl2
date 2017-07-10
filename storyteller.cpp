@@ -102,7 +102,18 @@ QString StoryTeller::advanceScript(){
  } else {
      qDebug() << QString::fromStdString("make exercise");
      //call zpdes to pick an exercise here
-     std::string chosen = its.chooseActivity(script[mainIndex].content);
+     std::string chosen;
+     if(mainIndex < 5) {
+        std::ostringstream chosenBuilder;
+        chosenBuilder << "\"";
+        chosenBuilder << script[mainIndex].content.front();
+        chosenBuilder << ".01\"";
+        chosen = chosenBuilder.str();
+        its.setLastActivity(script[mainIndex].content.front());
+
+     } else {
+         chosen = its.chooseActivity(script[mainIndex].content);
+     }
      next = makeJsonArray("activity", std::list<std::string>{chosen});
 
      //Tracking

@@ -158,10 +158,10 @@ void Zpdes::initializeActivities() {
 
     //minor activities
     minorActivities.push_back(std::make_shared<Activity>(Activity("01", 0.8, "Given program, predict function")));
-    //minorActivities.push_back(std::make_shared<Activity>(Activity("02", 0.8, "Given behaviour, choose program")));
-    //minorActivities.push_back(std::make_shared<Activity>(Activity("03", 0.8, "Given two behaviours, decide what is the difference")));
-    //minorActivities.push_back(std::make_shared<Activity>(Activity("04", 0.8, "Given a specification, complete a partial program")));
-    //minorActivities.push_back(std::make_shared<Activity>(Activity("05", 0.8, "Given specification, write a program")));
+    minorActivities.push_back(std::make_shared<Activity>(Activity("02", 0.8, "Given behaviour, choose program")));
+    minorActivities.push_back(std::make_shared<Activity>(Activity("03", 0.8, "Given two behaviours, decide what is the difference")));
+    minorActivities.push_back(std::make_shared<Activity>(Activity("04", 0.8, "Given a specification, complete a partial program")));
+    minorActivities.push_back(std::make_shared<Activity>(Activity("05", 0.8, "Given specification, write a program")));
 
 }
 
@@ -237,6 +237,7 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
 
 std::string Zpdes::updateZpd(const double result){
 
+
     //find the index of the specific activity
     unsigned index{0};
     for(auto it = lastActivity.get()->exercises.begin(); it != lastActivity.get()->exercises.end(); it++) {
@@ -291,6 +292,32 @@ unsigned Zpdes::activityFromZpd(std::list<std::shared_ptr<Activity> > &zpd) {
 
     return index;
 }
+
+//only for setting last activity for tutorials
+void Zpdes::setLastActivity(std::string name) {
+    for(auto it = majorActivities.begin(); it != majorActivities.end(); it++) {
+        if((it->front()).get()->id.find(name) != std::string::npos) {
+
+            for(auto it2 = ++(it->begin()); it2 != it->end(); it2++) {
+                if((*it2).get()->id.find(name) != std::string::npos) {
+
+                    lastActivity =  *it2;
+                    lastActivitySpecific = (*it2).get()->id;
+                }
+            }
+
+        }
+    }
+
+    for(auto it = minorActivities.begin(); it != minorActivities.end(); it++) {
+        if((*it).get()->id.find("04") != std::string::npos) {
+            lastActivityMinor = *it;
+        }
+
+    }
+    return;
+}
+
 
 
 ///////////////////////////////

@@ -8,9 +8,11 @@
             "cmd": "ex",
             "type": "type4",
             "text": "E01.01",
-	    "answerList": ["Thymio moves forwards.", "Thymio moves backwards.", "Thymio turns left on the spot.", "Thymio turns right on the spot.", "Thymio turns right.", "Thymio turns left."],
-	    "scoreList": [1, 0, 0, 0, 0, 0],
-	    "code": {"mode":"simple","scene":[[null,{"definition":"PaletteTopColorActionBlock","params":[32,5,9]}]]}
+	    "solution":
+{"mode":"simple","scene":[]}
+, 
+	    "code": 
+{"mode":"simple","scene":[[[],[{"definition":"MotorActionBlock","params":[0,0]}]]]}
         },
         {
             "cmd": "text",

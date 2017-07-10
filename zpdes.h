@@ -23,6 +23,9 @@ public:
     std::string updateZpd(const double result);
     void resetZpdes();
 
+    void setLastActivity(std::string name);
+
+
 signals:
     void activityGenerated(const QString& newText);
     void rewarded(const QString& newText);
@@ -33,6 +36,7 @@ private:
     //constants are currently arbitrary
     const double gamma = 0.8; //exploration rate
     unsigned numExercises = 0;
+
 
     //ExplorationGraph exGraph;
     //StoryGenerator storyGen;
