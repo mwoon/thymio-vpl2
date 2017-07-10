@@ -27,14 +27,17 @@ Page {
     padding: 50
     ColumnLayout {
         anchors.fill: parent
+        spacing: 20
 
         Text {
             Layout.alignment: Qt.AlignCenter
             text: question
             font.pointSize: 24
         }
+
         GridLayout {
-            anchors.fill: parent
+            Layout.fillWidth: true
+            Layout.fillHeight: true
             columnSpacing: 25
             rowSpacing: 25
             columns: 3
@@ -49,6 +52,8 @@ Page {
                     actionsVisible: false
                     eventsVisible: false
 
+
+
                     Layout.fillWidth: true
                     Layout.fillHeight: true
 
@@ -59,10 +64,20 @@ Page {
                     MouseArea {
                         anchors.fill: parent
                         z:1
+
                         onClicked: {
                             completeExercise(score)
                         }
                     }
+
+                    Rectangle {
+                        z:-1
+                        anchors.fill: parent
+                        color: "#30efff16"
+                        border.color: "#a0efff16"
+                        radius: 5
+                    }
+
                 }
             }
         }
