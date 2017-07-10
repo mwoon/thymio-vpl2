@@ -49,17 +49,12 @@ Item {
 	}
 
 	function deleteBlock(block) {
-		block.free();
+		block.destroy();
 	}
 
 	QtObject {
 		id: constants
 		property int rowSpacing: 60
-		property int rowPaddingV: 8
-		property int rowPaddingH: 14
-		property int actionSpacing: 0
-		property int columnSignRadius: 9
-		property int columnSignSpacing: 48
 	}
 
 	ListView {
@@ -101,7 +96,42 @@ Item {
 
 		Component {
 			id: rowComponent
-			StateTransition {
+			TransitionRow {
+				nextState: astState
+
+				property Item prev
+				property Item next
+				property int index: prev === null ? 0 : prev.index + 1
+
+				Component.onCompleted: {
+					rows.model.append(this);
+					rows.updateWidth();
+				}
+				Component.onDestruction: {
+					if (index < rows.model.count) {
+						rows.model.remove(index, 1);
+						rows.updateWidth();
+					}
+				}
+				onWidthChanged: rows.updateWidth()
+
+				onAstChanged: {
+					var last = next === null;
+					var empty = ast.events.length === 0 && ast.actions.length === 0;
+					if (last && !empty) {
+						next = rows.append(this, null);
+						astTransitions.splice(index, 0, ast);
+						scene.astChanged();
+					} else if (empty && !last) {
+						if (prev !== null) {
+							prev.next = next;
+						}
+						next.prev = prev;
+						destroy();
+						astTransitions.splice(index, 1);
+						scene.astChanged();
+					}
+				}
 			}
 		}
 	}
@@ -110,9 +140,8 @@ Item {
 		if (drop.source === blockDragPreview) {
 			drop.accepted = true;
 			var definition = blockDragPreview.definition;
-			source.definition = definition;
-			source.params = definition.defaultParams;
-			blockEditor.setBlock(source);
+			var params = definition.defaultParams;
+			blockEditor.openBlock(source, definition, params);
 		} else {
 			drop.accepted = false;
 		}
