@@ -11,8 +11,8 @@
 	    "answerList": ["In the program on top, Thymio moves backwards. In the program below, Thymio moves forwards.", "Thymio moves forwards more quickly in the program below than in the program on top.", "In the program on top, Thymio moves forwards. In the program below, Thymio moves backwards.", "Thymio moves forwards more quickly in the program on top than in the program below.", "Thymio moves backwards more quickly in the program on top than in the program below.", "Thymio moves forwards more quickly in the program below than in the program on top.", "There is no difference"],
 	    "scoreList": [0, 0, 1, 0, 0, 0],
 	    "code1": 
-{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"front"}]]},
-	    "code2": {"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"back"}]]}
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"front"}]]]},
+	    "code2": {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"back"}]]]}
         },
         {
             "cmd": "text",

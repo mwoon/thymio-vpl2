@@ -11,7 +11,7 @@
 	    "answerList": ["Thymio moves forwards.", "Thymio moves backwards.", "Thymio turns left on the spot.", "Thymio turns right on the spot.", "Thymio turns right.", "Thymio turns left."],
 	    "scoreList": [1, 0, 0, 0, 0, 0],
 	    "code": 
-{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"front"}]]}
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"front"}]]]}
         },
         {
             "cmd": "text",

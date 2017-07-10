@@ -48,6 +48,7 @@ Page {
                                 "whiteIcon": "qrc:/thymio-vpl2/icons/ic_invert_colors_white_24px.svg",
                                 "blackIcon": "qrc:/thymio-vpl2/icons/ic_invert_colors_black_24px.svg"
                             });
+            vpl.editor.loadCode(code);
             }
     }
 
@@ -71,7 +72,7 @@ Page {
 
     Component.onCompleted: {
         vpl.code = code;
-        vpl.editor.loadCode(code);
+        //vpl.editor.loadCode(code);
     }
 
 

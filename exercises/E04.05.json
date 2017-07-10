@@ -9,7 +9,7 @@
             "type": "type5",
             "text": "E04.05",
 	    "solution": 
-{"mode":"simple","scene":[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"MotorSimpleActionBlock","params":"front"}]]}
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"front"}]]]}
         },
         {
             "cmd": "text",
