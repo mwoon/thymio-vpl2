@@ -8,6 +8,7 @@ import "qrc:/thymio-vpl2"
 
 Page {
 
+    id: type2Ex
     anchors.fill: parent
 
     background : Rectangle {
@@ -25,6 +26,27 @@ Page {
 
 
     padding: 50
+
+    Button {
+        anchors.right: parent.right
+        anchors.top: parent.top
+        width: 80
+        height: 40
+        background: Rectangle {
+            color: "#30efff16"
+            border.color: "#a0efff16"
+            radius: 5
+        }
+        Image {
+            anchors.centerIn: parent
+            source: "qrc:/thymio-vpl2/icons/ic_connection_on_nonAR_white_24px.svg"
+        }
+
+      onClicked: {
+          vplPopup.open();
+      }
+    }
+
     ColumnLayout {
         anchors.fill: parent
         spacing: 20
@@ -97,6 +119,44 @@ Page {
 
         gameWindow.toggleDialogueBox(true);
         gameWindow.closeExerciseWindow();
+    }
+
+    Popup {
+
+        id: vplPopup
+        modal: true
+        closePolicy: Popup.NoAutoClose
+
+        width: parent.width
+        height:parent.height
+
+        background: Rectangle {
+            color: "transparent"
+        }
+
+        VplInterface {
+            id: vpl
+            anchors.fill: parent
+            Component.onCompleted: {
+                vpl.menu.clear();
+                vpl.menu.append({
+                                    "title": QT_TR_NOOP("Clear Program"),
+                                    "callback": "newProgram",
+                                    "whiteIcon": "qrc:/thymio-vpl2/icons/ic_new_white_24px.svg",
+                                    "blackIcon": "qrc:/thymio-vpl2/icons/ic_new_black_24px.svg"
+                                });
+                vpl.menu.append({
+                                    "title": QT_TR_NOOP("Back to Ada and Thymio"),
+                                    "callback": "closeVplPopup2",
+                                    "whiteIcon": "qrc:/thymio-vpl2/icons/ic_invert_colors_white_24px.svg",
+                                    "blackIcon": "qrc:/thymio-vpl2/icons/ic_invert_colors_black_24px.svg"
+                                });
+            }
+        }
+    }
+
+    function closePopup() {
+        vplPopup.close();
     }
 
     Component.onCompleted: {

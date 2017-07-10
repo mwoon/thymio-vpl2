@@ -188,6 +188,18 @@ Page {
         function restartExercise() {
             vplEditor.loadCode(code);
         }
+
+        function closeVplPopup1() {
+            type1Ex.closePopup();
+        }
+
+        function closeVplPopup2() {
+            type2Ex.closePopup();
+        }
+
+        function closeVplPopup3() {
+            type3Ex.closePopup();
+        }
     }
 
     Drawer {
