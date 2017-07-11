@@ -53,13 +53,19 @@ Page {
 
         Text {
             Layout.alignment: Qt.AlignCenter
+            Layout.leftMargin: 50
+            Layout.rightMargin: 200
+            Layout.preferredWidth: Screen.width - 300
             text: question
             font.pointSize: 24
+            wrapMode: Text.WordWrap
         }
 
         GridLayout {
             Layout.fillWidth: true
             Layout.fillHeight: true
+
+
             columnSpacing: 25
             rowSpacing: 25
             columns: 3
@@ -76,8 +82,9 @@ Page {
 
 
 
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
+
+                    width: Screen.width / 3 - 75
+                    height: Screen.height / 3
 
                     Component.onCompleted:  {
                         loadCode(program);

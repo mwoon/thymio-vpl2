@@ -261,7 +261,7 @@ Page {
             if(newStorySequence.activity)  {
                 type = "activity";
                 //file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                file = "/exercises/" + "E06.05" + ".json";
+                file = "/exercises/" + "E08.02" + ".json";
 
                 /*
                 for(var i = 0; i < newStorySequence.activity.length; i++) {
