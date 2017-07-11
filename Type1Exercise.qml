@@ -77,7 +77,7 @@ Page {
 
                 //Layout.fillWidth: true
                 Layout.preferredWidth: Screen.width / 2
-                Layout.preferredHeight: optionsList.count * 50
+                Layout.preferredHeight: optionsList.count * 100
                 spacing: 12
 
 
@@ -102,6 +102,7 @@ Page {
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
                             elide: Text.ElideRight
+                            wrapMode: Text.WordWrap
                         }
                         onClicked:  {
                             options.currentIndex = index;

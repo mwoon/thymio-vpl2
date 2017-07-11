@@ -115,9 +115,9 @@ Page {
             ListView {
                 id: options
 
-                //Layout.fillWidth: true
+                //Layout.fillHeight: true
                 Layout.preferredWidth: Screen.width / 2
-                Layout.preferredHeight: optionsList.count * 50
+                Layout.preferredHeight: optionsList.count * 100
                 spacing: 12
 
 
