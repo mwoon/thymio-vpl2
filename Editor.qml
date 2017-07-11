@@ -44,6 +44,7 @@ Item {
 		"PaletteBottomColorActionBlock",
 		"TopColorActionBlock",
 		"BottomColorActionBlock",
+		"MusicScoreBlock"
 	].map(function(name) {
 		var url = "blocks/" + name + ".qml";
 		var component = Qt.createComponent(url);
