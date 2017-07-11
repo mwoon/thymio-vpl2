@@ -1,0 +1,31 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E06.03"
+        },
+        {
+            "cmd": "ex",
+            "type": "type3",
+            "text": "E06.03",
+	    "answerList": [
+		"The program on top is slightly brighter.", 
+		"The program below is slightly brighter.", 
+		"They are the same.", 
+		"In the program on top, the right button has to be pressed. In the program below, the left button has to be pressed.", 
+		"In the program on top, the left button has to be pressed. In the program below, the right button has to be pressed.", 
+		"The program below will not work. Only the one on top works."
+	    ],
+	    "scoreList": [0, 0, 1, 0, 0, 0],
+	    "code1": 
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[32,0,1]}]]]}
+,
+	    "code2": 
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"TopColorActionBlock","params":[32,0,1]}]]]}
+        },
+        {
+            "cmd": "text",
+            "text": "post E06.03"
+        }
+    ]
+}

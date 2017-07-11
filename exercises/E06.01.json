@@ -2,16 +2,27 @@
     "list": [
         {
             "cmd": "text",
-            "text": "pre E01.01"
+            "text": "pre E06.01"
         },
         {
             "cmd": "ex",
             "type": "type1",
-            "text": "E01.01"
+            "text": "E06.01",
+	    "answerList": [
+		"When the button pointing behind is pressed, Thymio's top LEDs become green.", 
+		"When the button pointing left is pressed, Thymio's top LEDs become green.", 
+		"When the button pointing behind is pressed, Thymio's top LEDs become blue", 
+		"When the button pointing right is pressed, Thymio's bottom LEDs become green.", 
+		"When the button pointing in front is pressed, Thymio's bottom LEDs become green.", 
+		"When the button pointing in front is pressed, Thymio's top LEDs become green."
+	    ],
+	    "scoreList": [0, 0, 0, 0, 0, 1],
+	    "code": 
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["ON","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[0,32,0]}]]]}
         },
         {
             "cmd": "text",
-            "text": "post E01.01"
+            "text": "post E06.01"
         }
     ]
 }

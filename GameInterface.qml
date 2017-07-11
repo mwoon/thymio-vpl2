@@ -261,7 +261,7 @@ Page {
             if(newStorySequence.activity)  {
                 type = "activity";
                 //file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                file = "/exercises/" + "E05.05" + ".json";
+                file = "/exercises/" + "E06.05" + ".json";
 
                 /*
                 for(var i = 0; i < newStorySequence.activity.length; i++) {
@@ -280,8 +280,8 @@ Page {
                     print('HEADERS_RECEIVED')
                 } else if(xhr.readyState === XMLHttpRequest.DONE) {
                     print('DONE');
-                    console.log(xhr.status);
-                    console.log(xhr.responseText.toString());
+                    //console.log(xhr.status);
+                    //console.log(xhr.responseText.toString());
                     var a = JSON.parse(xhr.responseText.toString());
                     for(var i = 0; i < a.list.length; i++) {
                         part = {};
