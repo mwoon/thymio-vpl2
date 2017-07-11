@@ -8,6 +8,7 @@
             "cmd": "ex",
             "type": "type4",
             "text": "E01.01",
+	    "method": "fixed",
 	    "solution":
 {"mode":"simple","scene":[]}
 , 

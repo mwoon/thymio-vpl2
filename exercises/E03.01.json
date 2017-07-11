@@ -8,9 +8,12 @@
             "cmd": "ex",
             "type": "type4",
             "text": "E03.01",
-	    "answerList": ["Thymio moves forwards.", "Thymio moves backwards.", "Thymio turns left on the spot.", "Thymio turns right on the spot.", "Thymio turns right.", "Thymio turns left."],
-	    "scoreList": [1, 0, 0, 0, 0, 0],
-	    "code": {"mode":"simple","scene":[[null,{"definition":"MotorSimpleActionBlock","params":"right"},{"definition":"PaletteTopColorActionBlock","params":[32,18,13]},{"definition":"PaletteBottomColorActionBlock","params":[28,0,6]}],[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","ON"]},{"definition":"MotorSimpleActionBlock","params":"frontLeft"}],[{"definition":"TapEventBlock","params":null},{"definition":"PaletteTopColorActionBlock","params":[4,29,32]}],[null,{"definition":"MotorActionBlock","params":[-500,0]}]]}
+	    "method": "fixed",
+	    "solution":
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["ON","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"left"}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","ON","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","ON"]}],[{"definition":"MotorSimpleActionBlock","params":"right"}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","ON","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"back"}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"front"}]],[[{"definition":"ProxEventBlock","params":["FAR","FAR","FAR","FAR","FAR","FAR","FAR"]}],[{"definition":"PaletteBottomColorActionBlock","params":[32,1,3]}]]]}
+, 
+	    "code": 
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["ON","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"left"}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","ON","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]],[[],[{"definition":"MotorSimpleActionBlock","params":"front"}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","ON"]}],[{"definition":"MotorSimpleActionBlock","params":"right"}]],[[],[{"definition":"MotorSimpleActionBlock","params":"right"}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","ON","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"back"}]],[[],[{"definition":"PaletteTopColorActionBlock","params":[5,29,32]}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"front"}]],[[],[{"definition":"PaletteBottomColorActionBlock","params":[0,27,5]}]],[[{"definition":"ProxEventBlock","params":["FAR","FAR","FAR","FAR","FAR","FAR","FAR"]}],[{"definition":"PaletteBottomColorActionBlock","params":[32,1,3]}]]]}
         },
         {
             "cmd": "text",
@@ -18,3 +21,7 @@
         }
     ]
 }
+
+
+
+

@@ -8,9 +8,12 @@
             "cmd": "ex",
             "type": "type4",
             "text": "E02.01",
-	    "answerList": ["Thymio moves forwards.", "Thymio moves backwards.", "Thymio turns left on the spot.", "Thymio turns right on the spot.", "Thymio turns right.", "Thymio turns left."],
-	    "scoreList": [1, 0, 0, 0, 0, 0],
-	    "code": {"mode":"simple","scene":[[null,{"definition":"MotorSimpleActionBlock","params":"right"},{"definition":"PaletteTopColorActionBlock","params":[32,18,13]},{"definition":"PaletteBottomColorActionBlock","params":[28,0,6]}],[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","ON"]},{"definition":"MotorSimpleActionBlock","params":"frontLeft"}],[{"definition":"TapEventBlock","params":null},{"definition":"PaletteTopColorActionBlock","params":[4,29,32]}],[null,{"definition":"MotorActionBlock","params":[-500,0]}]]}
+	    "method": "fixed",
+	    "solution":
+{"mode":"simple","scene":[]}
+, 
+	    "code": 
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]},{"definition":"ButtonsEventBlock","params":["ON","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"left"}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","CLOSE"]},{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","DISABLED"]},{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","DISABLED"]},{"definition":"ClapEventBlock","params":null}],[{"definition":"PaletteTopColorActionBlock","params":[8,23,32]}]],[[],[{"definition":"PaletteBottomColorActionBlock","params":[5,32,3]},{"definition":"PaletteTopColorActionBlock","params":[4,0,15]}]],[[],[{"definition":"PaletteBottomColorActionBlock","params":[32,13,4]},{"definition":"MotorSimpleActionBlock","params":"right"},{"definition":"MotorSimpleActionBlock","params":"left"},{"definition":"MotorSimpleActionBlock","params":"backRight"}]]]}
         },
         {
             "cmd": "text",

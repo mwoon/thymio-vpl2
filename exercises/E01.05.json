@@ -1,0 +1,23 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E01.01"
+        },
+        {
+            "cmd": "ex",
+            "type": "type4",
+            "text": "E01.01",
+	    "method": "fixed",
+	    "solution":
+{"mode":"simple","scene":[]}
+, 
+	    "code": 
+{"mode":"simple","scene":[[[],[{"definition":"MotorActionBlock","params":[0,0]}]]]}
+        },
+        {
+            "cmd": "text",
+            "text": "post E01.01"
+        }
+    ]
+}
