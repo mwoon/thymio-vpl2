@@ -7,6 +7,8 @@ Item {
 	id: scene
 
 	property alias scale: rows.scale
+	property int eventCountMax: 5
+	property int actionCountMax: 5
 
 	/*
 		In simple mode, there is only one thread with only one state.
@@ -62,6 +64,7 @@ Item {
 
 		anchors.centerIn: parent
 
+		property int maxEventWidth: 0
 		leftMargin: constants.rowSpacing
 		width: leftMargin + contentWidth + rightMargin
 		rightMargin: constants.rowSpacing
@@ -94,10 +97,23 @@ Item {
 			contentWidth = width;
 		}
 
+		function updateMaxEventWidth() {
+			var newMaxEventWidth = 0;
+			for (var i = 0; i < model.count; ++i) {
+				var row = model.get(i);
+				newMaxEventWidth = Math.max(newMaxEventWidth, row.eventWidth);
+			}
+			maxEventWidth = newMaxEventWidth;
+		}
+
 		Component {
 			id: rowComponent
 			TransitionRow {
 				nextState: astState
+				eventCountMax: scene.eventCountMax
+				actionCountMax: scene.actionCountMax
+				anchors.left: parent ? parent.left : undefined
+				anchors.leftMargin: rows.maxEventWidth - eventWidth
 
 				property Item prev
 				property Item next
@@ -106,14 +122,22 @@ Item {
 				Component.onCompleted: {
 					rows.model.append(this);
 					rows.updateWidth();
+					rows.updateMaxEventWidth();
 				}
 				Component.onDestruction: {
 					if (index < rows.model.count) {
 						rows.model.remove(index, 1);
 						rows.updateWidth();
+						rows.updateMaxEventWidth();
 					}
 				}
-				onWidthChanged: rows.updateWidth()
+				onEventWidthChanged: {
+					rows.updateMaxEventWidth();
+				}
+
+				onWidthChanged: {
+					rows.updateWidth();
+				}
 
 				onAstChanged: {
 					var last = next === null;

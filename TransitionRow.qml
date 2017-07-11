@@ -4,8 +4,10 @@ import QtQuick.Layouts 1.3
 
 Item {
 	id: row
-	property int eventCountMax: -1
-	property int actionCountMax: -1
+	property int eventCountMax
+	property int actionCountMax
+
+	property alias eventWidth: events.width
 
 	property var nextState
 	property var ast: ({
@@ -72,11 +74,8 @@ Item {
 		y: constants.rowPaddingV
 		spacing: constants.blockSpacing
 
-		TransitionBlocks {
-			id: events
-			typeRestriction: "event"
-		}
 		Block {
+			visible: eventCountMax === -1 || eventCountMax > events.ast.length
 			canDelete: false
 			typeRestriction: "event"
 			onParamsChanged: {
@@ -88,6 +87,11 @@ Item {
 				definition = null;
 				params = undefined;
 			}
+		}
+		TransitionBlocks {
+			id: events
+			typeRestriction: "event"
+			layoutDirection: Qt.RightToLeft
 		}
 		ColumnLayout {
 			spacing: constants.columnSignSpacing
@@ -106,6 +110,7 @@ Item {
 			typeRestriction: "action"
 		}
 		Block {
+			visible: actionCountMax === -1 || actionCountMax > actions.ast.length
 			canDelete: false
 			typeRestriction: "action"
 			onParamsChanged: {
