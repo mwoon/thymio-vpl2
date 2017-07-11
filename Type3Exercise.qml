@@ -142,6 +142,7 @@ Page {
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter
                             elide: Text.ElideRight
+                            wrapMode: Text.WordWrap
                         }
                         onClicked:  {
                             options.currentIndex = index;
