@@ -60,20 +60,44 @@ Page {
 
             Editor {
                 id: vplEditorTop
+                //property alias fillHeight: Layout.fillHeight
                 Layout.preferredWidth: parent.width * 2 / 5
-                Layout.preferredHeight: width * 2 / 3
+                Layout.preferredHeight: parent.width  / 5
                 enabled: false
                 actionsVisible: false
                 eventsVisible: false
+                function fillHeight() {
+                    vplEditorTop.Layout.fillHeight = true;
+                }
+                Rectangle {
+                    z:-1
+                    anchors.fill: parent
+                    color: "#30ffffff"
+                    border.color: "#50ffffff"
+                    radius: 5
+                }
             }
 
             Editor {
                 id: vplEditorBot
+                //property alias fillHeight: Layout.fillHeight
                 Layout.preferredWidth: parent.width * 2 / 5
-                Layout.preferredHeight: width * 2 / 3
+                Layout.preferredHeight: parent.width  / 5
                 enabled: false
                 actionsVisible: false
                 eventsVisible: false
+
+                function fillHeight() {
+                    vplEditorBot.Layout.fillHeight = true;
+                }
+
+                Rectangle {
+                    z:-1
+                    anchors.fill: parent
+                    color: "#30ffffff"
+                    border.color: "#50ffffff"
+                    radius: 5
+                }
             }
         }
 
@@ -190,6 +214,17 @@ Page {
         for(var i = 0; i < answerList.length; i++) {
             optionsList.append({"name": answerList[i], "callback": "completeExercise"})
         }
+        var parsed1 = JSON.parse(code1);
+        var parsed2 = JSON.parse(code2);
+        if(parsed1.scene.length > parsed2.scene.length) {
+            vplEditorTop.fillHeight();
+        } else if (parsed2.scene.length > parsed1.scene.length) {
+            vplEditorBot.fillHeight();
+        } else {
+            vplEditorBot.fillHeight();
+            vplEditorTop.fillHeight();
+        }
+
         vplEditorTop.loadCode(code1);
         vplEditorBot.loadCode(code2);
     }
