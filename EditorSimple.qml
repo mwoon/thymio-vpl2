@@ -49,7 +49,7 @@ Item {
 	}
 
 	function deleteBlock(block) {
-		block.destroy();
+        block.destroy();
 	}
 
 	QtObject {
@@ -141,7 +141,8 @@ Item {
 			drop.accepted = true;
 			var definition = blockDragPreview.definition;
 			var params = definition.defaultParams;
-			blockEditor.openBlock(source, definition, params);
+            blockEditor.openBlock(source, definition, params);
+            scene.astChanged();
 		} else {
 			drop.accepted = false;
 		}

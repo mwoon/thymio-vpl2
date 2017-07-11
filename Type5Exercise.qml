@@ -10,9 +10,11 @@ Page {
 
     id: type5Ex
     anchors.fill: parent
+    clip:true
 
     //a sample solution
     property var solution;
+    property var method;
 
     VplInterface {
         id: vpl
@@ -43,21 +45,59 @@ Page {
 
     function completeExercise(code) {
 
-        //simulate and check behaviour
+        if(method === "fixed") {
+            //For now very stupid checking
+            var score = 0.0;
+            var sol = JSON.parse(solution);
+            if(JSON.stringify(code.scene) === JSON.stringify(sol.scene)) {
+                score = 1.0;
+            }
 
-        //For now very stupid checking
-        var score = 0.0;
-        var sol = JSON.parse(solution);
-        if(JSON.stringify(code.scene) === JSON.stringify(sol.scene)) {
-            score = 1.0;
+            stote.completeExercise(score);
+            gameWindow.next = true;
+
+            gameWindow.toggleDialogueBox(true);
+            gameWindow.closeExerciseWindow();
+        } else if(method === "sim") {
+            //simulate and check behaviour
+            submitted = true;
+            var events = vpl.thymio.events;
+            var source = vpl.thymio.source;
+
+            //TODO for now it's just a fixed simulation world, but should load it from code
+            var scenario = {
+                duration: 5,
+                worldSize: Qt.vector2d(100, 100),
+                thymio : { position: Qt.vector2d(20, 50), angle: 0 },
+                walls: [ { position: Qt.vector2d(80, 50), angle: Math.pi / 2, size: Qt.vector3d(20, 2, 10), color: "Blue" } ]
+            }
+            console.log("running simulation");
+            var simError = simulator.runProgram(scenario, events, source);
+            if (simError) {
+                console.log("simulation error: " + simError)
+            } else {
+                console.log("simulation complete");
+            }
         }
-
-        stote.completeExercise(score);
-        gameWindow.next = true;
-
-        gameWindow.toggleDialogueBox(true);
-        gameWindow.closeExerciseWindow();
     }
 
+    Connections {
+        target: simulator
+        onSimulationCompleted: {
+            console.log(positionLog + " " + sensorLog);
+            if(submitted) {
+                //if submitted and simulation completed -> use this result as the result
+
+                //close the exercise
+                gameWindow.next = true;
+
+                gameWindow.toggleDialogueBox(true);
+                gameWindow.closeExerciseWindow();
+            }
+
+
+        }
+
+    }
 
 }

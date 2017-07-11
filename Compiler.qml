@@ -21,8 +21,7 @@ import QtQuick 2.7
 	When a transition is taken, an AESL custom event is triggered so the UI can show it.
 */
 Item {
-	id: compiler
-
+    id: compiler
 	/*
 		// each thread's start state, maximum 2^^16 elements
 		input startStates: State[]
@@ -79,13 +78,15 @@ Item {
 
 	Timer {
 		id: timer
-		interval: 0
+        interval: 0
 		onTriggered: {
 			try {
+                console.log("compiling program")
 				var result = compile(ast);
 				output = result.output;
 				internal = result.internal;
 			} catch(error) {
+                console.log("error compiling");
 				if (typeof(error) === "string") {
 					output = {
 						error: error,

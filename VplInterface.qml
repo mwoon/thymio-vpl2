@@ -25,6 +25,7 @@ Page {
     property alias menu: menuItems
     property alias editor: vplEditor
     property var code;
+    property var thymio: thymio
 
     EditorTitleBar {
         id: vplEditorTitleBar
@@ -361,6 +362,8 @@ Page {
                 setVariable("motor.left.target", 0);
                 setVariable("motor.right.target", 0);
             } else {
+                events = vplEditor ? vplEditor.compiler.output.events : {};
+                source: playing ? vplEditor.compiler.output.script : "";
                 vplEditor.saveProgram(autosaveName);
             }
         }

@@ -8,6 +8,7 @@
             "cmd": "ex",
             "type": "type5",
             "text": "E04.05",
+	    "method": "fixed",
 	    "solution": 
 {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"front"}]]]}
         },

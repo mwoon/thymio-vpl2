@@ -5,6 +5,7 @@
 #include "thymio-vpl2.h"
 #include "zpdes.h"
 #include "storyteller.h"
+#include "simulator.h"
 
 int main(int argc, char *argv[])
 {
@@ -25,6 +26,9 @@ int main(int argc, char *argv[])
 
     StoryTeller* stote{new StoryTeller()};
     engine.rootContext()->setContextProperty("stote", stote);
+
+    Simulator* simulator{new Simulator()};
+    engine.rootContext()->setContextProperty("simulator", simulator);
 
     engine.load(QUrl(QStringLiteral("qrc:/Startup.qml")));
 

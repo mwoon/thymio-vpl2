@@ -17,10 +17,11 @@ Item {
 		}
 	}
 
+    /*
 	Simulator {
 		id: simulator
 		onSimulationCompleted: console.log(positionLog + " " + sensorLog);
-	}
+    }*/
 
 	onNodeChanged: {
 		setVariables();
@@ -52,7 +53,8 @@ Item {
 	}
 
 	function setProgram() {
-		/*
+
+        /*
 		// uncomment this section for simulating the execution at each run
 		// TODO: put simulation in a thread
 		var scenario = {
@@ -61,10 +63,15 @@ Item {
 			thymio : { position: Qt.vector2d(20, 50), angle: 0 },
 			walls: [ { position: Qt.vector2d(80, 50), angle: Math.pi / 2, size: Qt.vector3d(20, 2, 10), color: "Blue" } ]
 		}
-		var simError = simulator.runProgram(scenario, events, source);
-		if (simError)
+        console.log("running simulation");
+        var simError = simulator.runProgram(scenario, events, source);
+        if (simError) {
 			console.log("simulation error: " + simError)
-		*/
+        } else {
+            console.log("simulation complete");
+        }
+        */
+
 		if (node) {
 			error = node.setProgram(events, source);
 		}

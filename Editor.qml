@@ -25,6 +25,12 @@ Item {
 		ast: scene.ast
 	}
 
+    onBlockEditorVisibleChanged: {
+        if(!blockEditorVisible) {
+            scene.astChanged();
+        }
+    }
+
 	property var definitions: [
 		"ButtonsEventBlock",
 		"ProxEventBlock",

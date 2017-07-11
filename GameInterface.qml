@@ -430,9 +430,25 @@ Page {
         } else if (content.type === "type3") {
             exLoader.setSource("Type3Exercise.qml", { "answerList": content.answerList, "scoreList": content.scoreList, "code1" : JSON.stringify(content.code1), "code2" : JSON.stringify(content.code2)  });
         } else if(content.type === "type4") {
-            exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.solution), "code" : JSON.stringify(content.code) });
+            if(!content.method) {
+                content.method = "fixed";
+            }
+
+            if(content.method === "fixed") {
+                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.solution), "code" : JSON.stringify(content.code), "method": content.method});
+            } else if (content.method === "sim") {
+                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.scene), "code" : JSON.stringify(content.code), "method": content.method});
+            }
         } else if(content.type === "type5") {
-            exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.solution) });
+            if(!content.method) {
+                content.method = "fixed";
+            }
+
+            if(content.method === "fixed") {
+                exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.solution), "method": content.method });
+            } else if (content.method === "sim") {
+                exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.scene), "method": content.method });
+            }
         }
 
         textOutput.append({"output": content.text});
