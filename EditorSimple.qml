@@ -48,6 +48,8 @@ Item {
 			row.deserialize(data);
 			row = row.next;
 		});
+        rows.positionViewAtEnd();
+        rows.positionViewAtBeginning();
 	}
 
 	function deleteBlock(block) {
