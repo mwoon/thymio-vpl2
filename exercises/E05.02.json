@@ -1,0 +1,33 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E05.02"
+        },
+        {
+            "cmd": "ex",
+            "type": "type2",
+            "text": "E05.02",
+	    "answerList": [
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","CLOSE"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]]]},
+
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]]]},
+
+{"mode":"simple","scene":[[[{"definition":"ProxGroundEventBlock","params":["CLOSE","CLOSE"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]]]},
+
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["ON","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]]]},
+
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]]]},
+
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","FAR","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]]]}
+
+	    ],
+	    "scoreList": [0, 1, 0, 0, 0, 0],
+	    "description": "We need a program that will make Thymio stop when he senses something in front of him!"
+        },
+        {
+            "cmd": "text",
+            "text": "post E05.02"
+        }
+    ]
+}

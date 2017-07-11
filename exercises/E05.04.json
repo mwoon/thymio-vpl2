@@ -1,0 +1,22 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E05.04"
+        },
+        {
+            "cmd": "ex",
+            "type": "type4",
+            "text": "E05.04",
+	    "method": "fixed",
+	    "solution": 
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]]]},
+	    "code": 
+{"mode":"simple","scene":[[[],[{"definition":"MotorSimpleActionBlock","params":"stop"}]]]}
+        },
+        {
+            "cmd": "text",
+            "text": "post E05.04"
+        }
+    ]
+}

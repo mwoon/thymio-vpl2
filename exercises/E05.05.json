@@ -1,0 +1,20 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E05.05"
+        },
+        {
+            "cmd": "ex",
+            "type": "type5",
+            "text": "E05.05",
+	    "method": "fixed",
+	    "solution": 
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]]]}
+        },
+        {
+            "cmd": "text",
+            "text": "post E05.05"
+        }
+    ]
+}
