@@ -15,6 +15,7 @@ Page {
     //a sample solution
     property var solution;
     property var method;
+    property var checkfor;
 
     VplInterface {
         id: vpl
@@ -43,15 +44,42 @@ Page {
             }
     }
 
-    function completeExercise(code) {
+    function completeExercise(prog) {
 
         if(method === "fixed") {
             //For now very stupid checking
             var score = 0.0;
             var sol = JSON.parse(solution);
-            if(JSON.stringify(code.scene) === JSON.stringify(sol.scene)) {
+            if(JSON.stringify(prog.scene) === JSON.stringify(sol.scene)) {
                 score = 1.0;
+            } else if (checkfor && checkfor.length > 0) {
+            console.log("checking variable solutions");
+            for(var i = 0; i < checkfor.length; i++) {
+                if(checkfor[i].type === "buttoncolor") {
+                    for(var j = 0; j < prog.scene.length; j++) {
+                        //prog.scene[j][0] = events, prog.scene[j][1] = actions
+                        //checks if this row contains the correct button
+                        if(prog.scene[j][0].length === 1 && prog.scene[j][0][0].definition === "ButtonsEventBlock" &&  JSON.stringify(prog.scene[j][0][0].params) === JSON.stringify(checkfor[i].button)) {
+                            //one of the actions has to contain the correct color
+                            for(var actions = 0; actions < prog.scene[j][1].length; actions++) {
+                                if(prog.scene[j][1][actions].definition === "PaletteTopColorActionBlock" || prog.scene[j][1][actions].definition === "TopColorActionBlock") {
+                                    var r = prog.scene[j][1][actions].params[0];
+                                    var g = prog.scene[j][1][actions].params[1];
+                                    var b = prog.scene[j][1][actions].params[2];
+
+                                    if(checkfor[i].color === "red") {
+                                        console.log(prog.scene[j][1][actions].params);
+                                        if(r > g && r > b && ((g - b >= 0 && g - b < 4) || (b - g >= 0 && b - g < 4))) {
+                                            score = 1.0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
+        }
 
             stote.completeExercise(score);
             gameWindow.next = true;

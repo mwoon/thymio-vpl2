@@ -114,4 +114,5 @@ DISTFILES += \
     $$PWD/Type2Exercise.qml \
     $$PWD/Type3Exercise.qml \
     $$PWD/Type4Exercise.qml \
-    $$PWD/Type5Exercise.qml
+    $$PWD/Type5Exercise.qml \
+    $$PWD/assets/island_1.png

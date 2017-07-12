@@ -443,5 +443,6 @@
         <file>Type4Exercise.qml</file>
         <file>Type5Exercise.qml</file>
         <file>exercises/E02.01.json</file>
+        <file>assets/island_1.png</file>
     </qresource>
 </RCC>
