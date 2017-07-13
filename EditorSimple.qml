@@ -165,7 +165,6 @@ Item {
 			var definition = blockDragPreview.definition;
 			var params = definition.defaultParams;
             blockEditor.openBlock(source, definition, params);
-            scene.astChanged();
 		} else {
 			drop.accepted = false;
 		}
