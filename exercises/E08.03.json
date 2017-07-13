@@ -1,0 +1,31 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E08.03"
+        },
+        {
+            "cmd": "ex",
+            "type": "type3",
+            "text": "E08.03",
+	    "answerList": [
+		"The colors are different.", 
+		"In both programs Thymio's LEDs will be yellow when the right button is pressed.", 
+		"In the program on top, Thymio's LEDs will be yellow if the right button is pressed and in the program below they will be blue.", 
+		"In both programs Thymio's LEDs will be blue when the right button is pressed.", 
+		"In both programs, when the right button is pressed, sometimes the LEDs will be blue and sometimes they will be yellow.", 
+		"In the program on top, Thymio's LEDs will be blue if the right button is pressed and in the program below they will be yellow."
+	    ],
+	    "scoreList": [0, 0, 0, 0, 0, 1],
+	    "code1": 
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[2,0,31]}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,32,4]}]]]}
+,
+	    "code2": 
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,32,4]}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[2,0,31]}]]]}
+        },
+        {
+            "cmd": "text",
+            "text": "post E08.03"
+        }
+    ]
+}

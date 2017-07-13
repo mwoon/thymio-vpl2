@@ -23,8 +23,24 @@ Page {
     Rectangle {
         //Box to hold the background
         id: bgrd
-        color: "steelblue"
+        //color: "steelblue"
         anchors.fill: parent
+
+        Image {
+            id:backgroundImage
+            //x: -1000
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            //source: "/assets/island_1.png"
+
+            Behavior on x {
+                NumberAnimation {
+                    id:bgrdAnimation
+                    duration: 500
+                    easing.type: Easing.OutQuad
+                }
+            }
+        }
     }
 
     DialogueBox {
@@ -206,6 +222,10 @@ Page {
                     handleScene(part.content.scene);
                 } else if (part.content.cmd === "ex") {
                     handleEx(part.content);
+                } else if (part.content.cmd === "bgImage") {
+                    handleBgImage(part.content);
+                } else if (part.content.cmd === "dialogue") {
+                    handleDialogue(part.content.speaker, part.content.text);
                 }
             }
 
@@ -261,7 +281,7 @@ Page {
             if(newStorySequence.activity)  {
                 type = "activity";
                 //file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                file = "/exercises/" + "E08.02" + ".json";
+                file = "/exercises/" + "E08.05" + ".json";
 
                 /*
                 for(var i = 0; i < newStorySequence.activity.length; i++) {
@@ -408,8 +428,29 @@ Page {
         textOutput.append({"output": text});
     }
 
+    function handleDialogue(speaker, text) {
+        dialogueBox.speakerName = speaker;
+        dialogueBox.dialogue = text;
+    }
+
     function handleBgColor(color) {
-        bgrd.color = color;
+        //bgrd.color = color;
+    }
+
+    function handleBgImage(scene) {
+        if(scene.anim) {
+            bgrdAnimation.duration = scene.duration;
+            if(scene.easing) {
+                if(scene.easing === "outback") {
+                    bgrdAnimation.easing.type = Easing.OutBack;
+                } else if(scene.easing === "outquad") {
+                    bgrdAnimation.easing.type = Easing.OutQuad;
+                }
+            }
+
+        }
+        backgroundImage.source = scene.bgImage;
+        backgroundImage.x = scene.x;
     }
 
     function handleScene(scene) {
@@ -418,6 +459,10 @@ Page {
                 handleText(scene[i].text);
             } else if (scene[i].cmd === "bg") {
                 handleBgColor(scene[i].color);
+            } else if (scene[i].cmd === "bgImage") {
+                handleBgImage(scene[i]);
+            } else if (scene[i].cmd === "dialogue") {
+                handleDialogue(scene[i].speaker, scene[i].text);
             }
         }
     }
@@ -435,7 +480,7 @@ Page {
             }
 
             if(content.method === "fixed") {
-                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.solution), "code" : JSON.stringify(content.code), "method": content.method});
+                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.solution), "code" : JSON.stringify(content.code), "method": content.method, "checkfor": content.checkfor});
             } else if (content.method === "sim") {
                 exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.scene), "code" : JSON.stringify(content.code), "method": content.method});
             }
@@ -445,7 +490,7 @@ Page {
             }
 
             if(content.method === "fixed") {
-                exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.solution), "method": content.method });
+                exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.solution), "method": content.method, "checkfor": content.checkfor });
             } else if (content.method === "sim") {
                 exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.scene), "method": content.method });
             }

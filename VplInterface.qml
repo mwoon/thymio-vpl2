@@ -169,6 +169,7 @@ Page {
         }
         function returnToPreviousView() {
             startupWindow.showHome();
+            stote.resetScript();
         }
 
         function completeExercise4() {
