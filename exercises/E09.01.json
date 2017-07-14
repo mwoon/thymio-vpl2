@@ -2,16 +2,27 @@
     "list": [
         {
             "cmd": "text",
-            "text": "pre E01.01"
+            "text": "pre E09.01"
         },
         {
             "cmd": "ex",
             "type": "type1",
-            "text": "E01.01"
+            "text": "E09.01",
+	    "answerList": [
+		"When the leftmost and rightmost sensors in front don't detect anything, Thymio's top LEDs become blue.", 
+		"When all the sensors between the leftmost and rightmost sensors in front detect something, Thymio's top LEDs become blue.", 
+		"When the leftmost and rightmost sensors in front detect something, Thymio's top LEDs become blue.", 
+		"When the leftmost or rightmost sensors in front detect something, Thymio's top LEDs become blue.", 
+		"When all the sensors between the leftmost and rightmost sensors in front don't detect anything, Thymio's top LED's become blue.", 
+		"When any of the sensors between the leftmost and rightmost sensors in front detect anything, Thymio's top LEDs become blue."
+	    ],
+	    "scoreList": [0, 0, 1, 0, 0, 0],
+	    "code": 
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[1,0,31]}]]]}
         },
         {
             "cmd": "text",
-            "text": "post E01.01"
+            "text": "post E09.01"
         }
     ]
 }

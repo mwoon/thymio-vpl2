@@ -11,7 +11,7 @@
 	    "answerList": [
 		"When the button pointing left is pressed, Thymio's top LEDs become yellow and when the button pointing in front is pressed, Thymio's top LEDs become light blue.", 
 		"When the button pointing behind is pressed, Thymio's top LEDs become light blue and when the button pointing right is pressed, Thymio's top LEDs become yellow.", 
-		"When the button pointing right is pressed, Thymio's top LEDs become light blue and when the button pointing in front is pressed, Thymio's top LEDs become yellow", 
+		"When the button pointing right is pressed, Thymio's top LEDs become light blue and when the button pointing in front is pressed, Thymio's top LEDs become yellow.", 
 		"When the button pointing left is pressed, Thymio's top LEDs become light blue and when the button pointing in front is pressed, Thymio's top LEDs become yellow.", 
 		"When the button pointing behind is pressed, Thymio's top LED's become yellow and when the button pointing right is pressed, Thymio's top LEDs become light blue.", 
 		"When the button pointing behind is pressed, Thymio's top LED's become yellow and when the button pointing left is pressed, Thymio's top LEDs become light blue."
