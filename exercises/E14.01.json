@@ -9,16 +9,16 @@
             "type": "type1",
             "text": "E14.01",
 	    "answerList": [
-		"", 
-		"", 
-		"", 
-		"", 
-		"", 
-		""
+		"When all three sensors in the middle in front detect something, Thymio's top LEDs become blue. When the second sensor from the left in front does not detect anything but the right sensor behind Thymio does, his bottom LEDs become blue.", 
+		"When any of the three sensors in the middle in front detect something, Thymio's bottom LEDs become blue. When the second sensor from the left in front does not detect anything or the right sensor behind Thymio does, his top LEDs become blue.", 
+		"When all three sensors in the middle in front detect something, Thymio's bottom LEDs become blue. When the second sensor from the left in front detects something but the right sensor behind Thymio does not, his top LEDs become blue.", 
+		"When all three sensors in the middle in front detect nothing, Thymio's bottom LEDs become blue. When the second sensor from the left in front detects something but the right sensor behind Thymio does not, his top LEDs become blue.", 
+		"When all three sensors in the middle in front detect something, Thymio's bottom LEDs become blue. When the second sensor from the left in front does not detect anything but the right sensor behind Thymio does, his top LEDs become blue.", 
+		"When any of the three sensors in the middle in front detect nothing, Thymio's bottom LEDs become blue. When the second sensor from the left in front detects something or the right sensor behind Thymio does not, his top LEDs become blue."
 	    ],
-	    "scoreList": [0, 0, 0, 0, 0, 0],
+	    "scoreList": [0, 0, 0, 0, 1, 0],
 	    "code": 
-
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","CLOSE","CLOSE","CLOSE","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteBottomColorActionBlock","params":[1,0,31]}]],[[{"definition":"ProxEventBlock","params":["DISABLED","FAR","DISABLED","DISABLED","DISABLED","DISABLED","CLOSE"]}],[{"definition":"PaletteTopColorActionBlock","params":[3,0,31]}]]]}
         },
         {
             "cmd": "text",
