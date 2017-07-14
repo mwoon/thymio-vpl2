@@ -137,7 +137,8 @@ Page {
                         }
                         contentItem: Text {
                             text: control.text
-                            font: control.font
+                            //font: control.font
+                            font.pointSize: 14
                             color:  "#efff16"
                             horizontalAlignment: Text.AlignHCenter
                             verticalAlignment: Text.AlignVCenter

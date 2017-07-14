@@ -16,6 +16,7 @@ Page {
     property var solution;
     property var method;
     property var checkfor;
+    property var submitted;
 
     VplInterface {
         id: vpl
