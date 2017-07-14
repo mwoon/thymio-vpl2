@@ -9,16 +9,16 @@
             "type": "type1",
             "text": "E09.01",
 	    "answerList": [
-		"When the leftmost and rightmost sensors in front don't detect anything, Thymio's top LEDs become blue.", 
-		"When all the sensors between the leftmost and rightmost sensors in front detect something, Thymio's top LEDs become blue.", 
-		"When the leftmost and rightmost sensors in front detect something, Thymio's top LEDs become blue.", 
-		"When the leftmost or rightmost sensors in front detect something, Thymio's top LEDs become blue.", 
-		"When all the sensors between the leftmost and rightmost sensors in front don't detect anything, Thymio's top LED's become blue.", 
-		"When any of the sensors between the leftmost and rightmost sensors in front detect anything, Thymio's top LEDs become blue."
+		"When all the sensors except the second from the left are not covered, Thymio's top LEDs become pink and when all the sensors except the rightmost are not covered, Thymio's top LEDs become red.", 
+		"When all the sensors except the second from the left are covered, Thymio's top LEDs become pink and when all the sensors except the rightmost are covered, Thymio's top LEDs become red.", 
+		"When the second sensor from the left is covered, Thymio's top LEDs become pink and when the rightmost sensor is covered, Thymio's top LEDs become red.", 
+		"When the second sensor from the left is not covered, Thymio's top LEDs become pink and when the rightmost sensor is not covered, Thymio's top LEDs become red.", 
+		"When the rightmost sensor is covered, Thymio's top LEDs become pink and when the second sensor from the left is covered, Thymio's top LEDs become red.", 
+		"When the rightmost sensor is not covered, Thymio's top LEDs become pink and when the second sensor from the left is not covered, Thymio's top LEDs become red."
 	    ],
 	    "scoreList": [0, 0, 1, 0, 0, 0],
 	    "code": 
-{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[1,0,31]}]]]}
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,0,26]}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[32,1,0]}]]]}
         },
         {
             "cmd": "text",

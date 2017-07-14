@@ -9,19 +9,19 @@
             "type": "type3",
             "text": "E09.03",
 	    "answerList": [
-		"If the second sensor on the left stays covered, Thymio will not change his top LEDs to green if the left most sensor is uncovered.", 
-		"They are the same.", 
-		"In the program on top, Thymio will only change his top LEDs to green once.", 
-		"In the program on top, Thymio will never change his top LEDs to green.", 
-		"In the program below, Thymio will only change his LEDs to green if the second sensor from the left is uncovered and then covered again.", 
-		"In the program on top, it is possible for Thymio to change his top LEDs to green even if the second sensor from the left stays covered."
+		"In the program on top, Thymio's LEDs change color when the sensors become uncovered and in the program below Thymio's LEDS change color when the sensors become covered.", 
+		"In the below, Thymio's LEDs change color when the sensors become uncovered and in the program on top Thymio's LEDS change color when the sensors become covered.", 		
+		"In the program below, Thymio's LEDs will only become green.", 
+		"In the program below, Thymio's LEDs will stay green as long as the rightmost sensor is uncovered.", 
+		"In the program below, Thmymio's LEDs will stay blue as long as the middle sensor is uncovered.", 
+		"In the program below, Thymio's top LEDs can't change their color."
 	    ],
-	    "scoreList": [1, 0, 0, 0, 0, 0],
+	    "scoreList": [0, 1, 0, 0, 0, 0],
 	    "code1": 
-{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[4,31,0]}]],[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,20,0]}]]]}
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[1,32,0]}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[2,0,31]}]]]}
 ,
 	    "code2": 
-{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["FAR","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[4,31,0]}]],[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,20,0]}]]]}
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","FAR","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[1,32,0]}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","FAR","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[2,0,31]}]]]}
         },
         {
             "cmd": "text",

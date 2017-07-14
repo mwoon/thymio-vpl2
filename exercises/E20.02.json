@@ -1,0 +1,33 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E20.02"
+        },
+        {
+            "cmd": "ex",
+            "type": "type2",
+            "text": "E20.02",
+	    "answerList": [
+,
+
+,
+
+,
+
+,
+
+,
+
+
+
+	    ],
+	    "scoreList": [0, 0, 0, 0, 0, 0],
+	    "description": ""
+        },
+        {
+            "cmd": "text",
+            "text": "post E20.02"
+        }
+    ]
+}

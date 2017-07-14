@@ -1,0 +1,21 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E27.04",
+	    "description": ""
+        },
+        {
+            "cmd": "ex",
+            "type": "type4",
+            "text": "E27.04",
+	    "method": "fixed",
+	    "solution": ,
+	    "code": 
+        },
+        {
+            "cmd": "text",
+            "text": "post E27.04"
+        }
+    ]
+}

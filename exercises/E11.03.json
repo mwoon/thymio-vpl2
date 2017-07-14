@@ -1,0 +1,31 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E11.03"
+        },
+        {
+            "cmd": "ex",
+            "type": "type3",
+            "text": "E11.03",
+	    "answerList": [
+		"If the second sensor on the left stays covered, Thymio will not change his top LEDs to green if the left most sensor is uncovered.", 
+		"They are the same.", 
+		"In the program on top, Thymio will only change his top LEDs to green once.", 
+		"In the program on top, Thymio will never change his top LEDs to green.", 
+		"In the program below, Thymio will only change his LEDs to green if the second sensor from the left is uncovered and then covered again.", 
+		"In the program on top, it is possible for Thymio to change his top LEDs to green even if the second sensor from the left stays covered."
+	    ],
+	    "scoreList": [1, 0, 0, 0, 0, 0],
+	    "code1": 
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[4,31,0]}]],[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,20,0]}]]]}
+,
+	    "code2": 
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["FAR","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[4,31,0]}]],[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,20,0]}]]]}
+        },
+        {
+            "cmd": "text",
+            "text": "post E11.03"
+        }
+    ]
+}

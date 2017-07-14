@@ -1,0 +1,23 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E10.04",
+	    "description": ""
+        },
+        {
+            "cmd": "ex",
+            "type": "type4",
+            "text": "E10.04",
+	    "method": "fixed",
+	    "solution": 
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","FAR","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[32,1,25]}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","ON"]}],[{"definition":"PaletteTopColorActionBlock","params":[0,32,1]}]]]},
+	    "code": 
+{"mode":"simple","scene":[[[],[{"definition":"PaletteTopColorActionBlock","params":[32,1,25]}]]]}
+        },
+        {
+            "cmd": "text",
+            "text": "post E10.04"
+        }
+    ]
+}

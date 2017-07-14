@@ -1,0 +1,20 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E11.05"
+        },
+        {
+            "cmd": "ex",
+            "type": "type5",
+            "text": "E11.05",
+	    "method": "fixed",
+	    "solution": 
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[32,0,3]}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","CLOSE"]}],[{"definition":"PaletteTopColorActionBlock","params":[30,32,2]}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[1,0,30]}]]]}
+        },
+        {
+            "cmd": "text",
+            "text": "post E11.05"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E10.03"
+        },
+        {
+            "cmd": "ex",
+            "type": "type3",
+            "text": "E10.03",
+	    "answerList": [
+		"In the program below, if the right button is pressed, Thymio's top LEDs' color won't change to orange if the middle sensor in front is covered.", 
+		"In the program on top, if Thymio's middle sensor in front is covered, his top LEDs' color won't change to light blue if the right button is pressed.", 
+		"In the program below, if Thymio's middle sensor in front is covered, his top LEDs' color won't change to light blue if the right button is pressed.", 
+		"In the program on top, Thymio can onlly change his top LEDs' color to orange and in the program below only to light blue.", 
+		"They are the same.", 
+		"In the program on top, Thymio can only change his top LEDs' color to light blue and in the program below only to orange."
+	    ],
+	    "scoreList": [0, 0, 0, 0, 1, 0],
+	    "code1": 
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[5,30,32]}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,20,0]}]]]}
+,
+	    "code2": 
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,20,0]}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[4,28,32]}]]]}
+        },
+        {
+            "cmd": "text",
+            "text": "post E10.03"
+        }
+    ]
+}

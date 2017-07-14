@@ -2,16 +2,27 @@
     "list": [
         {
             "cmd": "text",
-            "text": "pre E01.01"
+            "text": "pre E14.01"
         },
         {
             "cmd": "ex",
             "type": "type1",
-            "text": "E01.01"
+            "text": "E14.01",
+	    "answerList": [
+		"", 
+		"", 
+		"", 
+		"", 
+		"", 
+		""
+	    ],
+	    "scoreList": [0, 0, 0, 0, 0, 0],
+	    "code": 
+
         },
         {
             "cmd": "text",
-            "text": "post E01.01"
+            "text": "post E14.01"
         }
     ]
 }

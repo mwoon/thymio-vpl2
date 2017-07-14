@@ -1,0 +1,33 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E10.02"
+        },
+        {
+            "cmd": "ex",
+            "type": "type2",
+            "text": "E10.02",
+	    "answerList": [
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[30,32,4]}]],[[{"definition":"ProxGroundEventBlock","params":["DISABLED","CLOSE"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,20,0]}]]]},
+
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[30,32,4]}]],[[{"definition":"ProxGroundEventBlock","params":["FAR","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,20,0]}]]]},
+
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[30,32,4]}]],[[{"definition":"ProxGroundEventBlock","params":["CLOSE","CLOSE"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,20,0]}]]]},
+
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[30,32,4]}]],[[{"definition":"ProxGroundEventBlock","params":["FAR","FAR"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,20,0]}]]]},
+
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[30,32,4]}]],[[{"definition":"ProxGroundEventBlock","params":["DISABLED","FAR"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,20,0]}]]]},
+
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[30,32,4]}]],[[{"definition":"ProxGroundEventBlock","params":["DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,20,0]}]]]}
+
+	    ],
+	    "scoreList": [1, 0, 0, 0, 0, 0],
+	    "description": "Which program will let Thymio change his top LEDs' color to yellow when the right button is pressed and to orange when the right bottom sensor is covered?"
+        },
+        {
+            "cmd": "text",
+            "text": "post E10.02"
+        }
+    ]
+}

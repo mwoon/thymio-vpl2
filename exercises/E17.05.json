@@ -1,0 +1,19 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E17.05"
+        },
+        {
+            "cmd": "ex",
+            "type": "type5",
+            "text": "E17.05",
+	    "method": "fixed",
+	    "solution": 
+        },
+        {
+            "cmd": "text",
+            "text": "post E17.05"
+        }
+    ]
+}

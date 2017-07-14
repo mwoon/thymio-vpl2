@@ -1,0 +1,20 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E10.05"
+        },
+        {
+            "cmd": "ex",
+            "type": "type5",
+            "text": "E10.05",
+	    "method": "fixed",
+	    "solution": 
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","FAR","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[32,1,25]}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","ON"]}],[{"definition":"PaletteTopColorActionBlock","params":[0,32,1]}]]]}
+        },
+        {
+            "cmd": "text",
+            "text": "post E10.05"
+        }
+    ]
+}

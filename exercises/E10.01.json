@@ -2,16 +2,27 @@
     "list": [
         {
             "cmd": "text",
-            "text": "pre E01.01"
+            "text": "pre E10.01"
         },
         {
             "cmd": "ex",
             "type": "type1",
-            "text": "E01.01"
+            "text": "E10.01",
+	    "answerList": [
+		"When the middle button in front of Thymio is pressed, Thymio's top LEDs become yellow and when the right sensor on top of Thymio is covered, Thymio's top LEDs become red.", 
+		"When the middle sensor below Thymio is covered, Thymio's top LEDs become yellow and when the right button is pressed, Thymio's top LEDs become red.", 
+		"When the middle sensor below Thymio is covered, Thymio's top LEDs become yellow and when the front button is pressed, Thymio's top LEDs become red.", 
+		"When the middle sensor in front is covered, Thymio's top LEDs become yellow and when the front button is pressed, Thymio's top LEDs become red.", 
+		"When the middle sensor in front is covered, Thymio's top LEDs become yellow and when the right button is pressed, Thymio's top LEDs become red.", 
+		"When the middle sensor in front is not covered, Thymio's top LEDs become yellow and when the right button is pressed, Thymio's top LEDs become red."
+	    ],
+	    "scoreList": [0, 0, 0, 0, 1, 0],
+	    "code": 
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[30,32,2]}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,0,5]}]]]}
         },
         {
             "cmd": "text",
-            "text": "post E01.01"
+            "text": "post E10.01"
         }
     ]
 }

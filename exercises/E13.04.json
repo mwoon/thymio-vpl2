@@ -1,0 +1,21 @@
+{
+    "list": [
+        {
+            "cmd": "text",
+            "text": "pre E13.04",
+	    "description": ""
+        },
+        {
+            "cmd": "ex",
+            "type": "type4",
+            "text": "E13.04",
+	    "method": "fixed",
+	    "solution": ,
+	    "code": 
+        },
+        {
+            "cmd": "text",
+            "text": "post E13.04"
+        }
+    ]
+}
