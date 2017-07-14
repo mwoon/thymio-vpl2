@@ -3,15 +3,17 @@
         {
             "cmd": "text",
             "text": "pre E13.04",
-	    "description": ""
+	    "description": "Bottom leds orange when thymio all Thymio's LEDs on the left detect something."
         },
         {
             "cmd": "ex",
             "type": "type4",
             "text": "E13.04",
 	    "method": "fixed",
-	    "solution": ,
+	    "solution": 
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED"]},{"definition":"ProxGroundEventBlock","params":["CLOSE","DISABLED"]}],[{"definition":"PaletteBottomColorActionBlock","params":[32,19,0]}]]]},
 	    "code": 
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]},{"definition":"ProxGroundEventBlock","params":["DISABLED","DISABLED"]}],[{"definition":"PaletteBottomColorActionBlock","params":[32,19,0]}]]]}
         },
         {
             "cmd": "text",

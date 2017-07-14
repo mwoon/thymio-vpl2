@@ -9,19 +9,19 @@
             "type": "type3",
             "text": "E13.03",
 	    "answerList": [
-		"", 
-		"", 
-		"", 
-		"", 
-		"", 
-		""
+		"The program on top is wrong and won't work.", 
+		"In the program below, Thymio's bottom LEDs change color only whenever the two bottom sensors detect nothing at exactly the same time.", 
+		"In the program on top, Thymio's bottom LEDs change color whenever first the right sensor detects nothing and then the left sensor detects nothing.", 
+		"In the program on top, Thymio's bottom LEDs change color whenever first the left sensor detects nothing and then the right sensor detects nothing.", 
+		"They are the same.", 
+		"In the program on top, Thymio's bottom LEDs change color whenever any of the two sensor detect nothing."
 	    ],
-	    "scoreList": [0, 0, 0, 0, 0, 0],
+	    "scoreList": [0, 0, 0, 0, 1, 0],
 	    "code1": 
-
+{"mode":"simple","scene":[[[{"definition":"ProxGroundEventBlock","params":["DISABLED","FAR"]},{"definition":"ProxGroundEventBlock","params":["FAR","DISABLED"]}],[{"definition":"PaletteBottomColorActionBlock","params":[27,2,0]}]]]}
 ,
 	    "code2": 
-
+{"mode":"simple","scene":[[[{"definition":"ProxGroundEventBlock","params":["FAR","FAR"]}],[{"definition":"PaletteBottomColorActionBlock","params":[27,2,0]}]]]}
         },
         {
             "cmd": "text",

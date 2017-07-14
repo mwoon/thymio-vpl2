@@ -9,15 +9,16 @@
             "type": "type1",
             "text": "E13.01",
 	    "answerList": [
-		"", 
-		"", 
-		"", 
-		"", 
-		"", 
-		""
+		"When the two left sensors in front detect nothing, Thymio's top LEDs become light blue.", 
+		"When the two left sensors in front detect something, Thymio's top LEDs become light blue.", 
+		"When the two left sensors in front detect nothing, Thymio's bottom LEDs become light blue.", 
+		"When any one of the two left sensor in front detect something, Thymio's top LEDs become light blue.", 
+		"When the two left sensors in front detect something, Thymio's bottom LEDs become light blue.", 
+		"When any one of the two left sensor in front detect nothing, Thymio's top LEDs become light blue."
 	    ],
-	    "scoreList": [0, 0, 0, 0, 0, 0],
+	    "scoreList": [0, 0, 0, 0, 1, 0],
 	    "code": 
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteBottomColorActionBlock","params":[5,29,32]}]]]}
 
         },
         {

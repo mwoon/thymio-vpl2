@@ -9,7 +9,7 @@
             "type": "type5",
             "text": "E13.05",
 	    "method": "fixed",
-	    "solution": 
+	    "solution": {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED"]},{"definition":"ProxGroundEventBlock","params":["CLOSE","DISABLED"]}],[{"definition":"PaletteBottomColorActionBlock","params":[32,19,0]}]]]}
         },
         {
             "cmd": "text",

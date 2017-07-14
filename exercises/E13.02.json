@@ -9,21 +9,21 @@
             "type": "type2",
             "text": "E13.02",
 	    "answerList": [
-,
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","FAR","FAR"]}],[{"definition":"PaletteBottomColorActionBlock","params":[31,0,25]}]]]},
 
-,
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["FAR","FAR","FAR","FAR","FAR","CLOSE","CLOSE"]}],[{"definition":"PaletteBottomColorActionBlock","params":[31,0,25]}]]]},
 
-,
+{"mode":"simple","scene":[[[{"definition":"ProxGroundEventBlock","params":["FAR","FAR"]}],[{"definition":"PaletteBottomColorActionBlock","params":[31,0,25]}]]]},
 
-,
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","CLOSE","CLOSE","CLOSE","FAR","FAR"]}],[{"definition":"PaletteBottomColorActionBlock","params":[31,0,25]}]]]},
 
-,
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","CLOSE"]}],[{"definition":"PaletteBottomColorActionBlock","params":[31,0,25]}]]]},
 
-
+{"mode":"simple","scene":[[[{"definition":"ProxGroundEventBlock","params":["CLOSE","CLOSE"]}],[{"definition":"PaletteBottomColorActionBlock","params":[31,0,25]}]]]}
 
 	    ],
-	    "scoreList": [0, 0, 0, 0, 0, 0],
-	    "description": ""
+	    "scoreList": [0, 1, 0, 0, 0, 0],
+	    "description": "Which program will change Thymio's bottom LEDs to pink when only the two sensors behind Thymio detect something?"
         },
         {
             "cmd": "text",
