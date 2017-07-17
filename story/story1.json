@@ -97,6 +97,21 @@
                      "text": "story1.6"
                   },
 		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "Ada rushes to where she heard the sound coming from."
+                  }
+               ]
+         }, 
+	 {
+            "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story1.7"
+                  },
+		  {
                      "cmd": "bgImage",
                      "bgImage": "/assets/island_1.png",
                      "x": -1400,
@@ -106,9 +121,114 @@
                   }
                ]
          }, 
+	 {
+            "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story1.8"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "There she sees a white robot on the ground. She takes a step back but then pauses and looks at the robot. It doesn't move or make any more sounds."
+                  }
+               ]
+         }, 
+	 {
+            "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story1.9"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Come on, let's see if we can help it."
+                  }
+               ]
+         }, 
+	 {
+            "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story1.10"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "She taps it a few times to see if it will move."
+                  }
+               ]
+         }, 
+	 {
+            "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story1.11"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "Suddenly the tablet she is holding lights up."
+                  }
+               ]
+         }, 
+	 {
+            "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story1.12"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "What is this?"
+                  }
+               ]
+         }, 
+	 {
+            "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story1.13"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "She looks from the tablet to the robot."
+                  }
+               ]
+         }, 
+	 {
+            "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story1.14"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Ah! Maybe we can use this to help."
+                  }
+               ]
+         }, 
          {
             "cmd": "text", 
-            "text": "story1.7"
+            "text": "story1 end"
          }
       ]
 }
