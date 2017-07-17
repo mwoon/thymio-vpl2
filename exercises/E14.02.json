@@ -13,7 +13,7 @@
 
 {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["FAR","FAR","DISABLED","FAR","FAR","DISABLED","DISABLED"]}],[{"definition":"PaletteBottomColorActionBlock","params":[0,28,32]}]],[[{"definition":"ProxEventBlock","params":["CLOSE","DISABLED","DISABLED","DISABLED","CLOSE","FAR","FAR"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,0,2]}]]]},
 
-{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","FAR","CLOSE","CLOSE","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[0,29,31]}]],[[{"definition":"ProxEventBlock","params":["FAR","DISABLED","DISABLED","DISABLED","FAR","CLOSE","CLOSE"]}],[{"definition":"PaletteTopColorActionBlock","params":[32,0,0]}]]]},
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","FAR","CLOSE","CLOSE","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[0,29,31]}]],[[{"definition":"ProxEventBlock","params":["FAR","DISABLED","DISABLED","DISABLED","FAR","CLOSE","CLOSE"]}],[{"definition":"PaletteBottomColorActionBlock","params":[32,0,0]}]]]},
 
 {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["FAR","FAR","DISABLED","FAR","FAR","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[0,29,32]}]],[[{"definition":"ProxEventBlock","params":["CLOSE","DISABLED","DISABLED","DISABLED","CLOSE","FAR","FAR"]}],[{"definition":"PaletteBottomColorActionBlock","params":[31,0,2]}]]]},
 
@@ -23,7 +23,7 @@
 
 	    ],
 	    "scoreList": [0, 0, 1, 0, 0, 0],
-	    "description": "We're looking for a program where: 1. Thymio's bottom LEDs will change to red when the outer two sensors in front detect nothing and the two sensors behind detect soemthing. 2. Thymio's top LEDs will change to light blue when all the sensors in front but the middle one detect something."
+	    "description": "We're looking for a program where: 1. Thymio's bottom LEDs will change to red when the outer two sensors in front detect nothing and the two sensors behind detect something. 2. Thymio's top LEDs will change to light blue when all the sensors in front but the middle one detect something."
         },
         {
             "cmd": "text",

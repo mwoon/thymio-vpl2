@@ -212,7 +212,32 @@ Page {
         vplPopup.close();
     }
 
+    //shuffle two arrays the same way
+    //adapted from: https://bost.ocks.org/mike/shuffle/
+    function shuffleOptions() {
+      var m = answerList.length, t, i;
+
+      // While there remain elements to shuffle…
+      while (m) {
+
+        // Pick a remaining element…
+        i = Math.floor(Math.random() * m--);
+
+        // And swap it with the current element.
+        t = answerList[m];
+        answerList[m] = answerList[i];
+        answerList[i] = t;
+
+        // Swap second array as well
+        t = scoreList[m];
+        scoreList[m] = scoreList[i];
+        scoreList[i] = t;
+      }
+
+    }
+
     Component.onCompleted: {
+        shuffleOptions();
         for(var i = 0; i < answerList.length; i++) {
             optionsList.append({"name": answerList[i], "callback": "completeExercise"})
         }
