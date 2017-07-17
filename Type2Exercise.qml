@@ -79,6 +79,7 @@ Page {
                     //enabled: false
                     actionsVisible: false
                     eventsVisible: false
+                    clip:true
 
 
 
