@@ -9,21 +9,21 @@
             "type": "type2",
             "text": "E15.02",
 	    "answerList": [
-,
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","CLOSE","CLOSE","CLOSE","DISABLED","DISABLED","CLOSE"]},{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","DISABLED","CLOSE","DISABLED","CLOSE","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[32,31,31]},{"definition":"PaletteBottomColorActionBlock","params":[32,30,29]}]]]},
 
-,
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","CLOSE","CLOSE","CLOSE","DISABLED","DISABLED","CLOSE"]},{"definition":"ProxEventBlock","params":["CLOSE","DISABLED","DISABLED","CLOSE","CLOSE","CLOSE","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[32,31,31]},{"definition":"PaletteBottomColorActionBlock","params":[32,30,29]}]]]},
 
-,
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","DISABLED","CLOSE","DISABLED","CLOSE","CLOSE","CLOSE"]},{"definition":"ProxEventBlock","params":["DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","CLOSE","CLOSE"]}],[{"definition":"PaletteTopColorActionBlock","params":[32,31,31]},{"definition":"PaletteBottomColorActionBlock","params":[32,30,29]}]]]},
 
-,
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","DISABLED","CLOSE","CLOSE","CLOSE","CLOSE","DISABLED"]},{"definition":"ProxEventBlock","params":["CLOSE","DISABLED","CLOSE","CLOSE","CLOSE","CLOSE","CLOSE"]}],[{"definition":"PaletteTopColorActionBlock","params":[32,31,31]},{"definition":"PaletteBottomColorActionBlock","params":[32,30,29]}]]]},
 
-,
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","CLOSE","CLOSE","CLOSE","CLOSE","CLOSE"]},{"definition":"ProxEventBlock","params":["CLOSE","FAR","CLOSE","FAR","FAR","CLOSE","CLOSE"]}],[{"definition":"PaletteTopColorActionBlock","params":[32,31,31]},{"definition":"PaletteBottomColorActionBlock","params":[32,30,29]}]]]},
 
-
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","DISABLED","CLOSE","FAR","CLOSE","CLOSE","CLOSE"]},{"definition":"ProxEventBlock","params":["CLOSE","FAR","CLOSE","DISABLED","DISABLED","CLOSE","FAR"]}],[{"definition":"PaletteTopColorActionBlock","params":[32,31,31]},{"definition":"PaletteBottomColorActionBlock","params":[32,30,29]}]]]}
 
 	    ],
-	    "scoreList": [0, 0, 0, 0, 0, 0],
-	    "description": ""
+	    "scoreList": [0, 1, 0, 0, 0, 0],
+	    "description": "Which program will make Thymio's bottom and top LEDs white when all of Thymio's front and back sensors detect something?"
         },
         {
             "cmd": "text",

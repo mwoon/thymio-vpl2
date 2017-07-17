@@ -9,15 +9,16 @@
             "type": "type1",
             "text": "E15.01",
 	    "answerList": [
-		"", 
-		"", 
-		"", 
-		"", 
-		"", 
-		""
+		"When both of Thymio's ground sensors detect nothing, Thymio's bottom and top LEDs will become green. When the ground sensors detect something, the LEDs will turn off.", 
+		"When Thymio's ground sensors detect something, Thymio's bottom LEDs will become green. When the ground sensors detect nothing, the LEDs will turn off.", 
+		"When Thymio's ground sensors detect something, Thymio's top LEDs will become green. When the ground sensors detect nothing, the LEDs will turn off.", 
+		"When both of Thymio's ground sensors detect something, Thymio's bottom and top LEDs will become green. When the ground sensors detect nothing, the LEDs will turn off.", 
+		"When both of Thymio's ground sensors detect something, Thymio's bottom and top LEDs will become green. When the ground sensors detect nothing, the bottom LEDs will turn off.", 
+		"When both of Thymio's ground sensors detect something, Thymio's bottom and top LEDs will become green. When the ground sensors detect nothing, the top LEDs will turn off."
 	    ],
-	    "scoreList": [0, 0, 0, 0, 0, 0],
+	    "scoreList": [0, 0, 0, 1, 0, 0],
 	    "code": 
+{"mode":"simple","scene":[[[{"definition":"ProxGroundEventBlock","params":["CLOSE","CLOSE"]}],[{"definition":"PaletteTopColorActionBlock","params":[1,32,0]},{"definition":"PaletteBottomColorActionBlock","params":[1,32,0]}]],[[{"definition":"ProxGroundEventBlock","params":["FAR","FAR"]}],[{"definition":"PaletteTopColorActionBlock","params":[0,0,0]},{"definition":"PaletteBottomColorActionBlock","params":[0,0,0]}]]]}
 
         },
         {

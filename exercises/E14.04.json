@@ -10,8 +10,9 @@
             "type": "type4",
             "text": "E14.04",
 	    "method": "fixed",
-	    "solution": ,
+	    "solution": {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","FAR","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[1,32,0]}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","FAR","DISABLED","CLOSE"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,0,3]}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","FAR"]}],[{"definition":"PaletteBottomColorActionBlock","params":[32,0,3]}]],[[{"definition":"ProxEventBlock","params":["FAR","DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED"]}],[{"definition":"PaletteBottomColorActionBlock","params":[1,31,0]}]]]},
 	    "code": 
+{"mode":"simple","scene":[[[],[{"definition":"PaletteTopColorActionBlock","params":[1,32,0]}]],[[],[{"definition":"PaletteTopColorActionBlock","params":[31,0,3]}]],[[],[{"definition":"PaletteBottomColorActionBlock","params":[32,0,3]}]],[[],[{"definition":"PaletteBottomColorActionBlock","params":[1,31,0]}]]]}
         },
         {
             "cmd": "text",

@@ -10,8 +10,9 @@
             "type": "type4",
             "text": "E15.04",
 	    "method": "fixed",
-	    "solution": ,
+	    "solution": {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","FAR","CLOSE","FAR","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteBottomColorActionBlock","params":[3,0,31]},{"definition":"PaletteTopColorActionBlock","params":[32,1,4]}]],[[{"definition":"ProxEventBlock","params":["CLOSE","FAR","FAR","FAR","CLOSE","DISABLED","DISABLED"]}],[{"definition":"PaletteBottomColorActionBlock","params":[4,28,32]},{"definition":"PaletteTopColorActionBlock","params":[1,32,0]}]]]},
 	    "code": 
+{"mode":"simple","scene":[[[],[{"definition":"PaletteBottomColorActionBlock","params":[3,0,31]}]],[[],[{"definition":"PaletteBottomColorActionBlock","params":[4,28,32]}]]]}
         },
         {
             "cmd": "text",

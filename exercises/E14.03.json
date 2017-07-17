@@ -9,19 +9,19 @@
             "type": "type3",
             "text": "E14.03",
 	    "answerList": [
-		"", 
-		"", 
-		"", 
-		"", 
-		"", 
-		""
+		"Both programs are broken because the two sensors events are almost the same.", 
+		"In the program on top, Thymio's top LEDs will never become blue.", 
+		"In the program below, Thymio's top LEDs will never become blue.", 
+		"They are the same.", 
+		"In the program below, Thymio's top LEDs will never become green.", 
+		"In the program on top, Thymio's top LEDs will never become green."
 	    ],
-	    "scoreList": [0, 0, 0, 0, 0, 0],
+	    "scoreList": [0, 0, 0, 0, 1, 0],
 	    "code1": 
-
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","FAR","CLOSE","CLOSE","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[1,0,31]}]],[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","DISABLED","CLOSE","CLOSE","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[6,32,4]}]]]}
 ,
 	    "code2": 
-
+{"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","DISABLED","CLOSE","CLOSE","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[1,0,31]}]],[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","FAR","CLOSE","CLOSE","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[6,32,4]}]]]}
         },
         {
             "cmd": "text",
