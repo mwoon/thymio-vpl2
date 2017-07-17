@@ -9,7 +9,7 @@
             "type": "type5",
             "text": "E16.05",
 	    "method": "fixed",
-	    "solution": 
+	    "solution": {"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","ON","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"front"}]]]}
         },
         {
             "cmd": "text",

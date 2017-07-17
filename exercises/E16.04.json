@@ -10,8 +10,9 @@
             "type": "type4",
             "text": "E16.04",
 	    "method": "fixed",
-	    "solution": ,
+	    "solution": {"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","ON","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"front"}]]]},
 	    "code": 
+{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[]]]}
         },
         {
             "cmd": "text",
