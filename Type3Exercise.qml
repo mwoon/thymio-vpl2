@@ -63,7 +63,8 @@ Page {
                 //property alias fillHeight: Layout.fillHeight
                 Layout.preferredWidth: parent.width * 2 / 5
                 Layout.preferredHeight: parent.width  / 5
-                enabled: false
+                //enabled: false
+                clip: true
                 actionsVisible: false
                 eventsVisible: false
                 function fillHeight() {
@@ -76,6 +77,17 @@ Page {
                     border.color: "#50ffffff"
                     radius: 5
                 }
+
+                Rectangle {
+                    anchors.fill: parent
+                    z:1
+                    color: "transparent"
+
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {}
+                    }
+                }
             }
 
             Editor {
@@ -83,7 +95,8 @@ Page {
                 //property alias fillHeight: Layout.fillHeight
                 Layout.preferredWidth: parent.width * 2 / 5
                 Layout.preferredHeight: parent.width  / 5
-                enabled: false
+                //enabled: false
+                clip: true
                 actionsVisible: false
                 eventsVisible: false
 
@@ -97,6 +110,17 @@ Page {
                     color: "#30ffffff"
                     border.color: "#50ffffff"
                     radius: 5
+                }
+
+                Rectangle {
+                    anchors.fill: parent
+                    z:1
+                    color: "transparent"
+
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {}
+                    }
                 }
             }
         }

@@ -57,9 +57,21 @@ Page {
             id: vplEditor
             Layout.preferredWidth: parent.width * 2 / 5
             Layout.preferredHeight: width * 2 / 3
-            enabled: false
+            //enabled: false
+            clip: true
             actionsVisible: false
             eventsVisible: false
+
+            Rectangle {
+                anchors.fill: parent
+                z:1
+                color: "transparent"
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {}
+                }
+            }
         }
 
         ColumnLayout {
