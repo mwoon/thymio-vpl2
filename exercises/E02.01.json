@@ -1,23 +1,62 @@
 {
     "list": [
         {
-            "cmd": "text",
-            "text": "pre E02.01"
-        },
-        {
             "cmd": "ex",
             "type": "type4",
             "text": "E02.01",
+	    "list": [
+		{
+            	    "cmd": "multi",
+            	    "scene":
+                        [
+                  		{ 
+                     			"cmd": "text", 
+                     			"text": "E02.01 01"
+                  		},
+		  		{
+                     			"cmd": "dialogue",
+                     			"speaker": "Ada",
+                     			"text": "What is all this stuff anyway?"
+                  		}
+               		]
+        	},
+		{
+            	    "cmd": "multi",
+            	    "scene":
+                        [
+                  		{ 
+                     			"cmd": "text", 
+                     			"text": "E02.01 02"
+                  		},
+		  		{
+                     			"cmd": "dialogue",
+                     			"speaker": "Ada",
+                     			"text": "Oh, there's a button in the menu you could try. It's called 'Clear Program'. If this is a program, maybe it'll get rid of all these things faster!"
+                  		}
+               		]
+        	},
+		{
+            	    "cmd": "multi",
+            	    "scene":
+                        [
+                  		{ 
+                     			"cmd": "text", 
+                     			"text": "E02.01 03"
+                  		},
+		  		{
+                     			"cmd": "dialogue",
+                     			"speaker": "Ada",
+                     			"text": "Try it out and send it back here!"
+                  		}
+               		]
+        	} 
+	    ],
 	    "method": "fixed",
 	    "solution":
 {"mode":"simple","scene":[]}
 , 
 	    "code": 
 {"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]},{"definition":"ButtonsEventBlock","params":["ON","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"left"}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","CLOSE"]},{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","DISABLED"]},{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","DISABLED"]},{"definition":"ClapEventBlock","params":null}],[{"definition":"PaletteTopColorActionBlock","params":[8,23,32]}]],[[],[{"definition":"PaletteBottomColorActionBlock","params":[5,32,3]},{"definition":"PaletteTopColorActionBlock","params":[4,0,15]}]],[[],[{"definition":"PaletteBottomColorActionBlock","params":[32,13,4]},{"definition":"MotorSimpleActionBlock","params":"right"},{"definition":"MotorSimpleActionBlock","params":"left"},{"definition":"MotorSimpleActionBlock","params":"backRight"}]]]}
-        },
-        {
-            "cmd": "text",
-            "text": "post E02.01"
         }
     ]
 }

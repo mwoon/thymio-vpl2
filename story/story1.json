@@ -64,6 +64,36 @@
                [
                   { 
                      "cmd": "text", 
+                     "text": "story1.31"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "Ada looks around the tablet."
+                  }
+               ]
+         },
+	 {
+            "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story1.32"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "I can see you through this device but you aren't here. That's strange."
+                  }
+               ]
+         },
+	 {
+            "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
                      "text": "story1.4"
                   },
 		  {
@@ -114,7 +144,7 @@
 		  {
                      "cmd": "bgImage",
                      "bgImage": "/assets/island_1.png",
-                     "x": -1400,
+                     "x": -1600,
                      "anim": true,
                      "duration": 500,
                      "easing": "outquad" 
@@ -225,10 +255,6 @@
                      "text": "Ah! Maybe we can use this to help."
                   }
                ]
-         }, 
-         {
-            "cmd": "text", 
-            "text": "story1 end"
          }
       ]
 }

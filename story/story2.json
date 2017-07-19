@@ -1,1 +1,200 @@
-{"list": [{"cmd": "text", "text": "story2"}, {"cmd": "bg", "color": "steelblue"}]}
+{
+    "list": 
+	[
+            {
+         	"cmd": "multi",
+                "scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "story2.1"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "",
+                         "text": "The lights on the robot blink and Ada takes a step back."
+                      }
+                   ]
+            }, 
+            {
+         	"cmd": "multi",
+                "scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "story2.2"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Robot",
+                         "text": "Ah, that's much better. Thank you for helping me."
+                      }
+                   ]
+            }, 
+            {
+         	"cmd": "multi",
+                "scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "story2.3"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Robot",
+                         "text": "The robot turns to face the tablet."
+                      }
+                   ]
+            }, 
+            {
+         	"cmd": "multi",
+                "scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "story2.4"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Robot",
+                         "text": "Oh. This is great. The tablet has made contact with Earth. I am 10LKFPS-WLTHYMIO."
+                      }
+                   ]
+            }, 
+            {
+         	"cmd": "multi",
+                "scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "story2.4"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "10LKFPS-WLTHYMIO",
+                         "text": "But you can of course call me Thymio."
+                      }
+                   ]
+            }, 
+            {
+         	"cmd": "multi",
+                "scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "story2.5"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Thymio",
+                         "text": "You've connected to collect my report, right? I'm really sorry but I don't have it anymore."
+                      }
+                   ]
+            }, 
+            {
+         	"cmd": "multi",
+                "scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "story2.6"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Thymio",
+                         "text": "It seems like something in this place has caused some of my systems to malfunction. There are many things I can't do on my own anymore."
+                      }
+                   ]
+            }, 
+            {
+         	"cmd": "multi",
+                "scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "story2.7"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Thymio",
+                         "text": "It would be best if you could help me get back to Earth by using that tablet."
+                      }
+                   ]
+            }, 
+            {
+         	"cmd": "multi",
+                "scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "story2.8"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Ada",
+                         "text": "Earth? I don't know of any place called 'Earth'. How do you plan to go there? Can I come along?"
+                      }
+                   ]
+            }, 
+            {
+         	"cmd": "multi",
+                "scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "story2.9"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "",
+                         "text": "Thymio turns to Ada. He only just noticed that she is here."
+                      }
+                   ]
+            }, 
+            {
+         	"cmd": "multi",
+                "scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "story2.10"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Thymio",
+                         "text": "I'm afraid you cannot come along. It's too dangerous for a living creature. I don't even know how I can return to Earth yet."
+                      }
+                   ]
+            }, 
+            {
+         	"cmd": "multi",
+                "scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "story2.11"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "",
+                         "text": "Thymio turns back to the tablet."
+                      }
+                   ]
+            }, 
+            {
+         	"cmd": "multi",
+                "scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "story2.12"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Thymio",
+                         "text": "We have to find a way together." 
+                      }
+                   ]
+            }
+	]
+}

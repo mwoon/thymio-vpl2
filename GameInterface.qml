@@ -1,6 +1,7 @@
 import QtQuick 2.6
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
+import QtQuick.Window 2.2
 
 Page {
 
@@ -29,7 +30,7 @@ Page {
         Image {
             id:backgroundImage
             //x: -1000
-            anchors.top: parent.top
+            //anchors.top: parent.top
             anchors.bottom: parent.bottom
             //source: "/assets/island_1.png"
 
@@ -62,7 +63,7 @@ Page {
 
         anchors.fill: parent
         spacing: 10
-        visible: true
+        visible: false
 
         ListView {
                 id:lView
@@ -198,6 +199,7 @@ Page {
 
             Button {
                 id: nextButton
+                visible: false
                 text: qsTr("Next")
                 onClicked: {
                     next = true;
@@ -229,7 +231,7 @@ Page {
                 }
             }
 
-
+            /*
             if(part.type === "story") {
                 nextButton.visible = true;
                 answer0.visible = false;
@@ -258,7 +260,7 @@ Page {
                 answer9.visible = true;
                 answer10.visible = true;
             }
-
+            */
             lView.positionViewAtEnd();
         } else {
             stote.advanceScript();
@@ -280,8 +282,8 @@ Page {
 
             if(newStorySequence.activity)  {
                 type = "activity";
-                //file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                file = "/exercises/" + "E20.05" + ".json";
+                file = "/exercises/" + newStorySequence.activity[0] + ".json";
+                //file = "/exercises/" + "E20.05" + ".json";
 
                 /*
                 for(var i = 0; i < newStorySequence.activity.length; i++) {
@@ -461,6 +463,8 @@ Page {
                 handleBgColor(scene[i].color);
             } else if (scene[i].cmd === "bgImage") {
                 handleBgImage(scene[i]);
+            } else if (scene[i].cmd === "ex") {
+                handleEx(scene[i]);
             } else if (scene[i].cmd === "dialogue") {
                 handleDialogue(scene[i].speaker, scene[i].text);
             }
@@ -480,9 +484,9 @@ Page {
             }
 
             if(content.method === "fixed") {
-                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.solution), "code" : JSON.stringify(content.code), "method": content.method, "checkfor": content.checkfor});
+                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.solution), "code" : JSON.stringify(content.code), "method": content.method, "storyList": content.list, "checkfor": content.checkfor});
             } else if (content.method === "sim") {
-                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.scene), "code" : JSON.stringify(content.code), "method": content.method});
+                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.scene), "code" : JSON.stringify(content.code), "method": content.method, "storyList": content.list});
             }
         } else if(content.type === "type5") {
             if(!content.method) {
