@@ -7,6 +7,8 @@ Page {
     ColumnLayout {
         spacing: 16
 
+        anchors.leftMargin: 50
+
         Button {
             text: "< return"
             onClicked: {
@@ -19,6 +21,21 @@ Page {
             onClicked: {
                 perfectSim();
             }
+        }
+
+        Text {
+            text: "returns 1 success for every exercise"
+        }
+
+        Button {
+            text: "Total Failure Student"
+            onClicked: {
+                totalFailSim();
+            }
+        }
+
+        Text {
+            text: "returns 0 success for every exercise"
         }
     }
 
@@ -84,6 +101,25 @@ Page {
 
             if(parsed.activity) {
                 stote.completeExercise(1.0);
+                response = parsed.activity[0];
+            } else if (parsed.story0) {
+               response = parsed.story0[0];
+            }
+            rawResp = "";
+        }
+
+        popup.open();
+    }
+
+    function totalFailSim() {
+        var response = "";
+        while(response !== "the_end") {
+            var rawResp = stote.advanceScript();
+            while (rawResp === "") {}
+            var parsed = JSON.parse(rawResp);
+
+            if(parsed.activity) {
+                stote.completeExercise(0.0);
                 response = parsed.activity[0];
             } else if (parsed.story0) {
                response = parsed.story0[0];
