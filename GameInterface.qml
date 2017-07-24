@@ -46,12 +46,19 @@ Page {
         }
     }
 
+    Rectangle {
+        id: darkScreen
+        visible: false
+        anchors.fill: parent
+        color: "#50000000"
+    }
+
     DialogueBox {
         id: dialogueBox
 
 
         anchors.top: parent.top
-        anchors.topMargin: 25
+        anchors.topMargin: 75
     }
 
     MouseArea {
@@ -59,7 +66,50 @@ Page {
         z: 2
 
         onClicked: {
-            next = true;
+            if(!storyLogLayout.visible) {
+                next = true;
+            } else {
+                gameMenu.toggleStoryLog();
+            }
+        }
+    }
+
+    ColumnLayout {
+
+        id: storyLogLayout
+
+        anchors.fill: parent
+        spacing: 10
+        visible: false
+        anchors.topMargin: 75
+        anchors.leftMargin: 25
+        anchors.rightMargin: 25
+
+        ListView {
+            id: storyLogView
+            clip: true //apparently this can affect performance
+            spacing: 10
+            model: dialogueLog
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            delegate: Rectangle {
+                height: speakerText.height
+                width: parent.width
+                color: "#80ffffff"
+                border.color: "#f0ffffff"
+                border.width: 3
+                radius: 20
+                Text {
+                    id: speakerText
+                    font.pointSize: 24
+                    text: "> " + ((speaker === "") ? "" : speaker + "\n   " ) + conversation
+                    anchors.topMargin: 10
+                    anchors.bottomMargin: 10
+                    padding: 5
+                    width: parent.width
+                    wrapMode: Text.WordWrap
+                }
+            }
         }
     }
 
@@ -72,20 +122,20 @@ Page {
         visible: false
 
         ListView {
-                id:lView
-                clip: true //apparently this can affect performance
-                model: textOutput
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-                delegate: Text {
-                    font.pointSize: 24
-                    text: "> " + output
-                    anchors.topMargin: 10
-                    anchors.bottomMargin: 10
-                    width: parent.width
-                    wrapMode: Text.WordWrap
-                }
+            id:lView
+            clip: true //apparently this can affect performance
+            model: textOutput
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            delegate: Text {
+                font.pointSize: 24
+                text: "> " + output
+                anchors.topMargin: 10
+                anchors.bottomMargin: 10
+                width: parent.width
+                wrapMode: Text.WordWrap
             }
+        }
 
 
         Row {
@@ -335,6 +385,10 @@ Page {
         id: textOutput
     }
 
+    ListModel {
+        id: dialogueLog
+    }
+
     Component.onCompleted: {
         next = true;
     }
@@ -374,6 +428,11 @@ Page {
         }
 
         ListElement {
+            title: "Story Log";
+            callback: "toggleStoryLog";
+        }
+
+        ListElement {
             title: "Test Functions";
             callback: "showFunction";
         }
@@ -386,6 +445,12 @@ Page {
 
         function toggleLog() {
             logLayout.visible = !logLayout.visible;
+        }
+
+        function toggleStoryLog() {
+            storyLogLayout.visible = !storyLogLayout.visible;
+            dialogueBox.visible = !storyLogLayout.visible;
+            darkScreen.visible = storyLogLayout.visible;
         }
 
         //This function should be adapted whenever something needs to be tested on button press
@@ -442,6 +507,8 @@ Page {
     function handleDialogue(speaker, text) {
         dialogueBox.speakerName = speaker;
         dialogueBox.dialogue = text;
+
+        dialogueLog.insert(0, {"speaker" : speaker, "conversation" : text});
     }
 
     function handleBgColor(color) {

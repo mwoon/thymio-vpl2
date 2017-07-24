@@ -17,8 +17,8 @@ Rectangle {
     z: 1
     radius: 20
 
-    color: "#50ffffff"
-    border.color: "#90ffffff"
+    color: "#80ffffff"
+    border.color: "#f0ffffff"
     border.width: 3
 
     ColumnLayout {

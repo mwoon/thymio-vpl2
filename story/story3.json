@@ -1,1 +1,18 @@
-{"list": [{"cmd": "text", "text": "story3"}, {"cmd": "bg", "color": "#00B000"}]}
+{"list": [
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.01"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": ""
+                  }
+               ]
+	}
+	]
+}
