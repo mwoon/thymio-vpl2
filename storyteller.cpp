@@ -3,8 +3,8 @@
 StoryTeller::StoryTeller(QObject *parent) : QObject(parent)
 {
     initializeScript();
-    mainIndex = 0;
-    successfulExercises = 0;
+    mainIndex = 6;
+    successfulExercises = 4;
     totalExInBlock = 0;
 }
 
@@ -103,6 +103,8 @@ QString StoryTeller::advanceScript(){
      qDebug() << QString::fromStdString("make exercise");
      //call zpdes to pick an exercise here
      std::string chosen;
+
+     //special handling for first few exercises / "tutorials"
      if(mainIndex < 5) {
         std::ostringstream chosenBuilder;
         chosenBuilder << "\"";
@@ -216,7 +218,11 @@ std::string StoryTeller::readFromFile(const std::string &fileName)
 
 //tutorial for file io with qt: http://expletive-deleted.com/2015/02/26/file-io-in-qt5/
 void StoryTeller::writeLogToFile(QString fileName) {
-    QFile output(fileName + QString::fromStdString( ".txt"));
+    QDir dir;
+    dir.mkdir(QString::fromStdString("simulations"));
+
+
+    QFile output(QString::fromStdString("simulations") + QDir::separator() + fileName + QString::fromStdString( ".txt"));
 
     if(output.open(QIODevice::WriteOnly)){
         QTextStream stream(&output);

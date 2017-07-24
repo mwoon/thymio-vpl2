@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QtDebug>
 #include <QFile>
+#include <QDir>
 #include <QTextStream>
 #include <sstream>
 #include <string>
