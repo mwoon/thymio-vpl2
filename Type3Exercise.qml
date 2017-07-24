@@ -186,10 +186,9 @@ Page {
                     var score = scoreList[options.currentIndex];
 
                     stote.completeExercise(score);
-                    gameWindow.next = true;
-
                     gameWindow.toggleDialogueBox(true);
-                    gameWindow.closeExerciseWindow();
+                    gameWindow.closeExerciseWindow(score);
+                    gameWindow.next = true;
                 }
 
             }

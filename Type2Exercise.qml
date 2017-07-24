@@ -123,10 +123,9 @@ Page {
 
     function completeExercise(score) {
         stote.completeExercise(score);
-        gameWindow.next = true;
-
         gameWindow.toggleDialogueBox(true);
-        gameWindow.closeExerciseWindow();
+        gameWindow.closeExerciseWindow(score);
+        gameWindow.next = true;
     }
 
     Popup {

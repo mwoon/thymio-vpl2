@@ -83,10 +83,9 @@ Page {
         }
 
             stote.completeExercise(score);
-            gameWindow.next = true;
-
             gameWindow.toggleDialogueBox(true);
-            gameWindow.closeExerciseWindow();
+            gameWindow.closeExerciseWindow(score);
+            gameWindow.next = true;
         } else if(method === "sim") {
             //simulate and check behaviour
             submitted = true;
@@ -116,12 +115,11 @@ Page {
             console.log(positionLog + " " + sensorLog);
             if(submitted) {
                 //if submitted and simulation completed -> use this result as the result
-
+                var score = 0.0;
                 //close the exercise
-                gameWindow.next = true;
-
                 gameWindow.toggleDialogueBox(true);
-                gameWindow.closeExerciseWindow();
+                gameWindow.closeExerciseWindow(score);
+                gameWindow.next = true;
             }
 
 

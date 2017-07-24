@@ -10,8 +10,6 @@ Rectangle {
 
 
     //visible: false
-    anchors.bottom: parent.bottom
-    anchors.bottomMargin: 25
     anchors.horizontalCenter: parent.horizontalCenter
 
     height: parent.height / 9 * 2

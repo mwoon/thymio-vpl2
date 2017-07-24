@@ -1,5 +1,20 @@
 {
     "list": [
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E02.01"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "It looks like there's more of that. Let's take a look."
+                  }
+               ]
+	},	
         {
             "cmd": "ex",
             "type": "type4",
@@ -57,6 +72,31 @@
 , 
 	    "code": 
 {"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","ON","DISABLED"]},{"definition":"ButtonsEventBlock","params":["ON","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"left"}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","CLOSE"]},{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","DISABLED"]},{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","DISABLED"]},{"definition":"ClapEventBlock","params":null}],[{"definition":"PaletteTopColorActionBlock","params":[8,23,32]}]],[[],[{"definition":"PaletteBottomColorActionBlock","params":[5,32,3]},{"definition":"PaletteTopColorActionBlock","params":[4,0,15]}]],[[],[{"definition":"PaletteBottomColorActionBlock","params":[32,13,4]},{"definition":"MotorSimpleActionBlock","params":"right"},{"definition":"MotorSimpleActionBlock","params":"left"},{"definition":"MotorSimpleActionBlock","params":"backRight"}]]]}
-        }
+        },
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Post E02.01 01"
+                  },
+		  {
+                     "cmd": "feedback",
+                     "options": [
+	  		[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "I think it worked! Good job!"
+                  	}],
+			[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "That doesn't seem quite right..."
+                  	}]
+		     ]
+                  }
+               ]
+	}
     ]
 }

@@ -17,6 +17,8 @@ Page {
         }
     }
 
+    //used to decide what text to show after an exercise
+    property var lastScore: 0;
 
     title: qsTr("Thymio game WIP")
     visible: true
@@ -46,6 +48,10 @@ Page {
 
     DialogueBox {
         id: dialogueBox
+
+
+        anchors.top: parent.top
+        anchors.topMargin: 25
     }
 
     MouseArea {
@@ -228,6 +234,8 @@ Page {
                     handleBgImage(part.content);
                 } else if (part.content.cmd === "dialogue") {
                     handleDialogue(part.content.speaker, part.content.text);
+                } else if (part.content.cmd === "feedback") {
+                    handleFeedback(part.content.options);
                 }
             }
 
@@ -421,8 +429,9 @@ Page {
         dialogueBox.visible = truefalse;
     }
 
-    function closeExerciseWindow() {
+    function closeExerciseWindow(score) {
         exercisePopup.close();
+        lastScore = score;
     }
 
     function handleText(text) {
@@ -455,6 +464,15 @@ Page {
         backgroundImage.x = scene.x;
     }
 
+    function handleFeedback(options) {
+        console.log("lastscore: " + lastScore);
+        if(lastScore > 0.5) {
+            handleScene(options[0]);
+        } else {
+            handleScene(options[1]);
+        }
+    }
+
     function handleScene(scene) {
         for(var i = 0; i < scene.length; i++) {
             if(scene[i].cmd === "text") {
@@ -467,6 +485,8 @@ Page {
                 handleEx(scene[i]);
             } else if (scene[i].cmd === "dialogue") {
                 handleDialogue(scene[i].speaker, scene[i].text);
+            } else if (scene[i].cmd === "feedback") {
+                handleFeedback(scene[i].options);
             }
         }
     }

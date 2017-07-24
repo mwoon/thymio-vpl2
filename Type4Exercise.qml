@@ -99,10 +99,10 @@ Page {
             }
 
             stote.completeExercise(score);
-            gameWindow.next = true;
 
             gameWindow.toggleDialogueBox(true);
-            gameWindow.closeExerciseWindow();
+            gameWindow.closeExerciseWindow(score);
+            gameWindow.next = true;
 
         } else if(method === "sim"){
             //simulate and check behaviour
@@ -135,11 +135,11 @@ Page {
             if(submitted) {
                 //if submitted and simulation completed -> use this result as the result
 
+                var score = 0.0;
                 //close the exercise
-                gameWindow.next = true;
-
                 gameWindow.toggleDialogueBox(true);
-                gameWindow.closeExerciseWindow();
+                gameWindow.closeExerciseWindow(score);
+                gameWindow.next = true;
             }
 
 
@@ -152,6 +152,12 @@ Page {
     /*---------------------------------------- Story Logic --------------------------------------------------*/
     DialogueBox {
         id: dialogueBox
+
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 25
+
+        color: "#50c4c4c4"
+        border.color: "#90c4c4c4"
     }
 
     property var storyStack: new Array();

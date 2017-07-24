@@ -190,6 +190,9 @@
         <file>story/story9.json</file>
         <file>story/story18.json</file>
         <file>story/the_end.json</file>
+        <file>images/logoEPFL.svg</file>
+        <file>images/logoETHGTC.svg</file>
+        <file>images/logoMobsya.svg</file>
     </qresource>
     <qresource prefix="/">
         <file>Startup.qml</file>

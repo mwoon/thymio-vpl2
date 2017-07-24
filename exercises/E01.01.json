@@ -58,6 +58,31 @@
 , 
 	    "code": 
 {"mode":"simple","scene":[[[],[{"definition":"MotorActionBlock","params":[0,0]}]]]}
-        }
+        },
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Post E01.01 01"
+                  },
+		  {
+                     "cmd": "feedback",
+                     "options": [
+	  		[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Awesome!"
+                  	}],
+			[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Uhm... I don't think you cleared it properly."
+                  	}]
+		     ]
+                  }
+               ]
+	}
     ]
 }

@@ -16,8 +16,11 @@ Page {
     height: 600
 
     Material.primary: Material.theme === Material.Dark ? "#200032" : Material.background // "#a3d9db"
+    property string linkRichTextStyle: Material.theme === Material.Dark ?
+        "<style>a:link { text-decoration: none; color: \"#90CAF9\" }</style>" :
+        "<style>a:link { text-decoration: none; color: \"#3F51B5\" }</style>"
     Material.accent: Material.theme === Material.Dark ? "#9478aa" : "#B290CC" // "#59cbc8"
-    //Material.background: Material.theme === Material.Dark ? "#ff44285a" : "white"
+    Material.background: Material.theme === Material.Dark ? "#ff44285a" : "white"
 
     header: vplEditor.blockEditorVisible ? blockEditorTitleBar : vplEditorTitleBar
 
@@ -271,20 +274,74 @@ Page {
                 font.pixelSize: 20
                 font.weight: Font.Medium
             }
-            Text {
+            Label {
+                textFormat: Text.RichText;
                 text:
-                    qsTr("<p><a href=\"http://stephane.magnenat.net\">Stéphane Magnenat</a>, <a href=\"http://sampla.ch\">Martin Voelkle</a><br/>and <a href=\"http://mariamari-a.com\">Maria Beltran</a></p>") +
-                    qsTr("<p>(c) 2015–2017 EPFL and ETH Zürich</p>") +
-                    qsTr("<p>This project is open source under <a href=\"https://github.com/aseba-community/thymio-vpl2/blob/master/LICENSE.txt\">LGPL</a></p>") +
-                    qsTr("<p>See file <a href=\"https://github.com/aseba-community/thymio-vpl2/blob/master/AUTHORS.md\">AUTHORS.md</a> in the <a href=\"https://github.com/aseba-community/thymio-vpl2\">source code</a><br/>") +
-                    qsTr("for a detailed list of contributions.</p>")
-                color: Material.foreground
-                linkColor: Material.foreground
+                    linkRichTextStyle +
+                    qsTr("<p><a href=\"http://stephane.magnenat.net\">Stéphane Magnenat</a>, <a href=\"http://sampla.ch\">Martin Voelkle</a>,<br/><a href=\"http://mariamari-a.com\">Maria Beltran</a> and contributors.</p>") +
+                    qsTr("<p>© 2015–2017 EPFL, ETH Zürich and Mobsya</p>") +
+                    qsTr("<p>This project is open source under <a href=\"https://github.com/aseba-community/thymio-vpl2/blob/master/LICENSE.txt\">LGPL</a>.<br/>") +
+                    qsTr("See file <a href=\"https://github.com/aseba-community/thymio-vpl2/blob/master/AUTHORS.md\">AUTHORS.md</a> in the <a href=\"https://github.com/aseba-community/thymio-vpl2\">source code</a><br/>") +
+                    qsTr("for a detailed list of contributions.")
                 font.pixelSize: 14
                 font.weight: Font.Normal
                 lineHeight: 20
                 lineHeightMode: Text.FixedHeight
                 onLinkActivated: Qt.openUrlExternally(link)
+            }
+            Row {
+                anchors.horizontalCenter: parent.horizontalCenter
+                Rectangle {
+                    width: 100
+                    height: 50
+                    color: "white"
+                    anchors.verticalCenter: parent.verticalCenter
+                    HDPIImage {
+                        width: 80
+                        height: width * 0.5
+                        fillMode: Image.PreserveAspectFit
+                        source: "qrc:/thymio-vpl2/images/logoEPFL.svg"
+                        anchors.centerIn: parent
+                    }
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: { Qt.openUrlExternally("http://mobots.epfl.ch"); }
+                    }
+                }
+                Rectangle {
+                    width: 100
+                    height: 50
+                    color: "white"
+                    anchors.verticalCenter: parent.verticalCenter
+                    HDPIImage {
+                        width: 80
+                        height: width * 0.48 // 0.38753
+                        fillMode: Image.PreserveAspectFit
+                        source: "qrc:/thymio-vpl2/images/logoETHGTC.svg"
+                        anchors.centerIn: parent
+                    }
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: { Qt.openUrlExternally("http://www.gtc.inf.ethz.ch"); }
+                    }
+                }
+                Rectangle {
+                    width: 100
+                    height: 50
+                    color: "white"
+                    anchors.verticalCenter: parent.verticalCenter
+                    HDPIImage {
+                        width: 80
+                        height: width * 0.27348
+                        fillMode: Image.PreserveAspectFit
+                        source: "qrc:/thymio-vpl2/images/logoMobsya.svg"
+                        anchors.centerIn: parent
+                    }
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: { Qt.openUrlExternally("http://www.mobsya.org"); }
+                    }
+                }
             }
         }
     }
@@ -363,8 +420,6 @@ Page {
                 setVariable("motor.left.target", 0);
                 setVariable("motor.right.target", 0);
             } else {
-                events = vplEditor ? vplEditor.compiler.output.events : {};
-                source: playing ? vplEditor.compiler.output.script : "";
                 vplEditor.saveProgram(autosaveName);
             }
         }
