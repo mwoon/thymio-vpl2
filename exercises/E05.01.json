@@ -8,7 +8,7 @@
             "cmd": "ex",
             "type": "type1",
             "text": "E05.01",
-	    "answerList": ["Thymio stops.", "Thymio stops if all his sensors in front detect nothing.", "Thymio stops if any of his sensors in front detect something.", "Thymio stops if all his sensors in front detect something.", "Thymio stops if any of his sensors in front detect nothing", "Thymio stops if one of his sensors in front detect something."],
+	    "answerList": ["Thymio stops.", "Thymio stops if all his sensors in front detect nothing.", "Thymio stops if any of his sensors in front detect something.", "Thymio stops if all his sensors in front detect something.", "Thymio stops if any of his sensors in front detect nothing.", "Thymio stops if one of his sensors in front detect something."],
 	    "scoreList": [0, 0, 0, 1, 0, 0],
 	    "code": 
 {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","CLOSE","CLOSE","CLOSE","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]]]}

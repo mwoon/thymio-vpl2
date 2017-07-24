@@ -34,7 +34,7 @@ Page {
             //x: -1000
             //anchors.top: parent.top
             anchors.bottom: parent.bottom
-            //source: "/assets/island_1.png"
+            source: "/assets/island_1.png"
 
             Behavior on x {
                 NumberAnimation {
@@ -341,7 +341,7 @@ Page {
             if(newStorySequence.activity)  {
                 type = "activity";
                 file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                //file = "/exercises/" + "E20.05" + ".json";
+                //file = "/exercises/" + "E04.03" + ".json";
 
                 /*
                 for(var i = 0; i < newStorySequence.activity.length; i++) {
@@ -528,7 +528,11 @@ Page {
 
         }
         backgroundImage.source = scene.bgImage;
-        backgroundImage.x = scene.x;
+        if(scene.sizeX) {
+            backgroundImage.x = (scene.sizeX - Screen.width + scene.x < 0 ) ? - scene.sizeX + Screen.width : scene.x;
+        } else {
+            backgroundImage.x = scene.x;
+        }
     }
 
     function handleFeedback(options) {
