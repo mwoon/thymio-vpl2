@@ -1,18 +1,313 @@
-{"list": [
+{
+    "list": [
 	{
 	    "cmd": "multi",
             "scene":
                [
                   { 
                      "cmd": "text", 
-                     "text": "story3.01"
+                     "text": "story3.1"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Thymio",
+                     "text": "Oh, it finally worked!"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.2"
                   },
 		  {
                      "cmd": "dialogue",
                      "speaker": "Ada",
-                     "text": ""
+                     "text": "Let's go!"
+                  }
+               ]
+	},
+	{
+            "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.3"
+                  },
+		  {
+                     "cmd": "bgImage",
+                     "bgImage": "/assets/island_1.png",
+		     "sizeX": "7200",
+                     "x": -4100,
+                     "anim": true,
+                     "duration": 1000,
+                     "easing": "outquad" 
+                  }
+               ]
+        },
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.4",
+		     "description": "a robot is sitting in the groove before the cliff"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Thymio",
+                     "text": "Hey there's another robot there!"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.5"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Thymio",
+                     "text": "Give me a moment to speak to it."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.6"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "Thymio starts to move towards the other robot but Ada stops him."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.7"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "No, you can't Thymio!"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.8"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Thymio",
+                     "text": "What? Why?"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.9"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Just don't."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.10"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "It's not safe."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.10"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "All of us here on Levigo, we stay away from the robots."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.11"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Thymio",
+                     "text": "But I'm a robot. You came to help me, didn't you?"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.12"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "You're different."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.13"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "They're different from you."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.14"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "Thymio doesn't understand."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.15"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Look at their eyes!"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.16"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "The eyes of the robot glow red."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.17"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "Thymio still doesn't understand but he listens to Ada. She pushes him away from the robot."
+                  }
+               ]
+	},
+	{
+            "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.18"
+                  },
+		  {
+                     "cmd": "bgImage",
+                     "bgImage": "/assets/island_1.png",
+		     "sizeX": "7200",
+                     "x": -5600,
+                     "anim": true,
+                     "duration": 1000,
+                     "easing": "outquad" 
+                  }
+               ]
+        },
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.17"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "They move around the robot and reach the edge of the island."
                   }
                ]
 	}
-	]
+    ]
 }

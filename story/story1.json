@@ -16,6 +16,7 @@
 		  {
 		     "cmd": "bgImage",
                      "bgImage": "/assets/island_1.png",
+		     "sizeX": "7200",
                      "x": -800,
                      "anim": true,
                      "duration": 0,
@@ -144,6 +145,7 @@
 		  {
                      "cmd": "bgImage",
                      "bgImage": "/assets/island_1.png",
+		     "sizeX": "7200",
                      "x": -1600,
                      "anim": true,
                      "duration": 500,
