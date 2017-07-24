@@ -287,7 +287,7 @@
                      "cmd": "bgImage",
                      "bgImage": "/assets/island_1.png",
 		     "sizeX": "7200",
-                     "x": -5600,
+                     "x": -6000,
                      "anim": true,
                      "duration": 1000,
                      "easing": "outquad" 
