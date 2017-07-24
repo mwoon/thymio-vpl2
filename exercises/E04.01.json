@@ -1,9 +1,20 @@
 {
     "list": [
-        {
-            "cmd": "text",
-            "text": "pre E04.01"
-        },
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E04.01"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Here's a program. What do you think it does?"
+                  }
+               ]
+	},
         {
             "cmd": "ex",
             "type": "type1",
@@ -13,9 +24,30 @@
 	    "code": 
 {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"front"}]]]}
         },
-        {
-            "cmd": "text",
-            "text": "post E04.01"
-        }
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Post E04.01 01"
+                  },
+		  {
+                     "cmd": "feedback",
+                     "options": [
+	  		[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "I think so too!"
+                  	}],
+			[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "I'm not so sure about that..."
+                  	}]
+		     ]
+                  }
+               ]
+	}
     ]
 }

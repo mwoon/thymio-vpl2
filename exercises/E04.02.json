@@ -1,9 +1,20 @@
 {
     "list": [
-        {
-            "cmd": "text",
-            "text": "pre E04.02"
-        },
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E04.02"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "There are a bunch of programs here! One of them has to move Thymio forwards, right?"
+                  }
+               ]
+	},
         {
             "cmd": "ex",
             "type": "type2",
@@ -25,9 +36,30 @@
 	    "scoreList": [0, 0, 0, 0, 1, 0],
 	    "description": "Which program will help Thymio move forwards?"
         },
-        {
-            "cmd": "text",
-            "text": "post E04.02"
-        }
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Post E04.02 01"
+                  },
+		  {
+                     "cmd": "feedback",
+                     "options": [
+	  		[{
+     				"cmd": "dialogue",
+     				"speaker": "Thymio",
+             			"text": "Looks like you got the right one!"
+                  	}],
+			[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "I don't think so..."
+                  	}]
+		     ]
+                  }
+               ]
+	}
     ]
 }
