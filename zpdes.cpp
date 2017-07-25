@@ -219,8 +219,8 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
         lastActivity = *zpd_it;
         lastActivityMinor = *minor_it;
         //TODO activate based on result of exercise instead
-        (*zpd_it).get()->activated = true;
-        (*minor_it).get()->activated = true;
+        //(*zpd_it).get()->activated = true;
+        //(*minor_it).get()->activated = true;
 
         auto avail_it = availables.begin();
         std::advance(avail_it, majorIndex);

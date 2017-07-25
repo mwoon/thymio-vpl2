@@ -5,7 +5,7 @@ import QtQuick.Layouts 1.3
 Page {
 
     ColumnLayout {
-        spacing: 16
+        spacing: 10
 
         anchors.leftMargin: 50
 
@@ -37,6 +37,30 @@ Page {
         Text {
             text: "returns 0 success for every exercise"
         }
+
+        Button {
+            text: "Always Low Score"
+            onClicked: {
+                alwaysLowScoreSim();
+            }
+        }
+
+        Text {
+            text: "returns 0.2 success for every exercise"
+        }
+
+        Button {
+            text: "30% Failure Student"
+            onClicked: {
+                failPercent30Sim();
+            }
+        }
+
+        Text {
+            text: "Student who fails 30% of exercises"
+        }
+
+
     }
 
     Popup {
@@ -120,6 +144,44 @@ Page {
 
             if(parsed.activity) {
                 stote.completeExercise(0.0);
+                response = parsed.activity[0];
+            } else if (parsed.story0) {
+               response = parsed.story0[0];
+            }
+            rawResp = "";
+        }
+
+        popup.open();
+    }
+
+    function alwaysLowScoreSim() {
+        var response = "";
+        while(response !== "the_end") {
+            var rawResp = stote.advanceScript();
+            while (rawResp === "") {}
+            var parsed = JSON.parse(rawResp);
+
+            if(parsed.activity) {
+                stote.completeExercise(0.2);
+                response = parsed.activity[0];
+            } else if (parsed.story0) {
+               response = parsed.story0[0];
+            }
+            rawResp = "";
+        }
+
+        popup.open();
+    }
+
+    function failPercent30Sim() {
+        var response = "";
+        while(response !== "the_end") {
+            var rawResp = stote.advanceScript();
+            while (rawResp === "") {}
+            var parsed = JSON.parse(rawResp);
+
+            if(parsed.activity) {
+                stote.simulateWithFailPercent(0.3);
                 response = parsed.activity[0];
             } else if (parsed.story0) {
                response = parsed.story0[0];

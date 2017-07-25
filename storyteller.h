@@ -2,6 +2,7 @@
 #define STORYTELLER_H
 
 #include <QObject>
+#include <random>
 #include <QtDebug>
 #include <QFile>
 #include <QDir>
@@ -34,6 +35,8 @@ public slots:
     QString lastGenerated();
     void writeLogToFile(QString fileName);
 
+    //simulation slots
+    void simulateWithFailPercent(const double percent);
 
 private:
     // simplification of main story

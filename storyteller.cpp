@@ -3,8 +3,8 @@
 StoryTeller::StoryTeller(QObject *parent) : QObject(parent)
 {
     initializeScript();
-    mainIndex = 6;
-    successfulExercises = 4;
+    mainIndex = 0;
+    successfulExercises = 0;
     totalExInBlock = 0;
 }
 
@@ -160,6 +160,29 @@ void StoryTeller::resetScript() {
 QString StoryTeller::lastGenerated() {
     return last;
 }
+
+
+//---------------- Simulation functions -------------------
+
+
+//student passes an exercise with 30%
+void StoryTeller::simulateWithFailPercent(const double percent) {
+
+    std::vector<double> probs(2);
+    probs[0] = percent;
+    probs[1] = 1 - percent;
+
+    // sample a proportional to probs
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::discrete_distribution<unsigned> d(probs.begin(), probs.end());
+
+    unsigned index = d(gen);
+
+    completeExercise(index);
+}
+
+
 
 
 //----------------- Helper functions -----------------
