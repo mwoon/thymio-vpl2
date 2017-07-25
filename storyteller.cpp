@@ -131,8 +131,8 @@ QString StoryTeller::advanceScript(){
 
 void StoryTeller::completeExercise(const double result) {
     std::ostringstream score;
-    score << "result " << result;
-    qDebug() << QString::fromStdString(score.str());
+    score << "result " << result << ", ex: ";
+    qDebug() << QString::fromStdString(score.str()) << last;
     //update condition for progressing story after exercise
     //FIXME Need to tune this condition and see what is good
     //maybe also add a hard limit on the number of exercises?
@@ -182,7 +182,39 @@ void StoryTeller::simulateWithFailPercent(const double percent) {
     completeExercise(index);
 }
 
+//fixed success by type of exercise, probabilities provided are the probabilities to fail exercises of that type
+void StoryTeller::simulateFixedSuccessByTypeOfExercise(const double prob1, const double prob2, const double prob3, const double prob4, const double prob5) {
 
+    double percent{0};
+
+    std::string lastString = last.toStdString();
+
+    if (lastString.find(".01") != std::string::npos) {
+        percent = prob1;
+    } else if (lastString.find(".02") != std::string::npos) {
+        percent = prob2;
+    } else if (lastString.find(".03") != std::string::npos) {
+        percent = prob3;
+    } else if (lastString.find(".04") != std::string::npos) {
+        percent = prob4;
+    } else if (lastString.find(".05") != std::string::npos) {
+        percent = prob5;
+    }
+
+
+    std::vector<double> probs(2);
+    probs[0] = percent;
+    probs[1] = 1 - percent;
+
+    // sample a proportional to probs
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::discrete_distribution<unsigned> d(probs.begin(), probs.end());
+
+    unsigned index = d(gen);
+
+    completeExercise(index);
+}
 
 
 //----------------- Helper functions -----------------

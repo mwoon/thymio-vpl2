@@ -1,63 +1,196 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
+import QtQuick.Window 2.2
 
 Page {
+
+    background: Rectangle {
+        color: "#C4C4C4"
+    }
 
     ColumnLayout {
         spacing: 10
 
+        anchors.fill: parent
         anchors.leftMargin: 50
 
-        Button {
-            text: "< return"
-            onClicked: {
-                startupWindow.showHome();
+        ListView {
+            id: options
+
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            spacing: 12
+
+
+            model: optionsList
+            delegate: RowLayout {
+                id: row
+                spacing: 8
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+
+                Button {
+                    id: control
+                    implicitWidth: Screen.width / 2
+                    text: name
+                    background: Rectangle {
+                        color: "#30efff16"
+                        border.color: "#a0efff16"
+                        radius: 5
+                    }
+                    contentItem: Text {
+                        text: control.text
+                        //font: control.font
+                        font.pointSize: 14
+                        color: "#efff16"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        elide: Text.ElideRight
+                        wrapMode: Text.WordWrap
+                    }
+                    onClicked:  {
+                        options.currentIndex = index;
+                        options.model[callback]();
+                    }
+                    highlighted: row.ListView.isCurrentItem
+                }
+
+                Text {
+                    text: description
+                }
             }
-        }
 
-        Button {
-            text: "Perfect Student"
-            onClicked: {
-                perfectSim();
+        }
+        ListModel {
+            id: optionsList
+
+            ListElement {
+                name: "Perfect Student"
+                callback: "perfectSim"
+                description: "returns 1 success for every exercise"
             }
-        }
 
-        Text {
-            text: "returns 1 success for every exercise"
-        }
-
-        Button {
-            text: "Total Failure Student"
-            onClicked: {
-                totalFailSim();
+            ListElement {
+                name: "Total Failure Student"
+                callback: "totalFailSim"
+                description: "returns 0 success for every exercise"
             }
-        }
 
-        Text {
-            text: "returns 0 success for every exercise"
-        }
-
-        Button {
-            text: "Always Low Score"
-            onClicked: {
-                alwaysLowScoreSim();
+            ListElement {
+                name: "Always Low Score"
+                callback: "alwaysLowScoreSim"
+                description: "returns 0.2 success for every exercise"
             }
-        }
 
-        Text {
-            text: "returns 0.2 success for every exercise"
-        }
-
-        Button {
-            text: "30% Failure Student"
-            onClicked: {
-                failPercent30Sim();
+            ListElement {
+                name: "30% Failure Student"
+                callback: "failPercent30Sim"
+                description: "Student who fails 30% of exercises"
             }
-        }
 
-        Text {
-            text: "Student who fails 30% of exercises"
+            ListElement {
+                name: "Fixed Rate Per Type 30%, 40%, 50%, 60%, 80%"
+                callback: "fixed3040506080"
+                description: "Student who fails type 1 exercise with 30%, type 2 with 40%, type 3 with 50%, type 4 with 60% and type 5 with 80%"
+            }
+
+
+            //functions
+            function perfectSim() {
+                var response = "";
+                while(response !== "the_end") {
+                    var rawResp = stote.advanceScript();
+                    while (rawResp === "") {}
+                    var parsed = JSON.parse(rawResp);
+
+                    if(parsed.activity) {
+                        stote.completeExercise(1.0);
+                        response = parsed.activity[0];
+                    } else if (parsed.story0) {
+                       response = parsed.story0[0];
+                    }
+                    rawResp = "";
+                }
+
+                popup.open();
+            }
+
+            function totalFailSim() {
+                var response = "";
+                while(response !== "the_end") {
+                    var rawResp = stote.advanceScript();
+                    while (rawResp === "") {}
+                    var parsed = JSON.parse(rawResp);
+
+                    if(parsed.activity) {
+                        stote.completeExercise(0.0);
+                        response = parsed.activity[0];
+                    } else if (parsed.story0) {
+                       response = parsed.story0[0];
+                    }
+                    rawResp = "";
+                }
+
+                popup.open();
+            }
+
+            function alwaysLowScoreSim() {
+                var response = "";
+                while(response !== "the_end") {
+                    var rawResp = stote.advanceScript();
+                    while (rawResp === "") {}
+                    var parsed = JSON.parse(rawResp);
+
+                    if(parsed.activity) {
+                        stote.completeExercise(0.2);
+                        response = parsed.activity[0];
+                    } else if (parsed.story0) {
+                       response = parsed.story0[0];
+                    }
+                    rawResp = "";
+                }
+
+                popup.open();
+            }
+
+            function failPercent30Sim() {
+                var response = "";
+                while(response !== "the_end") {
+                    var rawResp = stote.advanceScript();
+                    while (rawResp === "") {}
+                    var parsed = JSON.parse(rawResp);
+
+                    if(parsed.activity) {
+                        stote.simulateWithFailPercent(0.3);
+                        response = parsed.activity[0];
+                    } else if (parsed.story0) {
+                       response = parsed.story0[0];
+                    }
+                    rawResp = "";
+                }
+
+                popup.open();
+            }
+
+            function fixed3040506080() {
+                var response = "";
+                while(response !== "the_end") {
+                    var rawResp = stote.advanceScript();
+                    while (rawResp === "") {}
+                    var parsed = JSON.parse(rawResp);
+
+                    if(parsed.activity) {
+                        stote.simulateFixedSuccessByTypeOfExercise(0.3, 0.4, 0.5, 0.6, 0.8)
+                        response = parsed.activity[0];
+                    } else if (parsed.story0) {
+                       response = parsed.story0[0];
+                    }
+                    rawResp = "";
+                }
+
+                popup.open();
+            }
         }
 
 
@@ -116,81 +249,7 @@ Page {
         }
     }
 
-    function perfectSim() {
-        var response = "";
-        while(response !== "the_end") {
-            var rawResp = stote.advanceScript();
-            while (rawResp === "") {}
-            var parsed = JSON.parse(rawResp);
 
-            if(parsed.activity) {
-                stote.completeExercise(1.0);
-                response = parsed.activity[0];
-            } else if (parsed.story0) {
-               response = parsed.story0[0];
-            }
-            rawResp = "";
-        }
-
-        popup.open();
-    }
-
-    function totalFailSim() {
-        var response = "";
-        while(response !== "the_end") {
-            var rawResp = stote.advanceScript();
-            while (rawResp === "") {}
-            var parsed = JSON.parse(rawResp);
-
-            if(parsed.activity) {
-                stote.completeExercise(0.0);
-                response = parsed.activity[0];
-            } else if (parsed.story0) {
-               response = parsed.story0[0];
-            }
-            rawResp = "";
-        }
-
-        popup.open();
-    }
-
-    function alwaysLowScoreSim() {
-        var response = "";
-        while(response !== "the_end") {
-            var rawResp = stote.advanceScript();
-            while (rawResp === "") {}
-            var parsed = JSON.parse(rawResp);
-
-            if(parsed.activity) {
-                stote.completeExercise(0.2);
-                response = parsed.activity[0];
-            } else if (parsed.story0) {
-               response = parsed.story0[0];
-            }
-            rawResp = "";
-        }
-
-        popup.open();
-    }
-
-    function failPercent30Sim() {
-        var response = "";
-        while(response !== "the_end") {
-            var rawResp = stote.advanceScript();
-            while (rawResp === "") {}
-            var parsed = JSON.parse(rawResp);
-
-            if(parsed.activity) {
-                stote.simulateWithFailPercent(0.3);
-                response = parsed.activity[0];
-            } else if (parsed.story0) {
-               response = parsed.story0[0];
-            }
-            rawResp = "";
-        }
-
-        popup.open();
-    }
 
 /*-------------------------- Title Bar & Drawer Menu --------------------------------------*/
 

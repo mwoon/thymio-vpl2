@@ -37,6 +37,7 @@ public slots:
 
     //simulation slots
     void simulateWithFailPercent(const double percent);
+    void simulateFixedSuccessByTypeOfExercise(const double prob1, const double prob2, const double prob3, const double prob4, const double prob5);
 
 private:
     // simplification of main story
