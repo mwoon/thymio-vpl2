@@ -62,15 +62,24 @@ Page {
             actionsVisible: false
             eventsVisible: false
 
-            Rectangle {
-                anchors.fill: parent
-                z:1
-                color: "transparent"
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {}
+            //hacky workaround to make scroll-dragging in editor work without being able to change the code
+            onBlockEditorVisibleChanged: {
+                if(blockEditorVisible) {
+                    blockEditorVisible = false;
                 }
+            }
+
+            Component.onCompleted: {
+                disableDestroy();
+            }
+            //end hacky workaround
+
+            Rectangle {
+                z:-1
+                anchors.fill: parent
+                color: "#30ffffff"
+                border.color: "#50ffffff"
+                radius: 5
             }
         }
 
@@ -89,8 +98,9 @@ Page {
 
                 //Layout.fillWidth: true
                 Layout.preferredWidth: Screen.width / 2
-                Layout.preferredHeight: optionsList.count * 100
+                Layout.preferredHeight: optionsList.count * 75
                 spacing: 12
+                interactive: false
 
 
                 model: optionsList

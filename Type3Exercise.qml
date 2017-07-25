@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.7
 import QtQuick.Controls 2.1
 import QtQuick.Window 2.2
 import QtQuick.Layouts 1.3
@@ -78,16 +78,17 @@ Page {
                     radius: 5
                 }
 
-                Rectangle {
-                    anchors.fill: parent
-                    z:1
-                    color: "transparent"
-
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: {}
+                //hacky workaround to make scroll-dragging in editor work without being able to change the code
+                onBlockEditorVisibleChanged: {
+                    if(blockEditorVisible) {
+                        blockEditorVisible = false;
                     }
                 }
+
+                Component.onCompleted: {
+                    disableDestroy();
+                }
+                //end hacky workaround
             }
 
             Editor {
@@ -112,16 +113,17 @@ Page {
                     radius: 5
                 }
 
-                Rectangle {
-                    anchors.fill: parent
-                    z:1
-                    color: "transparent"
-
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: {}
+                //hacky workaround to make scroll-dragging in editor work without being able to change the code
+                onBlockEditorVisibleChanged: {
+                    if(blockEditorVisible) {
+                        blockEditorVisible = false;
                     }
                 }
+
+                Component.onCompleted: {
+                    disableDestroy();
+                }
+                //end hacky workaround
             }
         }
 
@@ -141,9 +143,9 @@ Page {
 
                 //Layout.fillHeight: true
                 Layout.preferredWidth: Screen.width / 2
-                Layout.preferredHeight: optionsList.count * 100
+                Layout.preferredHeight: optionsList.count * 75
                 spacing: 12
-
+                interactive: false
 
                 model: optionsList
                 delegate: Row {

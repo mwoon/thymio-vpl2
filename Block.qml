@@ -242,6 +242,7 @@ DropArea {
 	// drag
 	MouseArea {
 		id: dragArea
+        propagateComposedEvents: true
 		anchors.fill: parent
 		drag.target: canDrag ? block : null
 		scrollGestureEnabled: false  // 2-finger-flick gesture should pass through to the Flickable
@@ -322,6 +323,7 @@ DropArea {
 
 		onClicked: {
 			blockEditor.openBlock(block, block.definition, block.params);
+            mouse.accepted = false;
 		}
 	}
 }

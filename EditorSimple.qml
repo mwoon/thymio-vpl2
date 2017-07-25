@@ -18,6 +18,13 @@ Item {
 	property var astState
 	property var ast
 
+    //for the thymio game to enable scroll-dragging of vpl in exercises but not removing blocks
+    property bool doNotDestroy: false
+
+    function disableDestroy() {
+        doNotDestroy = true;
+    }
+
 	anchors.fill: parent
 	onWidthChanged: rows.updateWidth()
 
@@ -41,6 +48,7 @@ Item {
 		return data;
 	}
 
+
 	function deserialize(data) {
 		clear();
 		var row = rows.model.get(0);
@@ -52,9 +60,11 @@ Item {
         rows.positionViewAtBeginning();
 	}
 
-	function deleteBlock(block) {
-        block.destroy();
-	}
+    function deleteBlock (block) {
+        if(!doNotDestroy) {
+            block.destroy();
+        }
+    }
 
 	QtObject {
 		id: constants
@@ -109,6 +119,12 @@ Item {
 			maxEventWidth = newMaxEventWidth;
 		}
 
+        MouseArea {
+            anchors.fill: parent
+            propagateComposedEvents: true
+            onClicked: { mouse.accepted = false}
+        }
+
 		Component {
 			id: rowComponent
 			TransitionRow {
@@ -159,7 +175,7 @@ Item {
 		}
 	}
 
-	function handleBlockDrop(source, drop) {
+    function handleBlockDrop(source, drop) {
 		if (drop.source === blockDragPreview) {
 			drop.accepted = true;
 			var definition = blockDragPreview.definition;
@@ -170,7 +186,7 @@ Item {
 		}
 	}
 
-	function handleSceneDrop(source, drop) {
+    property var handleSceneDrop: function (source, drop) {
 		drop.accepted = false;
 	}
 }

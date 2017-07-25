@@ -89,16 +89,27 @@ Page {
 
                     Component.onCompleted:  {
                         loadCode(program);
+                        disableDestroy();
                     }
 
                     MouseArea {
                         anchors.fill: parent
-                        z:1
+                        z:-0.5
 
                         onClicked: {
-                            completeExercise(score)
+                            console.log("clicked");
+                            completeExercise(score);
                         }
                     }
+
+
+                    //hacky workaround to make scroll-dragging in editor work without being able to change the code
+                    onBlockEditorVisibleChanged: {
+                        if(blockEditorVisible) {
+                            blockEditorVisible = false;
+                        }
+                    }
+                    //end hacky workaround
 
                     Rectangle {
                         z:-1
