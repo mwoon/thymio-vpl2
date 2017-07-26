@@ -8,32 +8,92 @@
 #include <QVector2D>
 #include <QVector3D>
 #include <QColor>
+#include <QStandardPaths>
+#include <QFileInfo>
+#include <QDir>
+#include <QJSEngine>
+#include <QQmlEngine>
 
 using namespace Aseba;
 using namespace Enki;
 using namespace std;
 
+//! Make sure only one program runs at a time, because of global world pointer for Aseba C native functions
+static std::mutex simulationMutex;
+
+//! A node manager that uses the queues of the direct connection to send and process messages
 struct SimulatorNodesManager: NodesManager
 {
-	DirectAsebaThymio2* thymio;
+	DirectAsebaThymio2& thymio;
 
-	SimulatorNodesManager(DirectAsebaThymio2* thymio): thymio(thymio) {}
+	SimulatorNodesManager(DirectAsebaThymio2& thymio): thymio(thymio) {}
 
 	virtual void sendMessage(const Message& message)
 	{
-		thymio->inQueue.emplace(message.clone());
+		thymio.inQueue.emplace(message.clone());
 	}
 
 	void step()
 	{
-		while (!thymio->outQueue.empty())
+		while (!thymio.outQueue.empty())
 		{
-			processMessage(thymio->outQueue.front().get());
-			thymio->outQueue.pop();
+			processMessage(thymio.outQueue.front().get());
+			thymio.outQueue.pop();
 		}
 	}
 };
 
+//! An environment for this simulation
+struct QtSimulatorEnvironment: SimulatorEnvironment
+{
+	const Simulator* parent;
+	World* world;
+
+	QtSimulatorEnvironment(const Simulator* parent, World* world): parent(parent), world(world) {}
+
+	virtual void notify(const EnvironmentNotificationType type, const std::string& description, const strings& arguments) override
+	{
+		QString level;
+		switch (type)
+		{
+			case EnvironmentNotificationType::DISPLAY_INFO: level = "display";
+			case EnvironmentNotificationType::LOG_INFO: level = "info";
+			case EnvironmentNotificationType::LOG_WARNING: level = "warning";
+			case EnvironmentNotificationType::LOG_ERROR: level = "error";
+			case EnvironmentNotificationType::FATAL_ERROR: level = "error";
+		}
+		QStringList qArguments;
+		transform(arguments.begin(), arguments.end(), back_inserter(qArguments), [] (const string& stdString) { return QString::fromStdString(stdString); });
+		emit parent->notify(level, QString::fromStdString(description), qArguments);
+	}
+
+	virtual std::string getSDFilePath(const std::string& robotName, unsigned fileNumber) const override
+	{
+		auto fileName(QString("%1/%2/U%3.DAT")
+			.arg(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation))
+			.arg(QString::fromStdString(robotName))
+			.arg(fileNumber)
+		);
+		QDir().mkpath(QFileInfo(fileName).absolutePath());
+		return fileName.toStdString();
+	}
+
+	virtual World* getWorld() const override
+	{
+		return world;
+	}
+};
+
+//! An helper object to de-register the simulator environment once its content gets destroyed at end of scope
+struct SimulatorEnvironmentLifeSpanManager
+{
+	~SimulatorEnvironmentLifeSpanManager()
+	{
+		simulatorEnvironment.reset();
+	}
+};
+
+//! An helper to get a value of out a variant map
 template<typename T>
 std::tuple<QString, T> getValue(const QVariantMap& v, const QString& name, const QString& context = "Scenario")
 {
@@ -45,13 +105,167 @@ std::tuple<QString, T> getValue(const QVariantMap& v, const QString& name, const
 	return std::make_tuple("", entry.value<T>());
 }
 
+//! syntaxic sugar
 template<class T>
 std::remove_reference_t<T> const& as_const(T&&t) { return t; }
 
-QString Simulator::runProgram(const QVariantMap& scenario, const QVariantMap& events, const QString& source) const
+ThymioRobotInterface::ThymioRobotInterface(Enki::DirectAsebaThymio2& thymio):
+    thymio(thymio)
+{}
+
+QVector2D ThymioRobotInterface::position() const
 {
+	return QVector2D(thymio.pos.x, thymio.pos.y);
+}
+
+double ThymioRobotInterface::orientation() const
+{
+	return thymio.angle;
+}
+
+QVariantList ThymioRobotInterface::horizontalSensors() const
+{
+	QVariantList sensors;
+	sensors.append(thymio.infraredSensor0.getValue());
+	sensors.append(thymio.infraredSensor1.getValue());
+	sensors.append(thymio.infraredSensor2.getValue());
+	sensors.append(thymio.infraredSensor3.getValue());
+	sensors.append(thymio.infraredSensor4.getValue());
+	sensors.append(thymio.infraredSensor5.getValue());
+	sensors.append(thymio.infraredSensor6.getValue());
+	return sensors;
+}
+
+QVariantList ThymioRobotInterface::groundSensors() const
+{
+	QVariantList sensors;
+	sensors.append(thymio.groundSensor0.getValue());
+	sensors.append(thymio.groundSensor1.getValue());
+	return sensors;
+}
+
+QVariantList ThymioRobotInterface::nativeCalls() const
+{
+	QVariantList nativeCalls;
+	for (const auto& nativeCallEntry: thymio.thymioNativeCallLog)
+	{
+		QVariantMap nativeCall;
+		nativeCall["id"] = nativeCallEntry.first;
+		QVariantList qValues;
+		transform(nativeCallEntry.second.begin(), nativeCallEntry.second.end(), back_inserter(qValues), [] (int16_t value) { return QVariant(value); } );
+		nativeCall["values"] = qValues;
+		nativeCalls.append(nativeCall);
+	}
+	return nativeCalls;
+}
+
+void ThymioRobotInterface::tap()
+{
+	thymio.execLocalEvent(8);
+}
+
+void ThymioRobotInterface::clap()
+{
+	thymio.execLocalEvent(10);
+}
+
+void ThymioRobotInterface::pressBackwardButton()
+{
+	if (thymio.variables.buttonBackward != 1)
+	{
+		thymio.variables.buttonBackward = 1;
+		thymio.execLocalEvent(0);
+	}
+}
+
+void ThymioRobotInterface::releaseBackwardButton()
+{
+	if (thymio.variables.buttonBackward != 0)
+	{
+		thymio.variables.buttonBackward = 0;
+		thymio.execLocalEvent(0);
+	}
+}
+
+void ThymioRobotInterface::pressLeftButton()
+{
+	if (thymio.variables.buttonLeft != 1)
+	{
+		thymio.variables.buttonLeft = 1;
+		thymio.execLocalEvent(1);
+	}
+}
+
+void ThymioRobotInterface::releaseLeftButton()
+{
+	if (thymio.variables.buttonLeft != 0)
+	{
+		thymio.variables.buttonLeft = 0;
+		thymio.execLocalEvent(1);
+	}
+}
+
+void ThymioRobotInterface::pressCenterButton()
+{
+	if (thymio.variables.buttonCenter != 1)
+	{
+		thymio.variables.buttonCenter = 1;
+		thymio.execLocalEvent(2);
+	}
+}
+
+void ThymioRobotInterface::releaseCenterButton()
+{
+	if (thymio.variables.buttonCenter != 0)
+	{
+		thymio.variables.buttonCenter = 0;
+		thymio.execLocalEvent(2);
+	}
+}
+
+void ThymioRobotInterface::pressForwardButton()
+{
+	if (thymio.variables.buttonForward != 1)
+	{
+		thymio.variables.buttonForward = 1;
+		thymio.execLocalEvent(3);
+	}
+}
+
+void ThymioRobotInterface::releaseForwardButton()
+{
+	if (thymio.variables.buttonForward != 0)
+	{
+		thymio.variables.buttonForward = 0;
+		thymio.execLocalEvent(3);
+	}
+}
+
+void ThymioRobotInterface::pressRightButton()
+{
+	if (thymio.variables.buttonRight != 1)
+	{
+		thymio.variables.buttonRight = 1;
+		thymio.execLocalEvent(0);
+	}
+}
+
+void ThymioRobotInterface::releaseRightButton()
+{
+	if (thymio.variables.buttonRight != 0)
+	{
+		thymio.variables.buttonRight = 0;
+		thymio.execLocalEvent(0);
+	}
+}
+
+
+QString Simulator::runProgram(const QVariantMap& scenario, const QVariantMap& events, const QString& source, QJSValue callback) const
+{
+	std::lock_guard<std::mutex> guard(simulationMutex);
+
 	// Parameters
-	const double dt(0.2);
+	const double dt(0.1);
 
 	// validate events
 	unsigned i = 0;
@@ -74,7 +288,10 @@ QString Simulator::runProgram(const QVariantMap& scenario, const QVariantMap& ev
 	tie(error, worldSize) = getValue<QVector2D>(scenario, "worldSize");
 	if (!error.isEmpty()) return error;
 	World world(worldSize.x(), worldSize.y());
-	Enki::getWorld = [&]() { return &world; };
+	// Make sure that the global Enki pointer to the world is reset when this function is exited
+	// this is not clean and is a work-around through the non-reentrant World lookup interface
+	SimulatorEnvironmentLifeSpanManager simulatorEnvironmentLifeSpanManager;
+	simulatorEnvironment.reset(new QtSimulatorEnvironment(this, &world));
 
 	// walls
 	QVariantList walls;
@@ -123,13 +340,17 @@ QString Simulator::runProgram(const QVariantMap& scenario, const QVariantMap& ev
 	tie(error, initialAngle) = getValue<double>(thymioDescription, "angle", "Thymio");
 	if (!error.isEmpty()) return error;
 	// set to Thymio
-	DirectAsebaThymio2* thymio(new DirectAsebaThymio2());
+	DirectAsebaThymio2* thymio(new DirectAsebaThymio2("thymio"));
+	thymio->logThymioNativeCalls = true;
 	thymio->pos = { initialPosition.x(), initialPosition.y() };
 	thymio->angle = initialAngle;
 	world.addObject(thymio);
+	// Interface to expose it to Javascript callbacks
+	// as the robot lives as long as the world, and they are in the same scope, it is ok.
+	ThymioRobotInterface thymioInterface { *thymio };
 
-	// nod manager
-	SimulatorNodesManager SimulatorNodesManager(thymio);
+	// node manager
+	SimulatorNodesManager SimulatorNodesManager(*thymio);
 
 	// List the nodes and step, the robot should send its description to the nodes manager
 	thymio->inQueue.emplace(ListNodes().clone());
@@ -185,36 +406,61 @@ QString Simulator::runProgram(const QVariantMap& scenario, const QVariantMap& ev
 	}
 
 	// Fill the bytecode messages
-	vector<Message*> setBytecodeMessages;
-	sendBytecode(setBytecodeMessages, nodeId, vector<uint16>(bytecode.begin(), bytecode.end()));
-	for_each(setBytecodeMessages.begin(), setBytecodeMessages.end(), [=](Message* message){ thymio->inQueue.emplace(message); });
+	vector<unique_ptr<Message>> setBytecodeMessages;
+	sendBytecode(setBytecodeMessages, nodeId, vector<uint16_t>(bytecode.begin(), bytecode.end()));
+	for_each(setBytecodeMessages.begin(), setBytecodeMessages.end(), [=](unique_ptr<Message>& message) { thymio->inQueue.emplace(message.release()); });
+
+	// Prepare the context for the callback
+	QJSEngine* jsEngine(qjsEngine(this));
+	QJSValue callbackContext(jsEngine->newObject());
+	callbackContext.setProperty("simulatedThymio", jsEngine->newQObject(&thymioInterface));
+	QQmlEngine::setObjectOwnership(&thymioInterface, QQmlEngine::CppOwnership);
 
 	// Run the code and log needed information
-	QVariantList positionLog;
-	QVariantList sensorLog;
+	QVariantList log;
 	thymio->inQueue.emplace(new Run(nodeId));
+	double currentTime(0);
 	for (uint64_t i = 0; i < uint64_t(duration/dt); ++i)
 	{
+		callbackContext.setProperty("currentTime", QJSValue(currentTime));
+
 		// do step
 		step();
-		// log position
-		QVariantList position;
-		position.append(thymio->pos.x);
-		position.append(thymio->pos.y);
-		position.append(thymio->angle);
-		positionLog.append(position);
+
+		// if callback exists and is a function, execute callback
+		if (callback.isCallable())
+		{
+			QJSValue result(callback.callWithInstance(callbackContext));
+			if (result.isError())
+			{
+				const QString errorString =
+					QString("Callback to simulator returned an error at %1:%2 %3")
+					.arg(result.property("fileName").toString())
+					.arg(result.property("lineNumber").toInt())
+					.arg(result.toString());
+				qWarning() << errorString;
+				return errorString;
+			}
+		}
+
+		// log time
+		QVariantMap logEntry;
+		logEntry["time"] = currentTime;
+		// log pose
+		logEntry["position"] = thymioInterface.position();
+		logEntry["orientation"] = thymioInterface.orientation();
 		// log sensors
-		QVariantList sensor;
-		sensor.append(thymio->infraredSensor0.getValue());
-		sensor.append(thymio->infraredSensor1.getValue());
-		sensor.append(thymio->infraredSensor2.getValue());
-		sensor.append(thymio->infraredSensor3.getValue());
-		sensor.append(thymio->infraredSensor4.getValue());
-		sensor.append(thymio->groundSensor0.getValue());
-		sensor.append(thymio->groundSensor1.getValue());
-		sensorLog.append(sensor);
+		logEntry["horizontalSensors"] = thymioInterface.horizontalSensors();
+		logEntry["groundSensors"] = thymioInterface.groundSensors();
+		// log native calls
+		logEntry["nativeCalls"] = thymioInterface.nativeCalls();
+		log.append(logEntry);
+
+		// let simulation progress
+		thymio->thymioNativeCallLog.clear();
+		currentTime += dt;
 	}
 
-	emit simulationCompleted(positionLog, sensorLog);
+	emit simulationCompleted(log);
 	return "";
 }
