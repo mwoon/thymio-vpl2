@@ -2,6 +2,7 @@
 #define STORYTELLER_H
 
 #include <QObject>
+#include <QStandardPaths>
 #include <random>
 #include <QtDebug>
 #include <QFile>
@@ -60,6 +61,8 @@ private:
     std::string makeJsonArray(std::string propertyName, std::list<std::string> content);
     std::string makeJsonArray(std::string propertyName, std::string content);
     std::string readFromFile(const std::string &fileName);
+
+    unsigned logcounter{0};
 };
 
 #endif // STORYTELLER_H

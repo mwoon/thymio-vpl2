@@ -156,6 +156,9 @@ void StoryTeller::completeExercise(const double result) {
 void StoryTeller::resetScript() {
     mainIndex = 0;
     its.resetZpdes();
+    std::ostringstream filename;
+    filename << "autoLogOnReset" << logcounter++;
+    writeLogToFile(QString::fromStdString(filename.str()));
 }
 
 
@@ -275,11 +278,11 @@ std::string StoryTeller::readFromFile(const std::string &fileName)
 
 //tutorial for file io with qt: http://expletive-deleted.com/2015/02/26/file-io-in-qt5/
 void StoryTeller::writeLogToFile(QString fileName) {
-    QDir dir;
+    QDir dir(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation));
     dir.mkdir(QString::fromStdString("simulations"));
 
 
-    QFile output(QString::fromStdString("simulations") + QDir::separator() + fileName + QString::fromStdString( ".txt"));
+    QFile output(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation) + QDir::separator() + QString::fromStdString("simulations") + QDir::separator() + fileName + QString::fromStdString( ".txt"));
 
     if(output.open(QIODevice::WriteOnly)){
         QTextStream stream(&output);
