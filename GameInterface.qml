@@ -340,8 +340,8 @@ Page {
 
             if(newStorySequence.activity)  {
                 type = "activity";
-                //file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                file = "/exercises/" + "E10.01" + ".json";
+                file = "/exercises/" + newStorySequence.activity[0] + ".json";
+                //file = "/exercises/" + "E10.01" + ".json";
 
                 /*
                 for(var i = 0; i < newStorySequence.activity.length; i++) {
@@ -537,11 +537,22 @@ Page {
 
     function handleFeedback(options) {
         console.log("lastscore: " + lastScore);
+        var nextStory;
         if(lastScore > 0.5) {
-            handleScene(options[0]);
+            nextStory = options[0];
         } else {
-            handleScene(options[1]);
+            nextStory = options[1];
         }
+
+        var part;
+
+        for(var i = 0; i < nextStory.length; i++) {
+            part = {};
+            part.type = "story";
+            part.content = nextStory[i];
+            storyStack.push(part);
+        }
+        next = true;
     }
 
     function handleScene(scene) {

@@ -15,7 +15,9 @@ void StoryTeller::initializeScript() {
     script.push_back(ScriptBlock("exercise", std::list<std::string>{"E02"}));
     script.push_back(ScriptBlock("exercise", std::list<std::string>{"E03"}));
     script.push_back(ScriptBlock("story", std::list<std::string>{"\"story2\""}));
-    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E04", "E05"}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E04"}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story2_1\""}));
+    script.push_back(ScriptBlock("exercise", std::list<std::string>{"E05"}));
     script.push_back(ScriptBlock("story", std::list<std::string>{"\"story3\""}));
     script.push_back(ScriptBlock("exercise", std::list<std::string>{"E06", "E08", "E11", "E9", "E10"}));
     script.push_back(ScriptBlock("story", std::list<std::string>{"\"story4\""}));
@@ -69,7 +71,7 @@ QString StoryTeller::advanceScript(){
         //check if number of successfully completed exercises sufficient
         // TODO if yes, advance story: increment mainIndex and dish out new story,
         // if no, draw another exercise
-        if((successfulExercises > succExLimit - 1) || (totalExInBlock > totalExLimit - 1) || (mainIndex < 5)) {
+        if((successfulExercises > succExLimit - 1) || (totalExInBlock > totalExLimit - 1) || (mainIndex < 9)) {
             //FIXME for now just increment
             successfulExercises = 0;
             totalExInBlock = 0;

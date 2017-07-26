@@ -93,6 +93,10 @@
      				"cmd": "dialogue",
      				"speaker": "Ada",
              			"text": "That doesn't seem quite right..."
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "It doesn't look like you cleared it out properly."
                   	}]
 		     ]
                   }

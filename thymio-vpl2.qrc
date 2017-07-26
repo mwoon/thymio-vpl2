@@ -193,6 +193,7 @@
         <file>images/logoEPFL.svg</file>
         <file>images/logoETHGTC.svg</file>
         <file>images/logoMobsya.svg</file>
+        <file>story/story2_1.json</file>
     </qresource>
     <qresource prefix="/">
         <file>Startup.qml</file>

@@ -200,6 +200,9 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
     for(auto it = minorActivities.begin(); it != minorActivities.end(); it++) {
         if(it == minorActivities.begin() || prev->get()->activated) {
             minorZpd.push_back(*it);
+            qDebug() << QString::fromStdString((*it).get()->id) << " ";
+        } else {
+            break;
         }
         prev = it;
     }

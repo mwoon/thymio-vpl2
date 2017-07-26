@@ -23,6 +23,7 @@ Item {
 
     function disableDestroy() {
         doNotDestroy = true;
+        mouseblocker.enabled = true;
     }
 
 	anchors.fill: parent
@@ -119,10 +120,15 @@ Item {
 			maxEventWidth = newMaxEventWidth;
 		}
 
+
         MouseArea {
+            id: mouseblocker
+            enabled: false
             anchors.fill: parent
             propagateComposedEvents: true
-            onClicked: { mouse.accepted = false}
+            onClicked: {
+                if(!doNotDestroy) {mouse.accepted = false}
+            }
         }
 
 		Component {

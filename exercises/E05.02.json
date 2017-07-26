@@ -1,8 +1,34 @@
 {
-    "list": [
-        {
-            "cmd": "text",
-            "text": "pre E05.02"
+    "list": [ 
+    	{
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "pre ex 5.02 1"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Ada",
+                         "text": "Okay, so... A program that'll help Thymio stop." 
+                      }
+                   ]
+        },
+	{
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "pre ex 5.02 2"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Ada",
+                         "text": "One of these maybe?" 
+                      }
+                   ]
         },
         {
             "cmd": "ex",
@@ -25,9 +51,38 @@
 	    "scoreList": [0, 1, 0, 0, 0, 0],
 	    "description": "We need a program that will make Thymio stop when he senses something in front of him!"
         },
-        {
-            "cmd": "text",
-            "text": "post E05.02"
-        }
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Post E05.01 01"
+                  },
+		  {
+                     "cmd": "feedback",
+                     "options": [
+	  		[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "That's the one I would've picked!"
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Let's try it out."
+                  	}],
+			[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "That doesn't seem quite right..."
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Maybe this one is better?"
+                  	}]
+		     ]
+                  }
+               ]
+	}
     ]
 }
