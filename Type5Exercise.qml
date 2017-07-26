@@ -112,7 +112,7 @@ Page {
     Connections {
         target: simulator
         onSimulationCompleted: {
-            console.log(positionLog + " " + sensorLog);
+            console.log(console.log(JSON.stringify(log)));
             if(submitted) {
                 //if submitted and simulation completed -> use this result as the result
                 var score = 0.0;

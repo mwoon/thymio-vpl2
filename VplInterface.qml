@@ -175,6 +175,21 @@ Page {
             stote.resetScript();
         }
 
+        ListElement {
+                    title: QT_TR_NOOP("simulate exercise");
+                    callback: "simulateExercise";
+                    whiteIcon: "";
+                    blackIcon: "";
+        }
+
+        function simulateExercise() {
+            vplEditor.saveProgram(autosaveName);
+            thymio.playing = true;
+            thymio.runSimulation();
+
+            thymio.playing = false;
+        }
+
         function completeExercise4() {
             var code = {
                 scene: vplEditor.scene.serialize()
