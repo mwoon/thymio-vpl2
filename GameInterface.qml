@@ -7,7 +7,7 @@ Page {
 
     id: gameWindow
 
-
+    property bool askForFeedback: false;
     property StackView view
     property var storyStack: new Array()
     property bool next: false //signals when a new segment is ready to be read
@@ -497,6 +497,20 @@ Page {
     function closeExerciseWindow(score) {
         exercisePopup.close();
         lastScore = score;
+
+        if(askForFeedback) {
+            exercisePopup.open();
+            toggleDialogueBox(false);
+            exLoader.setSource("DifficultyFeedback.qml", { });
+        } else {
+            next = true;
+        }
+    }
+
+    function closeFeedbackWindow() {
+        exercisePopup.close();
+        toggleDialogueBox(true);
+        next = true;
     }
 
     function handleText(text) {
@@ -604,7 +618,7 @@ Page {
 
         textOutput.append({"output": content.text});
         exercisePopup.open();
-        dialogueBox.visible = false;
+        toggleDialogueBox(false);
     }
 
 }

@@ -34,6 +34,8 @@ public slots:
     void resetScript();
     void completeExercise(const double result);
     QString lastGenerated();
+
+    void appendToLog(QString toLog);
     void writeLogToFile(QString fileName);
 
     //simulation slots

@@ -102,7 +102,6 @@ Page {
 
             gameWindow.toggleDialogueBox(true);
             gameWindow.closeExerciseWindow(score);
-            gameWindow.next = true;
 
         } else if(method === "sim"){
             //simulate and check behaviour
@@ -139,7 +138,6 @@ Page {
                 //close the exercise
                 gameWindow.toggleDialogueBox(true);
                 gameWindow.closeExerciseWindow(score);
-                gameWindow.next = true;
             }
 
 

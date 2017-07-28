@@ -166,6 +166,11 @@ QString StoryTeller::lastGenerated() {
     return last;
 }
 
+void StoryTeller::appendToLog(QString toLog) {
+    std::string logString;
+    logString = toLog.toStdString();
+    log.push_back(logString);
+}
 
 //---------------- Simulation functions -------------------
 
@@ -278,11 +283,13 @@ std::string StoryTeller::readFromFile(const std::string &fileName)
 
 //tutorial for file io with qt: http://expletive-deleted.com/2015/02/26/file-io-in-qt5/
 void StoryTeller::writeLogToFile(QString fileName) {
-    QDir dir(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation));
+    QDir dir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
     dir.mkdir(QString::fromStdString("simulations"));
 
 
-    QFile output(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation) + QDir::separator() + QString::fromStdString("simulations") + QDir::separator() + fileName + QString::fromStdString( ".txt"));
+    QFile output(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QDir::separator() + QString::fromStdString("simulations") + QDir::separator() + fileName + QString::fromStdString( ".txt"));
+
+    qDebug() << "file written to: " << QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) << QDir::separator() << QString::fromStdString("simulations") << QDir::separator() << fileName << QString::fromStdString( ".txt");
 
     if(output.open(QIODevice::WriteOnly)){
         QTextStream stream(&output);

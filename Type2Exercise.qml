@@ -136,7 +136,6 @@ Page {
         stote.completeExercise(score);
         gameWindow.toggleDialogueBox(true);
         gameWindow.closeExerciseWindow(score);
-        gameWindow.next = true;
     }
 
     Popup {

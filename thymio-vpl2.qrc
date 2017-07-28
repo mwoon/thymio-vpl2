@@ -103,7 +103,7 @@
         <file>blocks/MotorSimpleActionBlock.qml</file>
         <file>blocks/MusicScoreBlock.qml</file>
         <file>blocks/NopActionBlock.qml</file>
-		<file>blocks/ImageStateActionBlock.qml</file>
+        <file>blocks/ImageStateActionBlock.qml</file>
         <file>blocks/images/nop.svg</file>
         <file>blocks/images/stop.svg</file>
         <file>blocks/images/clap.svg</file>
@@ -450,5 +450,6 @@
         <file>Type5Exercise.qml</file>
         <file>exercises/E02.01.json</file>
         <file>assets/island_1.png</file>
+        <file>DifficultyFeedback.qml</file>
     </qresource>
 </RCC>
