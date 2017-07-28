@@ -305,7 +305,127 @@
 		  {
                      "cmd": "dialogue",
                      "speaker": "",
-                     "text": "They move around the robot and reach the edge of the island."
+                     "text": "They move around the robot quietly."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.18"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "The robot doesn't see them and doesn't move at all."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.19"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "After a little while, they reach the end of the island."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.18"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "There they see a huge bird."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.18"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Pasquawk, I'm back!"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.19"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Pasquawk",
+                     "text": "Hey Ada, aare we going back to the village soon?"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.20"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "Pasquawk's eyes widen when he sees Thymio."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.21"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "The bird quickly jumps off the edge of the island and stays away."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.22"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Pasquawk",
+                     "text": "Ada, Ada, Ada, that's a robot! Quick! Get away!"
                   }
                ]
 	}
