@@ -24,6 +24,7 @@ Page {
     property int sIdx: 0;
     property real totalScore: 0;
     property bool simulationIsRunning: false;
+    property var special;
 
     VplInterface {
         id: vpl

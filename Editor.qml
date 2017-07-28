@@ -19,6 +19,8 @@ Item {
 
     property alias eventsVisible: eventPane.visible
     property alias actionsVisible: actionPane.visible
+    property alias sceneCode: sceneLoader.scene
+    property alias modeCode: sceneLoader.mode
 
     function disableDestroy() {
         vplEditor.scene.disableDestroy();

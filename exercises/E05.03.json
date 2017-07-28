@@ -1,8 +1,19 @@
 {
     "list": [
         {
-            "cmd": "text",
-            "text": "pre E05.03"
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "pre ex 5.03 1"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Ada",
+                         "text": "Hey, take a look at this. What's the difference between these two?" 
+                      }
+                   ]
         },
         {
             "cmd": "ex",
@@ -23,9 +34,61 @@
 	    "code2": 
 {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]],[[{"definition":"ProxEventBlock","params":["DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]]]}
         },
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Post E05.03 01"
+                  },
+		  {
+                     "cmd": "feedback",
+                     "options": [
+	  		[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Oh! That makes sense."
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Thank you for helping me understand."
+                  	}],
+			[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Huh?! Really?"
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "Thymio",
+             			"text": "No, that isn't right."
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "Thymio",
+             			"text": "The top one only activates when all of my front sensors detect something."
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "Thymio",
+             			"text": "That means if only one of them detects something, I'll still crash."
+                  	}]
+		     ]
+                  }
+               ]
+	},
         {
-            "cmd": "text",
-            "text": "post E05.03"
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 5.03 2"
+                      },
+		      {
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "The bottom one seems safer. Let's use that one."
+                      }
+                   ]
         }
     ]
 }

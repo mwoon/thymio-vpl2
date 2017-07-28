@@ -29,6 +29,7 @@ Page {
     property int sIdx: 0;
     property real totalScore: 0;
     property bool simulationIsRunning: false;
+    property var special;
 
 
 
@@ -114,6 +115,22 @@ Page {
             //simulate and check behaviour
             submitted = true;
 
+            //check for special simulations
+            if(special) {
+                switch(special.cmd) {
+                case "insertCode":
+                    var codeScene = vpl.editor.sceneCode;
+                    var mode = vpl.editor.modeCode;
+                    codeScene.unshift([special.events, special.actions]);
+                    var tempCode = { "mode": mode, "scene": codeScene};
+                    vpl.editor.loadCode(JSON.stringify(tempCode));
+                    vpl.editor.scene.deserialize(vpl.editor.sceneCode);
+                    break;
+                default:
+                    break;
+                }
+            }
+
             //start all simulations
             while(sIdx < scene.length) {
                 nextSimulation();
@@ -154,9 +171,6 @@ Page {
             scenario.walls = [];
         }
 
-        console.log(JSON.stringify(scenario));
-        console.log(JSON.stringify(scene[sIdx]));
-
         vpl.thymio.playing = true;
 
         var simError;
@@ -191,6 +205,9 @@ Page {
                         switch(scene[sIdx].checkfor[curCheck].type) {
                         case "xgreater" :
                             if(scene[sIdx].checkfor[curCheck].endpos < log[log.length - 1].position.x) {score += scorePerCheck;}
+                            break;
+                        case "xsmaller" :
+                            if(scene[sIdx].checkfor[curCheck].endpos > log[log.length - 1].position.x) {score += scorePerCheck;}
                             break;
                         default:
                             break;

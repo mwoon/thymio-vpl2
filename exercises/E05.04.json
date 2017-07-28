@@ -1,22 +1,110 @@
 {
     "list": [
         {
-            "cmd": "text",
-            "text": "pre E05.04"
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "pre ex 5.04 1"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Ada",
+                         "text": "There's a half finished program right here." 
+                      }
+                   ]
+        },
+	{
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "pre ex 5.04 2"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Ada",
+                         "text": "Let's finish it!" 
+                      }
+                   ]
         },
         {
             "cmd": "ex",
             "type": "type4",
             "text": "E05.04",
-	    "method": "fixed",
+	    "method": "sim",
+	    "special": {
+		"cmd": "insertCode", 
+		"events": [
+		    {
+			"definition": "ProxEventBlock",
+			"params": ["DISABLED", "DISABLED", "FAR", "DISABLED", "DISABLED", "DISABLED", "DISABLED"]
+		    }
+		], 
+		"actions": [
+		    {
+			"definition": "MotorSimpleActionBlock",
+			"params": "front"
+		    }
+		]
+	    },
+            "scene": [{
+	    	"checkfor": [{"type": "xsmaller", "endpos" : 85}],
+                "duration": 5,
+                "worldSize": [100, 100],
+                "thymio" : { "position": [50, 50], "angle": 0 }
+            }],
 	    "solution": 
 {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"stop"}]]]},
 	    "code": 
 {"mode":"simple","scene":[[[],[{"definition":"MotorSimpleActionBlock","params":"stop"}]]]}
         },
-        {
-            "cmd": "text",
-            "text": "post E05.04"
-        }
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Post E05.04 01"
+                  },
+		  {
+                     "cmd": "feedback",
+                     "options": [
+	  		[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Woohoo! you did it!"
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "It'll be safe for Thymio to move now."
+                  	}],
+			[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Ah!"
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "No!"
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Thymio, stoooooop!"
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "",
+             			"text": "Ada manages to stop Thymio before he crashes."
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Phew that was a close one."
+                  	}]
+		     ]
+                  }
+               ]
+	}
     ]
 }

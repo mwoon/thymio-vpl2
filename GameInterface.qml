@@ -341,7 +341,7 @@ Page {
             if(newStorySequence.activity)  {
                 type = "activity";
                 //file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                file = "/exercises/" + "E04.05" + ".json";
+                file = "/exercises/" + "E05.04" + ".json";
 
                 /*
                 for(var i = 0; i < newStorySequence.activity.length; i++) {
@@ -560,11 +560,13 @@ Page {
 
         var part;
 
-        for(var i = 0; i < nextStory.length; i++) {
+        //add them to the front of the story stack in reverse order (other stuff is already on the stack)
+        //essentially replacing the options that was on the stack before with its contents
+        for(var i = nextStory.length - 1; i >= 0; i--) {
             part = {};
             part.type = "story";
             part.content = nextStory[i];
-            storyStack.push(part);
+            storyStack.unshift(part);
         }
         next = true;
     }
@@ -603,7 +605,7 @@ Page {
                 exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.solution), "code" : JSON.stringify(content.code), "method": content.method, "storyList": content.list, "checkfor": content.checkfor});
             } else if (content.method === "sim") {
                 console.log("loading sim version of ex4")
-                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.scene), "code" : JSON.stringify(content.code), "method": content.method, "storyList": content.list, "scene": content.scene});
+                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.scene), "code" : JSON.stringify(content.code), "method": content.method, "storyList": content.list, "scene": content.scene, "special": content.special});
             }
         } else if(content.type === "type5") {
             if(!content.method) {
@@ -613,7 +615,7 @@ Page {
             if(content.method === "fixed") {
                 exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.solution), "method": content.method, "checkfor": content.checkfor });
             } else if (content.method === "sim") {
-                exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.scene), "method": content.method, "scene": content.scene });
+                exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.scene), "method": content.method, "scene": content.scene, "special": content.special });
             }
         }
 

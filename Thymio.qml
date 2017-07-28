@@ -80,15 +80,13 @@ Item {
 		if (simError)
 			console.log("Simulation error: " + simError)
 		*/
+        console.log(source);
 		if (node) {
 			error = node.setProgram(events, source);
 		}
 	}
 
     function runSimulationDefault() {
-        console.log("runSimulation simulation");
-        console.log("source " + source);
-        console.log("events " + JSON.stringify(events));
 
         var scenario = {
             duration: 2,
@@ -128,5 +126,14 @@ Item {
         } else {
             console.log("simulation complete");
         }
+    }
+
+    Connections {
+        target: simulator
+        onSimulationCompleted: {
+
+            console.log(JSON.stringify(log))
+        }
+
     }
 }
