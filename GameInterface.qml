@@ -340,8 +340,8 @@ Page {
 
             if(newStorySequence.activity)  {
                 type = "activity";
-                file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                //file = "/exercises/" + "E10.01" + ".json";
+                //file = "/exercises/" + newStorySequence.activity[0] + ".json";
+                file = "/exercises/" + "E04.05" + ".json";
 
                 /*
                 for(var i = 0; i < newStorySequence.activity.length; i++) {
@@ -602,7 +602,8 @@ Page {
             if(content.method === "fixed") {
                 exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.solution), "code" : JSON.stringify(content.code), "method": content.method, "storyList": content.list, "checkfor": content.checkfor});
             } else if (content.method === "sim") {
-                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.scene), "code" : JSON.stringify(content.code), "method": content.method, "storyList": content.list});
+                console.log("loading sim version of ex4")
+                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.scene), "code" : JSON.stringify(content.code), "method": content.method, "storyList": content.list, "scene": content.scene});
             }
         } else if(content.type === "type5") {
             if(!content.method) {
@@ -612,7 +613,7 @@ Page {
             if(content.method === "fixed") {
                 exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.solution), "method": content.method, "checkfor": content.checkfor });
             } else if (content.method === "sim") {
-                exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.scene), "method": content.method });
+                exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.scene), "method": content.method, "scene": content.scene });
             }
         }
 

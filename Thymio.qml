@@ -17,11 +17,12 @@ Item {
 		}
 	}
 
+    /*
 	Simulator {
 		id: simulator
         onSimulationCompleted: {console.log(JSON.stringify(log))}
 		onNotify: console.log("Thymio said: " + level + " " + description + " " + arguments)
-	}
+    }*/
 
 	onNodeChanged: {
 		setVariables();
@@ -84,7 +85,7 @@ Item {
 		}
 	}
 
-    function runSimulation() {
+    function runSimulationDefault() {
         console.log("runSimulation simulation");
         console.log("source " + source);
         console.log("events " + JSON.stringify(events));
@@ -109,5 +110,23 @@ Item {
             console.log("simulation complete");
         }
 
+    }
+
+    function runSimulationWithFunction(scenario, testFunction) {
+        var simError = simulator.runProgram(scenario, events, source, testFunction);
+        if (simError) {
+            console.log("simulation error: " + simError)
+        } else {
+            console.log("simulation complete");
+        }
+    }
+
+    function runSimulation(scenario) {
+        var simError = simulator.runProgram(scenario, events, source);
+        if (simError) {
+            console.log("simulation error: " + simError)
+        } else {
+            console.log("simulation complete");
+        }
     }
 }

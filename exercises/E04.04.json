@@ -19,7 +19,13 @@
             "cmd": "ex",
             "type": "type4",
             "text": "E04.04",
-	    "method": "fixed",
+	    "method": "sim",
+            "scene": [{
+	    	"checkfor": [{"type": "xgreater", "endpos" : 25}],
+                "duration": 5,
+                "worldSize": [100, 100],
+                "thymio" : { "position": [20, 50], "angle": 0 }
+            }], 
 	    "solution": 
 {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"MotorSimpleActionBlock","params":"front"}]]]},
 	    "code": 

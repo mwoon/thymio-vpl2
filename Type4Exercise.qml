@@ -21,8 +21,14 @@ Page {
     property var solution;
     property var method;
     property var checkfor;
+
+    //only for simulations
     property bool submitted: false;
     property var submittedCode;
+    property var scene;
+    property int sIdx: 0;
+    property real totalScore: 0;
+    property bool simulationIsRunning: false;
 
 
 
@@ -107,43 +113,97 @@ Page {
         } else if(method === "sim"){
             //simulate and check behaviour
             submitted = true;
-            var events = vpl.thymio.events;
-            var source = vpl.thymio.source;
 
-            //TODO for now it's just a fixed simulation world, but should load it from code
-            var scenario = {
-                duration: 5,
-                worldSize: Qt.vector2d(100, 100),
-                thymio : { position: Qt.vector2d(20, 50), angle: 0 },
-                walls: [ { position: Qt.vector2d(80, 50), angle: Math.pi / 2, size: Qt.vector3d(20, 2, 10), color: "Blue" } ]
+            //start all simulations
+            while(sIdx < scene.length) {
+                nextSimulation();
+                while(simulationIsRunning){}
+                sIdx++;
             }
-            console.log("running simulation");
-            var simError = simulator.runProgram(scenario, events, source);
-            if (simError) {
-                console.log("simulation error: " + simError)
-            } else {
-                console.log("simulation complete");
-            }
+
+
+            //close the exercise
+            stote.completeExercise(totalScore);
+            stote.appendToLog("submitted code: " + JSON.stringify(submittedCode));
+            gameWindow.toggleDialogueBox(true);
+            gameWindow.closeExerciseWindow(totalScore);
+
         }
 
+    }
+
+    function nextSimulation() {
+        simulationIsRunning = true;
+        //setup scene
+        var scenario = {};
+        scenario.duration = scene[sIdx].duration;
+        scenario.worldSize = Qt.vector2d(scene[sIdx].worldSize[0], scene[sIdx].worldSize[1]);
+        scenario.thymio = {"position": Qt.vector2d(scene[sIdx].thymio.position[0], scene[sIdx].thymio.position[1]), angle: Math.PI * scene[sIdx].thymio.angle};
+        if(scene[sIdx].walls) {
+            for(var i = 0; i < scene[sIdx].walls.length; i++){
+                scenario.walls[i] = {
+                    "position": Qt.vector2d(scene[sIdx].walls[i].position[0], scene[sIdx].walls[i].position[2]),
+                    "angle": Math.PI * scene[sIdx].walls[i].angle,
+                    "size": Qt.vector3d(scene[sIdx].walls[i].size[0], scene[sIdx].walls[i].size[1], scene[sIdx].walls[i].size[2])
+                };
+                if(scene[sIdx].walls[i].color) {
+                    scenario.walls[i].color = scene[sIdx].walls[i].color;
+                }
+            }
+        } else {
+            scenario.walls = [];
+        }
+
+        console.log(JSON.stringify(scenario));
+        console.log(JSON.stringify(scene[sIdx]));
+
+        vpl.thymio.playing = true;
+
+        var simError;
+        if(scene[sIdx].testFunction) {
+            var testFunction = new Function(scene[sIdx].testFunction);
+            console.log("running simulation");
+            simError = vpl.thymio.runSimulationWithFunction(scenario, testFunction);
+
+        } else {
+            console.log("running simulation");
+            simError = vpl.thymio.runSimulation(scenario);
+
+        }
     }
 
     Connections {
         target: simulator
         onSimulationCompleted: {
-            console.log(console.log(JSON.stringify(log)));
-            if(submitted) {
-                //if submitted and simulation completed -> use this result as the result
 
-                var score = 0.0;
-                //close the exercise
-                stote.completeExercise(score);
-                stote.appendToLog("submitted code: " + JSON.stringify(submittedCode));
-                gameWindow.toggleDialogueBox(true);
-                gameWindow.closeExerciseWindow(score);
+            vpl.thymio.playing = false;
+
+            console.log("Checking results of simulation");
+            //console.log(JSON.stringify(log))
+            if(submitted) {
+                //if submitted and simulation completed -> check the simulation for the result
+                var score = 1.0;
+
+                if (scene[sIdx].checkfor && scene[sIdx].checkfor.length > 0) {
+                    score = 0.0;
+                    var scorePerCheck = 1.0 / scene[sIdx].checkfor.length;
+                    for(var curCheck = 0; curCheck < scene[sIdx].checkfor.length; curCheck++) {
+                        switch(scene[sIdx].checkfor[curCheck].type) {
+                        case "xgreater" :
+                            if(scene[sIdx].checkfor[curCheck].endpos < log[log.length - 1].position.x) {score += scorePerCheck;}
+                            break;
+                        default:
+                            break;
+                        }
+                    }
+                }
+
+                totalScore += score / scene.length;
+                console.log("totalScore: " + totalScore);
+
             }
 
-
+            simulationIsRunning = false;
         }
 
     }

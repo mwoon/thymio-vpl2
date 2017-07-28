@@ -185,7 +185,7 @@ Page {
         function simulateExercise() {
             vplEditor.saveProgram(autosaveName);
             thymio.playing = true;
-            thymio.runSimulation();
+            thymio.runSimulationDefault();
 
             thymio.playing = false;
         }
