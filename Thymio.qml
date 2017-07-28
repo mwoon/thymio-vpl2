@@ -66,7 +66,8 @@ Item {
             duration: 1,
 			worldSize: Qt.vector2d(100, 100),
 			thymio : { position: Qt.vector2d(20, 50), angle: 0 },
-			walls: [ { position: Qt.vector2d(80, 50), angle: Math.pi / 2, size: Qt.vector3d(20, 2, 10), color: "Blue" } ]
+			walls: [ { position: Qt.vector2d(80, 50), angle: Math.pi / 2, size: Qt.vector3d(20, 2, 10), color: "Blue" } ],
+			groundTexture: "/tmp/test.png"
 		}
 		var simError = simulator.runProgram(scenario, events, source, function() {
 			if (this.currentTime === 0) {
@@ -74,15 +75,10 @@ Item {
                 console.log("Simulation tapped Thymio");
 			}
 			console.log(this.currentTime + ": " + this.simulatedThymio.position.x + " : " + this.simulatedThymio.horizontalSensors[2]);
-        })
-		if (simError) {
-			console.log("simulation error: " + simError)
-        	} else {
-            		console.log("simulation complete");
-        	}
-
-*/
-
+		});
+		if (simError)
+			console.log("Simulation error: " + simError)
+		*/
 		if (node) {
 			error = node.setProgram(events, source);
 		}
