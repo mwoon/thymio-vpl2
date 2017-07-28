@@ -365,7 +365,7 @@
 		  {
                      "cmd": "dialogue",
                      "speaker": "Ada",
-                     "text": "Pasquawk, I'm back!"
+                     "text": "Ruby, I'm back!"
                   }
                ]
 	},
@@ -379,7 +379,7 @@
                   },
 		  {
                      "cmd": "dialogue",
-                     "speaker": "Pasquawk",
+                     "speaker": "Ruby",
                      "text": "Hey Ada, aare we going back to the village soon?"
                   }
                ]
@@ -395,7 +395,7 @@
 		  {
                      "cmd": "dialogue",
                      "speaker": "",
-                     "text": "Pasquawk's eyes widen when he sees Thymio."
+                     "text": "Ruby's eyes widen when he sees Thymio."
                   }
                ]
 	},
@@ -424,7 +424,7 @@
                   },
 		  {
                      "cmd": "dialogue",
-                     "speaker": "Pasquawk",
+                     "speaker": "Ruby",
                      "text": "Ada, Ada, Ada, that's a robot! Quick! Get away!"
                   }
                ]
