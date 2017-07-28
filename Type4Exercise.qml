@@ -22,6 +22,7 @@ Page {
     property var method;
     property var checkfor;
     property bool submitted: false;
+    property var submittedCode;
 
 
 
@@ -60,7 +61,7 @@ Page {
 
     function completeExercise(prog) {
 
-
+        submittedCode = prog;
 
         if(method === "fixed") {
             var score = 0.0;
@@ -99,7 +100,7 @@ Page {
             }
 
             stote.completeExercise(score);
-
+            stote.appendToLog("submitted code: " + JSON.stringify(submittedCode));
             gameWindow.toggleDialogueBox(true);
             gameWindow.closeExerciseWindow(score);
 
@@ -136,6 +137,8 @@ Page {
 
                 var score = 0.0;
                 //close the exercise
+                stote.completeExercise(score);
+                stote.appendToLog("submitted code: " + JSON.stringify(submittedCode));
                 gameWindow.toggleDialogueBox(true);
                 gameWindow.closeExerciseWindow(score);
             }

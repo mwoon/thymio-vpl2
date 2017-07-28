@@ -16,7 +16,8 @@ Page {
     property var solution;
     property var method;
     property var checkfor;
-    property var submitted;
+    property bool submitted: false;
+    property var submittedCode;
 
     VplInterface {
         id: vpl
@@ -46,6 +47,8 @@ Page {
     }
 
     function completeExercise(prog) {
+
+        submittedCode = prog;
 
         if(method === "fixed") {
             //For now very stupid checking
@@ -83,6 +86,7 @@ Page {
         }
 
             stote.completeExercise(score);
+            stote.appendToLog("submitted code: " + JSON.stringify(submittedCode));
             gameWindow.toggleDialogueBox(true);
             gameWindow.closeExerciseWindow(score);
         } else if(method === "sim") {
@@ -116,6 +120,8 @@ Page {
                 //if submitted and simulation completed -> use this result as the result
                 var score = 0.0;
                 //close the exercise
+                stote.completeExercise(score);
+                stote.appendToLog("submitted code: " + JSON.stringify(submittedCode));
                 gameWindow.toggleDialogueBox(true);
                 gameWindow.closeExerciseWindow(score);
             }
