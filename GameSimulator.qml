@@ -95,101 +95,148 @@ Page {
                 description: "Student who fails type 1 exercise with 30%, type 2 with 40%, type 3 with 50%, type 4 with 60% and type 5 with 80%"
             }
 
+            ListElement {
+                name: "increase per trial"
+                callback: "increasePerTrial"
+                description: "start success rate 0, increase success by 0.1 for each success and 0.05 for each failure. per type"
+            }
+
 
             //functions
             function perfectSim() {
-                var response = "";
-                while(response !== "the_end") {
-                    var rawResp = stote.advanceScript();
-                    while (rawResp === "") {}
-                    var parsed = JSON.parse(rawResp);
+                for(var i = 0; i < 100; i++) {
+                    var response = "";
+                    while(response !== "the_end") {
+                        var rawResp = stote.advanceScript();
+                        while (rawResp === "") {}
+                        var parsed = JSON.parse(rawResp);
 
-                    if(parsed.activity) {
-                        stote.completeExercise(1.0);
-                        response = parsed.activity[0];
-                    } else if (parsed.story0) {
-                       response = parsed.story0[0];
+                        if(parsed.activity) {
+                            stote.completeExercise(1.0);
+                            response = parsed.activity[0];
+                        } else if (parsed.story0) {
+                            response = parsed.story0[0];
+                        }
+                        rawResp = "";
                     }
-                    rawResp = "";
-                }
 
-                popup.open();
+                    stote.writeLogToFile("perfect_" + i);
+                    stote.resetScript();
+                }
             }
 
             function totalFailSim() {
-                var response = "";
-                while(response !== "the_end") {
-                    var rawResp = stote.advanceScript();
-                    while (rawResp === "") {}
-                    var parsed = JSON.parse(rawResp);
+                for(var i = 0; i < 100; i++) {
+                    var response = "";
+                    while(response !== "the_end") {
+                        var rawResp = stote.advanceScript();
+                        while (rawResp === "") {}
+                        var parsed = JSON.parse(rawResp);
 
-                    if(parsed.activity) {
-                        stote.completeExercise(0.0);
-                        response = parsed.activity[0];
-                    } else if (parsed.story0) {
-                       response = parsed.story0[0];
+                        if(parsed.activity) {
+                            stote.completeExercise(0.0);
+                            response = parsed.activity[0];
+                        } else if (parsed.story0) {
+                            response = parsed.story0[0];
+                        }
+                        rawResp = "";
                     }
-                    rawResp = "";
-                }
 
-                popup.open();
+                    stote.writeLogToFile("totalFail_" + i);
+                    stote.resetScript();
+                }
             }
 
             function alwaysLowScoreSim() {
-                var response = "";
-                while(response !== "the_end") {
-                    var rawResp = stote.advanceScript();
-                    while (rawResp === "") {}
-                    var parsed = JSON.parse(rawResp);
+                for(var i = 0; i < 100; i++) {
+                    var response = "";
+                    while(response !== "the_end") {
+                        var rawResp = stote.advanceScript();
+                        while (rawResp === "") {}
+                        var parsed = JSON.parse(rawResp);
 
-                    if(parsed.activity) {
-                        stote.completeExercise(0.2);
-                        response = parsed.activity[0];
-                    } else if (parsed.story0) {
-                       response = parsed.story0[0];
+                        if(parsed.activity) {
+                            stote.completeExercise(0.2);
+                            response = parsed.activity[0];
+                        } else if (parsed.story0) {
+                            response = parsed.story0[0];
+                        }
+                        rawResp = "";
                     }
-                    rawResp = "";
-                }
 
-                popup.open();
+                    stote.writeLogToFile("lowScore20_" + i);
+                    stote.resetScript();
+                }
             }
 
             function failPercent30Sim() {
-                var response = "";
-                while(response !== "the_end") {
-                    var rawResp = stote.advanceScript();
-                    while (rawResp === "") {}
-                    var parsed = JSON.parse(rawResp);
+                for(var i = 0; i < 100; i++) {
 
-                    if(parsed.activity) {
-                        stote.simulateWithFailPercent(0.3);
-                        response = parsed.activity[0];
-                    } else if (parsed.story0) {
-                       response = parsed.story0[0];
+                    var response = "";
+                    while(response !== "the_end") {
+                        var rawResp = stote.advanceScript();
+                        while (rawResp === "") {}
+                        var parsed = JSON.parse(rawResp);
+
+                        if(parsed.activity) {
+                            stote.simulateWithFailPercent(0.3);
+                            response = parsed.activity[0];
+                        } else if (parsed.story0) {
+                            response = parsed.story0[0];
+                        }
+                        rawResp = "";
                     }
-                    rawResp = "";
-                }
 
-                popup.open();
+                    stote.writeLogToFile("failRate30_" + i);
+                    stote.resetScript();
+                }
             }
 
             function fixed3040506080() {
-                var response = "";
-                while(response !== "the_end") {
-                    var rawResp = stote.advanceScript();
-                    while (rawResp === "") {}
-                    var parsed = JSON.parse(rawResp);
+                for(var i = 0; i < 100; i++) {
 
-                    if(parsed.activity) {
-                        stote.simulateFixedSuccessByTypeOfExercise(0.3, 0.4, 0.5, 0.6, 0.8)
-                        response = parsed.activity[0];
-                    } else if (parsed.story0) {
-                       response = parsed.story0[0];
+                    var response = "";
+                    while(response !== "the_end") {
+                        var rawResp = stote.advanceScript();
+                        while (rawResp === "") {}
+                        var parsed = JSON.parse(rawResp);
+
+                        if(parsed.activity) {
+                            stote.simulateFixedSuccessByTypeOfExercise(0.3, 0.4, 0.5, 0.6, 0.8)
+                            response = parsed.activity[0];
+                        } else if (parsed.story0) {
+                            response = parsed.story0[0];
+                        }
+                        rawResp = "";
                     }
-                    rawResp = "";
+
+                    stote.writeLogToFile("fixed3040506080_" + i);
+                    stote.resetScript();
+                }
+            }
+
+            function increasePerTrial() {
+
+                for(var i = 0; i < 100; i++) {
+
+                    var response = "";
+                    while(response !== "the_end") {
+                        var rawResp = stote.advanceScript();
+                        while (rawResp === "") {}
+                        var parsed = JSON.parse(rawResp);
+
+                        if(parsed.activity) {
+                            stote.simulateIncreasePerTrial();
+                            response = parsed.activity[0];
+                        } else if (parsed.story0) {
+                            response = parsed.story0[0];
+                        }
+                        rawResp = "";
+                    }
+                    stote.writeLogToFile("ipt_" + i);
+                    stote.resetScript();
                 }
 
-                popup.open();
             }
         }
 

@@ -156,6 +156,15 @@ void StoryTeller::completeExercise(const double result) {
 void StoryTeller::resetScript() {
     mainIndex = 0;
     its.resetZpdes();
+
+    //reset simulation
+    type1Rate = 0;
+    type2Rate = 0;
+    type3Rate = 0;
+    type4Rate = 0;
+    type5Rate = 0;
+
+
     std::ostringstream filename;
     filename << "autoLogOnReset" << logcounter++;
     writeLogToFile(QString::fromStdString(filename.str()));
@@ -222,6 +231,54 @@ void StoryTeller::simulateFixedSuccessByTypeOfExercise(const double prob1, const
     std::discrete_distribution<unsigned> d(probs.begin(), probs.end());
 
     unsigned index = d(gen);
+
+    completeExercise(index);
+}
+
+
+void StoryTeller::simulateIncreasePerTrial() {
+    double percent{0};
+
+    std::string lastString = last.toStdString();
+
+    if (lastString.find(".01") != std::string::npos) {
+        percent = type1Rate;
+    } else if (lastString.find(".02") != std::string::npos) {
+        percent = type2Rate;
+    } else if (lastString.find(".03") != std::string::npos) {
+        percent = type3Rate;
+    } else if (lastString.find(".04") != std::string::npos) {
+        percent = type4Rate;
+    } else if (lastString.find(".05") != std::string::npos) {
+        percent = type5Rate;
+    }
+
+    qDebug() << QString::fromStdString("percent: ") << percent;
+
+    std::vector<double> probs(2);
+    probs[0] = 1 - percent;
+    probs[1] = percent;
+
+    // sample a proportional to probs
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::discrete_distribution<unsigned> d(probs.begin(), probs.end());
+
+    unsigned index = d(gen);
+
+    double learning = index ? 0.1 : 0.05;
+
+    if (lastString.find(".01") != std::string::npos) {
+        type1Rate += learning;
+    } else if (lastString.find(".02") != std::string::npos) {
+        type2Rate += learning;
+    } else if (lastString.find(".03") != std::string::npos) {
+        type3Rate += learning;
+    } else if (lastString.find(".04") != std::string::npos) {
+        type4Rate += learning;
+    } else if (lastString.find(".05") != std::string::npos) {
+        type5Rate += learning;
+    }
 
     completeExercise(index);
 }

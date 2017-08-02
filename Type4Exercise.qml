@@ -119,12 +119,13 @@ Page {
             if(special) {
                 switch(special.cmd) {
                 case "insertCode":
-                    var codeScene = vpl.editor.sceneCode;
+                    vpl.editor.saveProgram("autosaveName");
+                    var codeScene = vpl.editor.scene.serialize();
                     var mode = vpl.editor.modeCode;
                     codeScene.unshift([special.events, special.actions]);
                     var tempCode = { "mode": mode, "scene": codeScene};
                     vpl.editor.loadCode(JSON.stringify(tempCode));
-                    vpl.editor.scene.deserialize(vpl.editor.sceneCode);
+                    vpl.editor.compiler.forceCompile();
                     break;
                 default:
                     break;

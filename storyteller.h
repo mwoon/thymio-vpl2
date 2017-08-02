@@ -41,6 +41,7 @@ public slots:
     //simulation slots
     void simulateWithFailPercent(const double percent);
     void simulateFixedSuccessByTypeOfExercise(const double prob1, const double prob2, const double prob3, const double prob4, const double prob5);
+    void simulateIncreasePerTrial();
 
 private:
     // simplification of main story
@@ -65,6 +66,14 @@ private:
     std::string readFromFile(const std::string &fileName);
 
     unsigned logcounter{0};
+
+
+    //simulation used for increase per trial
+    double type1Rate{0};
+    double type2Rate{0};
+    double type3Rate{0};
+    double type4Rate{0};
+    double type5Rate{0};
 };
 
 #endif // STORYTELLER_H

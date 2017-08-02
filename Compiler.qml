@@ -72,8 +72,12 @@ Item {
 	// internal state during program execution
 	property var internal
 
+    function forceCompile() {
+        timer.forceCompile();
+    }
+
 	onAstChanged: {
-		timer.start();
+        timer.start();
 	}
 
 	Timer {
@@ -102,6 +106,30 @@ Item {
 				}
 			}
 		}
+
+        function forceCompile() {
+            try {
+                console.log("compiling program")
+                var result = compile(ast);
+                output = result.output;
+                internal = result.internal;
+            } catch(error) {
+                console.log("error compiling");
+                if (typeof(error) === "string") {
+                    output = {
+                        error: error,
+                        events: {},
+                        script: "",
+                    };
+                    internal = {
+                        states: [],
+                        transitions: [],
+                    };
+                } else {
+                    throw error;
+                }
+            }
+        }
 
 		function compile(startStates) {
 			function filledArray(length, value) {
