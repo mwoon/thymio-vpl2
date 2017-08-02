@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<manifest package="org.mobsya.thymiovpl2" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="0.1.1" android:versionCode="2" android:installLocation="auto">
-        <application android:hardwareAccelerated="true" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="Thymio VPL" android:icon="@drawable/icon">
-                <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation" android:name="org.qtproject.qt5.android.bindings.QtActivity" android:label="Thymio VPL" android:screenOrientation="unspecified" android:launchMode="singleTop">
+<manifest package="org.mobsya.thymiovpl2its" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="0.1.1" android:versionCode="2" android:installLocation="auto">
+        <application android:hardwareAccelerated="true" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="Thymio VPL ITS" android:icon="@drawable/icon">
+                <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation" android:name="org.qtproject.qt5.android.bindings.QtActivity" android:label="Thymio VPL ITS" android:screenOrientation="unspecified" android:launchMode="singleTop">
                         <intent-filter>
                                 <action android:name="android.intent.action.MAIN"/>
                                 <category android:name="android.intent.category.LAUNCHER"/>
