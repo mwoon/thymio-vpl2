@@ -43,7 +43,8 @@ private:
     //std::list<std::pair<std::string, double> > mostRecentActivities;
     std::shared_ptr<Activity>  lastActivity; //the group identifier which contains the name of all included exercises
     std::string lastActivitySpecific; //the actual exercise that was solved
-    std::shared_ptr<Activity>  lastActivityMinor; //the level of the exercise that was solved.
+    std::shared_ptr<Activity>  lastActivityMinor; //the type of the exercise that was solved.
+    std::shared_ptr<Activity>  lastActivityComplexity; //the complexity of the exercise that was solved.
 
 
     void initializeActivities();
@@ -53,8 +54,10 @@ private:
 
     // ---------- 20.05.2017 changes -------------
     //first activity in the list is a dummy, the id contains the ids of all subsequent exercise
-    std::list<std::list<std::shared_ptr<Activity>> > majorActivities;
+    std::list<std::list<std::shared_ptr<Activity>> > majorActivities; //AKA category of activity
     std::list<std::shared_ptr<Activity> > minorActivities;
+    std::list<std::shared_ptr<Activity> > complexityActivities;
+    std::list<std::shared_ptr<Activity> > categoryActivities;
 
     unsigned activityFromZpd(std::list<std::shared_ptr<Activity>> &zpd);
 };

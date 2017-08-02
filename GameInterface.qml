@@ -341,7 +341,7 @@ Page {
             if(newStorySequence.activity)  {
                 type = "activity";
                 //file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                file = "/exercises/" + "E05.04" + ".json";
+                file = "/exercises/" + "E05.01" + ".json";
 
                 /*
                 for(var i = 0; i < newStorySequence.activity.length; i++) {
@@ -432,11 +432,12 @@ Page {
             callback: "toggleStoryLog";
         }
 
+        /*
         ListElement {
             title: "Test Functions";
             callback: "showFunction";
         }
-
+        */
 
         function showHome() {
             startupWindow.showHome();

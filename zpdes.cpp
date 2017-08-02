@@ -156,16 +156,33 @@ void Zpdes::initializeActivities() {
                              std::make_shared<Activity>(Activity("E23", 0.5, "\"E23\"", std::list<std::string>{"E23"}))
                          });
 
-    //minor activities
+    //minor activities AKA type of activity
     minorActivities.push_back(std::make_shared<Activity>(Activity("01", 0.8, "Given program, predict function")));
     minorActivities.push_back(std::make_shared<Activity>(Activity("02", 0.8, "Given behaviour, choose program")));
     minorActivities.push_back(std::make_shared<Activity>(Activity("03", 0.8, "Given two behaviours, decide what is the difference")));
     minorActivities.push_back(std::make_shared<Activity>(Activity("04", 0.8, "Given a specification, complete a partial program")));
     minorActivities.push_back(std::make_shared<Activity>(Activity("05", 0.8, "Given specification, write a program")));
 
+    //complexity of activity
+    complexityActivities.push_back(std::make_shared<Activity>(Activity("E01E02E03E04E05E06E08E11E13E26E32E34E35E31E28E16E20E17E45E18E41E42", 0.8, "easy exercises")));
+    complexityActivities.push_back(std::make_shared<Activity>(Activity("E09E14E27E29E30E19E44E24E43", 0.8, "medium exercises")));
+    complexityActivities.push_back(std::make_shared<Activity>(Activity("E10E15E25E33E22E46E21E40E47E23", 0.8, "hard exercises")));
+
+
+    //category of activity
+    categoryActivities.push_back(std::make_shared<Activity>(Activity("E01E02E03", 0.8, "tutorial")));
+    categoryActivities.push_back(std::make_shared<Activity>(Activity("E04E05", 0.8, "tutorial-esque")));
+
+    categoryActivities.push_back(std::make_shared<Activity>(Activity("E06E08", 0.8, "buttons and colors")));
+    categoryActivities.push_back(std::make_shared<Activity>(Activity("E11E09E10E13E14E15", 0.8, "sensors and colors")));
+    categoryActivities.push_back(std::make_shared<Activity>(Activity("E26E32E34E35E31E27E25E33", 0.8, "tap/clap and ")));
+    categoryActivities.push_back(std::make_shared<Activity>(Activity("E28E29E30", 0.8, "sound")));
+    categoryActivities.push_back(std::make_shared<Activity>(Activity(("E36E37E39E38", 0.8, "accelerometer")));
+    categoryActivities.push_back(std::make_shared<Activity>(Activity(("E16E20E17E45E18E41E42E19E44E24E43E22E46E21E40E47E23", 0.8, "motor")));
 }
 
 std::string Zpdes::chooseActivity(std::list<std::string> availables) {
+    /*
     //major
     std::list<std::shared_ptr<Activity>> zpd;
 
@@ -191,6 +208,18 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
     qDebug() << " ";
 
     unsigned majorIndex = activityFromZpd(zpd);
+    */
+
+    std::list<std::shared_ptr<Activity>> categoryZPD;
+
+    std::vector<int> complexityBinCount(3, 0);
+    for(auto it = availables.begin(); it != availables.end(); it++) {
+        for(auto it2 = categoryActivities.begin(); it2 != categoryActivities.end(); it2++) {
+            if(it2->get()->id.find(*it) != std::string::npos) {
+
+            }
+        }
+    }
 
 
     //minor
@@ -221,9 +250,6 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
 
         lastActivity = *zpd_it;
         lastActivityMinor = *minor_it;
-        //TODO activate based on result of exercise instead
-        //(*zpd_it).get()->activated = true;
-        //(*minor_it).get()->activated = true;
 
         auto avail_it = availables.begin();
         std::advance(avail_it, majorIndex);
@@ -257,6 +283,9 @@ std::string Zpdes::updateZpd(const double result){
     //minor
     lastActivityMinor.get()->updateBanditLevel(result);
 
+    //complexity
+    lastActivityComplexity.get()->updateBanditLevel(result);
+
     std::stringstream logText;
     logText << lastActivitySpecific << "." << lastActivityMinor.get()->id << ", " << result << ", " << lastActivity.get()->banditLevel << ", " << lastActivityMinor.get()->banditLevel;
     return logText.str();
@@ -267,6 +296,7 @@ void Zpdes::resetZpdes() {
     //clear all acitivities and reinitialize
     majorActivities.clear();
     minorActivities.clear();
+    complexityActivities.clear();
     initializeActivities();
 }
 
