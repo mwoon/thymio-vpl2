@@ -177,8 +177,9 @@ void Zpdes::initializeActivities() {
     categoryActivities.push_back(std::make_shared<Activity>(Activity("E11E09E10E13E14E15", 0.8, "sensors and colors")));
     categoryActivities.push_back(std::make_shared<Activity>(Activity("E26E32E34E35E31E27E25E33", 0.8, "tap/clap and ")));
     categoryActivities.push_back(std::make_shared<Activity>(Activity("E28E29E30", 0.8, "sound")));
-    categoryActivities.push_back(std::make_shared<Activity>(Activity(("E36E37E39E38", 0.8, "accelerometer")));
-    categoryActivities.push_back(std::make_shared<Activity>(Activity(("E16E20E17E45E18E41E42E19E44E24E43E22E46E21E40E47E23", 0.8, "motor")));
+    categoryActivities.push_back(std::make_shared<Activity>(Activity("E36E37E39E38", 0.8, "accelerometer")));
+    categoryActivities.push_back(std::make_shared<Activity>(Activity("E16E20E17E45E18E41E42E19E44E24E43E22E46E21E40E47E23", 0.8, "motor")));
+    qDebug() << QString::fromStdString("finished initialization");
 }
 
 std::string Zpdes::chooseActivity(std::list<std::string> availables) {
@@ -210,22 +211,71 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
     unsigned majorIndex = activityFromZpd(zpd);
     */
 
-    std::list<std::shared_ptr<Activity>> categoryZPD;
-
+    //make sure there are exercises in the bins before choosing bins
+    //prevent choosing a complexity if there are no exercises in there
     std::vector<int> complexityBinCount(3, 0);
     for(auto it = availables.begin(); it != availables.end(); it++) {
-        for(auto it2 = categoryActivities.begin(); it2 != categoryActivities.end(); it2++) {
+        unsigned index{0};
+        for(auto it2 = complexityActivities.begin(); it2 != complexityActivities.end(); it2++) {
             if(it2->get()->id.find(*it) != std::string::npos) {
-
+                complexityBinCount[index]++;
             }
+            index++;
         }
     }
 
+    //pick a complexity
+    std::list<std::shared_ptr<Activity>> complexityZPD;
+    unsigned index{0};
+    auto prev = complexityActivities.begin();
+    for(auto it = complexityActivities.begin(); it != complexityActivities.end(); it++) {
+        if((complexityBinCount[index] > 0) && (it == complexityActivities.begin() || prev->get()->activated)) {
+            complexityZPD.push_back(*it);
+        }
+        index++;
+    }
+    unsigned complexityIndex = activityFromZpd(complexityZPD);
+    qDebug() << QString::fromStdString("complexity chosen");
+
+    //--------------------------------------------------------------------------------------
+
+    //add only activities in chosen complexity to ZPD
+
+    std::list<std::shared_ptr<Activity>> categoryZPD;
+
+    qDebug() << "size: " << complexityZPD.size() << ", index: " << complexityIndex;
+    auto complexity_it = complexityZPD.begin();
+    std::advance(complexity_it, complexityIndex);
+    lastActivityComplexity = *complexity_it;
+
+    for(auto it = availables.begin(); it != availables.end();) {
+        //check if activity is in right complexity
+        if(complexity_it->get()->id.find(*it) != std::string::npos) {
+            for(auto it2 = complexityActivities.begin(); it2 != complexityActivities.end(); it2++){
+                if(it2->get()->id.find(*it) != std::string::npos) {
+                    categoryZPD.push_back(*it2);
+                    qDebug() << QString::fromStdString("category added");
+                }
+            }
+            it++;
+        } else {
+            //don't need this value anymore, it would get in the way
+            availables.erase(it++);
+        }
+    }
+
+    unsigned categoryIndex = activityFromZpd(categoryZPD);
+
+
+
+    qDebug() << QString::fromStdString("category chosen");
+
+    //---------------------------------------------------------------
 
     //minor
     std::list<std::shared_ptr<Activity>> minorZpd;
 
-    auto prev = minorActivities.begin();
+    prev = minorActivities.begin();
     for(auto it = minorActivities.begin(); it != minorActivities.end(); it++) {
         if(it == minorActivities.begin() || prev->get()->activated) {
             minorZpd.push_back(*it);
@@ -238,27 +288,30 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
 
     unsigned minorIndex = activityFromZpd(minorZpd);
 
+    //---------------------------------------------------------------
+
     std::string description;
 
-
-    if(zpd.size() > majorIndex) { //safeguard
-        auto zpd_it = zpd.begin();
+    qDebug() << "size: " << categoryZPD.size() << ", index: " << categoryIndex;
+    //if(categoryZPD.size() > categoryIndex) { //safeguard
+        auto zpd_it = categoryZPD.begin();
         auto minor_it = minorZpd.begin();
 
-        std::advance(zpd_it, majorIndex);
+        std::advance(zpd_it, categoryIndex);
         std::advance(minor_it, minorIndex);
 
         lastActivity = *zpd_it;
         lastActivityMinor = *minor_it;
 
         auto avail_it = availables.begin();
-        std::advance(avail_it, majorIndex);
+        std::advance(avail_it, categoryIndex);
         lastActivitySpecific  = *avail_it;
 
 
         //contains exercise in the form of "EXX.XX"
         description = "\"" + *avail_it + "." + lastActivityMinor.get()->id + "\"";
-    }
+        qDebug() << QString::fromStdString("generated exercise: ")<< QString::fromStdString(description);
+    //}
 
 
     return description;
@@ -266,7 +319,7 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
 
 std::string Zpdes::updateZpd(const double result){
 
-
+    /*
     //find the index of the specific activity
     unsigned index{0};
     for(auto it = lastActivity.get()->exercises.begin(); it != lastActivity.get()->exercises.end(); it++) {
@@ -275,11 +328,14 @@ std::string Zpdes::updateZpd(const double result){
         }
         index++;
     }
+    */
 
+    qDebug() << QString::fromStdString("updating zpdes1");
     //Ask activity to update its bandit level of major and minor
     //major
     lastActivity.get()->updateBanditLevel(result);
 
+    qDebug() << QString::fromStdString("updating zpdes2");
     //minor
     lastActivityMinor.get()->updateBanditLevel(result);
 
@@ -287,7 +343,11 @@ std::string Zpdes::updateZpd(const double result){
     lastActivityComplexity.get()->updateBanditLevel(result);
 
     std::stringstream logText;
-    logText << lastActivitySpecific << "." << lastActivityMinor.get()->id << ", " << result << ", " << lastActivity.get()->banditLevel << ", " << lastActivityMinor.get()->banditLevel;
+    logText << lastActivitySpecific << "." << lastActivityMinor.get()->id << ", ";
+    logText << "result: " << result << ", ";
+    logText << "category: " << lastActivity.get()->banditLevel << ", " << lastActivity.get()->getAverageSuccess() << ", ";
+    logText << "type: " << lastActivityMinor.get()->banditLevel <<  ", " << lastActivityMinor.get()->getAverageSuccess() << ", ";
+    logText << "complexity: " << lastActivityComplexity.get()->banditLevel << ", " << lastActivityComplexity.get()->getAverageSuccess();
     return logText.str();
 }
 
@@ -296,6 +356,7 @@ void Zpdes::resetZpdes() {
     //clear all acitivities and reinitialize
     majorActivities.clear();
     minorActivities.clear();
+    categoryActivities.clear();
     complexityActivities.clear();
     initializeActivities();
 }
@@ -328,6 +389,7 @@ unsigned Zpdes::activityFromZpd(std::list<std::shared_ptr<Activity> > &zpd) {
 
 //only for setting last activity for tutorials
 void Zpdes::setLastActivity(std::string name) {
+    /*
     for(auto it = majorActivities.begin(); it != majorActivities.end(); it++) {
         if((it->front()).get()->id.find(name) != std::string::npos) {
 
@@ -340,7 +402,7 @@ void Zpdes::setLastActivity(std::string name) {
             }
 
         }
-    }
+    }*/
 
     for(auto it = minorActivities.begin(); it != minorActivities.end(); it++) {
         if((*it).get()->id.find("04") != std::string::npos) {
@@ -348,6 +410,21 @@ void Zpdes::setLastActivity(std::string name) {
         }
 
     }
+
+    for(auto it = complexityActivities.begin(); it != complexityActivities.end(); it++) {
+        if((*it).get()->id.find(name) != std::string::npos) {
+            lastActivityComplexity = *it;
+        }
+
+    }
+
+    for(auto it = categoryActivities.begin(); it != categoryActivities.end(); it++) {
+        if((*it).get()->id.find(name) != std::string::npos) {
+            lastActivity = *it;
+        }
+
+    }
+    lastActivitySpecific = name;
     return;
 }
 

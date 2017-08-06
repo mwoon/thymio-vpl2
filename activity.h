@@ -6,6 +6,7 @@
 #include <list>
 #include <vector>
 #include <string>
+#include <QtDebug>
 
 class Activity
 {
@@ -35,6 +36,7 @@ public:
     void updateBanditLevel(double reward);
     void setDescription(std::string desc);
     //void setSuccessor(Activity a);
+    double getAverageSuccess();
 
 
     //store all previous results from using this activity for each difficulty

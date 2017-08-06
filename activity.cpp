@@ -2,11 +2,16 @@
 
 void Activity::updateBanditLevel(double result)
 {
+    qDebug() << QString::fromStdString("updating zpdes1.01");
     //if result is better than 0.5 activate it
     if(result > 0.5) {
         activated = true;
     }
 
+    //update success rate
+    successRate.first += result;
+    successRate.second++;
+    qDebug() << QString::fromStdString("updating zpdes1.02");
 
     //push new result to front of list of results
     prevResults.push_front(result);
@@ -51,3 +56,7 @@ void Activity::setDescription(std::string desc) {
     successor.reset();
     successor = std::make_shared<Activity>(a);
 }*/
+
+double Activity::getAverageSuccess() {
+    return successRate.first / successRate.second;
+}

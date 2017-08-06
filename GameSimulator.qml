@@ -104,7 +104,7 @@ Page {
 
             //functions
             function perfectSim() {
-                for(var i = 0; i < 100; i++) {
+                for(var i = 0; i < 1000; i++) {
                     var response = "";
                     while(response !== "the_end") {
                         var rawResp = stote.advanceScript();
@@ -126,7 +126,7 @@ Page {
             }
 
             function totalFailSim() {
-                for(var i = 0; i < 100; i++) {
+                for(var i = 0; i < 1000; i++) {
                     var response = "";
                     while(response !== "the_end") {
                         var rawResp = stote.advanceScript();
@@ -148,7 +148,7 @@ Page {
             }
 
             function alwaysLowScoreSim() {
-                for(var i = 0; i < 100; i++) {
+                for(var i = 0; i < 1000; i++) {
                     var response = "";
                     while(response !== "the_end") {
                         var rawResp = stote.advanceScript();
@@ -170,7 +170,7 @@ Page {
             }
 
             function failPercent30Sim() {
-                for(var i = 0; i < 100; i++) {
+                for(var i = 0; i < 1000; i++) {
 
                     var response = "";
                     while(response !== "the_end") {
@@ -193,7 +193,7 @@ Page {
             }
 
             function fixed3040506080() {
-                for(var i = 0; i < 100; i++) {
+                for(var i = 0; i < 1000; i++) {
 
                     var response = "";
                     while(response !== "the_end") {
@@ -217,7 +217,7 @@ Page {
 
             function increasePerTrial() {
 
-                for(var i = 0; i < 100; i++) {
+                for(var i = 0; i < 1000; i++) {
 
                     var response = "";
                     while(response !== "the_end") {

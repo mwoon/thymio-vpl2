@@ -34,7 +34,7 @@ public slots:
 
 private:
     //constants are currently arbitrary
-    const double gamma = 0.8; //exploration rate
+    const double gamma = 0.3; //exploration rate
     unsigned numExercises = 0;
 
 
