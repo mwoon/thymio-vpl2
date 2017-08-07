@@ -199,12 +199,87 @@ Page {
       }
 
     }
+    /*---------------------------------------- Story Logic --------------------------------------------------*/
+    DialogueBox {
+        id: dialogueBox
 
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 25
+
+        color: "#50c4c4c4"
+        border.color: "#90c4c4c4"
+    }
+
+    property var storyStack: new Array();
+    property var storyList;
+    property bool next: false //signals when a new segment is ready to be read
+    onNextChanged: {
+        if(next) {
+            updateStory();
+        }
+    }
+
+    MouseArea {
+        id: mouse
+        anchors.fill: parent
+        z: 2
+
+        onClicked: {
+            next = true;
+        }
+    }
+
+    function updateStory() {
+        if(!next) { return; }
+        next = false;
+
+        if(storyStack.length > 0) {
+            var part = storyStack.shift();
+
+            if(part.type === "story" || part.type === "activity") {
+                if (part.content.cmd === "multi") {
+                    handleScene(part.content.scene);
+                } else if (part.content.cmd === "dialogue") {
+                    handleDialogue(part.content.speaker, part.content.text);
+                }
+            }
+        } else {
+            mouse.enabled = false;
+            dialogueBox.visible = false;
+        }
+    }
+
+    function handleDialogue(speaker, text) {
+        dialogueBox.speakerName = speaker;
+        dialogueBox.dialogue = text;
+    }
+
+    function handleScene(scene) {
+        for(var i = 0; i < scene.length; i++) {
+            if (scene[i].cmd === "dialogue") {
+                handleDialogue(scene[i].speaker, scene[i].text);
+            }
+        }
+    }
+
+    /*--------------------------------------------------------------------------------------------------------*/
     Component.onCompleted: {
         shuffleOptions();
         for(var i = 0; i < answerList.length; i++) {
             optionsList.append({"code": JSON.stringify(answerList[i]), "result": scoreList[i]})
         }
+
+        if(storyList) {
+            var part;
+            for(var i = 0; i < storyList.length; i++) {
+                part = {};
+                part.type = "story";
+                part.content = storyList[i];
+                storyStack.push(part);
+            }
+        }
+
+        next = true;
     }
 
 

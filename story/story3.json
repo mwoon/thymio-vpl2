@@ -380,7 +380,7 @@
 		  {
                      "cmd": "dialogue",
                      "speaker": "Ruby",
-                     "text": "Hey Ada, aare we going back to the village soon?"
+                     "text": "Hey Ada, are we going back to the village soon?"
                   }
                ]
 	},
@@ -426,6 +426,201 @@
                      "cmd": "dialogue",
                      "speaker": "Ruby",
                      "text": "Ada, Ada, Ada, that's a robot! Quick! Get away!"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.23"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "It's okay Ruby."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.24"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "He won't hurt you."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.25"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ruby",
+                     "text": "But he's a robot! He's dangerous!"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.26"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Ahh... Thymio, we'll just have to prove to Ruby that you aren't scary."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.27"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Thymio",
+                     "text": "How are we going to do that? he seems terrified."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.28"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Well, you can do something fun, can't you?"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.29"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Thymio",
+                     "text": "I suppose if you can get the right program to run, I could change my colors?"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.30"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Yes! That's it! How do we do that?"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.31"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Thymio",
+                     "text": "There's an event for the colors. One for the LEDs on top and one for the LEDs below."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.32"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Thymio",
+                     "text": "We can also use the buttons to activate them."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.33"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "You have buttons?"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.34"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Thymio",
+                     "text": "Yes, the four arrows and the circle button on top of me."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story3.35"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Okay, let's try it and hope Ruby will come down when he sees the colors!"
                   }
                ]
 	}

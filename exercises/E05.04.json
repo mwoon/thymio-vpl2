@@ -30,6 +30,21 @@
                       }
                    ]
         },
+	{
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "pre ex 5.04 3"
+                      },
+		      {
+                         "cmd": "dialogue",
+                         "speaker": "Ada",
+                         "text": "Remember, we want Thymio to be able to stop if his front sensor detects something!" 
+                      }
+                   ]
+        },
         {
             "cmd": "ex",
             "type": "type4",
