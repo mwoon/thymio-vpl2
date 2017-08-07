@@ -17,7 +17,7 @@ BlockDefinition {
 			property var params: defaultParams
 
 			Image {
-				source: "images/clap.svg"
+				source: "TapEventBlock.svg"
 				width: 256 // working around Qt bug with SVG and HiDPI
 				height: 256 // working around Qt bug with SVG and HiDPI
 				anchors.centerIn: parent
@@ -31,8 +31,8 @@ BlockDefinition {
 
 	function compile(params) {
 		return {
-			event: "mic",
-			condition: "currentEvent == event_mic",
+			event: "tap",
+			condition: "currentEvent == event_tap",
 		};
 	}
 }

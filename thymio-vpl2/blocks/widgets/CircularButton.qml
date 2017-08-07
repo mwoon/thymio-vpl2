@@ -3,9 +3,9 @@ import "../.."
 
 HDPIImage {
 	state: "DISABLED"
-	source: state === "DISABLED" ? "images/triangularButtonOff.svg" : "images/triangularButtonOn.svg"
-	width: 58 // working around Qt bug with SVG and HiDPI
-	height: 58 // working around Qt bug with SVG and HiDPI
+	source: state === "DISABLED" ? "CircularButtonOff.svg" : "CircularButtonOn.svg"
+	width: 64 // working around Qt bug with SVG and HiDPI
+	height: 64 // working around Qt bug with SVG and HiDPI
 
 	MouseArea {
 		anchors.fill: parent

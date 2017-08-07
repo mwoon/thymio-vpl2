@@ -39,6 +39,8 @@ Item {
 			actions: Action[]
 			// destination state
 			next: State
+			// called during compilation to indicate that the transition has an error
+			setError(error: boolean): void
 			// called during program execution when the transition is taken
 			trigger(): void
 		}
@@ -189,6 +191,9 @@ Item {
 					transitionDatas.push(transitionData);
 					transition.compilationData = transitionData;
 
+					transition.setError(false);
+
+					var eventCategories = {};
 					transition.events.forEach(function (event) {
 						var compiled = event.compile();
 						if (compiled.event && transitionData.events.indexOf(compiled.event) === -1) {
@@ -200,14 +205,35 @@ Item {
 						transitionData.condition += " and (" + compiled.condition + ")";
 						// collect additional code
 						collectAdditionalCode(event, compiled);
+						// check the category
+						var category = event.definition.category;
+						if (category !== "") {
+							if (eventCategories[category] === undefined) {
+								eventCategories[category] = true;
+							} else {
+								transition.setError(true);
+								throw qsTr("Duplicate events");
+							}
+						}
 					});
 
+					var actionCategories = {};
 					transition.actions.forEach(function (action) {
 						var compiled = action.compile();
 						// for each action, add the AESL statements
 						transitionData.actions += compiled.action + "\n";
 						// collect additional code
 						collectAdditionalCode(action, compiled);
+						// check the category
+						var category = action.definition.category;
+						if (category !== "") {
+							if (actionCategories[category] === undefined) {
+								actionCategories[category] = true;
+							} else {
+								transition.setError(true);
+								throw qsTr("Duplicate actions");
+							}
+						}
 					});
 
 					transitionData.next = visitState(thread, transition.next);
@@ -297,6 +323,17 @@ Item {
 				visitThread(startState);
 			}
 
+			transitionDatas.forEach(function(transition) {
+				if (transition.events.length === 0) {
+					transition.transition.setError(true);
+					throw qsTr("Missing event");
+				}
+				if (transition.actions.length === 0) {
+					transition.transition.setError(true);
+					throw qsTr("Missing action");
+				}
+			});
+
 			// AESL custom events
 			var events = {
 				// "transition" AESL event, triggered when a transition is triggered
@@ -369,14 +406,6 @@ Item {
 
 				// this procedure gets called when the state is entered from any transition
 				script += "sub state" + state.index + "Enter" + "\n";
-				script = state.transitions.reduce(function (script, transition) {
-					if (transition.events.length === 0) {
-						// unconditional transitions exit the state immediately
-						script += "callsub transition" + transition.index + "Trigger" + "\n";
-						script += "return" + "\n";
-					}
-					return script;
-				}, script);
 				// set the thread's current state
 				script += "threadStates[currentThread] = " + state.index + "\n";
 				// reset the thread's current state's age
