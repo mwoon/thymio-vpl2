@@ -3,7 +3,7 @@
 StoryTeller::StoryTeller(QObject *parent) : QObject(parent)
 {
     initializeScript();
-    mainIndex = 0;
+    mainIndex = 2;
     successfulExercises = 0;
     totalExInBlock = 0;
 }
@@ -140,7 +140,7 @@ void StoryTeller::completeExercise(const double result) {
     //maybe also add a hard limit on the number of exercises?
     totalExInBlock++;
 
-    if(result > 0.5) {
+    if(result >= 0.5) {
         successfulExercises++;
     } else {
         successfulExercises = 0;

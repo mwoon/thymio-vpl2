@@ -51,7 +51,7 @@
 		]
 	    },
             "scene": [{
-	    	"checkfor": [{"type": "xsmaller", "endpos" : 85}],
+	    	"checkfor": [{"type": "xsmaller", "endpos" : 85}, {"type": "xgreater", "endpos" : 70}],
                 "duration": 5,
                 "worldSize": [100, 100],
                 "thymio" : { "position": [50, 50], "angle": 0 }

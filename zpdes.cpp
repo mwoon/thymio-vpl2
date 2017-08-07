@@ -330,12 +330,10 @@ std::string Zpdes::updateZpd(const double result){
     }
     */
 
-    qDebug() << QString::fromStdString("updating zpdes1");
     //Ask activity to update its bandit level of major and minor
     //major
     lastActivity.get()->updateBanditLevel(result);
 
-    qDebug() << QString::fromStdString("updating zpdes2");
     //minor
     lastActivityMinor.get()->updateBanditLevel(result);
 

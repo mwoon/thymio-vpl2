@@ -8,7 +8,21 @@
             "cmd": "ex",
             "type": "type5",
             "text": "E08.05",
-	    "method": "fixed",
+	    "method": "sim",
+	    "scene": [{
+	    	"checkfor": [{"type": "topcolor", "time" : 1, "color": "blue"}],
+                "duration": 2,
+                "worldSize": [100, 100],
+                "thymio" : { "position": [50, 50], "angle": 0 },
+		"testFunction": "buttonBack"
+            },
+	    {
+	    	"checkfor": [{"type": "topcolor", "time" : 1, "color": "pink"}],
+                "duration": 2,
+                "worldSize": [100, 100],
+                "thymio" : { "position": [50, 50], "angle": 0 },
+		"testFunction": "buttonFront"
+            }],
 	    "solution": 
 {"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","ON","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,0,3]}]],[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","ON"]}],[{"definition":"PaletteTopColorActionBlock","params":[4,32,4]}]]]}
         },

@@ -89,10 +89,17 @@ Item {
     function runSimulationDefault() {
 
         var scenario = {
-            duration: 2,
-            worldSize: Qt.vector2d(100, 100),
-            thymio : { position: Qt.vector2d(20, 50), angle: 0 },
-            walls: [ { position: Qt.vector2d(80, 50), angle: Math.pi / 2, size: Qt.vector3d(20, 2, 10), color: "Blue" } ]
+            duration: 1,
+            worldSize: Qt.vector2d(100, 40),
+            thymio : { position: Qt.vector2d(60, 20), angle: 0 },
+            walls: [ //{ position: Qt.vector2d(80, 50), angle: Math.pi / 2, size: Qt.vector3d(20, 2, 10), color: "Blue" },
+            //{ position: Qt.vector2d(69, 27), angle: 0, size: Qt.vector3d(2, 2, 10)}, //outer most left sensor
+            //{ position: Qt.vector2d(69, 24.8), angle: 0, size: Qt.vector3d(2, 2, 10)}, //both outer most sensors
+            //{ position: Qt.vector2d(72, 22.4), angle: 0, size: Qt.vector3d(2, 2, 10)}, //inner left sensor
+            //{ position: Qt.vector2d(72, 20), angle: 0, size: Qt.vector3d(2,2, 10)} //middle sensor
+            //{ position: Qt.vector2d(72, 17.6), angle: 0, size: Qt.vector3d(2, 2, 10)}, //inner right sensor
+            { position: Qt.vector2d(69, 13), angle: 0, size: Qt.vector3d(2, 2, 10)} //outer most right sensor
+            ]
         }
         var simError = simulator.runProgram(scenario, events, source, function() {
             if (this.currentTime === 0) {
@@ -111,7 +118,35 @@ Item {
     }
 
     function runSimulationWithFunction(scenario, testFunction) {
-        var simError = simulator.runProgram(scenario, events, source, testFunction);
+        var func;
+        switch(testFunction) {
+        case "buttonFront":
+            func = buttonFront;
+            break;
+        case "buttonBack":
+            func = buttonBack;
+            break;
+        case "buttonLeft":
+            func = buttonLeft;
+            break;
+        case "buttonRight":
+            func = buttonRight;
+            break;
+        case "buttonCenter":
+            func = buttonCenter;
+            break;
+        case "clap":
+            func = clap;
+            break;
+        case "tap":
+            func = tap;
+            break;
+        default:
+            func = tap;
+            break;
+        }
+
+        var simError = simulator.runProgram(scenario, events, source, func);
         if (simError) {
             console.log("simulation error: " + simError)
         } else {
@@ -135,5 +170,56 @@ Item {
             console.log(JSON.stringify(log))
         }
 
+    }
+
+    // ------------------------- simulation functions --------------------------
+
+    function tap() {
+        if (this.currentTime === 0) {
+            this.simulatedThymio.tap();
+            console.log("Simulation tap");
+        }
+    }
+
+    function clap() {
+        if (this.currentTime === 0) {
+            this.simulatedThymio.clap();
+            console.log("Simulation clap");
+        }
+    }
+
+    function buttonBack() {
+        if (this.currentTime === 0) {
+            this.simulatedThymio.pressBackwardButton();
+            console.log("Simulation pressBackwardButton");
+        }
+    }
+
+    function buttonFront() {
+        if (this.currentTime === 0) {
+            this.simulatedThymio.pressForwardButton();
+            console.log("Simulation pressForwardButton");
+        }
+    }
+
+    function buttonLeft() {
+        if (this.currentTime === 0) {
+            this.simulatedThymio.pressLeftButton();
+            console.log("Simulation pressLeftButton");
+        }
+    }
+
+    function buttonRight() {
+        if (this.currentTime === 0) {
+            this.simulatedThymio.pressRightButton();
+            console.log("Simulation pressRightButton");
+        }
+    }
+
+    function buttonCenter() {
+        if (this.currentTime === 0) {
+            this.simulatedThymio.pressCenterButton();
+            console.log("Simulation pressCenterButton");
+        }
     }
 }

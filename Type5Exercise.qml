@@ -100,6 +100,23 @@ Page {
             //simulate and check behaviour
             submitted = true;
 
+            //check for special simulations
+            if(special) {
+                switch(special.cmd) {
+                case "insertCode":
+                    vpl.editor.saveProgram("autosaveName");
+                    var codeScene = vpl.editor.scene.serialize();
+                    var mode = vpl.editor.modeCode;
+                    codeScene.unshift([special.events, special.actions]);
+                    var tempCode = { "mode": mode, "scene": codeScene};
+                    vpl.editor.loadCode(JSON.stringify(tempCode));
+                    vpl.editor.compiler.forceCompile();
+                    break;
+                default:
+                    break;
+                }
+            }
+
             //start all simulations
             while(sIdx < scene.length) {
                 nextSimulation();
@@ -138,16 +155,12 @@ Page {
             scenario.walls = [];
         }
 
-        console.log(JSON.stringify(scenario));
-        console.log(JSON.stringify(scene[sIdx]));
-
         vpl.thymio.playing = true;
 
         var simError;
         if(scene[sIdx].testFunction) {
-            var testFunction = new Function(scene[sIdx].testFunction);
             console.log("running simulation");
-            simError = vpl.thymio.runSimulationWithFunction(scenario, testFunction);
+            simError = vpl.thymio.runSimulationWithFunction(scenario, scene[sIdx].testFunction);
 
         } else {
             console.log("running simulation");
@@ -175,6 +188,36 @@ Page {
                         switch(scene[sIdx].checkfor[curCheck].type) {
                         case "xgreater" :
                             if(scene[sIdx].checkfor[curCheck].endpos < log[log.length - 1].position.x) {score += scorePerCheck;}
+                            break;
+                        case "xsmaller" :
+                            if(scene[sIdx].checkfor[curCheck].endpos > log[log.length - 1].position.x) {score += scorePerCheck;}
+                            break;
+                        case "topcolor" :
+                            if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length > 0) { //was there a native call
+                                if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].id === 5) { //was the native call to the top color
+                                    var coloration = log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].values;
+                                    var r = coloration[0];
+                                    var g = coloration[1];
+                                    var b = coloration[2];
+                                    var correct = false;
+                                    switch(scene[sIdx].checkfor[curCheck].color) {
+                                    case "red" :
+                                        if(r > g && r > b && ((g - b >= 0 && g - b <= 4) || (b - g >= 0 && b - g <= 4))) {score += scorePerCheck;}
+                                        break;
+                                    case "green" :
+                                        if((g > r && g > b && ((r - b >= 0 && r - b <= 4) || (r - g >= 0 && r - g <= 4))) || (g > r*2 && g > b*2)){score += scorePerCheck;}
+                                        break;
+                                    case "pink" :
+                                        if((r >= 30 && b >= 14  && ((b - g) >= 0))){score += scorePerCheck;}
+                                        break;
+                                    case "blue" :
+                                        if((b > r && b > g && ((g <= 24 && g - r >= 0) || (r <= 7 && r - g >= 0)))){score += scorePerCheck;}
+                                        break;
+                                    default:
+                                        break;
+                                    }
+                                }
+                            }
                             break;
                         default:
                             break;

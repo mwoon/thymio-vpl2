@@ -29,8 +29,8 @@ Rectangle {
 
             Layout.leftMargin: 25
             Layout.rightMargin: 25
-            Layout.topMargin: 25
-            height: 150
+            Layout.topMargin: parent.height / 16
+            height: parent.height / 4
 
             text: "Placeholder Name"
             font.pointSize: 16
@@ -40,7 +40,7 @@ Rectangle {
 
             Layout.leftMargin: 25
             Layout.rightMargin: 25
-            Layout.topMargin: 25
+            Layout.topMargin: parent.height / 16
             Layout.fillHeight: true
             Layout.fillWidth: true //Need this to ensure that the width of the text box does not spill over parent width
 

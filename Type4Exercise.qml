@@ -94,7 +94,7 @@ Page {
 
                                         if(checkfor[i].color === "red") {
                                             console.log(prog.scene[j][1][actions].params);
-                                            if(r > g && r > b && ((g - b >= 0 && g - b < 4) || (b - g >= 0 && b - g < 4))) {
+                                            if(r > g && r > b && ((g - b >= 0 && g - b <= 4) || (b - g >= 0 && b - g <= 4))) {
                                                 score = 1.0;
                                             }
                                         }
@@ -176,9 +176,8 @@ Page {
 
         var simError;
         if(scene[sIdx].testFunction) {
-            var testFunction = new Function(scene[sIdx].testFunction);
             console.log("running simulation");
-            simError = vpl.thymio.runSimulationWithFunction(scenario, testFunction);
+            simError = vpl.thymio.runSimulationWithFunction(scenario, scene[sIdx].testFunction);
 
         } else {
             console.log("running simulation");
@@ -209,6 +208,35 @@ Page {
                             break;
                         case "xsmaller" :
                             if(scene[sIdx].checkfor[curCheck].endpos > log[log.length - 1].position.x) {score += scorePerCheck;}
+                            break;
+                        case "topcolor" :
+                            if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length > 0) { //was there a native call
+                                console.log("checking color");
+                                if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].id === 5) { //was the native call to the top color
+                                    console.log("checking top color");
+                                    var coloration = log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].values;
+                                    var r = coloration[0];
+                                    var g = coloration[1];
+                                    var b = coloration[2];
+                                    var correct = false;
+                                    switch(scene[sIdx].checkfor[curCheck].color) {
+                                    case "red" :
+                                        if(r > g && r > b && ((g - b >= 0 && g - b <= 4) || (b - g >= 0 && b - g <= 4))) {score += scorePerCheck;}
+                                        break;
+                                    case "green" :
+                                        if((g > r && g > b && ((r - b >= 0 && r - b <= 4) || (r - g >= 0 && r - g <= 4))) || (g > r*2 && g > b*2)){score += scorePerCheck;}
+                                        break;
+                                    case "pink" :
+                                        if((r >= 30 && b >= 14  && ((b - g) >= 0))){score += scorePerCheck;}
+                                        break;
+                                    case "blue" :
+                                        if((b > r && b > g && ((g <= 24 && g - r >= 0) || (r <= 7 && r - g >= 0)))){score += scorePerCheck;}
+                                        break;
+                                    default:
+                                        break;
+                                    }
+                                }
+                            }
                             break;
                         default:
                             break;
