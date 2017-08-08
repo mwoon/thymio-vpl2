@@ -9,7 +9,40 @@
             "cmd": "ex",
             "type": "type4",
             "text": "E09.04",
-	    "method": "fixed",
+	    "method": "sim",
+	    "special": {
+		"cmd": "insertCode", 
+		"events": [
+		    {
+			"definition": "ProxEventBlock",
+			"params": ["DISABLED", "DISABLED", "FAR", "DISABLED", "DISABLED", "DISABLED", "DISABLED"]
+		    }
+		], 
+		"actions": [
+		    {
+			"definition": "MotorSimpleActionBlock",
+			"params": "front"
+		    }
+		]
+	    },
+	    "scene": [{
+	    	"checkfor": [{"type": "topcolor", "time" : 18, "color": "green"}],
+                "duration": 2,
+                "worldSize": [100, 40],
+		"walls": [
+		    {"position":[72, 17.6], "angle":0, "size": [2, 2, 10]}		
+		],
+                "thymio" : { "position": [40, 20], "angle": 0 }
+            },
+	    {
+	    	"checkfor": [{"type": "topcolor", "time" : 3, "color": "light blue"}],
+                "duration": 2,
+                "worldSize": [100, 40],
+		"walls": [
+		    {"position":[52, 22.4], "angle":0, "size": [2, 2, 10]}		
+		],
+                "thymio" : { "position": [40, 20], "angle": 0 }
+            }],
 	    "solution": {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","CLOSE","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[1,32,0]}]],[[{"definition":"ProxEventBlock","params":["DISABLED","FAR","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[0,27,31]}]]]},
 	    "code": 
 {"mode":"simple","scene":[[[],[{"definition":"PaletteTopColorActionBlock","params":[1,32,0]}]],[[],[{"definition":"PaletteTopColorActionBlock","params":[0,27,31]}]]]}

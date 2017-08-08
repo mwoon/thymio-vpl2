@@ -140,10 +140,11 @@ Page {
         scenario.duration = scene[sIdx].duration;
         scenario.worldSize = Qt.vector2d(scene[sIdx].worldSize[0], scene[sIdx].worldSize[1]);
         scenario.thymio = {"position": Qt.vector2d(scene[sIdx].thymio.position[0], scene[sIdx].thymio.position[1]), angle: Math.PI * scene[sIdx].thymio.angle};
+        scenario.walls = [];
         if(scene[sIdx].walls) {
             for(var i = 0; i < scene[sIdx].walls.length; i++){
                 scenario.walls[i] = {
-                    "position": Qt.vector2d(scene[sIdx].walls[i].position[0], scene[sIdx].walls[i].position[2]),
+                    "position": Qt.vector2d(scene[sIdx].walls[i].position[0], scene[sIdx].walls[i].position[1]),
                     "angle": Math.PI * scene[sIdx].walls[i].angle,
                     "size": Qt.vector3d(scene[sIdx].walls[i].size[0], scene[sIdx].walls[i].size[1], scene[sIdx].walls[i].size[2])
                 };
@@ -151,8 +152,6 @@ Page {
                     scenario.walls[i].color = scene[sIdx].walls[i].color;
                 }
             }
-        } else {
-            scenario.walls = [];
         }
 
         vpl.thymio.playing = true;
@@ -212,6 +211,9 @@ Page {
                                         break;
                                     case "blue" :
                                         if((b > r && b > g && ((g <= 24 && g - r >= 0) || (r <= 7 && r - g >= 0)))){score += scorePerCheck;}
+                                        break;
+                                    case "light blue" :
+                                        if(b > r+3 && g > r+3 && b >= g && b - g <= 6 ){score += scorePerCheck;}
                                         break;
                                     default:
                                         break;

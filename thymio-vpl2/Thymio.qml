@@ -97,8 +97,8 @@ Item {
             //{ position: Qt.vector2d(69, 24.8), angle: 0, size: Qt.vector3d(2, 2, 10)}, //both outer most sensors
             //{ position: Qt.vector2d(72, 22.4), angle: 0, size: Qt.vector3d(2, 2, 10)}, //inner left sensor
             //{ position: Qt.vector2d(72, 20), angle: 0, size: Qt.vector3d(2,2, 10)} //middle sensor
-            //{ position: Qt.vector2d(72, 17.6), angle: 0, size: Qt.vector3d(2, 2, 10)}, //inner right sensor
-            { position: Qt.vector2d(69, 13), angle: 0, size: Qt.vector3d(2, 2, 10)} //outer most right sensor
+            { position: Qt.vector2d(72, 17.6), angle: 0, size: Qt.vector3d(2, 2, 10)}//, //inner right sensor
+            //{ position: Qt.vector2d(69, 13), angle: 0, size: Qt.vector3d(2, 2, 10)} //outer most right sensor
             ]
         }
         var simError = simulator.runProgram(scenario, events, source, function() {
