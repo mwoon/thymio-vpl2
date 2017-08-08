@@ -1,9 +1,65 @@
 {
     "list": [
         {
-            "cmd": "text",
-            "text": "pre E09.02"
-        },
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E09.02 01"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "How about green and blue?"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E09.02 02"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "A program that makes Thymio's top LEDs turn blue when his middle front sensor detects something and turn green when the rightmost sensor detects something..."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E09.02 03"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "Ada clicks around on the tablet."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E09.02 04"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "I found a whole lot of programs. One of these has to do what I want, right?"
+                  }
+               ]
+	},
         {
             "cmd": "ex",
             "type": "type2",
@@ -25,9 +81,94 @@
 	    "scoreList": [0, 0, 0, 0, 1, 0],
 	    "description": "Which program will let Thymio's top LEDs become blue when the middle sensor is covered and green when the rightmost sensor is covered?"
         },
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Post E09.02 01"
+                  },
+		  {
+                     "cmd": "feedback",
+                     "options": [
+	  		[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Yay, you found one!"
+                  	}],
+			[{
+     				"cmd": "dialogue",
+     				"speaker": "Thymio",
+             			"text": "I don't think it's that one."
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "Thymio",
+             			"text": "Try the other one..."
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "",
+             			"text": "Ada looks for the one Thymio is pointing at."
+                  	}]
+		     ]
+                  }
+               ]
+	},
         {
-            "cmd": "text",
-            "text": "post E09.02"
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 9.02 2"
+                      },{
+			 "cmd": "dialogue",
+			 "speaker": "Ada",
+     			 "text": "Okay, I'll try it out now."
+                  	}
+                   ]
+        },
+        {
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 9.02 3"
+                      },{
+			 "cmd": "dialogue",
+			 "speaker": "",
+     			 "text": "The program works. Thymio's color changes to green and then too blue."
+                  	}
+                   ]
+        },
+        {
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 9.02 4"
+                      },{
+			 "cmd": "dialogue",
+			 "speaker": "",
+     			 "text": "Ruby flaps his wings in excitement."
+                  	}
+                   ]
+        },
+        {
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 9.02 5"
+                      },{
+			 "cmd": "dialogue",
+			 "speaker": "Ruby",
+     			 "text": "Do it again! Do it again!"
+                  	}
+                   ]
         }
     ]
 }
