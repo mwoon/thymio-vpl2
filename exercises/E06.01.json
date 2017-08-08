@@ -54,7 +54,7 @@
                   	},{
      				"cmd": "dialogue",
      				"speaker": "Ada",
-             			"text": "It should turn green when the front button is pressed!"
+             			"text": "The top LEDs should turn green when the front button is pressed!"
                   	}]
 		     ]
                   }

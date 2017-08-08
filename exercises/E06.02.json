@@ -1,9 +1,20 @@
 {
     "list": [
         {
-            "cmd": "text",
-            "text": "pre E06.02"
-        },
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E06.02"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Here are some programs I found!"
+                  }
+               ]
+	},
         {
             "cmd": "ex",
             "type": "type2",
@@ -25,9 +36,83 @@
 	    "scoreList": [0, 0, 0, 0, 1, 0],
 	    "description": "How can Thymio change his top LEDs to red when the button pointing right is pressed?"
         },
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Post E06.02 01"
+                  },
+		  {
+                     "cmd": "feedback",
+                     "options": [
+	  		[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "This one should be perfect!"
+                  	}],
+			[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Hmm, I don't think that's the one."
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "It should be another one..."
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "",
+             			"text": "Ada picks a different program"
+                  	}]
+		     ]
+                  }
+               ]
+	},
         {
-            "cmd": "text",
-            "text": "post E06.02"
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 6.02 2"
+                      },{
+     				
+			 "cmd": "dialogue",
+     		         "speaker": "",
+             		 "text": "Ada loads up the program."
+                  	}
+                   ]
+        },
+        {
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 6.02 3"
+                      },{
+     				
+			 "cmd": "dialogue",
+     		         "speaker": "",
+             		 "text": "Thymio's top LEDs change to red as Ada presses the right button."
+                  	}
+                   ]
+        },
+        {
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 6.02 4"
+                      },{
+     				
+			 "cmd": "dialogue",
+     		         "speaker": "",
+             		 "text": "Ruby looks at them curiously."
+                  	}
+                   ]
         }
     ]
 }

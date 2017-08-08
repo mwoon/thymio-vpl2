@@ -1,9 +1,50 @@
 {
     "list": [
         {
-            "cmd": "text",
-            "text": "pre E08.02"
-        },
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E08.02 01"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "There's a bunch of programs here that look like they'll change Thymio's colors for two buttons."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E08.02 02"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Let's see... I think we should pick one that uses Thymio's top LEDS because Ruby won't be able to see the bottom ones."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E08.02 02"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Which of these will make Thymio's top LEDS yellow when the button pointing right is pressed and light blue when the button pointing behind is pressed."
+                  }
+               ]
+	},
         {
             "cmd": "ex",
             "type": "type2",
@@ -25,9 +66,66 @@
 	    "scoreList": [0, 0, 1, 0, 0, 0],
 	    "description": "Which program will let Thymio change his top LEDs to light blue when the button pointing behind is pressed and to yellow when the button pointing right is pressed?"
         },
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Post E08.02 01"
+                  },
+		  {
+                     "cmd": "feedback",
+                     "options": [
+	  		[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "That's the one!"
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Let's try it out."
+                  	}],
+			[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "I don't think that's the right one."
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Let's try this other one out."
+                  	}]
+		     ]
+                  }
+               ]
+	},
         {
-            "cmd": "text",
-            "text": "post E08.02"
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 8.02 2"
+                      },{
+			 "cmd": "dialogue",
+			 "speaker": "",
+     			 "text": "Ada taps the buttons on Thymio and changes his LED colors."
+                  	}
+                   ]
+        },
+        {
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 8.02 2"
+                      },{
+			 "cmd": "dialogue",
+			 "speaker": "",
+     			 "text": "Ruby watches with a smile."
+                  	}
+                   ]
         }
     ]
 }

@@ -1,1 +1,79 @@
-{"list": [{"cmd": "text", "text": "story4"}, {"cmd": "bg", "color": "steelblue"}]}
+{
+    "list": [
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story4.1"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Ruby come down here please! Thymio really isn't bad!"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story4.2"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Thymio",
+                     "text": "I have no functions to endanger a huge bird!"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story4.3"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "What does that even mean Thymio?"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story4.4"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "It means I can't hurt him."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "story4.5"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "",
+                     "text": "After seeing how comfortable Ada is with Thymio, Ruby decides to come down."
+                  }
+               ]
+	}
+    ]
+}
