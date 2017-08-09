@@ -1,9 +1,50 @@
 {
     "list": [
         {
-            "cmd": "text",
-            "text": "pre E11.02"
-        },
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E11.02 01"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Okay, I've got a bunch of programs with green and orange top color actions here."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E11.02 02"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Hmmm... What should we do?"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E11.02 03"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Okay how about this: A program that will let Thymio change his top LEDs to orange when the two leftmost sensors detect something and green when only the second sensor from the left detects something"
+                  }
+               ]
+	},
         {
             "cmd": "ex",
             "type": "type2",
@@ -25,10 +66,47 @@
 	    "scoreList": [0, 0, 0, 0, 0, 1],
 	    "description": "Which program will let Thymio change his top LEDs to orange when the two leftmost sensors detect something and green when only the second sensor from the left detects something?"
         },
-        {
-            "cmd": "text",
-            "text": "post E11.02"
-        }
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Post E11.02 01"
+                  },
+		  {
+                     "cmd": "feedback",
+                     "options": [
+	  		[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "That's a perfect fit!"
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Thanks for finding it!"
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "",
+             			"text": "Ada switches the top LEDs from green to orange."
+                  	}],
+			[{
+     				"cmd": "dialogue",
+     				"speaker": "",
+             			"text": "Ada tries out the program."
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Hmm... This doesn't seem to be the right one."
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Let's look for a different program."
+                  	}]
+		     ]
+                  }
+               ]
+	}
     ]
 }
 

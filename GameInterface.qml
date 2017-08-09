@@ -19,6 +19,7 @@ Page {
 
     //used to decide what text to show after an exercise
     property var lastScore: 0;
+    property var lastStory;
 
     title: qsTr("Thymio game WIP")
     visible: true
@@ -336,12 +337,14 @@ Page {
             if(newStorySequence.story0) {
                 type = "story";
                 file = "thymio-vpl2/story/" + newStorySequence.story0[0] + ".json";
+                lastStory = newStorySequence.story0[0];
+                console.log(lastStory);
             }
 
             if(newStorySequence.activity)  {
                 type = "activity";
                 //file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                file = "/exercises/" + "E09.03" + ".json";
+                file = "/exercises/" + "E11.01" + ".json";
 
                 /*
                 for(var i = 0; i < newStorySequence.activity.length; i++) {
@@ -363,10 +366,18 @@ Page {
                     //console.log(xhr.status);
                     //console.log(xhr.responseText.toString());
                     var a = JSON.parse(xhr.responseText.toString());
-                    for(var i = 0; i < a.list.length; i++) {
+
+                    var storyList;
+                    if(a[lastStory+"list"]) {
+                        storyList = a[lastStory+"list"];
+                    } else {
+                        storyList = a["list"];
+                    }
+
+                    for(var i = 0; i < storyList.length; i++) {
                         part = {};
                         part.type = type;
-                        part.content = a.list[i];
+                        part.content = storyList[i];
                         storyStack.push(part);
                     }
                     next = true;
@@ -603,10 +614,10 @@ Page {
             }
 
             if(content.method === "fixed") {
-                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.solution), "code" : JSON.stringify(content.code), "method": content.method, "storyList": content.list, "checkfor": content.checkfor});
+                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.solution), "code" : JSON.stringify(content.code), "method": content.method, "storyList": content.list, "checkfor": content.checkfor, "description": content.description});
             } else if (content.method === "sim") {
                 console.log("loading sim version of ex4")
-                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.scene), "code" : JSON.stringify(content.code), "method": content.method, "storyList": content.list, "scene": content.scene, "special": content.special});
+                exLoader.setSource("Type4Exercise.qml", { "solution" : JSON.stringify(content.scene), "code" : JSON.stringify(content.code), "method": content.method, "storyList": content.list, "scene": content.scene, "special": content.special, "description": content.description});
             }
         } else if(content.type === "type5") {
             if(!content.method) {
@@ -614,9 +625,9 @@ Page {
             }
 
             if(content.method === "fixed") {
-                exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.solution), "method": content.method, "storyList": content.list, "checkfor": content.checkfor });
+                exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.solution), "method": content.method, "storyList": content.list, "checkfor": content.checkfor, "description": content.description });
             } else if (content.method === "sim") {
-                exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.scene), "method": content.method, "storyList": content.list, "scene": content.scene, "special": content.special });
+                exLoader.setSource("Type5Exercise.qml", { "solution" : JSON.stringify(content.scene), "method": content.method, "storyList": content.list, "scene": content.scene, "special": content.special, "description": content.description });
             }
         }
 

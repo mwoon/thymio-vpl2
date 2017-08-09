@@ -34,6 +34,19 @@
             "cmd": "ex",
             "type": "type4",
             "text": "E08.04",
+	    "description": [
+		{
+            	    "cmd": "multi",
+            	    "scene":
+                        [
+		  		{
+                     			"cmd": "dialogue",
+                     			"speaker": "Ada",
+                     			"text": "Let's make it so that the button pointing back will make Thymio's top LEDs blue and Thymio's color should change to pink when the button pointing in front is pressed!"
+                  		}
+               		]
+        	}
+	    ],
 	    "method": "sim",
 	    "scene": [{
 	    	"checkfor": [{"type": "topcolor", "time" : 1, "color": "blue"}],

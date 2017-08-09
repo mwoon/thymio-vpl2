@@ -50,6 +50,19 @@
             "type": "type4",
             "text": "E06.04",
 	    "method": "sim",
+	    "description": [
+		{
+            	    "cmd": "multi",
+            	    "scene":
+                        [
+		  		{
+                     			"cmd": "dialogue",
+                     			"speaker": "Ada",
+                     			"text": "Our program should change Thymio's top LEDs to red when the back button is pressed!"
+                  		}
+               		]
+        	}
+	    ],
 	    "scene": [{
 	    	"checkfor": [{"type": "topcolor", "time" : 1, "color": "red"}],
                 "duration": 2,

@@ -140,7 +140,7 @@
                [
                   { 
                      "cmd": "text", 
-                     "text": "story1.7"
+                     "text": "story1.8"
                   },
 		  {
                      "cmd": "bgImage",
@@ -150,16 +150,6 @@
                      "anim": true,
                      "duration": 500,
                      "easing": "outquad" 
-                  }
-               ]
-         }, 
-	 {
-            "cmd": "multi",
-            "scene":
-               [
-                  { 
-                     "cmd": "text", 
-                     "text": "story1.8"
                   },
 		  {
                      "cmd": "dialogue",

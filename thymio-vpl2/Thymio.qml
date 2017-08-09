@@ -93,11 +93,12 @@ Item {
             worldSize: Qt.vector2d(100, 40),
             thymio : { position: Qt.vector2d(60, 20), angle: 0 },
             walls: [ //{ position: Qt.vector2d(80, 50), angle: Math.pi / 2, size: Qt.vector3d(20, 2, 10), color: "Blue" },
+            {"position":Qt.vector2d(48, 23.5), "angle":0, "size": Qt.vector3d(2,2, 10)}, //behind left
             //{ position: Qt.vector2d(69, 27), angle: 0, size: Qt.vector3d(2, 2, 10)}, //outer most left sensor
             //{ position: Qt.vector2d(69, 24.8), angle: 0, size: Qt.vector3d(2, 2, 10)}, //both outer most sensors
             //{ position: Qt.vector2d(72, 22.4), angle: 0, size: Qt.vector3d(2, 2, 10)}, //inner left sensor
-            //{ position: Qt.vector2d(72, 20), angle: 0, size: Qt.vector3d(2,2, 10)} //middle sensor
-            { position: Qt.vector2d(72, 17.6), angle: 0, size: Qt.vector3d(2, 2, 10)}//, //inner right sensor
+            { position: Qt.vector2d(72, 20), angle: 0, size: Qt.vector3d(2,2, 10)} //middle sensor
+            //{ position: Qt.vector2d(72, 17.6), angle: 0, size: Qt.vector3d(2, 2, 10)}//, //inner right sensor
             //{ position: Qt.vector2d(69, 13), angle: 0, size: Qt.vector3d(2, 2, 10)} //outer most right sensor
             ]
         }

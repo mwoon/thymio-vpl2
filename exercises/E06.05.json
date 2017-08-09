@@ -64,6 +64,19 @@
             "cmd": "ex",
             "type": "type5",
             "text": "E06.05",
+	    "description": [
+		{
+            	    "cmd": "multi",
+            	    "scene":
+                        [
+		  		{
+                     			"cmd": "dialogue",
+                     			"speaker": "Ada",
+                     			"text": "Write a program to change Thymio's top LEDs to red when the back button is pressed!"
+                  		}
+               		]
+        	}
+	    ],
 	    "method": "sim",
 	    "scene": [{
 	    	"checkfor": [{"type": "topcolor", "time" : 1, "color": "red"}],

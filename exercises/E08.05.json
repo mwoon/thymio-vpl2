@@ -49,6 +49,19 @@
             "cmd": "ex",
             "type": "type5",
             "text": "E08.05",
+	    "description": [
+		{
+            	    "cmd": "multi",
+            	    "scene":
+                        [
+		  		{
+                     			"cmd": "dialogue",
+                     			"speaker": "Ada",
+                     			"text": "Try doing this: Thymio's top LEDs change to blue when the button pointing behind is pressed and Thymio's top LEDS change to pink when the button pointing in front is pressed!"
+                  		}
+               		]
+        	}
+	    ],
 	    "method": "sim",
 	    "scene": [{
 	    	"checkfor": [{"type": "topcolor", "time" : 1, "color": "blue"}],

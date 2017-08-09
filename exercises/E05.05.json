@@ -35,6 +35,19 @@
             "type": "type5",
             "text": "E05.05",
 	    "method": "sim",
+	    "description": [
+		{
+            	    "cmd": "multi",
+            	    "scene":
+                        [
+		  		{
+                     			"cmd": "dialogue",
+                     			"speaker": "Ada",
+                     			"text": "We want Thymio to be able to stop if his front sensor detects something!"
+                  		}
+               		]
+        	}
+	    ],
 	    "special": {
 		"cmd": "insertCode", 
 		"events": [

@@ -1,20 +1,191 @@
 {
     "list": [
         {
-            "cmd": "text",
-            "text": "pre E11.05"
-        },
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E11.05 01"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Let's make a program by ourselves using 3 colors!"
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E11.05 02"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "I need to think for a bit about what we could do..."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E11.05 03"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Okay, I've got it! Listen carefully."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E11.05 03"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "When the two front left sensors detect something, the top LEDs should change to red. When the right sensor behind detects something, the top LEDs should change to yellow. When the front middle sensor detects something, the top LEDs should change to blue."
+                  }
+               ]
+	},
         {
             "cmd": "ex",
             "type": "type5",
             "text": "E11.05",
-	    "method": "fixed",
+	    "description": [
+		{
+            	    "cmd": "multi",
+            	    "scene":
+                        [
+		  		{
+                     			"cmd": "dialogue",
+                     			"speaker": "Ada",
+                     			"text": "When the two front left sensors detect something, the top LEDs should change to red. When the right sensor behind detects something, the top LEDs should change to yellow. When the front middle sensor detects something, the top LEDs should change to blue."
+                  		}
+               		]
+        	}
+	    ],
+	    "method": "sim",
+	    "special": {
+		"cmd": "insertCode", 
+		"events": [
+		    {
+			"definition": "ProxEventBlock",
+			"params": ["DISABLED", "DISABLED", "FAR", "DISABLED", "DISABLED", "DISABLED", "DISABLED"]
+		    }
+		], 
+		"actions": [
+		    {
+			"definition": "MotorSimpleActionBlock",
+			"params": "front"
+		    }
+		]
+	    },
+	    "scene": [
+	    {
+	    	"checkfor": [{"type": "topcolor", "time" : 11, "color": "red"}, {"type": "nottopcolor", "time" : 15}],
+                "duration": 2,
+                "worldSize": [100, 40],
+		"walls": [
+		    {"position":[60, 26], "angle":0, "size": [2, 2, 10]}		
+		],
+                "thymio" : { "position": [40, 20], "angle": 0 }
+            },
+	    {
+	    	"checkfor": [{"type": "topcolor", "time" : 11, "color": "blue"}],
+                "duration": 2,
+                "worldSize": [100, 40],
+		"walls": [
+		    {"position":[60, 20], "angle":0, "size": [2, 2, 10]}		
+		],
+                "thymio" : { "position": [40, 20], "angle": 0 }
+            },{
+	    	"checkfor": [{"type": "topcolor", "time" : 6, "color": "yellow"}],
+                "duration": 1,
+                "worldSize": [100, 40],
+		"walls": [
+		    {"position":[35, 22], "angle":0, "size": [2, 2, 10]}	
+		],
+                "thymio" : { "position": [40, 20], "angle": 0 },
+		"special": {
+			"cmd": "insertCode", 
+			"events": [
+		    	{
+				"definition": "ProxEventBlock",
+				"params": ["DISABLED", "DISABLED", "FAR", "DISABLED", "DISABLED", "DISABLED", "DISABLED"]
+		    	}
+			], 
+			"actions": [
+		    	{
+				"definition": "MotorSimpleActionBlock",
+				"params": "right"
+			    }
+			]
+	    	}
+            }],
 	    "solution": 
 {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[32,0,3]}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED","CLOSE"]}],[{"definition":"PaletteTopColorActionBlock","params":[30,32,2]}]],[[{"definition":"ProxEventBlock","params":["DISABLED","DISABLED","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[1,0,30]}]]]}
         },
-        {
-            "cmd": "text",
-            "text": "post E11.05"
-        }
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Post E11.04 01"
+                  },
+		  {
+                     "cmd": "feedback",
+                     "options": [
+	  		[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Let's show this to Ruby!"
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Hey Ruby, look at this!"
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "Ruby",
+             			"text": "No! I won't look!"
+                  	}, {
+     				"cmd": "dialogue",
+     				"speaker": "",
+             			"text": "Ada changes Thymio's colors anyway and Ruby watches anyway."
+                  	}],
+			[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Hmm... It doesn't seem to be doing what I want it to."
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "I guess we can't use this."
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "What should we try next?"
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Let me see..."
+                  	}]
+		     ]
+                  }
+               ]
+	}
     ]
 }

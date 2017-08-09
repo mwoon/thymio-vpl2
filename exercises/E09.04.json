@@ -1,14 +1,67 @@
 {
     "list": [
         {
-            "cmd": "text",
-            "text": "pre E09.04",
-	    "description": ""
-        },
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E09.04 01"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "I think we can do something with this program here."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E09.04 02"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "There are only some LED actions on it, so let's add some sensor events to activate them. I'll leave it to you to finish it."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E09.04 03"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "How about this: When the second sensor from the left does not detect anything, Thymio's top LEDs turn light blue. When the second sensor from the right detects something, Thymio's top LEDs turn green!"
+                  }
+               ]
+	},
         {
             "cmd": "ex",
             "type": "type4",
             "text": "E09.04",
+	    "description": [
+		{
+            	    "cmd": "multi",
+            	    "scene":
+                        [
+		  		{
+                     			"cmd": "dialogue",
+                     			"speaker": "Ada",
+                     			"text": "Do this: When the second sensor from the left does not detect anything, Thymio's top LEDs turn light blue. When the second sensor from the right detects something, Thymio's top LEDs turn green!"
+                  		}
+               		]
+        	}
+	    ],
 	    "method": "sim",
 	    "special": {
 		"cmd": "insertCode", 
@@ -30,7 +83,7 @@
                 "duration": 2,
                 "worldSize": [100, 40],
 		"walls": [
-		    {"position":[72, 17.6], "angle":0, "size": [2, 2, 10]}		
+		    {"position":[72, 16.5], "angle":0, "size": [2, 2, 10]}		
 		],
                 "thymio" : { "position": [40, 20], "angle": 0 }
             },
@@ -47,9 +100,76 @@
 	    "code": 
 {"mode":"simple","scene":[[[],[{"definition":"PaletteTopColorActionBlock","params":[1,32,0]}]],[[],[{"definition":"PaletteTopColorActionBlock","params":[0,27,31]}]]]}
         },
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Post E09.04 01"
+                  },
+		  {
+                     "cmd": "feedback",
+                     "options": [
+	  		[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "That's great! Exactly how I thought it should be!"
+                  	}],
+			[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Uhm, that's not quite what I wanted. But Maybe we can still use this?"
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "",
+             			"text": "Ada checks the program and fixes it up a little bit."
+                  	}]
+		     ]
+                  }
+               ]
+	},
         {
-            "cmd": "text",
-            "text": "post E09.04"
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 9.04 2"
+                      },{
+			 "cmd": "dialogue",
+			 "speaker": "Ruby",
+     			 "text": "Hey, what're you doing down there now?"
+                  	}
+                   ]
+        },
+        {
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 9.04 3"
+                      },{
+			 "cmd": "dialogue",
+			 "speaker": "Ada",
+     			 "text": "Come and see for yourself!"
+                  	}
+                   ]
+        },
+        {
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 9.04 3"
+                      },{
+			 "cmd": "dialogue",
+			 "speaker": "",
+     			 "text": "Ruby shakes his head and stays in the air."
+                  	}
+                   ]
         }
     ]
 }

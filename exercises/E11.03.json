@@ -1,15 +1,55 @@
 {
     "list": [
         {
-            "cmd": "text",
-            "text": "pre E11.03"
-        },
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E11.03 01"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "These two programs are very similar."
+                  }
+               ]
+	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E11.03 02"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "But it would be weird if they are the same."
+                  }
+               ]
+	},{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E11.03 03"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "What do you think the difference is?"
+                  }
+               ]
+	},
         {
             "cmd": "ex",
             "type": "type3",
             "text": "E11.03",
 	    "answerList": [
-		"If the second sensor on the left stays covered, Thymio will not change his top LEDs to green if the left most sensor is uncovered.", 
+		"In the program on top, If the second sensor on the left stays covered, Thymio will not change his top LEDs to green if the left most sensor is uncovered.", 
 		"They are the same.", 
 		"In the program on top, Thymio will only change his top LEDs to green once.", 
 		"In the program on top, Thymio will never change his top LEDs to green.", 
@@ -23,9 +63,80 @@
 	    "code2": 
 {"mode":"simple","scene":[[[{"definition":"ProxEventBlock","params":["FAR","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[4,31,0]}]],[[{"definition":"ProxEventBlock","params":["CLOSE","CLOSE","DISABLED","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[31,20,0]}]]]}
         },
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Post E11.03 01"
+                  },
+		  {
+                     "cmd": "feedback",
+                     "options": [
+	  		[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Ah! That's how it is. Because in the first program, the green top color action only reacts to the second sensor from the left and doesn't care about the one all the way on the left."
+                  	}],
+			[{
+     				"cmd": "dialogue",
+     				"speaker": "Ada",
+             			"text": "Are you sure?"
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "Thymio",
+             			"text": "No, the difference is that in the program on top, If the second sensor on the left stays covered, the top LEDs will not change to green if the left most sensor becomes uncovered."
+                  	},{
+     				"cmd": "dialogue",
+     				"speaker": "Thymio",
+             			"text": "Because in the first program, the green top color action only reacts to the second sensor from the left and doesn't care about the one all the way on the left."
+                  	}]
+		     ]
+                  }
+               ]
+	},
         {
-            "cmd": "text",
-            "text": "post E11.03"
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 11.03 2"
+                      },{
+			 "cmd": "dialogue",
+			 "speaker": "",
+     			 "text": "While Thymio and Ada discuss the program, Ruby lands on the cliff to get a closer look."
+                  	}
+                   ]
+        },
+        {
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 11.03 3"
+                      },{
+			 "cmd": "dialogue",
+			 "speaker": "",
+     			 "text": "As soon as Ada notices him, he flies away again."
+                  	}
+                   ]
+        },
+        {
+ 	     "cmd": "multi",
+          	"scene":
+                   [
+                      { 
+                         "cmd": "text", 
+                         "text": "post ex 11.03 3"
+                      },{
+			 "cmd": "dialogue",
+			 "speaker": "",
+     			 "text": "Ada looks at the program again, making sure she understands it."
+                  	}
+                   ]
         }
     ]
 }

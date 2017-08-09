@@ -4,6 +4,19 @@
             "cmd": "ex",
             "type": "type4",
             "text": "E01.01",
+	    "description": [
+		{
+            	    "cmd": "multi",
+            	    "scene":
+                        [
+		  		{
+                     			"cmd": "dialogue",
+                     			"speaker": "Ada",
+                     			"text": "Remove that blue circle in the center and then use the first option in the menu on the top left!"
+                  		}
+               		]
+        	}
+	    ],
 	    "list": [
 		{
             	    "cmd": "multi",

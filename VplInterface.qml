@@ -220,6 +220,14 @@ Page {
         function closeVplPopup3() {
             type3Ex.closePopup();
         }
+
+        function showDescription5() {
+            type5Ex.showDescription();
+        }
+
+        function showDescription4() {
+            type4Ex.showDescription();
+        }
     }
 
     Drawer {

@@ -30,11 +30,39 @@
                   }
                ]
 	},
+	{
+	    "cmd": "multi",
+            "scene":
+               [
+                  { 
+                     "cmd": "text", 
+                     "text": "Pre E04.05 03"
+                  },
+		  {
+                     "cmd": "dialogue",
+                     "speaker": "Ada",
+                     "text": "Make a program that let's Thymio move forwards when his middle front sensor does not detect anything!"
+                  }
+               ]
+	},
         {
             "cmd": "ex",
             "type": "type5",
             "text": "E04.05",
 	    "method": "sim",
+	    "description": [
+		{
+            	    "cmd": "multi",
+            	    "scene":
+                        [
+		  		{
+                     			"cmd": "dialogue",
+                     			"speaker": "Ada",
+                     			"text": "Make a program that let's Thymio move forwards when his middle front sensor does not detect anything!"
+                  		}
+               		]
+        	}
+	    ],
             "scene": [{
 	    	"checkfor": [{"type": "xgreater", "endpos" : 25}],
                 "duration": 5,

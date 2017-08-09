@@ -20,6 +20,19 @@
             "type": "type4",
             "text": "E03.01",
 	    "method": "fixed",
+	    "description": [
+		{
+            	    "cmd": "multi",
+            	    "scene":
+                        [
+		  		{
+                     			"cmd": "dialogue",
+                     			"speaker": "Ada",
+                     			"text": "Take away only the circles with no orange one beside it! Leave everything else as it is."
+                  		}
+               		]
+        	}
+	    ],
 	    "list": [
 		{
             	    "cmd": "multi",

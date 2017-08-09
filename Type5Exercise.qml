@@ -12,6 +12,9 @@ Page {
     anchors.fill: parent
     clip:true
 
+    //description
+    property var description;
+
     //a sample solution
     property var solution;
     property var method;
@@ -43,14 +46,23 @@ Page {
                                 "whiteIcon": "qrc:/thymio-vpl2/icons/ic_new_white_24px.svg",
                                 "blackIcon": "qrc:/thymio-vpl2/icons/ic_new_black_24px.svg"
                             });
+            if(description) {
+                vpl.menu.append({
+                                    "title": QT_TR_NOOP("Ask Ada What to Do"),
+                                    "callback": "showDescription5",
+                                    "whiteIcon": "",
+                                    "blackIcon": ""
+                                });
+            }
             vpl.menu.append({
                                 "title": QT_TR_NOOP("Return to Main Menu"),
                                 "callback": "returnToPreviousView",
-                                "whiteIcon": "qrc:/thymio-vpl2/icons/ic_invert_colors_white_24px.svg",
-                                "blackIcon": "qrc:/thymio-vpl2/icons/ic_invert_colors_black_24px.svg"
+                                "whiteIcon": "",
+                                "blackIcon": ""
                             });
+
             vpl.editor.clearProgram();
-            }
+        }
     }
 
     function completeExercise(prog) {
@@ -105,7 +117,7 @@ Page {
                 switch(special.cmd) {
                 case "insertCode":
                     vpl.editor.saveProgram("autosaveName");
-                    var codeScene = vpl.editor.scene.serialize();
+                    var codeScene = submittedCode.scene;
                     var mode = vpl.editor.modeCode;
                     codeScene.unshift([special.events, special.actions]);
                     var tempCode = { "mode": mode, "scene": codeScene};
@@ -135,6 +147,44 @@ Page {
 
     function nextSimulation() {
         simulationIsRunning = true;
+
+        //check for special simulations
+        if(scene[sIdx].special) {
+            switch(scene[sIdx].special.cmd) {
+            case "insertCode":
+                vpl.editor.saveProgram("autosaveName");
+                var codeScene = submittedCode.scene;
+                var mode = vpl.editor.modeCode;
+                codeScene.unshift([scene[sIdx].special.events, scene[sIdx].special.actions]);
+                var tempCode = { "mode": mode, "scene": codeScene};
+                vpl.editor.loadCode(JSON.stringify(tempCode));
+                vpl.editor.compiler.forceCompile();
+                break;
+            case "removeCodeOfType":
+                vpl.editor.saveProgram("autosaveName");
+                var codeScene = submittedCode.scene;
+                var mode = vpl.editor.modeCode;
+                for(var i = 0; i < codeScene.length; i++) {
+                    var contains = false;
+                    for(var j = 0; j < codeScene[i][0].length; j++) {
+                        if(codeScene[i][0][j].definition.indexOf(scene[sIdx].special.type) !== -1) {
+                            contains = true;
+                        }
+                    }
+                    if(contains) {
+                        codeScene.splice(i, 1);
+                        i--;
+                    }
+                }
+                var tempCode = { "mode": mode, "scene": codeScene};
+                vpl.editor.loadCode(JSON.stringify(tempCode));
+                vpl.editor.compiler.forceCompile();
+                break;
+            default:
+                break;
+            }
+        }
+
         //setup scene
         var scenario = {};
         scenario.duration = scene[sIdx].duration;
@@ -201,7 +251,7 @@ Page {
                                     var correct = false;
                                     switch(scene[sIdx].checkfor[curCheck].color) {
                                     case "red" :
-                                        if(r > g && r > b && ((g - b >= 0 && g - b <= 4) || (b - g >= 0 && b - g <= 4))) {score += scorePerCheck;}
+                                        if(r > g && r > b && ((g - b >= 0 && g - b <= 4) || (b - g >= 0 && b - g <= 4) || (r > 30 && (b + g < 20)))) {score += scorePerCheck;}
                                         break;
                                     case "green" :
                                         if((g > r && g > b && ((r - b >= 0 && r - b <= 4) || (r - g >= 0 && r - g <= 4))) || (g > r*2 && g > b*2)){score += scorePerCheck;}
@@ -215,10 +265,24 @@ Page {
                                     case "light blue" :
                                         if(b > r+3 && g > r+3 && b >= g && b - g <= 6 ){score += scorePerCheck;}
                                         break;
+                                    case "yellow" :
+                                        if(r > b && g > b && ((g - r >= 0 && g - r <= 4) || (r - g >= 0 && r - g <= 4)) && ((g - r >= 0 && g >= b*2) || (r - g >= 0 && r<= b*2) || (r + g >= 58)) ){score += scorePerCheck;}
+                                        break;
                                     default:
                                         break;
                                     }
                                 }
+                            }
+                            break;
+                        case "nottopcolor":
+                            if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length > 0) {
+                                if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].id === 5) {
+
+                                } else {
+                                    score += scorePerCheck;
+                                }
+                            } else {
+                                score += scorePerCheck;
                             }
                             break;
                         default:
@@ -298,6 +362,22 @@ Page {
                 handleDialogue(scene[i].speaker, scene[i].text);
             }
         }
+    }
+
+    //open up description
+    function showDescription() {
+        if(description) {
+            var part;
+            for(var i = 0; i < description.length; i++) {
+                part = {};
+                part.type = "story";
+                part.content = description[i];
+                storyStack.push(part);
+            }
+        }
+        next = true;
+        mouse.enabled = true;
+        dialogueBox.visible = true;
     }
 
     /*--------------------------------------------------------------------------------------------------------*/

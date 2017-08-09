@@ -3,7 +3,7 @@
 StoryTeller::StoryTeller(QObject *parent) : QObject(parent)
 {
     initializeScript();
-    mainIndex = 1;
+    mainIndex = 10;
     successfulExercises = 3;
     totalExInBlock = 0;
 }
