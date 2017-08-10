@@ -76,24 +76,25 @@ Page {
             if(JSON.stringify(prog.scene) === JSON.stringify(sol.scene)) {
                 score = 1.0;
             } else if (checkfor && checkfor.length > 0) {
-            console.log("checking variable solutions");
-            for(var i = 0; i < checkfor.length; i++) {
-                if(checkfor[i].type === "buttoncolor") {
-                    for(var j = 0; j < prog.scene.length; j++) {
-                        //prog.scene[j][0] = events, prog.scene[j][1] = actions
-                        //checks if this row contains the correct button
-                        if(prog.scene[j][0].length === 1 && prog.scene[j][0][0].definition === "ButtonsEventBlock" &&  JSON.stringify(prog.scene[j][0][0].params) === JSON.stringify(checkfor[i].button)) {
-                            //one of the actions has to contain the correct color
-                            for(var actions = 0; actions < prog.scene[j][1].length; actions++) {
-                                if(prog.scene[j][1][actions].definition === "PaletteTopColorActionBlock" || prog.scene[j][1][actions].definition === "TopColorActionBlock") {
-                                    var r = prog.scene[j][1][actions].params[0];
-                                    var g = prog.scene[j][1][actions].params[1];
-                                    var b = prog.scene[j][1][actions].params[2];
+                console.log("checking variable solutions");
+                for(var i = 0; i < checkfor.length; i++) {
+                    if(checkfor[i].type === "buttoncolor") {
+                        for(var j = 0; j < prog.scene.length; j++) {
+                            //prog.scene[j][0] = events, prog.scene[j][1] = actions
+                            //checks if this row contains the correct button
+                            if(prog.scene[j][0].length === 1 && prog.scene[j][0][0].definition === "ButtonsEventBlock" &&  JSON.stringify(prog.scene[j][0][0].params) === JSON.stringify(checkfor[i].button)) {
+                                //one of the actions has to contain the correct color
+                                for(var actions = 0; actions < prog.scene[j][1].length; actions++) {
+                                    if(prog.scene[j][1][actions].definition === "PaletteTopColorActionBlock" || prog.scene[j][1][actions].definition === "TopColorActionBlock") {
+                                        var r = prog.scene[j][1][actions].params[0];
+                                        var g = prog.scene[j][1][actions].params[1];
+                                        var b = prog.scene[j][1][actions].params[2];
 
-                                    if(checkfor[i].color === "red") {
-                                        console.log(prog.scene[j][1][actions].params);
-                                        if(r > g && r > b && ((g - b >= 0 && g - b < 4) || (b - g >= 0 && b - g < 4))) {
-                                            score = 1.0;
+                                        if(checkfor[i].color === "red") {
+                                            console.log(prog.scene[j][1][actions].params);
+                                            if(r > g && r > b && ((g - b >= 0 && g - b < 4) || (b - g >= 0 && b - g < 4))) {
+                                                score = 1.0;
+                                            }
                                         }
                                     }
                                 }
@@ -102,7 +103,6 @@ Page {
                     }
                 }
             }
-        }
 
             stote.completeExercise(score);
             stote.appendToLog("submitted code: " + JSON.stringify(submittedCode));
@@ -203,7 +203,9 @@ Page {
                 }
             }
         }
-
+        if(scene[sIdx].ground_img) {
+            scenario.groundTexture = "exercises/" + scene[sIdx].ground_img;
+        }
         vpl.thymio.playing = true;
 
         var simError;
@@ -243,33 +245,12 @@ Page {
                             break;
                         case "topcolor" :
                             if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length > 0) { //was there a native call
+                                console.log("checking color");
                                 if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].id === 5) { //was the native call to the top color
+                                    console.log("checking top color");
                                     var coloration = log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].values;
-                                    var r = coloration[0];
-                                    var g = coloration[1];
-                                    var b = coloration[2];
-                                    var correct = false;
-                                    switch(scene[sIdx].checkfor[curCheck].color) {
-                                    case "red" :
-                                        if(r > g && r > b && ((g - b >= 0 && g - b <= 4) || (b - g >= 0 && b - g <= 4) || (r > 30 && (b + g < 20)))) {score += scorePerCheck;}
-                                        break;
-                                    case "green" :
-                                        if((g > r && g > b && ((r - b >= 0 && r - b <= 4) || (r - g >= 0 && r - g <= 4))) || (g > r*2 && g > b*2)){score += scorePerCheck;}
-                                        break;
-                                    case "pink" :
-                                        if((r >= 30 && b >= 14  && ((b - g) >= 0))){score += scorePerCheck;}
-                                        break;
-                                    case "blue" :
-                                        if((b > r && b > g && ((g <= 24 && g - r >= 0) || (r <= 7 && r - g >= 0)))){score += scorePerCheck;}
-                                        break;
-                                    case "light blue" :
-                                        if(b > r+3 && g > r+3 && b >= g && b - g <= 6 ){score += scorePerCheck;}
-                                        break;
-                                    case "yellow" :
-                                        if(r > b && g > b && ((g - r >= 0 && g - r <= 4) || (r - g >= 0 && r - g <= 4)) && ((g - r >= 0 && g >= b*2) || (r - g >= 0 && r<= b*2) || (r + g >= 58)) ){score += scorePerCheck;}
-                                        break;
-                                    default:
-                                        break;
+                                    if(checkColor(coloration, scene[sIdx].checkfor[curCheck].color)) {
+                                        score += scorePerCheck;
                                     }
                                 }
                             }
@@ -277,6 +258,29 @@ Page {
                         case "nottopcolor":
                             if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length > 0) {
                                 if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].id === 5) {
+
+                                } else {
+                                    score += scorePerCheck;
+                                }
+                            } else {
+                                score += scorePerCheck;
+                            }
+                            break;
+                        case "botcolor":
+                            if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length > 0) { //was there a native call
+                                console.log("checking color");
+                                if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].id === 7) { //was the native call to the top color
+                                    console.log("checking top color");
+                                    var coloration = log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].values;
+                                    if(checkColor(coloration, scene[sIdx].checkfor[curCheck].color)) {
+                                        score += scorePerCheck;
+                                    }
+                                }
+                            }
+                            break;
+                        case "notbotcolor":
+                            if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length > 0) {
+                                if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].id === 7) {
 
                                 } else {
                                     score += scorePerCheck;
@@ -299,6 +303,41 @@ Page {
             simulationIsRunning = false;
         }
 
+    }
+
+    function checkColor(coloration, color){
+        var match = false;
+
+        var r = coloration[0];
+        var g = coloration[1];
+        var b = coloration[2];
+        var correct = false;
+        switch(color) {
+        case "red" :
+            if(r > g && r > b && ((g - b >= 0 && g - b <= 4) || (b - g >= 0 && b - g <= 4) || (r > 30 && (b + g < 20)))) {match = true;}
+            break;
+        case "green" :
+            if((g > r && g > b && ((r - b >= 0 && r - b <= 4) || (r - g >= 0 && r - g <= 4))) || (g > r*2 && g > b*2)){match = true;}
+            break;
+        case "pink" :
+            if((r >= 30 && b >= 14  && ((b - g) >= 0))){match = true;}
+            break;
+        case "blue" :
+            if((b > r && b > g && ((g <= 24 && g - r >= 0) || (r <= 7 && r - g >= 0)))){match = true;}
+            break;
+        case "light blue" :
+            if(b > r+3 && g > r+3 && b >= g && b - g <= 6 ){match = true;}
+            break;
+        case "yellow" :
+            if(r > b && g > b && ((g - r >= 0 && g - r <= 4) || (r - g >= 0 && r - g <= 4)) && ((g - r >= 0 && g >= b*2) || (r - g >= 0 && r<= b*2) || (r + g >= 58)) ){match = true;}
+            break;
+        case "orange":
+            if(r <= g * 5 && g > b * 2 && r * 7 / 8 > g) {match = true;}
+        default:
+            break;
+        }
+
+        return match;
     }
 
     /*---------------------------------------- Story Logic --------------------------------------------------*/

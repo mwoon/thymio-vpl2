@@ -62,6 +62,7 @@ Page {
     }
 
     MouseArea {
+        id: storyAdvancementArea
         anchors.fill: parent
         z: 2
 
@@ -147,6 +148,8 @@ Page {
         if(!next) { return; }
         next = false;
 
+        console.log("story advanced");
+
         if(storyStack.length > 0) {
             var part = storyStack.shift();
 
@@ -184,7 +187,7 @@ Page {
             var type;
             if(newStorySequence.story0) {
                 type = "story";
-                file = "thymio-vpl2/story/" + newStorySequence.story0[0] + ".json";
+                //file = "thymio-vpl2/story/" + newStorySequence.story0[0] + ".json";
                 lastStory = newStorySequence.story0[0];
                 console.log(lastStory);
             }
@@ -192,7 +195,7 @@ Page {
             if(newStorySequence.activity)  {
                 type = "activity";
                 //file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                file = "/exercises/" + "E11.05" + ".json";
+                file = "/exercises/" + "E14.05" + ".json";
 
             }
 
@@ -346,12 +349,14 @@ Page {
             toggleDialogueBox(false);
             exLoader.setSource("DifficultyFeedback.qml", { });
         } else {
+            storyAdvancementArea.enabled = true;
             next = true;
         }
     }
 
     function closeFeedbackWindow() {
         exercisePopup.close();
+        storyAdvancementArea.enabled = true;
         toggleDialogueBox(true);
         next = true;
     }
@@ -394,10 +399,20 @@ Page {
     function handleFeedback(options) {
         console.log("lastscore: " + lastScore);
         var nextStory;
-        if(lastScore > 0.5) {
-            nextStory = options[0];
-        } else {
-            nextStory = options[1];
+        if(options.length === 2) {
+            if(lastScore > 0.5) {
+                nextStory = options[0];
+            } else {
+                nextStory = options[1];
+            }
+        } else if (options.length === 3) {
+            if (lastScore >= 0.99) {
+                nextStory = options[0];
+            }else if(lastScore > 0.5) {
+                nextStory = options[1];
+            } else {
+                nextStory = options[2];
+            }
         }
 
         var part;
@@ -461,6 +476,7 @@ Page {
             }
         }
 
+        storyAdvancementArea.enabled = false;
         textOutput.append({"output": content.text});
         exercisePopup.open();
         toggleDialogueBox(false);

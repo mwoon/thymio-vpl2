@@ -431,5 +431,7 @@
         <file>thymio-vpl2/images/logoEPFL.svg</file>
         <file>thymio-vpl2/images/logoETHGTC.svg</file>
         <file>thymio-vpl2/images/logoMobsya.svg</file>
+        <file>exercises/lightdark.png</file>
+        <file>exercises/darklight.png</file>
     </qresource>
 </RCC>

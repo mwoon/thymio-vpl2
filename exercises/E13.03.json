@@ -1,31 +1,178 @@
 {
     "list": [
         {
-            "cmd": "text",
-            "text": "pre E13.03"
+            "cmd": "multi",
+            "scene":[
+                {
+                    "cmd": "text",
+                    "text": "Pre E13.03 01"
+                },
+                {
+                    "cmd": "dialogue",
+                    "speaker": "Ada",
+                    "text": "Let me take a look and see if I can find something matching on the tablet."
+                }
+            ]
+        },
+        {
+            "cmd": "multi",
+            "scene":[
+                {
+                    "cmd": "text",
+                    "text": "Pre E13.03 02"
+                },
+                {
+                    "cmd": "dialogue",
+                    "speaker": "",
+                    "text": "Ada clicks around on the tablet."
+                }
+            ]
+        },
+
+        {
+            "cmd": "multi",
+            "scene":[
+                {
+                    "cmd": "text",
+                    "text": "Pre E13.03 03"
+                },
+                {
+                    "cmd": "dialogue",
+                    "speaker": "Ada",
+                    "text": "Ok, one of these two could work."
+                }
+            ]
+        },
+        {
+            "cmd": "multi",
+            "scene":[
+                {
+                    "cmd": "text",
+                    "text": "Pre E13.03 04"
+                },
+                {
+                    "cmd": "dialogue",
+                    "speaker": "Ada",
+                    "text": "But what's the difference between them?"
+                }
+            ]
         },
         {
             "cmd": "ex",
             "type": "type3",
             "text": "E13.03",
-	    "answerList": [
-		"The program on top is wrong and won't work.", 
-		"In the program below, Thymio's bottom LEDs change color only whenever the two bottom sensors detect nothing at exactly the same time.", 
-		"In the program on top, Thymio's bottom LEDs change color whenever first the right sensor detects nothing and then the left sensor detects nothing.", 
-		"In the program on top, Thymio's bottom LEDs change color whenever first the left sensor detects nothing and then the right sensor detects nothing.", 
-		"They are the same.", 
-		"In the program on top, Thymio's bottom LEDs change color whenever any of the two sensor detect nothing."
-	    ],
-	    "scoreList": [0, 0, 0, 0, 1, 0],
-	    "code1": 
-{"mode":"simple","scene":[[[{"definition":"ProxGroundEventBlock","params":["DISABLED","FAR"]},{"definition":"ProxGroundEventBlock","params":["FAR","DISABLED"]}],[{"definition":"PaletteBottomColorActionBlock","params":[27,2,0]}]]]}
-,
-	    "code2": 
-{"mode":"simple","scene":[[[{"definition":"ProxGroundEventBlock","params":["FAR","FAR"]}],[{"definition":"PaletteBottomColorActionBlock","params":[27,2,0]}]]]}
+            "answerList": [
+                "The program on top is wrong and won't work because there are two of the same orange blocks.",
+                "In the program below, Thymio's bottom LEDs change color only whenever the two bottom sensors detect nothing at exactly the same time.",
+                "In the program on top, Thymio's bottom LEDs change color whenever first the right sensor detects nothing and then the left sensor detects nothing.",
+                "In the program on top, Thymio's bottom LEDs change color whenever first the left sensor detects nothing and then the right sensor detects nothing.",
+                "They are the same.",
+                "In the program on top, Thymio's bottom LEDs change color whenever any of the two sensor detect nothing."
+            ],
+            "scoreList": [1, 0, 0, 0, 0, 0],
+            "code1":
+            {"mode":"simple","scene":[[[{"definition":"ProxGroundEventBlock","params":["DISABLED","FAR"]},{"definition":"ProxGroundEventBlock","params":["FAR","DISABLED"]}],[{"definition":"PaletteBottomColorActionBlock","params":[27,2,0]}]]]}
+            ,
+            "code2":
+            {"mode":"simple","scene":[[[{"definition":"ProxGroundEventBlock","params":["FAR","FAR"]}],[{"definition":"PaletteBottomColorActionBlock","params":[27,2,0]}]]]}
         },
         {
-            "cmd": "text",
-            "text": "post E13.03"
+            "cmd": "multi",
+            "scene":
+                [
+                {
+                    "cmd": "text",
+                    "text": "Post E13.03 01"
+                },
+                {
+                    "cmd": "feedback",
+                    "options": [
+                        [{
+                             "cmd": "dialogue",
+                             "speaker": "Ada",
+                             "text": "Oh yeah, that makes sense."
+                         }],
+                        [{
+                             "cmd": "dialogue",
+                             "speaker": "Thymio",
+                             "text": "The one on top doesn't work."
+                         },{
+                             "cmd": "dialogue",
+                             "speaker": "Ada",
+                             "text": "Really? Why?"
+                         },{
+                             "cmd": "dialogue",
+                             "speaker": "Thymio",
+                             "text": "A program with two same blocks won't work because it might be impossible to make both events happen at the same time."
+                         }]
+                    ]
+                }
+            ]
+        },
+        {
+            "cmd": "multi",
+            "scene":[
+                {
+                    "cmd": "text",
+                    "text": "post ex 13.03 02"
+                },{
+                    "cmd": "dialogue",
+                    "speaker": "Ada",
+                    "text": "So we should use the bottom one."
+                }
+            ]
+        },
+        {
+            "cmd": "multi",
+            "scene":[
+                {
+                    "cmd": "text",
+                    "text": "post ex 13.03 02"
+                },{
+                    "cmd": "dialogue",
+                    "speaker": "",
+                    "text": "Ada loads the bottom program into Thymio."
+                }
+            ]
+        },
+        {
+            "cmd": "multi",
+            "scene":[
+                {
+                    "cmd": "text",
+                    "text": "post ex 13.03 03"
+                },{
+                    "cmd": "dialogue",
+                    "speaker": "",
+                    "text": "The floor underneath Thymio's bottom sensors drops down but then quickly comes back up."
+                }
+            ]
+        },
+        {
+            "cmd": "multi",
+            "scene":[
+                {
+                    "cmd": "text",
+                    "text": "post ex 13.03 04"
+                },{
+                    "cmd": "dialogue",
+                    "speaker": "Ada",
+                    "text": "That is kind of scary, you know..."
+                }
+            ]
+        },
+        {
+            "cmd": "multi",
+            "scene":[
+                {
+                    "cmd": "text",
+                    "text": "post ex 13.03 05"
+                },{
+                    "cmd": "dialogue",
+                    "speaker": "",
+                    "text": "Let's see what we have to do next."
+                }
+            ]
         }
     ]
 }

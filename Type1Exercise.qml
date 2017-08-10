@@ -98,7 +98,7 @@ Page {
 
                 //Layout.fillWidth: true
                 Layout.preferredWidth: Screen.width / 2
-                Layout.preferredHeight: optionsList.count * 75
+                Layout.preferredHeight: optionsList.count * 90
                 spacing: 12
                 interactive: false
 
