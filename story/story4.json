@@ -476,7 +476,7 @@
 		  {
                      "cmd": "dialogue",
                      "speaker": "",
-                     "text": "Ada points to a small island with a circle shape. In the middle Thymio could see something that looked like a small house."
+                     "text": "Ada points to a small island with a circle shape. In the middle Thymio can see something that looks like a small house."
                   }
                ]
 	},
@@ -881,7 +881,7 @@
 		  {
                      "cmd": "dialogue",
                      "speaker": "Ada",
-                     "text": "Hey look, there's also a button there."
+                     "text": "Hey look, there's also a button here."
                   }
                ]
 	},

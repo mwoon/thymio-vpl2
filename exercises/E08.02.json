@@ -26,7 +26,7 @@
                 {
                     "cmd": "dialogue",
                     "speaker": "Ada",
-                    "text": "Let's see... I think we should pick one that uses Thymio's top LEDS because Ruby won't be able to see the bottom ones."
+                    "text": "Let's see... I think we should pick one that uses Thymio's top LEDs because Ruby won't be able to see the bottom ones."
                 }
             ]
         },
@@ -109,7 +109,7 @@
                 },{
                     "cmd": "dialogue",
                     "speaker": "",
-                    "text": "Ada taps the buttons on Thymio and changes his LED colors."
+                    "text": "Ada taps the buttons on Thymio and changes his LEDs' colors."
                 }
             ]
         },

@@ -187,15 +187,15 @@ Page {
             var type;
             if(newStorySequence.story0) {
                 type = "story";
-                //file = "thymio-vpl2/story/" + newStorySequence.story0[0] + ".json";
+                file = "thymio-vpl2/story/" + newStorySequence.story0[0] + ".json";
                 lastStory = newStorySequence.story0[0];
                 console.log(lastStory);
             }
 
             if(newStorySequence.activity)  {
                 type = "activity";
-                //file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                file = "/exercises/" + "E15.05" + ".json";
+                file = "/exercises/" + newStorySequence.activity[0] + ".json";
+                //file = "/exercises/" + "E15.05" + ".json";
 
             }
 

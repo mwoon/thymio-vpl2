@@ -24,7 +24,7 @@
                 {
                     "cmd": "dialogue",
                     "speaker": "Ada",
-                    "text": "We need to make it so that when the middle front sensor detects something and both sensors beside it don't detect anything, the top LEDs become red and the bottom LEDS become blue. But when the leftmost and rightmost sensors in front detect something but all the sensors in between do not, the top LEDs should become green and the bottom LEDs light blue!"
+                    "text": "We need to make it so that when the middle front sensor detects something and both sensors beside it don't detect anything, the top LEDs become red and the bottom LEDs become blue. But when the leftmost and rightmost sensors in front detect something but all the sensors in between do not, the top LEDs should become green and the bottom LEDs light blue!"
                 }
             ]
         },
@@ -40,7 +40,7 @@
                         {
                             "cmd": "dialogue",
                             "speaker": "Ada",
-                            "text": "We need to make it so that when the middle front sensor detects something and both sensors beside it don't detect anything, the top LEDs become red and the bottom LEDS become blue. But when the leftmost and rightmost sensors in front detect something and all the sensors in between do not, the top LEDs should become green and the bottom LEDs light blue!"
+                            "text": "We need to make it so that when the middle front sensor detects something and both sensors beside it don't detect anything, the top LEDs become red and the bottom LEDs become blue. But when the leftmost and rightmost sensors in front detect something and all the sensors in between do not, the top LEDs should become green and the bottom LEDs light blue!"
                         }
                     ]
                 }
