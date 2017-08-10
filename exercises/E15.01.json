@@ -1,8 +1,44 @@
 {
     "list": [
         {
-            "cmd": "text",
-            "text": "pre E15.01"
+            "cmd": "multi",
+            "scene":[
+                {
+                    "cmd": "text",
+                    "text": "Pre E15.01 01"
+                },
+                {
+                    "cmd": "dialogue",
+                    "speaker": "Ada",
+                    "text": "Alright, another program."
+                }
+            ]
+        },{
+            "cmd": "multi",
+            "scene":[
+                {
+                    "cmd": "text",
+                    "text": "Pre E15.01 02"
+                },
+                {
+                    "cmd": "dialogue",
+                    "speaker": "Ada",
+                    "text": "We need to tell the machine what it does."
+                }
+            ]
+        },{
+            "cmd": "multi",
+            "scene":[
+                {
+                    "cmd": "text",
+                    "text": "Pre E15.01 03"
+                },
+                {
+                    "cmd": "dialogue",
+                    "speaker": "Ada",
+                    "text": "But what does it do?"
+                }
+            ]
         },
         {
             "cmd": "ex",
@@ -22,8 +58,60 @@
 
         },
         {
-            "cmd": "text",
-            "text": "post E15.01"
+            "cmd": "multi",
+            "scene":
+                [
+                {
+                    "cmd": "text",
+                    "text": "Post E15.01 01"
+                },
+                {
+                    "cmd": "feedback",
+                    "options": [
+                        [{
+                             "cmd": "dialogue",
+                             "speaker": "Ada",
+                             "text": "I would have said the same thing!"
+                         }],
+                        [{
+                             "cmd": "dialogue",
+                             "speaker": "Ada",
+                             "text": "That's not right... Is it?"
+                         }, {
+                             "cmd": "dialogue",
+                             "speaker": "Thymio",
+                             "text": "No, it isn't. What it does is turn both top and bottom LEDs to green when the bottom sensors detect something and turn the off when both sensors detect nothing."
+                         }]
+                    ]
+                }
+            ]
+        },
+        {
+            "cmd": "multi",
+            "scene":[
+                {
+                    "cmd": "text",
+                    "text": "post ex 15.01 02"
+                },{
+                    "cmd": "dialogue",
+                    "speaker": "Ada",
+                    "text": "Okay, so let's give it the answer."
+                }
+            ]
+        },
+        {
+            "cmd": "multi",
+            "scene":[
+                {
+                    "cmd": "text",
+                    "text": "post ex 15.01 03"
+                },{
+                    "cmd": "dialogue",
+                    "speaker": "",
+                    "text": "The screen flashes green a few times and then flashes white."
+                }
+            ]
         }
+
     ]
 }

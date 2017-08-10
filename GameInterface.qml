@@ -195,7 +195,7 @@ Page {
             if(newStorySequence.activity)  {
                 type = "activity";
                 //file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                file = "/exercises/" + "E14.05" + ".json";
+                file = "/exercises/" + "E15.05" + ".json";
 
             }
 

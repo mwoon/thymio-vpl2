@@ -246,20 +246,26 @@ Page {
                         case "topcolor" :
                             if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length > 0) { //was there a native call
                                 console.log("checking color");
-                                if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].id === 5) { //was the native call to the top color
-                                    console.log("checking top color");
-                                    var coloration = log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].values;
-                                    if(checkColor(coloration, scene[sIdx].checkfor[curCheck].color)) {
-                                        score += scorePerCheck;
+                                var matched = false;
+                                for(var j = 0; j < log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length; j++) {
+                                    if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls[j].id === 5) { //was the native call to the top color
+                                        console.log("checking top color");
+                                        var coloration = log[scene[sIdx].checkfor[curCheck].time].nativeCalls[j].values;
+                                        matched = matched || checkColor(coloration, scene[sIdx].checkfor[curCheck].color);
                                     }
+                                }
+                                if(matched) {
+                                    score += scorePerCheck;
                                 }
                             }
                             break;
                         case "nottopcolor":
                             if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length > 0) {
-                                if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].id === 5) {
-
-                                } else {
+                                var matched = false;
+                                for(var j = 0; j < log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length; j++) {
+                                    matched = matched || (log[scene[sIdx].checkfor[curCheck].time].nativeCalls[j].id === 5);
+                                }
+                                if(!matched) {
                                     score += scorePerCheck;
                                 }
                             } else {
@@ -269,20 +275,26 @@ Page {
                         case "botcolor":
                             if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length > 0) { //was there a native call
                                 console.log("checking color");
-                                if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].id === 7) { //was the native call to the top color
-                                    console.log("checking top color");
-                                    var coloration = log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].values;
-                                    if(checkColor(coloration, scene[sIdx].checkfor[curCheck].color)) {
-                                        score += scorePerCheck;
+                                var matched = false;
+                                for(var j = 0; j < log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length; j++) {
+                                    if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls[j].id === 7) { //was the native call to the top color
+                                        console.log("checking top color");
+                                        var coloration = log[scene[sIdx].checkfor[curCheck].time].nativeCalls[j].values;
+                                        matched = matched || checkColor(coloration, scene[sIdx].checkfor[curCheck].color);
                                     }
+                                }
+                                if(matched) {
+                                    score += scorePerCheck;
                                 }
                             }
                             break;
                         case "notbotcolor":
                             if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length > 0) {
-                                if(log[scene[sIdx].checkfor[curCheck].time].nativeCalls[0].id === 7) {
-
-                                } else {
+                                var matched = false;
+                                for(var j = 0; j < log[scene[sIdx].checkfor[curCheck].time].nativeCalls.length; j++) {
+                                    matched = matched || (log[scene[sIdx].checkfor[curCheck].time].nativeCalls[j].id === 7);
+                                }
+                                if(!matched) {
                                     score += scorePerCheck;
                                 }
                             } else {
