@@ -72,9 +72,6 @@ CONFIG += c++14 object_parallel_to_source
 HEADERS += $$PWD/aseba.h \
     $$PWD/zpdes.h \
     $$PWD/activity.h \
-    $$PWD/explorationgraph.h \
-    $$PWD/storygenerator.h \
-    $$PWD/storycomponent.h \
     $$PWD/scriptblock.h \
     $$PWD/storyteller.h \
 	$$PWD/simulator.h
@@ -84,9 +81,6 @@ SOURCES += \
 	$$PWD/thymio-vpl2.cpp \
     $$PWD/zpdes.cpp \
     $$PWD/activity.cpp \
-    $$PWD/explorationgraph.cpp \
-    $$PWD/storygenerator.cpp \
-    $$PWD/storycomponent.cpp \
     $$PWD/scriptblock.cpp \
     $$PWD/storyteller.cpp \
 	$$PWD/simulator.cpp

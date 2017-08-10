@@ -360,9 +360,9 @@ Page {
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
-                    print('HEADERS_RECEIVED')
+                    //print('HEADERS_RECEIVED')
                 } else if(xhr.readyState === XMLHttpRequest.DONE) {
-                    print('DONE');
+                    //print('DONE');
                     //console.log(xhr.status);
                     //console.log(xhr.responseText.toString());
                     var a = JSON.parse(xhr.responseText.toString());

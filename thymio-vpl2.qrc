@@ -65,11 +65,6 @@
         <file>exercises/E06.03.json</file>
         <file>exercises/E06.04.json</file>
         <file>exercises/E06.05.json</file>
-        <file>exercises/E07.01.json</file>
-        <file>exercises/E07.02.json</file>
-        <file>exercises/E07.03.json</file>
-        <file>exercises/E07.04.json</file>
-        <file>exercises/E07.05.json</file>
         <file>exercises/E08.01.json</file>
         <file>exercises/E08.02.json</file>
         <file>exercises/E08.03.json</file>
@@ -254,15 +249,9 @@
         <file>activity.h</file>
         <file>aseba.cpp</file>
         <file>aseba.h</file>
-        <file>explorationgraph.cpp</file>
-        <file>explorationgraph.h</file>
         <file>main.cpp</file>
         <file>scriptblock.cpp</file>
         <file>scriptblock.h</file>
-        <file>storycomponent.cpp</file>
-        <file>storycomponent.h</file>
-        <file>storygenerator.cpp</file>
-        <file>storygenerator.h</file>
         <file>storyteller.cpp</file>
         <file>storyteller.h</file>
         <file>thymio-vpl2.cpp</file>
@@ -279,8 +268,6 @@
         <file>exercises/E02.01.json</file>
         <file>assets/island_1.png</file>
         <file>DifficultyFeedback.qml</file>
-    </qresource>
-    <qresource>
         <file>thymio-vpl2/utils.js</file>
         <file>thymio-vpl2/Link.qml</file>
         <file>thymio-vpl2/BlockLinkArrow.qml</file>
@@ -384,7 +371,7 @@
         <file>thymio-vpl2/blocks/MotorSimpleActionBlock.qml</file>
         <file>thymio-vpl2/blocks/MusicScoreBlock.qml</file>
         <file>thymio-vpl2/blocks/NopActionBlock.qml</file>
-		<file>thymio-vpl2/blocks/ImageStateActionBlock.qml</file>
+        <file>thymio-vpl2/blocks/ImageStateActionBlock.qml</file>
         <file>thymio-vpl2/blocks/NopActionBlock.svg</file>
         <file>thymio-vpl2/blocks/ClapEventBlock.svg</file>
         <file>thymio-vpl2/blocks/TapEventBlock.svg</file>

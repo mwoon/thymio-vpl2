@@ -1,93 +1,93 @@
 {
     "list": [
         {
-	    "cmd": "multi",
+            "cmd": "multi",
             "scene":
-               [
-                  { 
-                     "cmd": "text", 
-                     "text": "Pre E06.01"
-                  },
-		  {
-                     "cmd": "dialogue",
-                     "speaker": "Ada",
-                     "text": "Alright, here's a program I just made!"
-                  }
-               ]
-	},
+                [
+                {
+                    "cmd": "text",
+                    "text": "Pre E06.01"
+                },
+                {
+                    "cmd": "dialogue",
+                    "speaker": "Ada",
+                    "text": "Alright, here's a program I just made!"
+                }
+            ]
+        },
         {
             "cmd": "ex",
             "type": "type1",
             "text": "E06.01",
-	    "answerList": [
-		"When the button pointing behind is pressed, Thymio's top LEDs become green.", 
-		"When the button pointing left is pressed, Thymio's top LEDs become green.", 
-		"When the button pointing behind is pressed, Thymio's top LEDs become blue", 
-		"When the button pointing right is pressed, Thymio's bottom LEDs become green.", 
-		"When the button pointing in front is pressed, Thymio's bottom LEDs become green.", 
-		"When the button pointing in front is pressed, Thymio's top LEDs become green."
-	    ],
-	    "scoreList": [0, 0, 0, 0, 0, 1],
-	    "code": 
-{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["ON","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[0,32,0]}]]]}
+            "answerList": [
+                "When the button pointing behind is pressed, Thymio's top LEDs become green.",
+                "When the button pointing left is pressed, Thymio's top LEDs become green.",
+                "When the button pointing behind is pressed, Thymio's top LEDs become blue",
+                "When the button pointing right is pressed, Thymio's bottom LEDs become green.",
+                "When the button pointing in front is pressed, Thymio's bottom LEDs become green.",
+                "When the button pointing in front is pressed, Thymio's top LEDs become green."
+            ],
+            "scoreList": [0, 0, 0, 0, 0, 1],
+            "code":
+            {"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["ON","DISABLED","DISABLED","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[0,32,0]}]]]}
         },
-	{
-	    "cmd": "multi",
+        {
+            "cmd": "multi",
             "scene":
-               [
-                  { 
-                     "cmd": "text", 
-                     "text": "Post E06.01 01"
-                  },
-		  {
-                     "cmd": "feedback",
-                     "options": [
-	  		[{
-     				"cmd": "dialogue",
-     				"speaker": "Ada",
-             			"text": "That's what I was going for!"
-                  	}],
-			[{
-     				"cmd": "dialogue",
-     				"speaker": "Ada",
-             			"text": "No, that wasn't what I wanted it to do."
-                  	},{
-     				"cmd": "dialogue",
-     				"speaker": "Ada",
-             			"text": "The top LEDs should turn green when the front button is pressed!"
-                  	}]
-		     ]
-                  }
-               ]
-	},
-        {
- 	     "cmd": "multi",
-          	"scene":
-                   [
-                      { 
-                         "cmd": "text", 
-                         "text": "post ex 6.01 2"
-                      },{
-     				
-			 "cmd": "dialogue",
-     		         "speaker": "",
-             		 "text": "Ada presses the button pointing in front on Thymio and his top LEDs change to green."
-                  	}
-                   ]
+                [
+                {
+                    "cmd": "text",
+                    "text": "Post E06.01 01"
+                },
+                {
+                    "cmd": "feedback",
+                    "options": [
+                        [{
+                             "cmd": "dialogue",
+                             "speaker": "Ada",
+                             "text": "That's what I was going for!"
+                         }],
+                        [{
+                             "cmd": "dialogue",
+                             "speaker": "Ada",
+                             "text": "No, that wasn't what I wanted it to do."
+                         },{
+                             "cmd": "dialogue",
+                             "speaker": "Ada",
+                             "text": "The top LEDs should turn green when the front button is pressed!"
+                         }]
+                    ]
+                }
+            ]
         },
         {
- 	     "cmd": "multi",
-          	"scene":
-                   [
-                      { 
-                         "cmd": "text", 
-                         "text": "post ex 6.01 3"
-                      },{
-			 "cmd": "dialogue",
-			 "speaker": "",
-     			 "text": "Ruby looks at the color closely."
-                  	}
-                   ]
+            "cmd": "multi",
+            "scene":
+                [
+                {
+                    "cmd": "text",
+                    "text": "post ex 6.01 2"
+                },{
+
+                    "cmd": "dialogue",
+                    "speaker": "",
+                    "text": "Ada presses the button pointing in front on Thymio and his top LEDs change to green."
+                }
+            ]
+        },
+        {
+            "cmd": "multi",
+            "scene":
+                [
+                {
+                    "cmd": "text",
+                    "text": "post ex 6.01 3"
+                },{
+                    "cmd": "dialogue",
+                    "speaker": "",
+                    "text": "Ruby looks at the color closely."
+                }
+            ]
         }
     ]
 }

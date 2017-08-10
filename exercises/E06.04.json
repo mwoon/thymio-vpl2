@@ -1,138 +1,138 @@
 {
     "list": [
         {
-	    "cmd": "multi",
+            "cmd": "multi",
             "scene":
-               [
-                  { 
-                     "cmd": "text", 
-                     "text": "Pre E06.04 01"
-                  },
-		  {
-                     "cmd": "dialogue",
-                     "speaker": "Ada",
-                     "text": "Ruby likes the color red, so let's make a program that can turn Thymio's top LEDs red."
-                  }
-               ]
-	},
-	{
-	    "cmd": "multi",
+                [
+                {
+                    "cmd": "text",
+                    "text": "Pre E06.04 01"
+                },
+                {
+                    "cmd": "dialogue",
+                    "speaker": "Ada",
+                    "text": "Ruby likes the color red, so let's make a program that can turn Thymio's top LEDs red."
+                }
+            ]
+        },
+        {
+            "cmd": "multi",
             "scene":
-               [
-                  { 
-                     "cmd": "text", 
-                     "text": "Pre E06.04 02"
-                  },
-		  {
-                     "cmd": "dialogue",
-                     "speaker": "Ada",
-                     "text": "There's a half finished program here with a button pointing down. We can use this!"
-                  }
-               ]
-	},
-	{
-	    "cmd": "multi",
+                [
+                {
+                    "cmd": "text",
+                    "text": "Pre E06.04 02"
+                },
+                {
+                    "cmd": "dialogue",
+                    "speaker": "Ada",
+                    "text": "There's a half finished program here with a button pointing down. We can use this!"
+                }
+            ]
+        },
+        {
+            "cmd": "multi",
             "scene":
-               [
-                  { 
-                     "cmd": "text", 
-                     "text": "Pre E06.04 03"
-                  },
-		  {
-                     "cmd": "dialogue",
-                     "speaker": "Ada",
-                     "text": "Our program should change Thymio's top LEDs to red when the back button is pressed!"
-                  }
-               ]
-	},
+                [
+                {
+                    "cmd": "text",
+                    "text": "Pre E06.04 03"
+                },
+                {
+                    "cmd": "dialogue",
+                    "speaker": "Ada",
+                    "text": "Our program should change Thymio's top LEDs to red when the back button is pressed!"
+                }
+            ]
+        },
         {
             "cmd": "ex",
             "type": "type4",
             "text": "E06.04",
-	    "method": "sim",
-	    "description": [
-		{
-            	    "cmd": "multi",
-            	    "scene":
+            "method": "sim",
+            "description": [
+                {
+                    "cmd": "multi",
+                    "scene":
                         [
-		  		{
-                     			"cmd": "dialogue",
-                     			"speaker": "Ada",
-                     			"text": "Our program should change Thymio's top LEDs to red when the back button is pressed!"
-                  		}
-               		]
-        	}
-	    ],
-	    "scene": [{
-	    	"checkfor": [{"type": "topcolor", "time" : 1, "color": "red"}],
-                "duration": 2,
-                "worldSize": [100, 100],
-                "thymio" : { "position": [50, 50], "angle": 0 },
-		"testFunction": "buttonBack"
-            }],
-	    "solution": 
-{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","ON","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[28,0,2]}]]]},
-	    "code": 
-{"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","ON","DISABLED","DISABLED"]}],[]]]}
+                        {
+                            "cmd": "dialogue",
+                            "speaker": "Ada",
+                            "text": "Our program should change Thymio's top LEDs to red when the back button is pressed!"
+                        }
+                    ]
+                }
+            ],
+            "scene": [{
+                    "checkfor": [{"type": "topcolor", "time" : 1, "color": "red"}],
+                    "duration": 2,
+                    "worldSize": [100, 100],
+                    "thymio" : { "position": [50, 50], "angle": 0 },
+                    "testFunction": "buttonBack"
+                }],
+            "solution":
+            {"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","ON","DISABLED","DISABLED"]}],[{"definition":"PaletteTopColorActionBlock","params":[28,0,2]}]]]},
+            "code":
+            {"mode":"simple","scene":[[[{"definition":"ButtonsEventBlock","params":["DISABLED","DISABLED","ON","DISABLED","DISABLED"]}],[]]]}
         },
-	{
-	    "cmd": "multi",
+        {
+            "cmd": "multi",
             "scene":
-               [
-                  { 
-                     "cmd": "text", 
-                     "text": "Post E06.04 01"
-                  },
-		  {
-                     "cmd": "feedback",
-                     "options": [
-	  		[{
-     				"cmd": "dialogue",
-     				"speaker": "Ada",
-             			"text": "Ruby should really like this!"
-                  	}],
-			[{
-     				"cmd": "dialogue",
-     				"speaker": "Ada",
-             			"text": "Wait, that's not quite right..."
-                  	},{
-     				"cmd": "dialogue",
-     				"speaker": "",
-             			"text": "Ada pokes around on the tablet to fix the program."
-                  	}]
-		     ]
-                  }
-               ]
-	},
-        {
- 	     "cmd": "multi",
-          	"scene":
-                   [
-                      { 
-                         "cmd": "text", 
-                         "text": "post ex 6.04 2"
-                      },{
-     				
-			 "cmd": "dialogue",
-     		         "speaker": "",
-             		 "text": "They run the program and Thymio's color changes to red."
-                  	}
-                   ]
+                [
+                {
+                    "cmd": "text",
+                    "text": "Post E06.04 01"
+                },
+                {
+                    "cmd": "feedback",
+                    "options": [
+                        [{
+                             "cmd": "dialogue",
+                             "speaker": "Ada",
+                             "text": "Ruby should really like this!"
+                         }],
+                        [{
+                             "cmd": "dialogue",
+                             "speaker": "Ada",
+                             "text": "Wait, that's not quite right..."
+                         },{
+                             "cmd": "dialogue",
+                             "speaker": "",
+                             "text": "Ada pokes around on the tablet to fix the program."
+                         }]
+                    ]
+                }
+            ]
         },
         {
- 	     "cmd": "multi",
-          	"scene":
-                   [
-                      { 
-                         "cmd": "text", 
-                         "text": "post ex 6.04 3"
-                      },{
-     				
-			 "cmd": "dialogue",
-     		         "speaker": "",
-             		 "text": "Ruby laughs, but stays away."
-                  	}
-                   ]
+            "cmd": "multi",
+            "scene":
+                [
+                {
+                    "cmd": "text",
+                    "text": "post ex 6.04 2"
+                },{
+
+                    "cmd": "dialogue",
+                    "speaker": "",
+                    "text": "They run the program and Thymio's color changes to red."
+                }
+            ]
+        },
+        {
+            "cmd": "multi",
+            "scene":
+                [
+                {
+                    "cmd": "text",
+                    "text": "post ex 6.04 3"
+                },{
+
+                    "cmd": "dialogue",
+                    "speaker": "",
+                    "text": "Ruby laughs, but stays away."
+                }
+            ]
         }
     ]
 }

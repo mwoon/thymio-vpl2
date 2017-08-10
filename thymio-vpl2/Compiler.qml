@@ -86,8 +86,7 @@ Item {
 		id: timer
         interval: 0
 		onTriggered: {
-			try {
-                console.log("compiling program")
+            try {
 				var result = compile(ast);
 				output = result.output;
 				internal = result.internal;
@@ -111,7 +110,6 @@ Item {
 
         function forceCompile() {
             try {
-                console.log("compiling program")
                 var result = compile(ast);
                 output = result.output;
                 internal = result.internal;

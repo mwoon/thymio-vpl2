@@ -58,76 +58,76 @@ void StoryTeller::initializeScript() {
 
 QString StoryTeller::advanceScript(){
 
- //check previous segment type
- if(mainIndex < script.size()) {
-    if(script[mainIndex].type == "story") {
-        qDebug() << QString::fromStdString("story: next");
-        //previous was a story -> continue story
-        mainIndex++;
-
-    } else {
-        qDebug() << QString::fromStdString("story: stay");
-        //previous was an exercise block
-        //check if number of successfully completed exercises sufficient
-        // TODO if yes, advance story: increment mainIndex and dish out new story,
-        // if no, draw another exercise
-        if((successfulExercises > succExLimit - 1) || (totalExInBlock > totalExLimit - 1) || (mainIndex < 9)) {
-            //FIXME for now just increment
-            successfulExercises = 0;
-            totalExInBlock = 0;
+    //check previous segment type
+    if(mainIndex < script.size()) {
+        if(script[mainIndex].type == "story") {
+            qDebug() << QString::fromStdString("story: next");
+            //previous was a story -> continue story
             mainIndex++;
+
+        } else {
+            qDebug() << QString::fromStdString("story: stay");
+            //previous was an exercise block
+            //check if number of successfully completed exercises sufficient
+            // TODO if yes, advance story: increment mainIndex and dish out new story,
+            // if no, draw another exercise
+            if((successfulExercises > succExLimit - 1) || (totalExInBlock > totalExLimit - 1) || (mainIndex < 9)) {
+                //FIXME for now just increment
+                successfulExercises = 0;
+                totalExInBlock = 0;
+                mainIndex++;
+            }
         }
     }
- }
 
- //no more story to show
- if(mainIndex >= script.size()) {
-     last = QString::fromStdString("{\"story0\":[\"the_end\"]}");
-     log.push_back("\"the_end\"");
-     emit segmentGenerated(last);
-     return last;
- }
+    //no more story to show
+    if(mainIndex >= script.size()) {
+        last = QString::fromStdString("{\"story0\":[\"the_end\"]}");
+        log.push_back("\"the_end\"");
+        emit segmentGenerated(last);
+        return last;
+    }
 
- //check current segment type
- std::string next;
- if(script[mainIndex].type == "story") {
-     qDebug() << QString::fromStdString("make story");
+    //check current segment type
+    std::string next;
+    if(script[mainIndex].type == "story") {
+        qDebug() << QString::fromStdString("make story");
 
-    //send next story back to front end
-    next = makeJsonArray("story0", script[mainIndex].content);
+        //send next story back to front end
+        next = makeJsonArray("story0", script[mainIndex].content);
 
-    //Some tracking
-    log.push_back(next);
-    last = QString::fromStdString("{" + next + "}");
-    emit segmentGenerated(last);
+        //Some tracking
+        log.push_back(next);
+        last = QString::fromStdString("{" + next + "}");
+        emit segmentGenerated(last);
 
- } else {
-     qDebug() << QString::fromStdString("make exercise");
-     //call zpdes to pick an exercise here
-     std::string chosen;
+    } else {
+        qDebug() << QString::fromStdString("make exercise");
+        //call zpdes to pick an exercise here
+        std::string chosen;
 
-     //special handling for first few exercises / "tutorials"
-     if(mainIndex < 5) {
-        std::ostringstream chosenBuilder;
-        chosenBuilder << "\"";
-        chosenBuilder << script[mainIndex].content.front();
-        chosenBuilder << ".01\"";
-        chosen = chosenBuilder.str();
-        its.setLastActivity(script[mainIndex].content.front());
+        //special handling for first few exercises / "tutorials"
+        if(mainIndex < 5) {
+            std::ostringstream chosenBuilder;
+            chosenBuilder << "\"";
+            chosenBuilder << script[mainIndex].content.front();
+            chosenBuilder << ".01\"";
+            chosen = chosenBuilder.str();
+            its.setLastActivity(script[mainIndex].content.front());
 
-     } else {
-         chosen = its.chooseActivity(script[mainIndex].content);
-     }
-     next = makeJsonArray("activity", std::list<std::string>{chosen});
+        } else {
+            chosen = its.chooseActivity(script[mainIndex].content);
+        }
+        next = makeJsonArray("activity", std::list<std::string>{chosen});
 
-     //Tracking
-     last = QString::fromStdString("{" + next + "}");
-     //log.push_back(chosen);
+        //Tracking
+        last = QString::fromStdString("{" + next + "}");
+        //log.push_back(chosen);
 
-     emit segmentGenerated(last);
- }
+        emit segmentGenerated(last);
+    }
 
- return last;
+    return last;
 }
 
 

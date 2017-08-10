@@ -1,101 +1,101 @@
 {
-    "list": [ 
+    "list": [
         {
             "cmd": "ex",
             "type": "type4",
             "text": "E01.01",
-	    "description": [
-		{
-            	    "cmd": "multi",
-            	    "scene":
-                        [
-		  		{
-                     			"cmd": "dialogue",
-                     			"speaker": "Ada",
-                     			"text": "Remove that blue circle in the center and then use the first option in the menu on the top left!"
-                  		}
-               		]
-        	}
-	    ],
-	    "list": [
-		{
-            	    "cmd": "multi",
-            	    "scene":
-                        [
-                  		{ 
-                     			"cmd": "text", 
-                     			"text": "E01.01 01"
-                  		},
-		  		{
-                     			"cmd": "dialogue",
-                     			"speaker": "Ada",
-                     			"text": "Hmm... I don't really understand what all of this is. But something seems wrong."
-                  		}
-               		]
-        	},
-		{
-            	    "cmd": "multi",
+            "description": [
+                {
+                    "cmd": "multi",
                     "scene":
-               		[
-                  		{ 
-                     			"cmd": "text", 
-                     			"text": "E01.01 02"
-                  		},
-		  		{
-                     			"cmd": "dialogue",
-                     			"speaker": "Ada",
-                     			"text": "You should try grabbing this circle in the middle and get rid of it."
-                  		}
-               		]
-        	},
-		{
-            	    "cmd": "multi",
+                        [
+                        {
+                            "cmd": "dialogue",
+                            "speaker": "Ada",
+                            "text": "Remove that blue circle in the center and then use the first option in the menu on the top left!"
+                        }
+                    ]
+                }
+            ],
+            "list": [
+                {
+                    "cmd": "multi",
                     "scene":
-               		[
-                  		{ 
-                     			"cmd": "text", 
-                     			"text": "E01.01 03"
-                  		},
-		  		{
-                     			"cmd": "dialogue",
-                     			"speaker": "Ada",
-                     			"text": "It looks like there's a menu in the top left. I think the first button will let you send what you did to the robot when you're done!"
-                  		}
-               		]
-        	}  
-	    ],
+                        [
+                        {
+                            "cmd": "text",
+                            "text": "E01.01 01"
+                        },
+                        {
+                            "cmd": "dialogue",
+                            "speaker": "Ada",
+                            "text": "Hmm... I don't really understand what all of this is. But something seems wrong."
+                        }
+                    ]
+                },
+                {
+                    "cmd": "multi",
+                    "scene":
+                        [
+                        {
+                            "cmd": "text",
+                            "text": "E01.01 02"
+                        },
+                        {
+                            "cmd": "dialogue",
+                            "speaker": "Ada",
+                            "text": "You should try grabbing this circle in the middle and get rid of it."
+                        }
+                    ]
+                },
+                {
+                    "cmd": "multi",
+                    "scene":
+                        [
+                        {
+                            "cmd": "text",
+                            "text": "E01.01 03"
+                        },
+                        {
+                            "cmd": "dialogue",
+                            "speaker": "Ada",
+                            "text": "It looks like there's a menu in the top left. I think the first button will let you send what you did to the robot when you're done!"
+                        }
+                    ]
+                }
+            ],
 
-	    "method": "fixed",
-	    "solution":
-{"mode":"simple","scene":[]}
-, 
-	    "code": 
-{"mode":"simple","scene":[[[],[{"definition":"MotorActionBlock","params":[0,0]}]]]}
+            "method": "fixed",
+            "solution":
+            {"mode":"simple","scene":[]}
+            ,
+            "code":
+            {"mode":"simple","scene":[[[],[{"definition":"MotorActionBlock","params":[0,0]}]]]}
         },
-	{
-	    "cmd": "multi",
+        {
+            "cmd": "multi",
             "scene":
-               [
-                  { 
-                     "cmd": "text", 
-                     "text": "Post E01.01 01"
-                  },
-		  {
-                     "cmd": "feedback",
-                     "options": [
-	  		[{
-     				"cmd": "dialogue",
-     				"speaker": "Ada",
-             			"text": "Awesome!"
-                  	}],
-			[{
-     				"cmd": "dialogue",
-     				"speaker": "Ada",
-             			"text": "Uhm... I don't think you cleared it properly."
-                  	}]
-		     ]
-                  }
-               ]
-	}
+                [
+                {
+                    "cmd": "text",
+                    "text": "Post E01.01 01"
+                },
+                {
+                    "cmd": "feedback",
+                    "options": [
+                        [{
+                             "cmd": "dialogue",
+                             "speaker": "Ada",
+                             "text": "Awesome!"
+                         }],
+                        [{
+                             "cmd": "dialogue",
+                             "speaker": "Ada",
+                             "text": "Uhm... I don't think you cleared it properly."
+                         }]
+                    ]
+                }
+            ]
+        }
     ]
 }
