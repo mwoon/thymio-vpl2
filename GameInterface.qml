@@ -139,6 +139,10 @@ Page {
 
     }
 
+    ListModel {
+        id: textOutput
+    }
+
     function updateStory() {
         if(!next) { return; }
         next = false;
@@ -188,7 +192,7 @@ Page {
             if(newStorySequence.activity)  {
                 type = "activity";
                 //file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                file = "/exercises/" + "E11.03" + ".json";
+                file = "/exercises/" + "E11.05" + ".json";
 
             }
 
@@ -221,12 +225,6 @@ Page {
             xhr.open("GET", file);
             xhr.send();
         }
-    }
-
-
-
-    ListModel {
-        id: textOutput
     }
 
     ListModel {
