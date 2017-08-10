@@ -18,7 +18,7 @@ public:
 
     //The content of the block, for exercises,
     //it contains a list of the exercise codes contained in the block,
-    //for story blocks, the strings are the story segments
+    //for story blocks, the strings are the story number
     std::list<std::string> content;
 
 };
