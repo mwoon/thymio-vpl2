@@ -57,7 +57,6 @@ Page {
     DialogueBox {
         id: dialogueBox
 
-
         anchors.top: parent.top
         anchors.topMargin: 75
     }
@@ -138,131 +137,6 @@ Page {
             }
         }
 
-
-        Row {
-
-            id: answersList
-            spacing: 20
-
-            Button {
-                id: answer0
-                visible: false
-                text: qsTr("1.0")
-                onClicked: {
-                    stote.completeExercise(1.0);
-                    next = true;
-                }
-            }
-
-            Button {
-                id: answer1
-                visible: false
-                text: qsTr("0.9")
-                onClicked: {
-                    stote.completeExercise(0.9);
-                    next = true;
-                }
-            }
-
-            Button {
-                id: answer2
-                visible: false
-                text: qsTr("0.8")
-                onClicked: {
-                    stote.completeExercise(0.8);
-                    next = true;
-                }
-            }
-
-            Button {
-                id: answer3
-                visible: false
-                text: qsTr("0.7")
-                onClicked: {
-                    stote.completeExercise(0.7);
-                    next = true;
-                }
-            }
-
-            Button {
-                id: answer4
-                visible: false
-                text: qsTr("0.6")
-                onClicked: {
-                    stote.completeExercise(0.6);
-                    next = true;
-                }
-            }
-
-            Button {
-                id: answer5
-                visible: false
-                text: qsTr("0.5")
-                onClicked: {
-                    stote.completeExercise(0.5);
-                    next = true;
-                }
-            }
-
-            Button {
-                id: answer6
-                visible: false
-                text: qsTr("0.4")
-                onClicked: {
-                    stote.completeExercise(0.4);
-                    next = true;
-                }
-            }
-
-            Button {
-                id: answer7
-                visible: false
-                text: qsTr("0.3")
-                onClicked: {
-                    stote.completeExercise(0.3);
-                    next = true;
-                }
-            }
-
-            Button {
-                id: answer8
-                visible: false
-                text: qsTr("0.2")
-                onClicked: {
-                    stote.completeExercise(0.2);
-                    next = true;
-                }
-            }
-
-            Button {
-                id: answer9
-                visible: false
-                text: qsTr("0.1")
-                onClicked: {
-                    stote.completeExercise(0.1);
-                    next = true;
-                }
-            }
-
-            Button {
-                id: answer10
-                visible: false
-                text: qsTr("0.0")
-                onClicked: {
-                    stote.completeExercise(0.0);
-                    next = true;
-                }
-            }
-
-            Button {
-                id: nextButton
-                visible: false
-                text: qsTr("Next")
-                onClicked: {
-                    next = true;
-                }
-            }
-        }
     }
 
     function updateStory() {
@@ -290,36 +164,6 @@ Page {
                 }
             }
 
-            /*
-            if(part.type === "story") {
-                nextButton.visible = true;
-                answer0.visible = false;
-                answer1.visible = false;
-                answer2.visible = false;
-                answer3.visible = false;
-                answer4.visible = false;
-                answer5.visible = false;
-                answer6.visible = false;
-                answer7.visible = false;
-                answer8.visible = false;
-                answer9.visible = false;
-                answer10.visible = false;
-            } else if (part.type === "activity") {
-                //textOutput.append({"output": part.content});
-                nextButton.visible = false;
-                answer0.visible = true;
-                answer1.visible = true;
-                answer2.visible = true;
-                answer3.visible = true;
-                answer4.visible = true;
-                answer5.visible = true;
-                answer6.visible = true;
-                answer7.visible = true;
-                answer8.visible = true;
-                answer9.visible = true;
-                answer10.visible = true;
-            }
-            */
             lView.positionViewAtEnd();
         } else {
             stote.advanceScript();
@@ -346,14 +190,6 @@ Page {
                 //file = "/exercises/" + newStorySequence.activity[0] + ".json";
                 file = "/exercises/" + "E11.03" + ".json";
 
-                /*
-                for(var i = 0; i < newStorySequence.activity.length; i++) {
-                    part = {};
-                    part.type = "activity";
-                    part.content = newStorySequence.activity[i];
-                    storyStack.push(part);
-                }
-                next = true;*/
             }
 
 
@@ -362,9 +198,6 @@ Page {
                 if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
                     //print('HEADERS_RECEIVED')
                 } else if(xhr.readyState === XMLHttpRequest.DONE) {
-                    //print('DONE');
-                    //console.log(xhr.status);
-                    //console.log(xhr.responseText.toString());
                     var a = JSON.parse(xhr.responseText.toString());
 
                     var storyList;
@@ -526,7 +359,6 @@ Page {
     }
 
     function handleText(text) {
-        //TODO this will change later when the list is removed
         textOutput.append({"output": text});
     }
 
