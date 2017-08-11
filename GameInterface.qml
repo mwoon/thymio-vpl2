@@ -35,7 +35,7 @@ Page {
             //x: -1000
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-            source: "/assets/island_1.png"
+            source: "qrc:/its-game/assets/island_1.png"
 
             Behavior on x {
                 NumberAnimation {
@@ -173,14 +173,14 @@ Page {
             var type;
             if(newStorySequence.story0) {
                 type = "story";
-                file = "thymio-vpl2/story/" + newStorySequence.story0[0] + ".json";
+                file = "qrc:/its-game/story/" + newStorySequence.story0[0] + ".json";
                 lastStory = newStorySequence.story0[0];
                 console.log(lastStory);
             }
 
             if(newStorySequence.activity)  {
                 type = "activity";
-                file = "/exercises/" + newStorySequence.activity[0] + ".json";
+                file = "qrc:/its-game/exercises/" + newStorySequence.activity[0] + ".json";
                 //file = "/exercises/" + "E04.04" + ".json";
 
             }
@@ -392,7 +392,7 @@ Page {
             }
 
         }
-        backgroundImage.source = scene.bgImage;
+        backgroundImage.source = "qrc:/its-game" + scene.bgImage;
         if(scene.sizeX) {
             backgroundImage.x = (scene.sizeX - Screen.width + scene.x < 0 ) ? - scene.sizeX + Screen.width : scene.x;
         } else {

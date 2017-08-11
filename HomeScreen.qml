@@ -7,7 +7,7 @@ Item {
 
     Image {
         anchors.fill: parent
-        source: "/assets/clouds.png"
+        source: "qrc:/its-game/assets/clouds.png"
         z:1
     }
 

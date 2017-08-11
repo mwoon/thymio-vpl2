@@ -229,6 +229,7 @@ Item {
         QT_TRANSLATE_NOOP("general", "Yes, will you bring us back to the village."),
         QT_TRANSLATE_NOOP("general", "Ruby nods very quickly and Ada hops onto his leg."),
         QT_TRANSLATE_NOOP("general", "He flies up and carries Thymio with his feet again."),
+        //E01
         QT_TRANSLATE_NOOP("general", ""),
         QT_TRANSLATE_NOOP("general", ""),
         QT_TRANSLATE_NOOP("general", ""),
