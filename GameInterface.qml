@@ -154,21 +154,7 @@ Page {
             var part = storyStack.shift();
 
             if(part.type === "story" || part.type === "activity") {
-                if(part.content.cmd === "text") {
-                    handleText(part.content.text)
-                } else if (part.content.cmd === "bg") {
-                    handleBgColor(part.content.color);
-                } else if (part.content.cmd === "multi") {
-                    handleScene(part.content.scene);
-                } else if (part.content.cmd === "ex") {
-                    handleEx(part.content);
-                } else if (part.content.cmd === "bgImage") {
-                    handleBgImage(part.content);
-                } else if (part.content.cmd === "dialogue") {
-                    handleDialogue(part.content.speaker, part.content.text);
-                } else if (part.content.cmd === "feedback") {
-                    handleFeedback(part.content.options);
-                }
+                storyPartAction(part.content);
             }
 
             lView.positionViewAtEnd();
@@ -187,15 +173,15 @@ Page {
             var type;
             if(newStorySequence.story0) {
                 type = "story";
-                file = "thymio-vpl2/story/" + newStorySequence.story0[0] + ".json";
+                //file = "thymio-vpl2/story/" + newStorySequence.story0[0] + ".json";
                 lastStory = newStorySequence.story0[0];
                 console.log(lastStory);
             }
 
             if(newStorySequence.activity)  {
                 type = "activity";
-                file = "/exercises/" + newStorySequence.activity[0] + ".json";
-                //file = "/exercises/" + "E15.05" + ".json";
+                //file = "/exercises/" + newStorySequence.activity[0] + ".json";
+                file = "/exercises/" + "E04.04" + ".json";
 
             }
 
@@ -336,6 +322,24 @@ Page {
 
 /*-------------------------- Functions to Update Story --------------------------------------*/
 
+    function storyPartAction(part){
+        if(part.cmd === "text") {
+            handleText(part.text)
+        } else if (part.cmd === "bg") {
+            handleBgColor(part.color);
+        } else if (part.cmd === "multi") {
+            handleScene(part.scene);
+        } else if (part.cmd === "ex") {
+            handleEx(part);
+        } else if (part.cmd === "bgImage") {
+            handleBgImage(part);
+        } else if (part.cmd === "dialogue") {
+            handleDialogue(part.speaker, part.text);
+        } else if (part.cmd === "feedback") {
+            handleFeedback(part.options);
+        }
+    }
+
     function toggleDialogueBox(truefalse) {
         dialogueBox.visible = truefalse;
     }
@@ -430,19 +434,7 @@ Page {
 
     function handleScene(scene) {
         for(var i = 0; i < scene.length; i++) {
-            if(scene[i].cmd === "text") {
-                handleText(scene[i].text);
-            } else if (scene[i].cmd === "bg") {
-                handleBgColor(scene[i].color);
-            } else if (scene[i].cmd === "bgImage") {
-                handleBgImage(scene[i]);
-            } else if (scene[i].cmd === "ex") {
-                handleEx(scene[i]);
-            } else if (scene[i].cmd === "dialogue") {
-                handleDialogue(scene[i].speaker, scene[i].text);
-            } else if (scene[i].cmd === "feedback") {
-                handleFeedback(scene[i].options);
-            }
+            storyPartAction(scene[i]);
         }
     }
 

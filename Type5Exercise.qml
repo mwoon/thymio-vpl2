@@ -35,12 +35,6 @@ Page {
         Component.onCompleted: {
             vpl.menu.clear();
             vpl.menu.append({
-                                "title": "Upload to Remote",
-                                "callback": "completeExercise5",
-                                "whiteIcon": "qrc:/thymio-vpl2/icons/ic_open_white_24px.svg",
-                                "blackIcon": "qrc:/thymio-vpl2/icons/ic_open_black_24px.svg"
-                            });
-            vpl.menu.append({
                                 "title": QT_TR_NOOP("Clear Program"),
                                 "callback": "newProgram",
                                 "whiteIcon": "qrc:/thymio-vpl2/icons/ic_new_white_24px.svg",
@@ -62,7 +56,9 @@ Page {
                             });
 
             vpl.editor.clearProgram();
+            vpl.setUploadButton(function(){completeExercise(vpl.editor.scene.serialize())});
         }
+
     }
 
     function completeExercise(prog) {

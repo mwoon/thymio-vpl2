@@ -59,7 +59,7 @@
                         {
                             "cmd": "dialogue",
                             "speaker": "Ada",
-                            "text": "It looks like there's a menu in the top left. I think the first button will let you send what you did to the robot when you're done!"
+                            "text": "It looks like that button 'Upload to Remote' in the rop right will let you send your work back to me. Press it when you're done!"
                         }
                     ]
                 }

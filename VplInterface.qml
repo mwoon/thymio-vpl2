@@ -37,6 +37,42 @@ Page {
         isThymioConnected: !!thymio.node
         onOpenDrawer: drawer.open()
         onOpenDashelTargetSelector: dashelTargetSelector.open()
+
+        Button {
+            id:uploadButton
+
+
+            anchors.right: parent.right
+            anchors.top: parent.top
+            width: 200
+            height: 50
+            z: 5;
+
+            Row {
+                anchors.centerIn: parent
+                spacing: 24
+                HDPIImage {
+                    property var whiteIcon: "qrc:/thymio-vpl2/icons/ic_open_white_24px.svg";
+                    property var blackIcon: "qrc:/thymio-vpl2/icons/ic_open_black_24px.svg";
+                    source: Material.theme === Material.Dark ? whiteIcon : blackIcon
+                    width: 24
+                    height: 24
+                    opacity: enabled ? 1.0 : 0.5
+                }
+                Text {
+                    text: qsTr("Upload to Remote");
+                    font.pixelSize: 14
+                    font.weight: Font.Medium
+                    color: Material.primaryTextColor
+                    opacity: enabled ? 1.0 : 0.5
+                }
+            }
+            onClicked: {
+                action();
+            }
+            property var action
+            visible: false
+        }
     }
 
     BlockEditorTitleBar {
@@ -58,6 +94,13 @@ Page {
 //			anchors.topMargin: 10
 //			color: Material.primaryTextColor
 //		}
+    }
+
+
+
+    function setUploadButton(func){
+        uploadButton.action = func;
+        uploadButton.visible = true;
     }
 
     // improve using: https://appbus.wordpress.com/2016/05/20/one-page-sample-app/
@@ -188,21 +231,6 @@ Page {
             thymio.runSimulationDefault();
 
             thymio.playing = false;
-        }
-
-        function completeExercise4() {
-            var code = {
-                scene: vplEditor.scene.serialize()
-            };
-            type4Ex.completeExercise(code);
-        }
-
-        function completeExercise5() {
-            var code = {
-                scene: vplEditor.scene.serialize()
-            };
-
-            type5Ex.completeExercise(code);
         }
 
         function restartExercise() {
