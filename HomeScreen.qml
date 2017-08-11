@@ -55,7 +55,7 @@ Item {
                 Button {
                     id: control
                     implicitWidth: 160
-                    text: name
+                    text: qsTranslate("general", name)
                     background: Rectangle {
                         color: control.highlighted ? "#30efff16" : "#30ffffff"
                         border.color: control.highlighted ? "#a0efff16" : "#50ffffff"
@@ -82,7 +82,7 @@ Item {
         id: menuList
 
         ListElement {
-            name: "Game";
+            name: QT_TRANSLATE_NOOP("general", "Game");
             callback: "showGame";
         }
         ListElement {

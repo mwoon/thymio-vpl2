@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QTranslator>
 #include <QQmlContext>
+#include <QtDebug>
 #include "thymio-vpl2.h"
 #include "zpdes.h"
 #include "storyteller.h"
@@ -16,8 +17,9 @@ int main(int argc, char *argv[])
 	app.setApplicationName("Thymio VPL Mobile Preview");
 
 	QTranslator qtTranslator;
-	QLocale::system().name();
-	qtTranslator.load("thymio-vpl2_" + QLocale::system().name(), ":/thymio-vpl2/translations/");
+    QLocale::system().name();
+    //qtTranslator.load("thymio-vpl2_" + QLocale::system().name(), ":/thymio-vpl2/translations/");
+    qtTranslator.load("thymio-vpl2_de_DE", ":/thymio-vpl2/translations/");
 	app.installTranslator(&qtTranslator);
 
 	thymioVPL2Init();

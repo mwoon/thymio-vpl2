@@ -15,8 +15,11 @@ ApplicationWindow {
 
 
     //height and width not relevant for application window (at least on Android?). it fills out the whole screen
-    width: Screen.width
-    height: Screen.height
+    //width: Screen.width
+    //height: Screen.height
+
+    width: 960
+    height: 600
 
 
 /*-------------------------- Loader --------------------------------------*/

@@ -250,8 +250,8 @@ Page {
     }
 
     function handleDialogue(speaker, text) {
-        dialogueBox.speakerName = speaker;
-        dialogueBox.dialogue = text;
+        dialogueBox.speakerName = qsTranslate("general", speaker);
+        dialogueBox.dialogue = qsTranslate("general", text);
     }
 
     function handleScene(scene) {

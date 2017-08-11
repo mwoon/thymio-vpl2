@@ -33,7 +33,7 @@ Page {
         Image {
             id:backgroundImage
             //x: -1000
-            //anchors.top: parent.top
+            anchors.top: parent.top
             anchors.bottom: parent.bottom
             source: "/assets/island_1.png"
 
@@ -366,8 +366,8 @@ Page {
     }
 
     function handleDialogue(speaker, text) {
-        dialogueBox.speakerName = speaker;
-        dialogueBox.dialogue = text;
+        dialogueBox.speakerName = qsTranslate("general", speaker);
+        dialogueBox.dialogue = qsTranslate("general", text);
 
         dialogueLog.insert(0, {"speaker" : speaker, "conversation" : text});
     }

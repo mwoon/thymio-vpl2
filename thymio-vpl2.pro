@@ -28,3 +28,5 @@ export(first.depends)
 export(copydata.commands)
 QMAKE_EXTRA_TARGETS += first copydata
 
+TRANSLATIONS+=  translations/thymio-vpl2_de_DE.ts
+

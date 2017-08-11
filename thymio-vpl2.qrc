@@ -25,6 +25,8 @@
         <file>story/story18.json</file>
         <file>story/the_end.json</file>
         <file>story/story2_1.json</file>
+        <file>translations/thymio-vpl2_de_CH.qm</file>
+        <file>translations/thymio-vpl2_de_DE.qm</file>
     </qresource>
     <qresource prefix="/">
         <file>Startup.qml</file>
