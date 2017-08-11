@@ -1,1 +1,34 @@
-{"list": [{"cmd": "text", "text": "story5"}, {"cmd": "bg", "color": "#00B000"}]}
+{
+    "list": [
+        {
+            "cmd": "multi",
+            "scene":
+                [
+                {
+                    "cmd": "text",
+                    "text": "story5.1"
+                },
+                {
+                    "cmd": "dialogue",
+                    "speaker": "",
+                    "text": "Ada reads the words on the screen."
+                }
+            ]
+        },
+        {
+            "cmd": "multi",
+            "scene":
+                [
+                {
+                    "cmd": "text",
+                    "text": "story5.1"
+                },
+                {
+                    "cmd": "dialogue",
+                    "speaker": "",
+                    "text": "Ada reads the words on the screen."
+                }
+            ]
+        }
+    ]
+}
