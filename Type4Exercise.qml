@@ -75,13 +75,14 @@ Page {
     function completeExercise(prog) {
 
         submittedCode = prog;
+        console.log(JSON.stringify(submittedCode));
 
         if(method === "fixed") {
             var score = 0.0;
 
             //For now very stupid checking
             var sol = JSON.parse(solution);
-            if(JSON.stringify(prog.scene) === JSON.stringify(sol.scene)) {
+            if(JSON.stringify(prog) === JSON.stringify(sol.scene)) {
                 score = 1.0;
             } else if (checkfor && checkfor.length > 0) {
                 console.log("checking variable solutions");

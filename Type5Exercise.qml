@@ -69,7 +69,7 @@ Page {
             //For now very stupid checking
             var score = 0.0;
             var sol = JSON.parse(solution);
-            if(JSON.stringify(prog.scene) === JSON.stringify(sol.scene)) {
+            if(JSON.stringify(prog) === JSON.stringify(sol.scene)) {
                 score = 1.0;
             } else if (checkfor && checkfor.length > 0) {
                 console.log("checking variable solutions");
