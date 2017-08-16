@@ -57,6 +57,7 @@ Page {
             id: vplEditor
             Layout.preferredWidth: parent.width * 2 / 5
             Layout.preferredHeight: width * 2 / 3
+            anchors.verticalCenter: parent.verticalCenter
             //enabled: false
             clip: true
             actionsVisible: false
@@ -86,9 +87,11 @@ Page {
         ColumnLayout {
             spacing: 12
             Layout.alignment: Qt.AlignCenter
+            Layout.preferredWidth: parent.width / 2
+            Layout.topMargin: type1Ex.height / 16
 
             Text {
-                Layout.alignment: Qt.AlignCenter
+                Layout.alignment: Qt.AlignLeft
                 text: qsTr("What does this program do?")
                 font.pointSize: 24
             }
@@ -97,7 +100,7 @@ Page {
                 id: options
 
                 //Layout.fillWidth: true
-                Layout.preferredWidth: Screen.width / 2
+                Layout.preferredWidth: parent.width
                 Layout.preferredHeight: optionsList.count * 90
                 spacing: 12
                 interactive: false
@@ -110,7 +113,7 @@ Page {
 
                     Button {
                         id: control
-                        implicitWidth: Screen.width / 2
+                        implicitWidth: type1Ex.width / 2
                         text: name
                         background: Rectangle {
                             color: "#30efff16"
@@ -186,6 +189,7 @@ Page {
                                     "blackIcon": "qrc:/thymio-vpl2/icons/ic_invert_colors_black_24px.svg"
                                 });
             }
+            editor.clip: true
         }
     }
 
@@ -239,7 +243,8 @@ Page {
 
     MouseArea {
         id: mouse
-        anchors.fill: parent
+        width: Screen.width
+        height: Screen.height
         z: 2
 
         onClicked: {
@@ -268,8 +273,8 @@ Page {
     }
 
     function handleDialogue(speaker, text) {
-        dialogueBox.speakerName = qsTranslate("general", speaker);
-        dialogueBox.dialogue = qsTranslate("general", text);
+        dialogueBox.speakerName = speaker;
+        dialogueBox.dialogue = text;
     }
 
     function handleScene(scene) {

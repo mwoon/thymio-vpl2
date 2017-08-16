@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QStandardPaths>
 #include <random>
+#include <QSysInfo>
 #include <QtDebug>
 #include <QFile>
 #include <QDir>
@@ -42,6 +43,10 @@ public slots:
     void simulateWithFailPercent(const double percent);
     void simulateFixedSuccessByTypeOfExercise(const double prob1, const double prob2, const double prob3, const double prob4, const double prob5);
     void simulateIncreasePerTrial();
+
+    //not strictly speaking part of the storyteller but this is a convenient place to put it
+    //used to load ground texture images for the simulator because those need to be external files
+    QString returnExerciseFolder();
 
 private:
     // simplification of main story

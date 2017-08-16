@@ -30,3 +30,16 @@ QMAKE_EXTRA_TARGETS += first copydata
 
 TRANSLATIONS+=  translations/thymio-vpl2_de_DE.ts
 
+# Additional import path used to resolve QML modules just for Qt Quick Designer
+QML_DESIGNER_IMPORT_PATH =
+
+OTHER_FILES += its-game/exercises
+
+# trying to make ground textures under exercises folder work on android
+android
+{
+    my_files.path = /assets
+    my_files.files += $$PWD/exercises/lightdark.png
+    my_files.files += $$PWD/exercises/darklight.png
+    INSTALLS += my_files
+}

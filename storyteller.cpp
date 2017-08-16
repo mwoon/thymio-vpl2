@@ -23,6 +23,7 @@ void StoryTeller::initializeScript() {
     script.push_back(ScriptBlock("story", std::list<std::string>{"\"story4\""}));
     script.push_back(ScriptBlock("exercise", std::list<std::string>{"E11", "E13", "E14", "E15"}));
     script.push_back(ScriptBlock("story", std::list<std::string>{"\"story5\""}));
+    /*
     script.push_back(ScriptBlock("exercise", std::list<std::string>{"E14", "E15", "E16", "E17", "E18", "E19", "E20", "E21", "E22", "E23"}));
     script.push_back(ScriptBlock("story", std::list<std::string>{"\"story6\""}));
     script.push_back(ScriptBlock("exercise", std::list<std::string>{"E16", "E17", "E24", "E20", "E21", "E14", "E15", "E22", "E25", "E26", "E27"}));
@@ -52,7 +53,7 @@ void StoryTeller::initializeScript() {
     script.push_back(ScriptBlock("exercise", std::list<std::string>{"E41", "E42", "E43", "E44", "E28", "E36"}));
     script.push_back(ScriptBlock("story", std::list<std::string>{"\"story19\""}));
     script.push_back(ScriptBlock("exercise", std::list<std::string>{"E36", "E37", "E39", "E38", "E34", "E35", "E28", "E29", "E30", "E31", "E32", "E33"}));
-    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story20\""}));
+    script.push_back(ScriptBlock("story", std::list<std::string>{"\"story20\""}));*/
 
 }
 
@@ -179,6 +180,16 @@ void StoryTeller::appendToLog(QString toLog) {
     std::string logString;
     logString = toLog.toStdString();
     log.push_back(logString);
+}
+
+QString StoryTeller::returnExerciseFolder() {
+    std::string folderName;
+    if(QSysInfo::productType() == "android") {
+        folderName = "assets:/";
+    } else {
+        folderName = "exercises/";
+    }
+    return QString::fromStdString(folderName);
 }
 
 //---------------- Simulation functions -------------------

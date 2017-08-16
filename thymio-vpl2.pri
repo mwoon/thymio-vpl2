@@ -111,5 +111,4 @@ DISTFILES += \
     $$PWD/Type5Exercise.qml \
     $$PWD/assets/island_1.png \
     $$PWD/DifficultyFeedback.qml \
-    $$PWD/TranslationArchive.qml \
-    $$PWD/TranslationArchive.qml
+    $$PWD/exercises/E04.01

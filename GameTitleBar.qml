@@ -14,8 +14,6 @@ Rectangle {
     color: "#40ffffff"
 
     ToolButton {
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
         focusPolicy: Qt.NoFocus
         Image {
             anchors.centerIn: parent

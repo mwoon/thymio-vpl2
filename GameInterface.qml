@@ -21,7 +21,7 @@ Page {
     property var lastScore: 0;
     property var lastStory;
 
-    title: qsTr("Thymio game WIP")
+    title: qsTr("Thymio Game Prototype")
     visible: true
 
     Rectangle {
@@ -69,8 +69,6 @@ Page {
         onClicked: {
             if(!storyLogLayout.visible) {
                 next = true;
-            } else {
-                gameMenu.toggleStoryLog();
             }
         }
     }
@@ -112,6 +110,7 @@ Page {
                 }
             }
         }
+
     }
 
     ColumnLayout {
@@ -163,56 +162,66 @@ Page {
         }
     }
 
+    property var storyObject;
+
     Connections {
         target: stote
         onSegmentGenerated: {
 
             var newStorySequence = JSON.parse(newText);
-            var part;
             var file;
-            var type;
+
             if(newStorySequence.story0) {
-                type = "story";
-                file = "qrc:/its-game/story/" + newStorySequence.story0[0] + ".json";
+                //file = "story/" + newStorySequence.story0[0] + ".qml";
                 lastStory = newStorySequence.story0[0];
                 console.log(lastStory);
             }
 
             if(newStorySequence.activity)  {
-                type = "activity";
-                file = "qrc:/its-game/exercises/" + newStorySequence.activity[0] + ".json";
-                //file = "/exercises/" + "E04.04" + ".json";
+                //file = "exercises/" + newStorySequence.activity[0] + ".qml";
+                file = "exercises/" + "E08.03" + ".qml";
 
             }
 
-
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED) {
-                    //print('HEADERS_RECEIVED')
-                } else if(xhr.readyState === XMLHttpRequest.DONE) {
-                    var a = JSON.parse(xhr.responseText.toString());
-
-                    var storyList;
-                    if(a[lastStory+"list"]) {
-                        storyList = a[lastStory+"list"];
-                    } else {
-                        storyList = a["list"];
-                    }
-
-                    for(var i = 0; i < storyList.length; i++) {
-                        part = {};
-                        part.type = type;
-                        part.content = storyList[i];
-                        storyStack.push(part);
-                    }
-                    next = true;
-                }
+            if(file === "story/the_end.qml") {
+                gameMenu.showHome();
+                return;
             }
 
             console.log(file);
-            xhr.open("GET", file);
-            xhr.send();
+            storyObject = Qt.createComponent(file);
+            if (storyObject.status === Component.Ready) {
+                    finishStoryObjectCreation();
+            } else {
+                    storyObject.statusChanged.connect(finishStoryObjectCreation);
+            }
+
+        }
+    }
+
+    function finishStoryObjectCreation() {
+        if (storyObject.status === Component.Ready) {
+            var a = storyObject.createObject(null);
+
+            var storyList;
+            if(a.scenario[lastStory+"list"]) {
+                storyList = a.scenario[lastStory+"list"];
+            } else {
+                storyList = a.scenario["list"];
+            }
+
+            var part;
+            var type = "story";
+            for(var i = 0; i < storyList.length; i++) {
+                part = {};
+                part.type = type;
+                part.content = storyList[i];
+                storyStack.push(part);
+            }
+            next = true;
+        } else if (component.status === Component.Error) {
+            // Error Handling
+            console.log("Error loading component:", component.errorString());
         }
     }
 
@@ -227,7 +236,7 @@ Page {
 
 /*-------------------------- Title Bar & Drawer Menu --------------------------------------*/
 
-    header: gameTB
+    //header: gameTB
 
     GameTitleBar {
         id: gameTB
@@ -283,6 +292,7 @@ Page {
             storyLogLayout.visible = !storyLogLayout.visible;
             dialogueBox.visible = !storyLogLayout.visible;
             darkScreen.visible = storyLogLayout.visible;
+            storyAdvancementArea.enabled = !storyLogLayout.visible;
         }
 
         //This function should be adapted whenever something needs to be tested on button press
@@ -370,8 +380,8 @@ Page {
     }
 
     function handleDialogue(speaker, text) {
-        dialogueBox.speakerName = qsTranslate("general", speaker);
-        dialogueBox.dialogue = qsTranslate("general", text);
+        dialogueBox.speakerName = speaker;
+        dialogueBox.dialogue = text;
 
         dialogueLog.insert(0, {"speaker" : speaker, "conversation" : text});
     }
@@ -394,7 +404,7 @@ Page {
         }
         backgroundImage.source = "qrc:/its-game" + scene.bgImage;
         if(scene.sizeX) {
-            backgroundImage.x = (scene.sizeX - Screen.width + scene.x < 0 ) ? - scene.sizeX + Screen.width : scene.x;
+            backgroundImage.x = (scene.sizeX - gameWindow.width + scene.x < 0 ) ? - scene.sizeX + gameWindow.width : scene.x;
         } else {
             backgroundImage.x = scene.x;
         }

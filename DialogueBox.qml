@@ -6,7 +6,7 @@ Rectangle {
     //Box for displaying text and dialogue
 
     property alias speakerName: speakerName.text
-    property alias dialogue: dialogue.text
+    property alias dialogue: dialoguetext.text
 
 
     //visible: false
@@ -36,7 +36,7 @@ Rectangle {
             font.pointSize: 16
         }
         Text {
-            id: dialogue
+            id: dialoguetext
 
             Layout.leftMargin: 25
             Layout.rightMargin: 25
@@ -47,6 +47,7 @@ Rectangle {
             text: "Placeholder Speech"
             font.pointSize: 16
             wrapMode: Text.WordWrap
+
         }
     }
 }

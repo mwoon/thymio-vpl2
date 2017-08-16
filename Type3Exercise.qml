@@ -62,7 +62,7 @@ Page {
                 id: vplEditorTop
                 //property alias fillHeight: Layout.fillHeight
                 Layout.preferredWidth: parent.width * 2 / 5
-                Layout.preferredHeight: parent.width  / 5
+                Layout.preferredHeight: type3Ex.height / 2 - 100
                 //enabled: false
                 clip: true
                 actionsVisible: false
@@ -133,7 +133,7 @@ Page {
             Layout.alignment: Qt.AlignCenter
 
             Text {
-                Layout.alignment: Qt.AlignCenter
+                Layout.alignment: Qt.AlignLeft
                 text: qsTr("What is the difference between these two?")
                 font.pointSize: 24
             }
@@ -144,6 +144,7 @@ Page {
                 //Layout.fillHeight: true
                 Layout.preferredWidth: Screen.width / 2
                 Layout.preferredHeight: optionsList.count * 75
+
                 spacing: 12
                 interactive: false
 
@@ -154,7 +155,7 @@ Page {
 
                     Button {
                         id: control
-                        implicitWidth: Screen.width / 2
+                        implicitWidth: type3Ex.width / 2
                         text: name
                         background: Rectangle {
                             color: "#30efff16"
@@ -229,6 +230,8 @@ Page {
                                     "blackIcon": "qrc:/thymio-vpl2/icons/ic_invert_colors_black_24px.svg"
                                 });
             }
+
+            editor.clip: true
         }
     }
 
@@ -311,8 +314,8 @@ Page {
     }
 
     function handleDialogue(speaker, text) {
-        dialogueBox.speakerName = qsTranslate("general", speaker);
-        dialogueBox.dialogue = qsTranslate("general", text);
+        dialogueBox.speakerName = speaker;
+        dialogueBox.dialogue = text;
     }
 
     function handleScene(scene) {

@@ -127,7 +127,7 @@ Page {
                 switch(special.cmd) {
                 case "insertCode":
                     vpl.editor.saveProgram("autosaveName");
-                    var codeScene = submittedCode.scene;
+                    var codeScene = submittedCode;
                     var mode = vpl.editor.modeCode;
                     codeScene.unshift([special.events, special.actions]);
                     var tempCode = { "mode": mode, "scene": codeScene};
@@ -165,7 +165,7 @@ Page {
             switch(scene[sIdx].special.cmd) {
             case "insertCode":
                 vpl.editor.saveProgram("autosaveName");
-                var codeScene = submittedCode.scene;
+                var codeScene = submittedCode;
                 var mode = vpl.editor.modeCode;
                 codeScene.unshift([scene[sIdx].special.events, scene[sIdx].special.actions]);
                 var tempCode = { "mode": mode, "scene": codeScene};
@@ -174,7 +174,7 @@ Page {
                 break;
             case "removeCodeOfType":
                 vpl.editor.saveProgram("autosaveName");
-                var codeScene = submittedCode.scene;
+                var codeScene = submittedCode;
                 var mode = vpl.editor.modeCode;
                 for(var i = 0; i < codeScene.length; i++) {
                     var contains = false;
@@ -217,7 +217,7 @@ Page {
             }
         }
         if(scene[sIdx].ground_img) {
-            scenario.groundTexture = "exercises/" + scene[sIdx].ground_img;
+            scenario.groundTexture = stote.returnExerciseFolder() + scene[sIdx].ground_img;
         }
 
         vpl.thymio.playing = true;
@@ -418,8 +418,8 @@ Page {
     }
 
     function handleDialogue(speaker, text) {
-        dialogueBox.speakerName = qsTranslate("general", speaker);
-        dialogueBox.dialogue = qsTranslate("general", text);
+        dialogueBox.speakerName = speaker;
+        dialogueBox.dialogue = text;
     }
 
     function handleScene(scene) {

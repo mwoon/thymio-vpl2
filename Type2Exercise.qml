@@ -169,6 +169,7 @@ Page {
                                     "blackIcon": "qrc:/thymio-vpl2/icons/ic_invert_colors_black_24px.svg"
                                 });
             }
+            editor.clip: true
         }
     }
 
@@ -250,8 +251,8 @@ Page {
     }
 
     function handleDialogue(speaker, text) {
-        dialogueBox.speakerName = qsTranslate("general", speaker);
-        dialogueBox.dialogue = qsTranslate("general", text);
+        dialogueBox.speakerName = speaker;
+        dialogueBox.dialogue = text;
     }
 
     function handleScene(scene) {

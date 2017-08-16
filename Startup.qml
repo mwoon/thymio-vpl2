@@ -6,7 +6,7 @@ import QtQuick.Controls.Material 2.0
 
 ApplicationWindow {
     id: startupWindow
-    title: qsTr("Thymio ITS game wip")
+    title: qsTr("Thymio Game Prototype")
     visible: true
 
 

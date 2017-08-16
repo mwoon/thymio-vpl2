@@ -284,7 +284,7 @@ Page {
 
                 Button {
                     id: okButton2
-                    text: "Save"
+                    text: qsTr("Save")
                     enabled: fileName.text !== ""
                     onClicked: {
                         stote.writeLogToFile(fileName.text);

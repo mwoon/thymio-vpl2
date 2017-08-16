@@ -18,8 +18,8 @@ int main(int argc, char *argv[])
 
 	QTranslator qtTranslator;
     QLocale::system().name();
-    //qtTranslator.load("thymio-vpl2_" + QLocale::system().name(), ":/its-game/translations/");
-    qtTranslator.load("thymio-vpl2_de_DE", ":/its-game/translations/");
+    qtTranslator.load("thymio-vpl2_" + QLocale::system().name(), ":/its-game/translations/");
+    //qtTranslator.load("thymio-vpl2_de_DE", ":/its-game/translations/");
 	app.installTranslator(&qtTranslator);
 
 	thymioVPL2Init();
