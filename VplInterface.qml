@@ -60,7 +60,43 @@ Page {
                     opacity: enabled ? 1.0 : 0.5
                 }
                 Text {
-                    text: qsTr("Upload to Remote");
+                    text: qsTr("Send to Ada");
+                    font.pixelSize: 14
+                    font.weight: Font.Medium
+                    color: Material.primaryTextColor
+                    opacity: enabled ? 1.0 : 0.5
+                }
+            }
+            onClicked: {
+                action();
+            }
+            property var action
+            visible: false
+        }
+
+        Button {
+            id: questionButton
+
+
+            anchors.right: uploadButton.left
+            anchors.top: parent.top
+            width: 200
+            height: 50
+            z: 5;
+
+            Row {
+                anchors.centerIn: parent
+                spacing: 24
+                HDPIImage {
+                    property var whiteIcon: "qrc:/thymio-vpl2/icons/ic_info_white_24px.svg";
+                    property var blackIcon: "qrc:/thymio-vpl2/icons/ic_info_black_24px.svg";
+                    source: Material.theme === Material.Dark ? whiteIcon : blackIcon
+                    width: 24
+                    height: 24
+                    opacity: enabled ? 1.0 : 0.5
+                }
+                Text {
+                    text: qsTr("Ask Ada what to do");
                     font.pixelSize: 14
                     font.weight: Font.Medium
                     color: Material.primaryTextColor
@@ -101,6 +137,11 @@ Page {
     function setUploadButton(func){
         uploadButton.action = func;
         uploadButton.visible = true;
+    }
+
+    function setQuestionButton(func){
+        questionButton.action = func;
+        questionButton.visible = true;
     }
 
     // improve using: https://appbus.wordpress.com/2016/05/20/one-page-sample-app/
@@ -249,13 +290,6 @@ Page {
             type3Ex.closePopup();
         }
 
-        function showDescription5() {
-            type5Ex.showDescription();
-        }
-
-        function showDescription4() {
-            type4Ex.showDescription();
-        }
     }
 
     Drawer {

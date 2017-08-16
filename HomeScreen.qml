@@ -89,11 +89,12 @@ Item {
             name: "VPL";
             callback: "showVPL";
         }
+        /*
         ListElement {
             name: "Simulator";
             callback: "showSim";
         }
-
+        */
         function showGame(){
             startupWindow.showGame();
         }

@@ -62,6 +62,7 @@ Page {
             clip: true
             actionsVisible: false
             eventsVisible: false
+            scale:1.9
 
             //hacky workaround to make scroll-dragging in editor work without being able to change the code
             onBlockEditorVisibleChanged: {
@@ -77,7 +78,9 @@ Page {
 
             Rectangle {
                 z:-1
-                anchors.fill: parent
+                width: parent.width - parent.width * 0.4
+                height: parent.height
+                anchors.centerIn: parent
                 color: "#30ffffff"
                 border.color: "#50ffffff"
                 radius: 5
@@ -162,10 +165,9 @@ Page {
 
         id: vplPopup
         modal: true
-        closePolicy: Popup.NoAutoClose
 
         width: parent.width
-        height:parent.height
+        height: parent.height
 
         background: Rectangle {
             color: "transparent"
@@ -228,8 +230,8 @@ Page {
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 25
 
-        color: "#50c4c4c4"
-        border.color: "#90c4c4c4"
+        color: "#CCc4c4c4"
+        border.color: "#FFc4c4c4"
     }
 
     property var storyStack: new Array();

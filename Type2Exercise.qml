@@ -42,9 +42,9 @@ Page {
             source: "qrc:/thymio-vpl2/icons/ic_connection_on_nonAR_white_24px.svg"
         }
 
-      onClicked: {
-          vplPopup.open();
-      }
+        onClicked: {
+            vplPopup.open();
+        }
     }
 
     ColumnLayout {
@@ -52,10 +52,9 @@ Page {
         spacing: 20
 
         Text {
-            Layout.alignment: Qt.AlignCenter
-            Layout.leftMargin: 50
+            Layout.alignment: Qt.AlignLeft
             Layout.rightMargin: 200
-            Layout.preferredWidth: Screen.width - 300
+            Layout.preferredWidth: type2Ex.width - 200
             text: question
             font.pointSize: 24
             wrapMode: Text.WordWrap
@@ -67,58 +66,79 @@ Page {
 
 
             columnSpacing: 25
-            rowSpacing: 25
+            rowSpacing: 5
             columns: 3
             rows: 2
 
             Repeater {
                 model: optionsList
-                Editor {
-                    property var program: code
-                    property var score: result
-                    //enabled: false
-                    actionsVisible: false
-                    eventsVisible: false
-                    clip:true
+                Rectangle {
+                    z:-1
+                    width: editor.width
+                    height: editor.height
+                    color: "#30ffffff"
+                    border.color: "#50ffffff"
+                    radius: 5
+
+                        Editor {
+                            id: editor
+                            property var program: code
+                            property var score: result
+                            //enabled: false
+                            actionsVisible: false
+                            eventsVisible: false
+                            clip:true
+                            anchors.left: parent.left
 
 
 
+                            scale: 1.9
+                            width: type2Ex.width / 3 - 75
+                            height: type2Ex.height / 3
 
-                    width: Screen.width / 3 - 75
-                    height: Screen.height / 3
+                            Component.onCompleted:  {
+                                loadCode(program);
+                                disableDestroy();
+                            }
 
-                    Component.onCompleted:  {
-                        loadCode(program);
-                        disableDestroy();
-                    }
 
-                    MouseArea {
-                        anchors.fill: parent
-                        z:-0.5
 
-                        onClicked: {
-                            console.log("clicked");
-                            completeExercise(score);
+                            //hacky workaround to make scroll-dragging in editor work without being able to change the code
+                            onBlockEditorVisibleChanged: {
+                                if(blockEditorVisible) {
+                                    blockEditorVisible = false;
+                                }
+                            }
+                            //end hacky workaround
+
+
+
                         }
-                    }
+                        Button {
+                            id: submit
+                            z:1
+                            anchors.right: parent.right
+                            anchors.bottom: parent.bottom
+                            width: background.width
+                            height:background.height
+                            background: Rectangle {
+                                anchors.centerIn: parent
+                                color: "#30efff16"
+                                border.color: "#a0efff16"
+                                width:40
+                                height:width
+                                radius: width
+                            Image {
+                                anchors.centerIn: parent
+                                source: "qrc:/thymio-vpl2/icons/ic_open_white_24px.svg"
+                            }
 
+                            }
 
-                    //hacky workaround to make scroll-dragging in editor work without being able to change the code
-                    onBlockEditorVisibleChanged: {
-                        if(blockEditorVisible) {
-                            blockEditorVisible = false;
+                            onClicked: {
+                                completeExercise(result);
+                            }
                         }
-                    }
-                    //end hacky workaround
-
-                    Rectangle {
-                        z:-1
-                        anchors.fill: parent
-                        color: "#30efff16"
-                        border.color: "#a0efff16"
-                        radius: 5
-                    }
-
                 }
             }
         }
@@ -142,10 +162,11 @@ Page {
 
         id: vplPopup
         modal: true
-        closePolicy: Popup.NoAutoClose
 
         width: parent.width
-        height:parent.height
+        height: parent.height
+        topMargin: 0
+        leftMargin: 0
 
         background: Rectangle {
             color: "transparent"
@@ -171,6 +192,7 @@ Page {
             }
             editor.clip: true
         }
+
     }
 
     function closePopup() {
@@ -180,24 +202,24 @@ Page {
     //shuffle two arrays the same way
     //adapted from: https://bost.ocks.org/mike/shuffle/
     function shuffleOptions() {
-      var m = answerList.length, t, i;
+        var m = answerList.length, t, i;
 
-      // While there remain elements to shuffle…
-      while (m) {
+        // While there remain elements to shuffle…
+        while (m) {
 
-        // Pick a remaining element…
-        i = Math.floor(Math.random() * m--);
+            // Pick a remaining element…
+            i = Math.floor(Math.random() * m--);
 
-        // And swap it with the current element.
-        t = answerList[m];
-        answerList[m] = answerList[i];
-        answerList[i] = t;
+            // And swap it with the current element.
+            t = answerList[m];
+            answerList[m] = answerList[i];
+            answerList[i] = t;
 
-        // Swap second array as well
-        t = scoreList[m];
-        scoreList[m] = scoreList[i];
-        scoreList[i] = t;
-      }
+            // Swap second array as well
+            t = scoreList[m];
+            scoreList[m] = scoreList[i];
+            scoreList[i] = t;
+        }
 
     }
     /*---------------------------------------- Story Logic --------------------------------------------------*/
@@ -207,8 +229,8 @@ Page {
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 25
 
-        color: "#50c4c4c4"
-        border.color: "#90c4c4c4"
+        color: "#CCc4c4c4"
+        border.color: "#FFc4c4c4"
     }
 
     property var storyStack: new Array();

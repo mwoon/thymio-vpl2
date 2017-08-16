@@ -27,7 +27,7 @@ Page {
     property var code2;
 
 
-    padding: 50
+    padding: 10
 
     Button {
         anchors.right: parent.right
@@ -51,7 +51,7 @@ Page {
 
     RowLayout {
         anchors.fill: parent
-        spacing: 25
+        spacing: 5
 
         ColumnLayout {
             anchors.fill: parent
@@ -61,8 +61,11 @@ Page {
             Editor {
                 id: vplEditorTop
                 //property alias fillHeight: Layout.fillHeight
-                Layout.preferredWidth: parent.width * 2 / 5
-                Layout.preferredHeight: type3Ex.height / 2 - 100
+                Layout.preferredWidth: type3Ex.width * 2 / 5
+                Layout.preferredHeight: type3Ex.height / 3
+                Layout.maximumHeight: parent.height / 2
+                anchors.top: parent.top
+                scale: 1
                 //enabled: false
                 clip: true
                 actionsVisible: false
@@ -72,7 +75,9 @@ Page {
                 }
                 Rectangle {
                     z:-1
-                    anchors.fill: parent
+                    width: parent.width - parent.width * 0.3
+                    height: parent.height
+                    anchors.centerIn: parent
                     color: "#30ffffff"
                     border.color: "#50ffffff"
                     radius: 5
@@ -94,8 +99,11 @@ Page {
             Editor {
                 id: vplEditorBot
                 //property alias fillHeight: Layout.fillHeight
-                Layout.preferredWidth: parent.width * 2 / 5
-                Layout.preferredHeight: parent.width  / 5
+                Layout.preferredWidth: type3Ex.width * 2 / 5
+                Layout.preferredHeight: type3Ex.height  / 3
+                Layout.maximumHeight: parent.height / 2
+                anchors.bottom: parent.bottom
+                scale: 1
                 //enabled: false
                 clip: true
                 actionsVisible: false
@@ -107,7 +115,9 @@ Page {
 
                 Rectangle {
                     z:-1
-                    anchors.fill: parent
+                    width: parent.width - parent.width * 0.3
+                    height: parent.height
+                    anchors.centerIn: parent
                     color: "#30ffffff"
                     border.color: "#50ffffff"
                     radius: 5
@@ -130,12 +140,14 @@ Page {
 
         ColumnLayout {
             spacing: 12
-            Layout.alignment: Qt.AlignCenter
+            Layout.alignment: Qt.AlignLeft
+            Layout.fillWidth: true
 
             Text {
                 Layout.alignment: Qt.AlignLeft
                 text: qsTr("What is the difference between these two?")
                 font.pointSize: 24
+                topPadding: 5
             }
 
             ListView {
@@ -203,10 +215,9 @@ Page {
 
         id: vplPopup
         modal: true
-        closePolicy: Popup.NoAutoClose
 
         width: parent.width
-        height:parent.height
+        height: parent.height
 
         background: Rectangle {
             color: "transparent"
@@ -270,8 +281,8 @@ Page {
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 25
 
-        color: "#50c4c4c4"
-        border.color: "#90c4c4c4"
+        color: "#CCc4c4c4"
+        border.color: "#FFc4c4c4"
     }
 
     property var storyStack: new Array();

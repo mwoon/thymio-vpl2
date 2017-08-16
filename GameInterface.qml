@@ -261,12 +261,12 @@ Page {
             title: "Return to Home";
             callback: "showHome";
         }
-
+        /*
         ListElement {
             title: "Toggle log";
             callback: "toggleLog";
         }
-
+        */
         ListElement {
             title: "Story Log";
             callback: "toggleStoryLog";

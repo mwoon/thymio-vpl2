@@ -40,25 +40,17 @@ Page {
                                 "whiteIcon": "qrc:/thymio-vpl2/icons/ic_new_white_24px.svg",
                                 "blackIcon": "qrc:/thymio-vpl2/icons/ic_new_black_24px.svg"
                             });
-            if(description) {
-                vpl.menu.append({
-                                    "title": QT_TR_NOOP("Ask Ada What to Do"),
-                                    "callback": "showDescription5",
-                                    "whiteIcon": "",
-                                    "blackIcon": ""
-                                });
-            }
+            /*
             vpl.menu.append({
                                 "title": QT_TR_NOOP("Return to Main Menu"),
                                 "callback": "returnToPreviousView",
                                 "whiteIcon": "",
                                 "blackIcon": ""
                             });
-
+            */
             vpl.editor.clearProgram();
-            vpl.setUploadButton(function(){
-                console.log(vpl.editor.scene.serialize());
-                completeExercise(vpl.editor.scene.serialize())});
+            vpl.setUploadButton(function(){completeExercise(vpl.editor.scene.serialize())});
+            if(description){vpl.setQuestionButton(function(){showDescription()});}
         }
 
     }
@@ -357,8 +349,8 @@ Page {
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 25
 
-        color: "#50c4c4c4"
-        border.color: "#90c4c4c4"
+        color: "#CCc4c4c4"
+        border.color: "#FFc4c4c4"
     }
 
     property var storyStack: new Array();
