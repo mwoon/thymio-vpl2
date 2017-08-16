@@ -172,14 +172,14 @@ Page {
             var file;
 
             if(newStorySequence.story0) {
-                //file = "story/" + newStorySequence.story0[0] + ".qml";
+                file = "story/" + newStorySequence.story0[0] + ".qml";
                 lastStory = newStorySequence.story0[0];
                 console.log(lastStory);
             }
 
             if(newStorySequence.activity)  {
-                //file = "exercises/" + newStorySequence.activity[0] + ".qml";
-                file = "exercises/" + "E08.03" + ".qml";
+                file = "exercises/" + newStorySequence.activity[0] + ".qml";
+                //file = "exercises/" + "E08.03" + ".qml";
 
             }
 
