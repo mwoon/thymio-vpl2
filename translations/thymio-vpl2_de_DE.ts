@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de_DE">
+<TS version="2.0" language="de_DE">
 <context>
     <name>BlockEditorTitleBar</name>
     <message>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../exercises/E02.01.qml" line="81"/>
         <source>Try it out and send it back here!</source>
-        <translation></translation>
+        <translation>Versuch es und schicke es dann wieder zurück!</translation>
     </message>
     <message>
         <location filename="../exercises/E02.01.qml" line="107"/>
@@ -725,7 +725,7 @@
     </message>
     <message>
         <source>When the button pointing behind is pressed, Thymio&apos;s top LEDs become blue</source>
-        <translation type="vanished">Wenn der Knopf der nach hinten zeigt gedrückt wird, werden Thymios obere Lichter blau.</translation>
+        <translation>Wenn der Knopf der nach hinten zeigt gedrückt wird, werden Thymios obere Lichter blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E06.01.qml" line="29"/>
@@ -807,7 +807,7 @@
     </message>
     <message>
         <source>Ada picks a different program</source>
-        <translation type="vanished">Ada wählt ein anderes Programm aus.</translation>
+        <translation>Ada wählt ein anderes Programm aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E06.02.qml" line="87"/>
@@ -1532,7 +1532,7 @@
     <message>
         <location filename="../exercises/E09.04.qml" line="33"/>
         <source>There are only some LED actions on it, so let&apos;s add some sensor events to activate them. I&apos;ll leave it to you to finish it.</source>
-        <translation>Darauf hats nur ein paar Aktionen mit Lichter. Fügen wir also noch ein paar Sensor Ereignisse hinzu. Ich überlass es dir!</translation>
+        <translation>Darauf hats nur ein paar Aktionen mit Lichter. Fügen wir also noch ein paar Sensor Ereignisse hinzu. Ich überlass es dir.</translation>
     </message>
     <message>
         <location filename="../exercises/E09.04.qml" line="48"/>
@@ -1542,37 +1542,37 @@
     <message>
         <location filename="../exercises/E09.04.qml" line="64"/>
         <source>Do this: When the second sensor from the left does not detect anything, Thymio&apos;s top LEDs turn light blue. When the second sensor from the right detects something, Thymio&apos;s top LEDs turn green!</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach das: Wenn der 2. Sensor von links nichts wahrnimmt, werden Thymios obere Lichter hellblau. Wenn der 2. Sensor von rechts etwas wahrnimmt, werden Thymios obere Lichter grün!</translation>
     </message>
     <message>
         <location filename="../exercises/E09.04.qml" line="121"/>
         <source>That&apos;s great! Exactly how I thought it should be!</source>
-        <translation type="unfinished"></translation>
+        <translation>Grossartig! Genau wie ich es erwartet habe!</translation>
     </message>
     <message>
         <location filename="../exercises/E09.04.qml" line="126"/>
         <source>Uhm, that&apos;s not quite what I wanted. But Maybe we can still use this?</source>
-        <translation type="unfinished"></translation>
+        <translation>Öh, das ist nicht ganz was ich wollte. Vielleicht können wir es trotzdem brauchen?</translation>
     </message>
     <message>
         <location filename="../exercises/E09.04.qml" line="130"/>
         <source>Ada checks the program and fixes it up a little bit.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada schaut sich das Programm an und verbessert es ein wenig.</translation>
     </message>
     <message>
         <location filename="../exercises/E09.04.qml" line="146"/>
         <source>Hey, what&apos;re you doing down there now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Hey, was macht ihr jetzt da unten?</translation>
     </message>
     <message>
         <location filename="../exercises/E09.04.qml" line="160"/>
         <source>Come and see for yourself!</source>
-        <translation type="unfinished"></translation>
+        <translation>Komm und schau selber nach!</translation>
     </message>
     <message>
         <location filename="../exercises/E09.04.qml" line="174"/>
         <source>Ruby shakes his head and stays in the air.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruby schüttelt den Kopf und bleibt hoch in der Luft.</translation>
     </message>
 </context>
 <context>
@@ -1580,58 +1580,58 @@
     <message>
         <location filename="../exercises/E09.05.qml" line="18"/>
         <source>Ada searches the tablet and then sighs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada sucht im Tablet herum und seufzt.</translation>
     </message>
     <message>
         <location filename="../exercises/E09.05.qml" line="33"/>
         <source>There aren&apos;t any useful programs on the tablet at the moment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich finde im Moment keine brauchbaren Programme.</translation>
     </message>
     <message>
         <location filename="../exercises/E09.05.qml" line="48"/>
         <source>In that case, let&apos;s make our own!</source>
-        <translation type="unfinished"></translation>
+        <translation>In diesem Fall müssen wir einfach ein eigenes machen!</translation>
     </message>
     <message>
         <location filename="../exercises/E09.05.qml" line="63"/>
         <location filename="../exercises/E09.05.qml" line="79"/>
         <source>The program should make Thymio&apos;s top LEDs turn green when the second sensor from the right detects something and they should turn light blue when the second sensor from the left detects something.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Programm sollte Thymios obere Lichter grün werden lassen wenn der 2. Sensor von rechts abgedeckt wird und die oberen Lichter sollten blau werden wenn der 2. Sensor von links abgedeckt wird.</translation>
     </message>
     <message>
         <location filename="../exercises/E09.05.qml" line="134"/>
         <source>Good job!</source>
-        <translation type="unfinished"></translation>
+        <translation>Gute Arbeit!</translation>
     </message>
     <message>
         <location filename="../exercises/E09.05.qml" line="138"/>
         <source>Let&apos;s try it out right now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Probieren wirs jetzt aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E09.05.qml" line="142"/>
         <source>Ruby laughs as Thymio&apos;s color changes when Ada runs past Thymio.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruby lacht als Thymios Farbe sich ändert als Ada vor ihm vorbei rennt.</translation>
     </message>
     <message>
         <location filename="../exercises/E09.05.qml" line="147"/>
         <source>Ada shakes her head.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada schütteltihren Kopf.</translation>
     </message>
     <message>
         <location filename="../exercises/E09.05.qml" line="151"/>
         <source>That&apos;s not what I thought it should do.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das ist nicht das was es machen soll.</translation>
     </message>
     <message>
         <location filename="../exercises/E09.05.qml" line="155"/>
         <source>Oh well, maybe there&apos;ll be something useful on the tablet now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naja, vielleicht finde ich jetzt etwas gutes auf dem Tablet.</translation>
     </message>
     <message>
         <location filename="../exercises/E09.05.qml" line="159"/>
         <source>Ruby watches her from afar.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruby schaut ihr von fern zu.</translation>
     </message>
 </context>
 <context>
@@ -1639,72 +1639,72 @@
     <message>
         <location filename="../exercises/E10.01.qml" line="18"/>
         <source>Hey, guess what this program does that I just found!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hey, du weisst bestimmt was dieses Programm dass ich gerade gefunden habe macht!</translation>
     </message>
     <message>
         <location filename="../exercises/E10.01.qml" line="27"/>
         <source>When the middle button in front of Thymio is pressed, Thymio&apos;s top LEDs become yellow and when the right sensor on top of Thymio is covered, Thymio&apos;s top LEDs become red.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der mittlere Knopf vor Thymio gedrückt wird, werden seine oberen Lichter gelb und wenn der rechte Sensor auf Thymio abgedeckt wird, werden die oberen Lichter rot.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.01.qml" line="28"/>
         <source>When the middle sensor below Thymio is covered, Thymio&apos;s top LEDs become yellow and when the right button is pressed, Thymio&apos;s top LEDs become red.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der mittlere Sensor unter Thymio abgedeckt wird, werden Thymios oberen Lichter gelb und wenn der rechte Knopf gedrückt wird, werden die oberen Lichter rot.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.01.qml" line="29"/>
         <source>When the middle sensor below Thymio is covered, Thymio&apos;s top LEDs become yellow and when the front button is pressed, Thymio&apos;s top LEDs become red.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der mittlere sensor unter Thymio abgedeckt wird, werden seine oberen Lichter gelb und wenn der vordere Knopf gedrückt wird, werden seine oberen Lichter rot.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.01.qml" line="30"/>
         <source>When the middle sensor in front is covered, Thymio&apos;s top LEDs become yellow and when the front button is pressed, Thymio&apos;s top LEDs become red.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der mittlere Sensor vorne abgedeckt wird, werden Thymios obere Lichter gelb und wenn der vordere Knopf gedrückt wird, werden Thymios obere Lichter rot.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.01.qml" line="31"/>
         <source>When the middle sensor in front is covered, Thymio&apos;s top LEDs become yellow and when the right button is pressed, Thymio&apos;s top LEDs become red.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der mittlere Sensor vorne abgedeckt wird, werden Thymios obere Lichter gelb und wenn der rechte Knopf gedrückt wird, werden Thymios obere Lichter rot.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.01.qml" line="32"/>
         <source>When the middle sensor in front is not covered, Thymio&apos;s top LEDs become yellow and when the right button is pressed, Thymio&apos;s top LEDs become red.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der mittlere Sensor vorne aufgedeckt wird, werden Thymios obere Lichter gelb und wenn der rechte Knopf gedrückt wird, werden Thymios obere Lichter rot.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.01.qml" line="52"/>
         <source>Yes!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja!</translation>
     </message>
     <message>
         <location filename="../exercises/E10.01.qml" line="56"/>
         <source>Let&apos;s use it right away!</source>
-        <translation type="unfinished"></translation>
+        <translation>Setzen wirs sofort ein!</translation>
     </message>
     <message>
         <location filename="../exercises/E10.01.qml" line="61"/>
         <source>No, that&apos;s not right.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein, das stimmt nicht.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.01.qml" line="65"/>
         <source>When the middle sensor in front is covered, Thymio&apos;s top LEDs become yellow and when the right button is pressed, Thymio&apos;s top LEDs become red!</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der mittlere Sensor vorne abgedeckt wird, werdenn Thymios obere Lichter gelb und wenn der rechte Knopf gedrückt wird, werden Thymios obere Lichter rot!</translation>
     </message>
     <message>
         <location filename="../exercises/E10.01.qml" line="69"/>
         <source>I think I&apos;m getting better at this stuff!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich glaube ich werde langsam besser mit diesen Dingern!</translation>
     </message>
     <message>
         <location filename="../exercises/E10.01.qml" line="85"/>
         <source>They try out the program and watch the color change between yellow and red.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie probieren das Programm aus und ändern Thymios Farbe zwischen gelb und rot hin und her.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.01.qml" line="99"/>
         <source>Ruby looks like he wants to try too, but he stays away.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruby sieht so aus als ob er auch gerne mitmachen würde, aber er bleibt noch fern.</translation>
     </message>
 </context>
 <context>
@@ -1712,52 +1712,52 @@
     <message>
         <location filename="../exercises/E10.02.qml" line="18"/>
         <source>Here are some programs I found with the colors yellow and orange.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hier sind einige Programme die ich gerade gefunden habe mit gelb und orangen Farben.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.02.qml" line="33"/>
         <source>Which one of these do you think will let Thymio change his top LEDs&apos; color to yellow when the right button is pressed and to orange when the right bottom sensor is covered?</source>
-        <translation type="unfinished"></translation>
+        <translation>Welche von diesen denkst du würde Thymio die Farbe seiner oberen Lichter zu gelb ändern lassen wenn der rechte Knopf gedrückt wird und zu orange wenn der rechte untere Sensor abgedeckt wird?</translation>
     </message>
     <message>
         <location filename="../exercises/E10.02.qml" line="56"/>
         <source>Which program will let Thymio change his top LEDs&apos; color to yellow when the right button is pressed and to orange when the right bottom sensor is covered?</source>
-        <translation type="unfinished"></translation>
+        <translation>Welches Programm lässt Thymios obere Lichter zu gelb wechseln wenn der rechte Knopf gedrückt wird und zu orange wenn der rechte untere Sensor abgedeckt wird?</translation>
     </message>
     <message>
         <location filename="../exercises/E10.02.qml" line="72"/>
         <source>I agree! that has to be the one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich bin ganz deiner Meinung! Das muss es sein.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.02.qml" line="76"/>
         <source>Let&apos;s test it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Testen wirs aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.02.qml" line="81"/>
         <source>Really? I would have picked a different one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Findest du? Ich hätte ein anderes ausgewählt.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.02.qml" line="85"/>
         <source>I think Ada might be right.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich denke Ada könnte recht haben.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.02.qml" line="89"/>
         <source>Okay, let&apos;s use this other one then.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok, dann nehmen wir dieses andere Programm.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.02.qml" line="105"/>
         <source>Ada presses the right button on Thymio and watches his color change to yellow. Then she stands in front of him and his color changes to orange.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada drückt auf den rechten Knopf auf Thymio. Seine Farbe ändert sich zu gelb. Dann lüpft sie ihn ein wenig und deckt nur den rechten Sensor ab. Seine Farbe ändert sich zu orange.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.02.qml" line="119"/>
         <source>Suddenly, Ruby flies down and taps Thymio&apos;s right button again and the color changes back to yellow.</source>
-        <translation type="unfinished"></translation>
+        <translation>Plötzlich fliegt Ruby herunter und drückt Thymios rechten Knopf. Seine Farbe wird wieder gelb.</translation>
     </message>
 </context>
 <context>
@@ -1765,72 +1765,72 @@
     <message>
         <location filename="../exercises/E10.03.qml" line="18"/>
         <source>Hmm... It would be cool to change Thymio&apos;s color to orange and light blue. I found two programs that I think can do that.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hmm... Es wäre cool wenn wir Thymios Farben zu orange und hellblau ändern können. Ich habe hier zwei Programme gefunden die das machen könnten.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.03.qml" line="33"/>
         <source>But what do you think the difference between these two is?</source>
-        <translation type="unfinished"></translation>
+        <translation>Aber was denkst du ist der Unterschied zwischen diesen beiden?</translation>
     </message>
     <message>
         <location filename="../exercises/E10.03.qml" line="42"/>
         <source>In the program below, if the right button is pressed, Thymio&apos;s top LEDs&apos; color won&apos;t change to orange if the middle sensor in front is covered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm unten werden Thymios Lichter NICHT orange wenn der mittlere Sensor schon abgedeckt ist.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.03.qml" line="43"/>
         <source>In the program on top, if Thymio&apos;s middle sensor in front is covered, his top LEDs&apos; color won&apos;t change to light blue if the right button is pressed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm oben, wird Thymios Farbe NICHT zu hellblau wechseln wenn der rechte Knopf gedrückt wird wenn der mittlere Sensor schon vorher abgedeckt war.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.03.qml" line="44"/>
         <source>In the program below, if Thymio&apos;s middle sensor in front is covered, his top LEDs&apos; color won&apos;t change to light blue if the right button is pressed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm unten, wird Thymios Farbe NICHT zu hellblau wechseln wenn der rechte Knopf gedrückt wird wenn der mittlere Sensor vorne schon vorher abgedeckt war. </translation>
     </message>
     <message>
         <location filename="../exercises/E10.03.qml" line="45"/>
         <source>In the program on top, Thymio can onlly change his top LEDs&apos; color to orange and in the program below only to light blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm oben, kann Thymio seine Farbe nur zu orange wechseln und im Programm unten nur zu hellblau. </translation>
     </message>
     <message>
         <location filename="../exercises/E10.03.qml" line="46"/>
         <source>They are the same.</source>
-        <translation type="unfinished">Sie sind gleich.</translation>
+        <translation>Sie sind gleich.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.03.qml" line="47"/>
         <source>In the program on top, Thymio can only change his top LEDs&apos; color to light blue and in the program below only to orange.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm oben, kann Thymio seine Farbe nur zu hellblau wechseln und im Programm unten nur zu orange.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.03.qml" line="70"/>
         <source>Oh I see.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ach so ist das.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.03.qml" line="75"/>
         <source>No, there&apos;s no difference at all.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein, es hat gar keinen Unterschied.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.03.qml" line="91"/>
         <source>So it doesn&apos;t matter which one we choose. Let&apos;s go ahead and test it then.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dann spielt es gar keine Rolle welches das wir wählen. Test wirs also aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.03.qml" line="105"/>
         <source>Ada cheers when Thymio&apos;s color changes to light blue and when she steps in front of him while hopping around it changes to orange.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada jubelt als Thymios Farbe zu hellblau wechselt und als sie vor Freude vor ihm hüpft, ändert die sich zu orange.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.03.qml" line="119"/>
         <source>Ruby lands a bit further away to watch more easily.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruby landet ein bisschen weiter weg damit er einfacher zusehen kann.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.03.qml" line="133"/>
         <source>But when Ada waves for him to come closer he flies up again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aber als Ada ihn herbeiwinkt, fliegt er wieder hinauf.</translation>
     </message>
 </context>
 <context>
@@ -1838,53 +1838,53 @@
     <message>
         <location filename="../exercises/E10.04.qml" line="18"/>
         <source>Hey, here&apos;s a program with a pink top color action.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hey, hier ist ein Programm mit einer Aktion für pinke obere Lichter.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.04.qml" line="33"/>
         <source>What can we do with this?</source>
-        <translation type="unfinished"></translation>
+        <translation>Was können wir damit anfangen?</translation>
     </message>
     <message>
         <location filename="../exercises/E10.04.qml" line="48"/>
         <source>How about using both sensor events and button events?</source>
-        <translation type="unfinished"></translation>
+        <translation>Wie wärs wenn wir Sensoren und Knöpfe brauchen?</translation>
     </message>
     <message>
         <location filename="../exercises/E10.04.qml" line="63"/>
         <source>Good idea! I&apos;ll leave it to you.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gute Idee! Ich überlass es dir.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.04.qml" line="78"/>
         <location filename="../exercises/E10.04.qml" line="94"/>
         <source>Make Thymio&apos;s top LEDs change to pink when his left sensor behind detects nothing and change to green when his center button is pressed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lass Thymios obere Lichter pink werden wenn sein linker Sensor hinten aufgedeckt wird und grün wenn sein mittlerer Knopf gedrückt wird.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.04.qml" line="152"/>
         <source>Yay, I think it works!</source>
-        <translation type="unfinished"></translation>
+        <translation>Juhuu! Ich glaube es funktioniert!</translation>
     </message>
     <message>
         <location filename="../exercises/E10.04.qml" line="156"/>
         <source>They test out the program and see Thymio&apos;s top LEDs change from green to pink.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie probieren das Programm aus und sehen wie Thymios obere Lichter von grün zu pink wechseln.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.04.qml" line="161"/>
         <source>Huh, that&apos;s not quite right.</source>
-        <translation type="unfinished"></translation>
+        <translation>Huch, das stimmt noch nicht ganz.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.04.qml" line="165"/>
         <source>I don&apos;t think this is what we wanted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich glaube nicht dass das ist was wir wollten.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.04.qml" line="169"/>
         <source>Let&apos;s try something else.</source>
-        <translation type="unfinished"></translation>
+        <translation>Probieren wir was anderes aus.</translation>
     </message>
 </context>
 <context>
@@ -1892,33 +1892,33 @@
     <message>
         <location filename="../exercises/E10.05.qml" line="18"/>
         <source>Let&apos;s use sensors and buttons!</source>
-        <translation type="unfinished"></translation>
+        <translation>Lass uns Sensoren und Knopf Ereignisse brauchen!</translation>
     </message>
     <message>
         <location filename="../exercises/E10.05.qml" line="33"/>
         <location filename="../exercises/E10.05.qml" line="49"/>
         <source>Make Thymio&apos;s top LEDs change to pink when his left sensor behind detects nothing and change to green when his center button is pressed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lass Thymios obere Lichter pink werden wenn sein linker Sensor hinten aufgedeckt wird und grün wenn sein mittlerer Knopf gedrückt wird.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.05.qml" line="105"/>
         <source>Yay, you did it!</source>
-        <translation type="unfinished"></translation>
+        <translation>Juhuu! Du hast es geschafft!</translation>
     </message>
     <message>
         <location filename="../exercises/E10.05.qml" line="109"/>
         <source>Ada has fun changing Thymio&apos;s colors from pink to green.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada hat Spass daran Thymios Lichter von pink auf grün umzustellen.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.05.qml" line="114"/>
         <source>Huh, that&apos;s not quite right.</source>
-        <translation type="unfinished"></translation>
+        <translation>Huch, das stimmt nicht ganz.</translation>
     </message>
     <message>
         <location filename="../exercises/E10.05.qml" line="118"/>
         <source>Oh well, nevermind.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ach, spielt keine Rolle.</translation>
     </message>
 </context>
 <context>
@@ -1926,154 +1926,154 @@
     <message>
         <location filename="../exercises/E11.01.qml" line="18"/>
         <source>This program here is pretty weird.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieses Programm ist ganz schön komisch.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="33"/>
         <source>Can you tell me what it does?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kannst du mir sagen was es macht?</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="42"/>
         <location filename="../exercises/E11.01.qml" line="200"/>
         <source>When the leftmost and rightmost sensors in front don&apos;t detect anything, Thymio&apos;s top LEDs become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn die linkesten und rechtesten Sensoren vorne aufgedeckt werden, werden Thymios oberen Lichter blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="43"/>
         <location filename="../exercises/E11.01.qml" line="201"/>
         <source>When all the sensors between the leftmost and rightmost sensors in front detect something, Thymio&apos;s top LEDs become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn alle Sensoren zwischen dem linkesten und rechtesten Sensor vorne abgedeckt werden, werden Thymios obere Lichter blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="44"/>
         <location filename="../exercises/E11.01.qml" line="202"/>
         <source>When the leftmost and rightmost sensors in front detect something, Thymio&apos;s top LEDs become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn die linkesten und rechtesten Sensoren vorne abgedeckt werden, werden Thymios obere Lichter blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="45"/>
         <location filename="../exercises/E11.01.qml" line="203"/>
         <source>When the leftmost or rightmost sensors in front detect something, Thymio&apos;s top LEDs become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn die linkesten oder rechtesten Sensoren vorne abgedeckt werden, werden Thymios obere Lichter blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="46"/>
         <location filename="../exercises/E11.01.qml" line="204"/>
         <source>When all the sensors between the leftmost and rightmost sensors in front don&apos;t detect anything, Thymio&apos;s top LED&apos;s become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn alle Sensoren zwischen dem linkesten und rechtesten Sensor vorne aufgedeckt werden, werden Thymios obere Lichter blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="47"/>
         <location filename="../exercises/E11.01.qml" line="205"/>
         <source>When any of the sensors between the leftmost and rightmost sensors in front detect anything, Thymio&apos;s top LEDs become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn irgendeiner der Sensoren zwischen dem linkesten und rechtesten Sensor vorne abgedeckt wird, werden Thymios obere Lichter blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="67"/>
         <source>Aha! So it&apos;s nothing special.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aha! Also ist es gar nicht speziell.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="71"/>
         <source>Thanks!</source>
-        <translation type="unfinished">Danke!</translation>
+        <translation>Danke!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="76"/>
         <source>No, that&apos;s not right.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein, das stimmt nicht.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="80"/>
         <source>When the leftmost and rightmost sensors in front detect something, my top LEDs become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn die linkesten und rechtesten Sensoren vorne abgedeckt werden, werden meine obere Lichter  blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="84"/>
         <source>Oh, so that&apos;s what it does.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ach, das macht es also.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="100"/>
         <source>Ada loads the program into Thymio from the tablet and stands in front of him.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada lädt das Programm in Thymio und steht vor ihm.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="114"/>
         <source>She stretches her hands out so they both cover his outermost sensors.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie streckt ihre Hände aus sodass beide die äussersten Sensoren abdecken.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="128"/>
         <location filename="../exercises/E11.01.qml" line="290"/>
         <source>Hurray!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hurrah!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="142"/>
         <source>Thymio&apos;s color changes to blue and she jumps in joy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thymios Farbe hat sich zu blau geändert und sie hüpft wild herum.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="161"/>
         <source>I think I can match what it says on the screen to Thymio&apos;s blocks!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich denke ich kann dass was auf dem Bildschirm steht zu Thymios Funktionen verbinden!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="176"/>
         <source>Ada taps around on the tablet trying to make the right program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada tippt auf dem Tablet herum um das richtige Programm zu machen.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="191"/>
         <source>Okay, what do you think this program does?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok, was denkst du macht dieses Programm?</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="225"/>
         <source>Great! We thought the same thing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Super! Wir haben das gleiche gedacht.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="229"/>
         <source>I&apos;ll load it into Thymio and then we can press the button.</source>
-        <translation type="unfinished"></translation>
+        <translation>I lade es mal in Thymio und dann können wir den Knopf drücken.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="234"/>
         <source>Hmm... But that&apos;s not what I thought.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hmm das ist nicht ganz was ich gedacht habe.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="238"/>
         <source>The program was supposed to make Thymio&apos;s top color turn blue when the leftmost and rightmost sensor in front detect something.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Programm sollte Thymios obere Farbe zu blau ändern lassen wenn die linkesten und rechtesten Sensoren vorne abgedeckt werden.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="242"/>
         <source>No, I think Ada is right.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein, ich denke Ada hat recht.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="246"/>
         <source>Let&apos;s try out the program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Probieren wir das Programm aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="262"/>
         <source>Ada loads the program into Thymio from the tablet and then presses the button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada lädt das Programm in Thymio und drückt den Knopf.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="276"/>
         <source>The pillars shoot out of the ground and check Thymio.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Säule springen aus dem Boden und überprüfen Thymio.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.01.qml" line="304"/>
         <source>The pillars drop back into the ground with a short green light. After that, the screen changes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Säulen fallen dann wieder mit einem kurzen grünen Licht in den Boden. Nachher, ändert sich der Bildschirm.</translation>
     </message>
 </context>
 <context>
@@ -2081,105 +2081,229 @@
     <message>
         <location filename="../exercises/E11.02.qml" line="18"/>
         <source>Okay, I&apos;ve got a bunch of programs with green and orange top color actions here.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok, Ich habe hier ein Haufen Programme mit grünen und orangen obere Licht Aktionen.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="33"/>
         <source>Hmmm... What should we do?</source>
-        <translation type="unfinished"></translation>
+        <translation>Hmmm... Was machen wir damit?</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="48"/>
         <source>Okay how about this: A program that will let Thymio change his top LEDs to orange when the two leftmost sensors detect something and green when only the second sensor from the left detects something</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok, wie wärs damit: Ein Programm das Thymio seine obere Farbe zu orange ändern lässt wenn die zwei linkesten Sensoren vorne abgedeckt werden und zu grün wenn nur der 2. Sensor von link abgedeckt wird.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="71"/>
         <location filename="../exercises/E11.02.qml" line="201"/>
         <source>Which program will let Thymio change his top LEDs to orange when the two leftmost sensors detect something and green when only the second sensor from the left detects something?</source>
-        <translation type="unfinished"></translation>
+        <translation>Welches Programm lässt Thymios obere Farbe zu orange ändern wenn die zwei linkesten Sensoren vorne abgedeckt werden und zu grün wenn nur der 2. Sensor von link abgedeckt wird?</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="87"/>
         <location filename="../exercises/E11.02.qml" line="217"/>
         <source>That&apos;s a perfect fit!</source>
-        <translation type="unfinished"></translation>
+        <translation>Das passt perfect!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="91"/>
         <location filename="../exercises/E11.02.qml" line="221"/>
         <source>Thanks for finding it!</source>
-        <translation type="unfinished"></translation>
+        <translation>Danke fürs Finden!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="95"/>
         <source>Ada switches the top LEDs from green to orange.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada ändert die Farbe des oberen Lichts von grün zu orange.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="100"/>
         <source>Ada tries out the program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada probiert das Programm aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="104"/>
         <source>Hmm... This doesn&apos;t seem to be the right one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hmm... Es macht nicht wirklich das was es sollte.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="108"/>
         <source>Let&apos;s look for a different program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchen wir ein anderes Programm.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="133"/>
         <source>So... the screen wants something with green and orange colors.</source>
-        <translation type="unfinished"></translation>
+        <translation>Also... Der Bildschirm will irgendetwas mit grünen und orangen Farben.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="148"/>
         <source>I&apos;ve got a bunch of programs with green and orange top color actions here.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich habe hier ein Haufen davon gefunden.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="163"/>
         <source>What does it want exactly...?</source>
-        <translation type="unfinished"></translation>
+        <translation>Was genau will es schon wieder...?</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="178"/>
         <source>I think it should be like this: A program that will let Thymio change his top LEDs to orange when the two leftmost sensors detect something and green when only the second sensor from the left detects something.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich denke das muss es sein: Ein Program womit Thymios obere Lichter zu orange ändern wenn die zwei linkesten Sensoren abgedeckt werden und zu grün wenn nur der 2. Sensor von link abgedeckt wird.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="225"/>
         <source>Ada loads the program into Thymio and presses the button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada lädt das Programm in Thymio und drückt den Knopf.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="230"/>
         <source>Ada tries out the program on Thymio.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada probiert das Programm auf Thymio aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="234"/>
         <source>This doesn&apos;t do what it says on the screen.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es macht nicht das was auf dem Bildschirm verlangt wird.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="238"/>
         <source>I think it should be this other one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vielleicht ist es dieses andere Programm.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="242"/>
         <source>Ada tries out a different program and presses the button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada probiert ein anderes Programm aus und drückt den Knopf.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.02.qml" line="258"/>
         <source>Everything seems to be okay and the screen changes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alles scheint in Ordnung zu sein und der Bildschirm wechselt sich.</translation>
+    </message>
+</context>
+<context>
+    <name>E11.03</name>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="18"/>
+        <source>These two programs are very similar.</source>
+        <translation>Diese beiden Programme sind sich sehr ähnlich.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="33"/>
+        <source>But it would be weird if they are the same.</source>
+        <translation>Aber es wäre komisch wenn sie gleich sind.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="47"/>
+        <location filename="../exercises/E11.03.qml" line="188"/>
+        <source>What do you think the difference is?</source>
+        <translation>Was glaubst du ist der Unterschied?</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="56"/>
+        <location filename="../exercises/E11.03.qml" line="197"/>
+        <source>In the program on top, If the second sensor on the left stays covered, Thymio will not change his top LEDs to green if the left most sensor is uncovered.</source>
+        <translation>Im Programm oben, ändert Thymio seine Farbe NICHT zu grün wenn der 2. Sensor von links abgedeckt wird, falls der linkeste Sensor nicht abgedeckt ist.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="57"/>
+        <location filename="../exercises/E11.03.qml" line="198"/>
+        <source>They are the same.</source>
+        <translation>Sie sind gleich.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="58"/>
+        <location filename="../exercises/E11.03.qml" line="199"/>
+        <source>In the program on top, Thymio will only change his top LEDs to green once.</source>
+        <translation>Im Programm oben, ändert Thymio seine obere Lichter nur einmal zu grün.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="59"/>
+        <location filename="../exercises/E11.03.qml" line="200"/>
+        <source>In the program on top, Thymio will never change his top LEDs to green.</source>
+        <translation>Im Programm oben ändert Thymio seine oberen Lichter nie zu grün.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="60"/>
+        <location filename="../exercises/E11.03.qml" line="201"/>
+        <source>In the program below, Thymio will only change his LEDs to green if the second sensor from the left is uncovered and then covered again.</source>
+        <translation>Im Programm unten, ändert Thymio seine Farbe zu grün nur wenn der 2. Sensor von links aufgedeckt wird und dann wieder abgedeckt wird.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="61"/>
+        <location filename="../exercises/E11.03.qml" line="202"/>
+        <source>In the program on top, it is possible for Thymio to change his top LEDs to green even if the second sensor from the left stays covered.</source>
+        <translation>Im Programm oben ist es möglich dass Thymio seine Farbe zu grün wechselt auch wenn der 2. Sensor von links immer abgedeckt bleibt.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="84"/>
+        <location filename="../exercises/E11.03.qml" line="225"/>
+        <source>Ah! That&apos;s how it is. Because in the first program, the green top color action only reacts to the second sensor from the left and doesn&apos;t care about the one all the way on the left.</source>
+        <translation>Ach! So ist das also. Weil im ersten Programm die Aktion mit grünem Licht nur auf den 2. Sensor von links schaut und sich nicht um den linkesten Sensor kümmert.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="89"/>
+        <location filename="../exercises/E11.03.qml" line="230"/>
+        <source>Are you sure?</source>
+        <translation>Bist du dir sicher?</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="93"/>
+        <location filename="../exercises/E11.03.qml" line="234"/>
+        <source>No, the difference is that in the program on top, If the second sensor on the left stays covered, the top LEDs will not change to green if the left most sensor becomes uncovered.</source>
+        <translation>Nein, der Unterschied ist dass im oberen Programm, falls der 2. Sensor von links abgedeckt bleibt, die Lichter NICHT grün werden wenn der linkeste Sensor aufgedeckt wird.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="97"/>
+        <location filename="../exercises/E11.03.qml" line="238"/>
+        <source>Because in the first program, the green top color action only reacts to the second sensor from the left and doesn&apos;t care about the one all the way on the left.</source>
+        <translation>Weil im ersten Programm, die Aktion mit dem grünen Licht nur auf den 2. Sensor von links schaut und sich nicht um den linkesten Sensor kümmert.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="113"/>
+        <source>While Thymio and Ada discuss the program, Ruby lands on the cliff to get a closer look.</source>
+        <translation>Während Thymio und Ada das Programm besprechen, landet Ruby auf der Klippe um Thymio besser sehen zu können.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="127"/>
+        <source>As soon as Ada notices him, he flies away again.</source>
+        <translation>Sobald Ada ihn bemerkt fliegt er wieder davon.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="141"/>
+        <source>Ada looks at the program again, making sure she understands it.</source>
+        <translation>Ada schaut sich das Programm nochmals an. Sie will ganz sicher sein dass sie es versteht.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="159"/>
+        <source>I think one of these two programs will match what it says on the screen.</source>
+        <translation>Ich denke einer dieser Programme ist genau dass was auf dem Bildschirm verlangt ist.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="174"/>
+        <source>But they are very similar.</source>
+        <translation>Sie sehen aber so ähnlich aus.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="254"/>
+        <source>Ok, so from what we know now, we should take the program below to match what it says on the screen.</source>
+        <translation>Ok, mit dem was wir jetzt wissen, sollten wir das untere Programm nehmen um dem Bildschirm zu gleichen.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="268"/>
+        <source>Ada loads the program.</source>
+        <translation>Ada lädt das Programm.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="282"/>
+        <source>The pillars come out again and Thymio changes colors to match the sensors.</source>
+        <translation>Die Säulen kommen aus dem Boden un Thymio wechselt seine Farbe gemäss den Sensoren.</translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="296"/>
+        <source>Once more, the screen changes.</source>
+        <translation>Und noch einmal ändert sich der Bildschirm.</translation>
     </message>
 </context>
 <context>
@@ -2188,7 +2312,7 @@
         <location filename="../exercises/E11.04.qml" line="18"/>
         <location filename="../exercises/E11.04.qml" line="205"/>
         <source>Could you help me finish up this program?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kannst du mir helfen dieses Programm fertig zu schreiben?</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="33"/>
@@ -2196,107 +2320,107 @@
         <location filename="../exercises/E11.04.qml" line="235"/>
         <location filename="../exercises/E11.04.qml" line="251"/>
         <source>When the two front left sensors detect something, the top LEDs should change to red. When the right sensor behind detects something, the top LEDs should change to yellow. When the front middle sensor detects something, the top LEDs should change to blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn die zwei linken vorderen Sensoren abgedeckt werden ändert sich die obere Farbe zu rot. Wenn der rechte hintere Sensor abgedeckt wird, ändert sich die obere Farbe zu gelb, Wenn der mittlere vordere Sensor abgedeckt wird, ändert sich die obere Farbe zu blau. </translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="131"/>
         <source>Thanks! Now we can show this to Ruby.</source>
-        <translation type="unfinished"></translation>
+        <translation>Danke! Jetzt müssen wirs nur noch Ruby zeigen.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="135"/>
         <source>Hey Ruby, look at this!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hey Ruby, schau dir das an!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="139"/>
         <source>Ruby watches Ada change Thymio first to blue, then red and then yellow.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruby schaut Ada zu wie sie Thymios Farbe zu blau, dann zu rot und dann zu gelb ändert.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="144"/>
         <source>Ruby watches Ada trying to test out the program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruby sieht Ada zu wie sie das Programm testet.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="148"/>
         <source>I don&apos;t think it&apos;s doing what I want it to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich glaube nicht dass es das macht was ich will.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="152"/>
         <source>We can try something else.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wir können was anderes ausprobieren.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="156"/>
         <source>Okay.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="176"/>
         <source>Let me give it a go!</source>
-        <translation type="unfinished"></translation>
+        <translation>Lass mich mal!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="190"/>
         <source>Ada tries to make the program using the tablet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada probiert mit dem Tablet das Programm zu machen.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="220"/>
         <source>I&apos;m stuck and I&apos;m not sure what to do now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich stecke fest und weiss nicht wie weiter.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="333"/>
         <source>Thanks! That should do the trick.</source>
-        <translation type="unfinished"></translation>
+        <translation>Danke! Das sollte passen.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="338"/>
         <source>Let me see...</source>
-        <translation type="unfinished"></translation>
+        <translation>Schauen wir mal...</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="342"/>
         <source>I think it&apos;s not right yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich denke dass es noch nicht ganz richtig ist.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="346"/>
         <source>But I think I have an idea now how I can fix it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aber ich glaube ich weiss jetzt wie man es verbessern kann.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="350"/>
         <source>Thank you!</source>
-        <translation type="unfinished"></translation>
+        <translation>Danke!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="354"/>
         <source>She goes about fixing the program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie repariert das Programm.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="370"/>
         <source>Ada then loads the program into Thymio and presses the button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada ländt dann das Programm auf Thymio und drückt den Knopf.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="384"/>
         <source>Looks like it worked out!</source>
-        <translation type="unfinished"></translation>
+        <translation>Schaut so aus als obs geklappt hat!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="398"/>
         <source>What&apos;s next?</source>
-        <translation type="unfinished"></translation>
+        <translation>Was kommt als nächstes?</translation>
     </message>
     <message>
         <location filename="../exercises/E11.04.qml" line="412"/>
         <source>Ada looks over at the screen.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada schaut zum Bildschirm</translation>
     </message>
 </context>
 <context>
@@ -2304,17 +2428,17 @@
     <message>
         <location filename="../exercises/E11.05.qml" line="18"/>
         <source>Let&apos;s make a program by ourselves using 3 colors!</source>
-        <translation type="unfinished"></translation>
+        <translation>Machen wir ein Programm mit 3 Farben!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="33"/>
         <source>I need to think for a bit about what we could do...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich muss mir zuerst überlegen was wir machen könnten...</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="48"/>
         <source>Okay, I&apos;ve got it! Listen carefully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok, ich habs! Hör gut zu.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="63"/>
@@ -2322,107 +2446,107 @@
         <location filename="../exercises/E11.05.qml" line="252"/>
         <location filename="../exercises/E11.05.qml" line="268"/>
         <source>When the two front left sensors detect something, the top LEDs should change to red. When the right sensor behind detects something, the top LEDs should change to yellow. When the front middle sensor detects something, the top LEDs should change to blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn die zwei linken vorderen Sensoren abgedeckt werden ändert sich die obere Farbe zu rot. Wenn der rechte hintere Sensor abgedeckt wird, ändert sich die obere Farbe zu gelb, Wenn der mittlere vordere Sensor abgedeckt wird, ändert sich die obere Farbe zu blau. </translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="159"/>
         <source>Let&apos;s show this to Ruby!</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeigen wirs Ruby!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="163"/>
         <source>Hey Ruby, look at this!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hey Ruby, schau mal!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="167"/>
         <source>No! I won&apos;t look!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein! Ich schaue nicht!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="171"/>
         <source>Ada changes Thymio&apos;s colors anyway and Ruby watches anyway.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada ändert dennoch Thymios Farbe und Ruby schaut dennoch zu. </translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="176"/>
         <source>Hmm... It doesn&apos;t seem to be doing what I want it to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hmm... Es scheint nicht das zu machen dass ich wollte.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="180"/>
         <source>I guess we can&apos;t use this.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dann können wirs eben nicht gebrauchen.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="184"/>
         <source>What should we try next?</source>
-        <translation type="unfinished"></translation>
+        <translation>Was probieren wir als nächstes?</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="188"/>
         <source>Let me see...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich schaue mal...</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="207"/>
         <source>It looks like we need a program with the three colors red, yellow and blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wir brauchen ein Programm mit rot, gelb und blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="222"/>
         <source>I&apos;ll leave it to you!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich überlass es dir!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="237"/>
         <source>Here&apos;s what you have to do...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hier, das sind die Anweisungen...</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="348"/>
         <source>That looks great!</source>
-        <translation type="unfinished"></translation>
+        <translation>Das sieht gut aus!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="352"/>
         <source>Let&apos;s try it out now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Probieren wirs jetzt aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="357"/>
         <source>Wait, I think there&apos;s a mistake somewhere.</source>
-        <translation type="unfinished"></translation>
+        <translation>Warte mal, ich glaube irgendwo hats einen Fehler.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="361"/>
         <source>I&apos;ll take another look at it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich schaue es nochmals an.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="365"/>
         <source>Ada tries to fix the program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada probiert das Programm zu verbessern.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="369"/>
         <source>That looks better now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das sieht viel besser aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="385"/>
         <source>The machine accepts the code without any issues.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Maschine nimmt den Code ohne Beschwerden an.</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="399"/>
         <source>Awesome!</source>
-        <translation type="unfinished">Super!</translation>
+        <translation>Super!</translation>
     </message>
     <message>
         <location filename="../exercises/E11.05.qml" line="413"/>
         <source>The screen lights up again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Bildschirm leuchtet wieder auf.</translation>
     </message>
 </context>
 <context>
@@ -2430,97 +2554,97 @@
     <message>
         <location filename="../exercises/E13.01.qml" line="18"/>
         <source>I can follow the instruction on screen but I&apos;m not sure if this is actually correct.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich kann die Anweisungen auf dem Bildschirm befolgen aber ich weiss gar nicht ob das richtig ist.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="33"/>
         <source>Can you take a look and tell me what you think this program does?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kannst du mal reinschauen und mir sagen was du glaubst dass dieses Programm macht?</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="42"/>
         <source>When the two left sensors in front detect nothing, Thymio&apos;s top LEDs become light blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn die zwei linken Sensoren vorne aufgedeckt werden, werden Thymios obere Lichter hellblau.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="43"/>
         <source>When the two left sensors in front detect something, Thymio&apos;s top LEDs become light blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn die zwei linken Sensoren vorne zugedeckt werden, werden Thymios obere Lichter hellblau. </translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="44"/>
         <source>When the two left sensors in front detect nothing, Thymio&apos;s bottom LEDs become light blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wemm die zwei linken Sensoren vorner aufgedeckt werden, werden Thymios untere Lichter hellblau.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="45"/>
         <source>When any one of the two left sensor in front detect something, Thymio&apos;s top LEDs become light blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn irgendeiner der zwei linken Sensoren vorne abgedeckt werden, werden Thymios obere Lichter hellblau.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="46"/>
         <source>When the two left sensors in front detect something, Thymio&apos;s bottom LEDs become light blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn die zwei linken Sensoren vorne abgedeckt werden, werden Thymios untere Lichter hellblau.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="47"/>
         <source>When any one of the two left sensor in front detect nothing, Thymio&apos;s top LEDs become light blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn irgendeiner der zwei linken vorderen Sensoren aufgedeckt werden, werden Thymios obere Lichter hellblau.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="68"/>
         <source>Okay, thanks!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok, danke!</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="72"/>
         <source>It seems to do the right thing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es scheint das richtige zu machen.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="77"/>
         <source>Hmm... I&apos;m pretty sure this program would change my bottom LEDs to light blue when the two left sensors in front detect something.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hmm... Ich bin mir ziemlich sicher dass dieses Programm meine unteren Lichter zu hellblau ändert wenn meine zwei linken Sensoren vorne abgedeckt werden.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="81"/>
         <source>I see.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ach so.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="85"/>
         <source>Well, that should be the right thing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gut, das sollte dann richtig sein.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="89"/>
         <source>Should we try it out?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sollen wirs testen?</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="93"/>
         <source>There&apos;s no way around it if we want to activate the portal, so I guess we should.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich sehe keine andere Möglichkeit wenn wir das Portal aktivieren wollen.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="108"/>
         <source>Ada presses the button and waits.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada drückt den Knopf und wartet.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="121"/>
         <source>Two pillars at Thymio&apos;s front on the left shoot out and his bottom color changes to light blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zwei Säulen schiessen aus dem Boden vor Thymios linken. Seine untere Farbe wird sofort hellblau.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="134"/>
         <source>Phew, we should be able to move on.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puuh, jetzt können wir weitermachen.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.01.qml" line="147"/>
         <source>She turns her attention back to the screen.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie dreht sich wieder zum Bildschirm</translation>
     </message>
 </context>
 <context>
@@ -2528,62 +2652,62 @@
     <message>
         <location filename="../exercises/E13.02.qml" line="17"/>
         <source>It looks like we should pick one of these programs on the screen.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es sieht so aus als sollten wir eines dieser Programme auf dem Bildschirm wählen.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.02.qml" line="32"/>
         <source>The instructions seem to say that we need a program that will change Thymio&apos;s bottom LEDs to pick when only the two sensors behind Thymio detect something...</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Anweisungen sagen dass wir ein Programm brauchen in dem Thymios untere Lichter zu pink werden wenn nur die zwei Sensoren hinter Thymio abgedeckt werden...</translation>
     </message>
     <message>
         <location filename="../exercises/E13.02.qml" line="55"/>
         <source>Which program will change Thymio&apos;s bottom LEDs to pink when only the two sensors behind Thymio detect something?</source>
-        <translation type="unfinished"></translation>
+        <translation>Welches Programm ändert Thymios untere Farbe zu pink nur wenn die zwei Sensoren hinter Thymio abgedeckt werden?</translation>
     </message>
     <message>
         <location filename="../exercises/E13.02.qml" line="71"/>
         <source>Yeah, that has to be the right one!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, das muss dass richtige sein!</translation>
     </message>
     <message>
         <location filename="../exercises/E13.02.qml" line="76"/>
         <source>I think that isn&apos;t the right one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich glaube dass ist nicht das richtige.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.02.qml" line="80"/>
         <source>Huh really? I was sure it was right too.</source>
-        <translation type="unfinished"></translation>
+        <translation>Huch, schon? Ich habe gedacht es sei richtig.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.02.qml" line="88"/>
         <source>Oh. I see. It should be this other one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ach so. Es sollte also dieses andere sein.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.02.qml" line="103"/>
         <source>There&apos;s no time like now to try, right?</source>
-        <translation type="unfinished"></translation>
+        <translation>Jetzt oder nie, oder?</translation>
     </message>
     <message>
         <location filename="../exercises/E13.02.qml" line="116"/>
         <source>Ada chooses the program on the screen.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada wählt ein Programm auf dem Bildschirem aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.02.qml" line="129"/>
         <source>After a moment there&apos;s a green light from the device.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach einem Moment hat das  Gerät ein grünes Licht.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.02.qml" line="142"/>
         <source>Great! I think it worked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Super! Ich glaube es hat funktioniert.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.02.qml" line="155"/>
         <source>The screen flashes and Ada quickly looks at it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Bildschirm flackert und Ada schaut schnell drauf.</translation>
     </message>
 </context>
 <context>
@@ -2591,97 +2715,97 @@
     <message>
         <location filename="../exercises/E13.03.qml" line="17"/>
         <source>Let me take a look and see if I can find something matching on the tablet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich schau mal ob ich was pasendes auf dem Tablet finde.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="31"/>
         <source>Ada clicks around on the tablet.</source>
-        <translation type="unfinished">Ada drückt auf dem tablet herum.</translation>
+        <translation>Ada drückt auf dem tablet herum.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="46"/>
         <source>Ok, one of these two could work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok, einer dieser beiden könnte funktionieren.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="60"/>
         <source>But what&apos;s the difference between them?</source>
-        <translation type="unfinished"></translation>
+        <translation>Aber was ist der Unterschied zwischen diesen beiden?</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="69"/>
         <source>The program on top is wrong and won&apos;t work because there are two of the same orange blocks.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Programm oben ist falsch und funktioniert nicht weil es zwei gleichartige Ereignis Blöcke hat.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="70"/>
         <source>In the program below, Thymio&apos;s bottom LEDs change color only whenever the two bottom sensors detect nothing at exactly the same time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm unten ändert sich Thymios untere Farbe nur wenn die zwei unteren Sensoren zur genau gleichen Zeit aufgedeckt werden.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="71"/>
         <source>In the program on top, Thymio&apos;s bottom LEDs change color whenever first the right sensor detects nothing and then the left sensor detects nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm oben ändern sich Thymios unter Lichter nur wenn zuerst der rechte und dann der linke Sensor aufgedeckt wird.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="72"/>
         <source>In the program on top, Thymio&apos;s bottom LEDs change color whenever first the left sensor detects nothing and then the right sensor detects nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm oben ändern sich Thymios unter Lichter nur wenn zuerst der linke und dann der rechte Sensor aufgedeckt wird.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="73"/>
         <source>They are the same.</source>
-        <translation type="unfinished">Sie sind gleich.</translation>
+        <translation>Sie sind gleich.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="74"/>
         <source>In the program on top, Thymio&apos;s bottom LEDs change color whenever any of the two sensor detect nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm oben ändern sich Thymios untere Lichter wann immer einer der beiden Sensoren aufgedeckt wird.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="97"/>
         <source>Oh yeah, that makes sense.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ach ja, das macht Sinn.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="102"/>
         <source>The one on top doesn&apos;t work.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das obere funktioniert nicht.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="106"/>
         <source>Really? Why?</source>
-        <translation type="unfinished"></translation>
+        <translation>Schon? Wieso?</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="110"/>
         <source>A program with two same blocks won&apos;t work because it might be impossible to make both events happen at the same time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein Programm mit zwei gleichartigen Blöcken funktioniert nicht weil es sein kann dass es unmöglich ist dass beide Ereignisse gleichzeitig passieren.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="125"/>
         <source>So we should use the bottom one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Also brauchen wir das untere Programm.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="138"/>
         <source>Ada loads the bottom program into Thymio.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada lädt das untere Programm auf Thymio.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="151"/>
         <source>The floor underneath Thymio&apos;s bottom sensors drops down but then quickly comes back up.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Boden unter Thymios Sensoren fällt ein bisschen weg, kommt dann aber gleich wider hoch.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="164"/>
         <source>That is kind of scary, you know...</source>
-        <translation type="unfinished"></translation>
+        <translation>Das ist schon ein bisschen beängstigend...</translation>
     </message>
     <message>
         <location filename="../exercises/E13.03.qml" line="177"/>
         <source>Let&apos;s see what we have to do next.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lass uns sehen was wir als nächstes tun müssen.</translation>
     </message>
 </context>
 <context>
@@ -2689,48 +2813,48 @@
     <message>
         <location filename="../exercises/E13.04.qml" line="17"/>
         <source>I&apos;m not sure which sensors have to be activated for the program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich bin mir nicht sicher welche Sensoren wir für das Programm brauchen.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.04.qml" line="31"/>
         <location filename="../exercises/E13.04.qml" line="61"/>
         <source>I think when all of Thymio&apos;s sensors on the left detect something, his bottom LEDs should turn orange.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich denke wenn ALLE von Thymios Sensoren auf der rechten Seite abgedeckt sind, soll seine untere Farbe orange werden.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.04.qml" line="45"/>
         <source>Help me set the sensors so that all of those on the left should detect something!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hilf mir die Sensoren so zu setzen dass alle linken Sensoren abgedeckt sind!</translation>
     </message>
     <message>
         <location filename="../exercises/E13.04.qml" line="221"/>
         <source>Hmm... It&apos;s just missing a little bit. Let me fix that up.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hmmm... Es fehlt noch was. Lass mich es verbessern,</translation>
     </message>
     <message>
         <location filename="../exercises/E13.04.qml" line="226"/>
         <source>No, no, I think that&apos;s not all the sensors on the left.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein, nein, das sind nicht alle linken Sensoren.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.04.qml" line="230"/>
         <source>Let me change it a bit.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lass mich es ein umändern.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.04.qml" line="245"/>
         <source>They upload the program to Thymio and Ada presses the button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie laden das Programm auf Thymio und Ada drückt den Knopf.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.04.qml" line="258"/>
         <source>The machine shows that it accepts the program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Maschine zeigt an dass es das Program akzeptiert.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.04.qml" line="271"/>
         <source>Ada takes another look at the screen.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada schaut wieder zum Bildschirm.</translation>
     </message>
 </context>
 <context>
@@ -2738,57 +2862,57 @@
     <message>
         <location filename="../exercises/E13.05.qml" line="18"/>
         <source>I&apos;m not sure I understand the instructions correctly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich bin mir nicht sicher dass ich das richtig verstehe.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.05.qml" line="32"/>
         <source>It seems to say that we should make Thymio&apos;s bottom LEDs turn orange when all the sensors on his left detect something.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es scheint zu sagen dass wir Thymios untere Lichter orange werden lassen sollen wenn ALLE Sensoren auf der linken Seite abgedeckt sind.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.05.qml" line="48"/>
         <source>When all of Thymio&apos;s sensors on the left detect something, his bottom LEDs should turn orange.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn alle Sensoren auf der linken Seite abgedeckt sind, werden Thymios untere Lichter orange.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.05.qml" line="200"/>
         <source>Looks good to me! Let&apos;s test it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sieht gut aus! Testen wirs!</translation>
     </message>
     <message>
         <location filename="../exercises/E13.05.qml" line="205"/>
         <source>Wait, let me make some changes. It didn&apos;t look quite correct.</source>
-        <translation type="unfinished"></translation>
+        <translation>Warte mal, lass mich eine kleine Änderung machen. es sieht noch nicht ganz korrekt aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.05.qml" line="210"/>
         <source>Wait, let me make some changes. It didn&apos;t look correct.</source>
-        <translation type="unfinished"></translation>
+        <translation>Warte mal, lass mich einige Änderungen machen. Es sieht nicht ganz korrekt  aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.05.qml" line="214"/>
         <source>Are you sure your changes are going to make it better?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bist du dir sicher dass es deine Änderungen besser machen? </translation>
     </message>
     <message>
         <location filename="../exercises/E13.05.qml" line="218"/>
         <source>Hey!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hey!</translation>
     </message>
     <message>
         <location filename="../exercises/E13.05.qml" line="222"/>
         <source>Just trust me on this one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertrau mir doch.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.05.qml" line="237"/>
         <source>The pillars shoot out of the ground again and accept the result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Säulen kommen wieder aus dem Boden und scheinen das Resultat anzunehmen.</translation>
     </message>
     <message>
         <location filename="../exercises/E13.05.qml" line="250"/>
         <source>Ada happily hops back to the screen.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada hüpft fröhlich wieder zum Bildschirm.</translation>
     </message>
 </context>
 <context>
@@ -2796,73 +2920,73 @@
     <message>
         <location filename="../exercises/E14.01.qml" line="17"/>
         <source>I think the screen is asking for this program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich denke der Bildschirm fragt nach diesem Programm.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.01.qml" line="31"/>
         <source>But what does it do?</source>
-        <translation type="unfinished"></translation>
+        <translation>Aber was macht es?</translation>
     </message>
     <message>
         <location filename="../exercises/E14.01.qml" line="40"/>
         <source>When all three sensors in the middle in front detect something, Thymio&apos;s top LEDs become blue. When the second sensor from the left in front does not detect anything but the right sensor behind Thymio does, his bottom LEDs become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn alle drei Sensoren in der Mitte vorne abgedeckt sind, werden Thymios obere Lichter blau. Wenn der 2. Sensor von links vorne aufgedeckt wird und der rechte Sensor hinter Thymio zugedeckt wird werden seine unteren Lichter blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.01.qml" line="41"/>
         <source>When any of the three sensors in the middle in front detect something, Thymio&apos;s bottom LEDs become blue. When the second sensor from the left in front does not detect anything or the right sensor behind Thymio does, his top LEDs become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn alle drei Sensoren in der Mitte vorne abgedeckt werden, werden Thymios untere Lichter blau. Wenn der 2. Sensor von links vorne aufgedeckt wird oder der rechte Sensor hinter Thymio zugedeckt wird, werden seine oberen Lichter blau.  </translation>
     </message>
     <message>
         <location filename="../exercises/E14.01.qml" line="42"/>
         <source>When all three sensors in the middle in front detect something, Thymio&apos;s bottom LEDs become blue. When the second sensor from the left in front detects something but the right sensor behind Thymio does not, his top LEDs become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn alle drei Sensoren in der Mitte vorne abgedeckt werden, werden Thymios untere Lichter blau. Wenn der 2. Sensor von links zugedeckt wird und der rechte Sensor hinten aufgedeckt wird, werden seine oberen Lichter blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.01.qml" line="43"/>
         <source>When all three sensors in the middle in front detect nothing, Thymio&apos;s bottom LEDs become blue. When the second sensor from the left in front detects something but the right sensor behind Thymio does not, his top LEDs become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn alle drei Sensoren in der Mitte vorne abgedeckt werden, werden Thymios untere Lichter blau. Wenn der 2. Sensor von links vorne zugedeckt wird und der rechte Sensor hinter Thymio aufgedeckt wird, werden seine oberen Lichter blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.01.qml" line="44"/>
         <location filename="../exercises/E14.01.qml" line="74"/>
         <source>When all three sensors in the middle in front detect something, Thymio&apos;s bottom LEDs become blue. When the second sensor from the left in front does not detect anything but the right sensor behind Thymio does, his top LEDs become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn alle drei Sensoren in der Mitte vorne zugedeckt werden, werden Thymios untere Lichter blau. Wenn der 2. Sensor von links vorne aufgedeckt wird und der rechte Sensor hinter Thymio zugedeckt wird, werden seine oberen Lichter blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.01.qml" line="45"/>
         <source>When any of the three sensors in the middle in front detect nothing, Thymio&apos;s bottom LEDs become blue. When the second sensor from the left in front detects something or the right sensor behind Thymio does not, his top LEDs become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn irgendeiner der drei Sensoren in der Mitte vorne zugedeckt werden, werden Thymios untere Lichter blau. Wenn der 2. Sensor von links vorne zugedeckt wird oder der rechte Sensor von hinten aufgedeckt wird, dann werden seine oberen Lichter blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.01.qml" line="65"/>
         <source>Oh I understand now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oh, jetzt verstehe ich.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.01.qml" line="70"/>
         <source>No wait... Shouldn&apos;t it be like this instead?</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein, warte... Sollte es nicht eher so sein?</translation>
     </message>
     <message>
         <location filename="../exercises/E14.01.qml" line="78"/>
         <source>That&apos;s right Ada, you figured it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das stimmt Ada, du hast es rausgefunden.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.01.qml" line="82"/>
         <source>Yippee!</source>
-        <translation type="unfinished"></translation>
+        <translation>Juhuu!</translation>
     </message>
     <message>
         <location filename="../exercises/E14.01.qml" line="97"/>
         <source>Ada pushes the button on the screen and waits for what happens next.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada drückt den Knopf beim Bildschirm und wartet bis etwas passiert.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.01.qml" line="110"/>
         <source>When the screen blinks, she looks at it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dann blinkt der Bildschirm und sie schaut drauf.</translation>
     </message>
 </context>
 <context>
@@ -2870,62 +2994,62 @@
     <message>
         <location filename="../exercises/E14.02.qml" line="17"/>
         <source>Oh no, there are a lot of programs on the screen.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oh nein, hier sind so viele Programm auf dem Bildschirm.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.02.qml" line="31"/>
         <source>Please help me figure out which one we need!</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte hilf mir herauszufinden welches wir brauchen!</translation>
     </message>
     <message>
         <location filename="../exercises/E14.02.qml" line="54"/>
         <source>We&apos;re looking for a program where: 1. Thymio&apos;s bottom LEDs will change to red when the outer two sensors in front detect nothing and the two sensors behind detect something. 2. Thymio&apos;s top LEDs will change to light blue when all the sensors in front but the middle one detect something.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wir suchen ein Program wo: 1. Thymios untere Lichter werden rot wenn die zwei äusseren Sensoren vorne und die zwei Sensoren hinten aufgedeckt werden. 2. Thymios obere Lichter werden hellblau wenn alle Sensoren vorne ausser dem mittleren zugedeckt werden.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.02.qml" line="70"/>
         <source>Aha! So that was the one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aha, das war es also!</translation>
     </message>
     <message>
         <location filename="../exercises/E14.02.qml" line="74"/>
         <source>It must have been easy for you, right?</source>
-        <translation type="unfinished"></translation>
+        <translation>Es war für dich bestimmt einfach, nicht?</translation>
     </message>
     <message>
         <location filename="../exercises/E14.02.qml" line="78"/>
         <source>Of course! people on Earth are all very smart!</source>
-        <translation type="unfinished"></translation>
+        <translation>Klar! Alle Menschen auf der Erde sind sehr klug!</translation>
     </message>
     <message>
         <location filename="../exercises/E14.02.qml" line="82"/>
         <source>Ada loads the code into Thymio and waits for more instructions on the screen.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada lädt den Code auf Thymio und wartet auf Mehr Anweisungen vom Bildschirm.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.02.qml" line="87"/>
         <source>Ada loads the code into Thymio and presses the button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada lädt den Code auf Thymio und drückt den Knopf.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.02.qml" line="91"/>
         <source>Suddenly, a red light flashes from the screen.</source>
-        <translation type="unfinished"></translation>
+        <translation>Plötzlich, blinken am Bildschirm rote Lichter.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.02.qml" line="95"/>
         <source>Ada hides behind Thymio, but the light soon stops and the screen blinks a few times.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada versteckt sich hinter Thymio aber die Lichter hören bald auf und der Bildschirm blinkt ein paar Mal.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.02.qml" line="99"/>
         <source>I guess that was the wrong one...?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich schätze das war wohl nicht richtig?</translation>
     </message>
     <message>
         <location filename="../exercises/E14.02.qml" line="103"/>
         <source>Looks like we&apos;ll have to see what it wants now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jetzt müssen wir schauen was passiert.</translation>
     </message>
 </context>
 <context>
@@ -2933,92 +3057,92 @@
     <message>
         <location filename="../exercises/E14.03.qml" line="17"/>
         <source>We have to choose between one of these two programs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wir müssen zwischen einer dieser beiden Programme entscheiden.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="31"/>
         <source>But I don&apos;t really understand what&apos;s different between them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aber ich weiss nicht was der Unterschied ist.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="40"/>
         <source>Both programs are broken because the two sensors events are almost the same.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beide Programme sind kaputt weil die Ereignisse fast gleich ausschauen.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="41"/>
         <source>In the program on top, Thymio&apos;s top LEDs will never become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm oben werden Thymios obere Lichter nie blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="42"/>
         <source>In the program below, Thymio&apos;s top LEDs will never become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm unten, werden Thymios obere Lichter nie blau.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="43"/>
         <source>In the program below, Thymio&apos;s top LEDs will only become green if Thymio&apos;s middle sensor first detects something and then doesn&apos;t and the other sensors all detect something the whole time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm unten, werden Thymios obere Lichter nur grün wennder mittlere vordere Sensor zuerst zugedeckt wird und dann aufgedeckt und die anderen Sensoren die ganze Zeit zugedeckt sind.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="44"/>
         <source>In the program below, Thymio&apos;s top LEDs will never become green.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm unten, werden Thymios obere Lichter nie grün.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="45"/>
         <source>In the program on top, Thymio&apos;s top LEDs will never become green.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm oben, werden Thymios obere Lichter nie grün.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="68"/>
         <source>Oh I understand now. It&apos;s because in the program below the event on top doesn&apos;t care about the middle sensor, so the event below can only get its turn if something happens that doesn&apos;t matter to the event on top.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ach som ich verstehs jetzt. Es ist so weil im Programm unten das Ereignis nicht auf den mittleren Sensor schaut. Und das Ereignis unterhalb kommt nur an der Reihe wenn es ein Ereignis hat dass nichts mit dem oberen Ereignis zu tun hat. </translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="73"/>
         <source>The answer is that in the program below, the color will only become green if something happens that doesn&apos;t concern the first event.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Antwort ist dass die Farbe nut grün wird falls etwas passiert dass nichts mit dem oberen Ereignis zu tun hat.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="77"/>
         <source>Huh? But why?</source>
-        <translation type="unfinished"></translation>
+        <translation>Huch, aber wieso?</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="81"/>
         <source>Because I can only check one line at a time. It&apos;s very fast but only one at a time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Weil ich immer nur Zeile für Zeile diesen Code lesen kann. Sehr schnell, aber immer noch Zeile für Zeile.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="85"/>
         <source>So if the first one already activates, the others won&apos;t also activate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn das erste Ereignis schon reagiert hat, reagiert nichts mehr bis sich wieder was ändert.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="89"/>
         <source>That&apos;s too confusing!</source>
-        <translation type="unfinished"></translation>
+        <translation>Das ist aber verwirrend!</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="93"/>
         <source>But let&apos;s just move on.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehen wir einfach weiter.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="108"/>
         <source>So we need the bottom one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wir brauchen also das untere Programm.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="121"/>
         <source>Ada pushes the button and the screen accepts their choice.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada drückt den Knopf und der Bildschirm nimmt ihre wahl an.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.03.qml" line="134"/>
         <source>More things appear on the screen.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mehr Sachen tauchen auf dem Bildschirm auf.</translation>
     </message>
 </context>
 <context>
@@ -3026,85 +3150,85 @@
     <message>
         <location filename="../exercises/E14.04.qml" line="17"/>
         <source>On the screen it says we have to finish this program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Auf dem Bildschirem steht wir sollen dieses Programm fertig machen.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="31"/>
         <source>Oh it&apos;s quite complicated... Let me try to explain it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es schein sehr kompliziert zu sein... Ich versuche es zu erklären.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="45"/>
         <location filename="../exercises/E14.04.qml" line="131"/>
         <source>When the leftmost sensor in front detects something and the left sensor behind doesn&apos;t, Thymio&apos;s top LEDs change to green.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der linkeste Sensor vorne zugedeckt ist und der linke Sensor hinten nicht, dann werden Thymios obere Lichter grün.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="59"/>
         <location filename="../exercises/E14.04.qml" line="142"/>
         <source>When the leftmost sensor in front does not detect anything and the left sensor behind detects something, Thymio&apos;s bottom LEDs change to green.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der linkeste Sensor vorne aufgedeckt ist und der linke sensor hinten zugedeckt ist, werden Thymios untere Lichter grün.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="73"/>
         <source>When the rightmost sensor in front detects something and the right sensor behind doesn&apos;t Thymio&apos;s bottom LEDs change to red. </source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der rechteste Sensor vorne zugedeckt ist und der rechte Sensore hinten aufgedeckt ist, werden Thymios untere Lichter rot. </translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="87"/>
         <location filename="../exercises/E14.04.qml" line="164"/>
         <source>And finally, when the rightmost sensor in front does not detect anything and the right sensor behind detects something, Thymio&apos;s top LEDs change to red.</source>
-        <translation type="unfinished"></translation>
+        <translation>Und schliesslich, wenn der rechteste Sensor vorne aufgedeckt is und der rechte Sensor hinten aufgedeckt ist, werden Thymios obere Lichter rot.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="101"/>
         <source>Whew, I think I got all of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puuh, ich denke das war alles.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="115"/>
         <source>If you forget I can always tell you again!</source>
-        <translation type="unfinished"></translation>
+        <translation>Falls du es vergisst, kannst du mich immer wieder fragen.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="153"/>
         <source>When the rightmost sensor in front detects something and the right sensor behind doesn&apos;t Thymio&apos;s bottom LEDs change to red.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der rechteste Sensor vorne zugedeckt ist und der rechte Sensore hinten aufgedeckt ist, werden Thymios untere Lichter rot. </translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="246"/>
         <source>I think we managed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich glaube wir habens geschafft.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="251"/>
         <source>Wait that doesn&apos;t look right.</source>
-        <translation type="unfinished"></translation>
+        <translation>Warte mal, das sieht nicht richtig aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="255"/>
         <source>Ada changes a few things.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada macht einige Änderungen.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="259"/>
         <source>There, that looks better.</source>
-        <translation type="unfinished"></translation>
+        <translation>So, das sieht besser aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="274"/>
         <source>Let&apos;s test it and see what happens.</source>
-        <translation type="unfinished"></translation>
+        <translation>Testen wirs und sehen was passiert.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="287"/>
         <source>The screen seems to accept their program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Bildschirm akzeptiert ihr programm.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.04.qml" line="300"/>
         <source>What&apos;s next, screen?</source>
-        <translation type="unfinished"></translation>
+        <translation>Was kommt als nächstes dran?</translation>
     </message>
 </context>
 <context>
@@ -3112,86 +3236,86 @@
     <message>
         <location filename="../exercises/E14.05.qml" line="17"/>
         <source>Oh great. The instructions are really complicated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ach super, die Anweisungen sind kompliziert.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="31"/>
         <source>Are you ready for them? Here goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bist du vorbereitet? Hier kommt sie.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="45"/>
         <location filename="../exercises/E14.05.qml" line="103"/>
         <source>When the leftmost sensor in front detects something and the left sensor behind doesn&apos;t, Thymio&apos;s top LEDs change to green.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der linkeste Sensor vorne zugedeckt ist und der linke Sensor hinten nicht, dann werden Thymios obere Lichter grün.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="59"/>
         <location filename="../exercises/E14.05.qml" line="114"/>
         <source>When the leftmost sensor in front does not detect anything and the left sensor behind detects something, Thymio&apos;s bottom LEDs change to green.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der linkeste Sensor vorne aufgedeckt ist und der linke sensor hinten zugedeckt ist, werden Thymios untere Lichter grün.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="73"/>
         <location filename="../exercises/E14.05.qml" line="125"/>
         <source>When the rightmost sensor in front detects something and the right sensor behind doesn&apos;t Thymio&apos;s bottom LEDs change to red.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der rechteste Sensor vorne zugedeckt ist und der rechte Sensore hinten aufgedeckt ist, werden Thymios untere Lichter rot. </translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="87"/>
         <location filename="../exercises/E14.05.qml" line="136"/>
         <source>And finally, when the rightmost sensor in front does not detect anything and the right sensor behind detects something, Thymio&apos;s top LEDs change to red.</source>
-        <translation type="unfinished"></translation>
+        <translation>Und schliesslich, wenn der rechteste Sensor vorne aufgedeckt is und der rechte Sensor hinten aufgedeckt ist, werden Thymios obere Lichter rot.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="216"/>
         <source>Let&apos;s try it out!</source>
-        <translation type="unfinished"></translation>
+        <translation>Probieren wirs aus!</translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="221"/>
         <source>I want to change a few things in the program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich will im Programm einige Änderungen machen.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="225"/>
         <source>Why?</source>
-        <translation type="unfinished"></translation>
+        <translation>Wieso</translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="229"/>
         <source>It doesn&apos;t look right.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es sieht nicht richtig aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="233"/>
         <source>Okay, but are you sure you&apos;re making it better?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok, aber bist du dir sicher dass du es besser machst?</translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="237"/>
         <source>Yes, leave it to me!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, überlass es nur mir.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="252"/>
         <source>Ada loads the program and presses the button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada lädt das Programm und drückt den Knopf.</translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="265"/>
         <source>The pillars move up and down a few times around Thymio and then they vanish back in the ground.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Säulen bewegen sich auf und ab ein paar mal und geben dann auf. </translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="278"/>
         <source>Looks like it was okay!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sieht so aus als ob es in Ordnung war!</translation>
     </message>
     <message>
         <location filename="../exercises/E14.05.qml" line="291"/>
         <source>Ada bounces back to the screen to see what&apos;s next.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada hüpft zurück zum Bildschirm um zu sehen was als nächstes kommt.</translation>
     </message>
 </context>
 <context>
@@ -3199,72 +3323,72 @@
     <message>
         <location filename="../exercises/E15.01.qml" line="17"/>
         <source>Alright, another program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok, ein neues Programm.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.01.qml" line="30"/>
         <source>We need to tell the machine what it does.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wir müssen der Maschine sagen was es macht.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.01.qml" line="43"/>
         <source>But what does it do?</source>
-        <translation type="unfinished"></translation>
+        <translation>Aber was machst sie?</translation>
     </message>
     <message>
         <location filename="../exercises/E15.01.qml" line="52"/>
         <source>When both of Thymio&apos;s ground sensors detect nothing, Thymio&apos;s bottom and top LEDs will become green. When the ground sensors detect something, the LEDs will turn off.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn beide unteren Sensoren aufgedeckt sind, werden Thymios obere und untere Lichter grün. Wenn die unteren Sensoren zugedeckt sind, schalten beide Lichter ab.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.01.qml" line="53"/>
         <source>When Thymio&apos;s ground sensors detect something, Thymio&apos;s bottom LEDs will become green. When the ground sensors detect nothing, the LEDs will turn off.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn die unteren Sensoren zugedeckt sind, werden Thymios untere Lichter grün. Wenn die unteren Sensoren aufgedeckt sind, schalten die Lichter ab.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.01.qml" line="54"/>
         <source>When Thymio&apos;s ground sensors detect something, Thymio&apos;s top LEDs will become green. When the ground sensors detect nothing, the LEDs will turn off.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn die unteren Sensoren zugedeckt sind, werden Thymios obere Lichter grün. Wenn die unteren Sensore aufgedeckt sind, schalten die Lichter ab.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.01.qml" line="55"/>
         <source>When both of Thymio&apos;s ground sensors detect something, Thymio&apos;s bottom and top LEDs will become green. When the ground sensors detect nothing, the LEDs will turn off.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn beide untere Sensoren zugedeckt sind werden Thymios obere und untere Lichter grün. Wenn die unteren Sensoren aufgedeckt werden, schalten die Lichter ab.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.01.qml" line="56"/>
         <source>When both of Thymio&apos;s ground sensors detect something, Thymio&apos;s bottom and top LEDs will become green. When the ground sensors detect nothing, the bottom LEDs will turn off.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn die unteren Sensoren etwas zugedeckt werden, werden die oberen und unteren Lichter grün- Wenn die unteren Sensoren aufgedeckt werden, schalten die unteren Lichter ab.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.01.qml" line="57"/>
         <source>When both of Thymio&apos;s ground sensors detect something, Thymio&apos;s bottom and top LEDs will become green. When the ground sensors detect nothing, the top LEDs will turn off.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn die unteren Sensoren etwas zugedeckt werden, werden die oberen und unteren Lichter grün- Wenn die unteren Sensoren aufgedeckt werden, schalten die oberen Lichter ab.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.01.qml" line="78"/>
         <source>I would have said the same thing!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich hätte das gleiche gesagt.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.01.qml" line="83"/>
         <source>That&apos;s not right... Is it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein, das ist es nicht, oder?</translation>
     </message>
     <message>
         <location filename="../exercises/E15.01.qml" line="87"/>
         <source>No, it isn&apos;t. What it does is turn both top and bottom LEDs to green when the bottom sensors detect something and turn the off when both sensors detect nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nein, ist es nicht. Es ändert die oberen und unteren Lichter zu grün wenn beide unteren Sensoren abgedeckt sind und schaltet die beiden Lichter ab wenn beide Sensoren aufgedeckt sind.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.01.qml" line="102"/>
         <source>Okay, so let&apos;s give it the answer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok, jetzt können wir unsere Antwort geben.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.01.qml" line="115"/>
         <source>The screen flashes green a few times and then flashes white.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Bildschirm flackert grün und dann weiss.</translation>
     </message>
 </context>
 <context>
@@ -3272,52 +3396,52 @@
     <message>
         <location filename="../exercises/E15.02.qml" line="17"/>
         <source>We need to choose one of these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wir müssen einer von diesen auswählen.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.02.qml" line="31"/>
         <source>Do you know which one it should be?</source>
-        <translation type="unfinished"></translation>
+        <translation>Weisst du welches dass es sein soll?</translation>
     </message>
     <message>
         <location filename="../exercises/E15.02.qml" line="54"/>
         <source>Which program will make Thymio&apos;s bottom and top LEDs white when all of Thymio&apos;s front and back sensors detect something?</source>
-        <translation type="unfinished"></translation>
+        <translation>Welches Programm macht die oberen und unteren Lichter weiss wenn alle vorderen und hinteren Sensoren zugedeckt sind?</translation>
     </message>
     <message>
         <location filename="../exercises/E15.02.qml" line="70"/>
         <source>That should be the right one!</source>
-        <translation type="unfinished"></translation>
+        <translation>Das scheint das richtige zu sein!</translation>
     </message>
     <message>
         <location filename="../exercises/E15.02.qml" line="75"/>
         <source>That can&apos;t be right.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das kann nicht stimmen.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.02.qml" line="79"/>
         <source>Why don&apos;t you pick one then, Ada?</source>
-        <translation type="unfinished"></translation>
+        <translation>Dann wähl doch du, Ada?</translation>
     </message>
     <message>
         <location filename="../exercises/E15.02.qml" line="83"/>
         <source>Okay, I will.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok, mache ich.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.02.qml" line="98"/>
         <source>Ada gives the screen the answer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada gibt dem Bildschirm ihre Antwort.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.02.qml" line="111"/>
         <source>After a moment, the screen indicates that it was the right answer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach einem Moment zeigt der Bildschirm an dass es die richtige Antwort war.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.02.qml" line="124"/>
         <source>Ada looks happy, but she turns back to the screen to see what it says now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada sieht froh aus, aber sie dreht sich schnell wieder zum Bildschirm, gespannt auf die nächste Frage.</translation>
     </message>
 </context>
 <context>
@@ -3325,87 +3449,87 @@
     <message>
         <location filename="../exercises/E15.03.qml" line="17"/>
         <source>One of these two has to be what the screen wants.</source>
-        <translation type="unfinished"></translation>
+        <translation>Einer dieser zwei Programme muss das sein was der Bildschirm will.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="31"/>
         <source>But what&apos;s the difference between them?</source>
-        <translation type="unfinished"></translation>
+        <translation>Aber was ist der Unterschied zwischen diesen beiden?</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="40"/>
         <source>In the program on top, Thymio&apos;s LEDs will never be red  if the back sensors stay uncovered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm oben werden Thymios Lichter nie rot wenn die hinteren Sensoren aufgedeckt bleiben.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="41"/>
         <source>They are the same.</source>
-        <translation type="unfinished">Sie sind gleich.</translation>
+        <translation>Sie sind gleich.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="42"/>
         <source>In the program below, Thymio&apos;s LEDs will only be light blue once if the back sensors stay uncovered. They won&apos;t change back after changing to red.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm unten werden Thymios Lichter nur einmal hellblau wenn die hinteren Sensoren aufgedeckt bleiben. Sie ändern sich nicht mehr wenn sie rot werden.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="43"/>
         <source>In the program on top, Thymio&apos;s LEDs will only be light blue once  if the back sensors stay uncovered. They won&apos;t change back after changing to red.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm oben werden Thymios Lichter nur einmal hellblau wenn die hinteren Sensoren aufgedeckt bleiben. Sie ändern sich nicht mehr wenn sie rot werden.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="44"/>
         <source>In the program below, Thymio&apos;s LEDs will only be red once if the back sensors stay uncovered. They won&apos;t change back after changing to light blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm unten werden Thymios Lichter nur einmal rot wenn die hinteren Sensoren aufgedeckt bleiben. Sie ändern sich nicht mehr wenn sie hellblau werden.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="45"/>
         <source>In the program on top, Thymio&apos;s LEDs will only be red once if the back sensors stay uncovered. They won&apos;t change back after changing to light blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Programm oben werden Thymios Lichter nur einmal rot wenn die hinteren Sensoren aufgedeckt bleiben. Sie ändern sich nicht mehr wenn sie hellblau werden.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="68"/>
         <source>Oh I see!</source>
-        <translation type="unfinished">Ach so ist das!</translation>
+        <translation>Ach so ist das!</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="73"/>
         <source>That can&apos;t be right.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das kann nicht stimmen.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="77"/>
         <source>You&apos;re right Ada.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du hast recht Ada.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="81"/>
         <source>Okay, but why?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok, aber wieso?</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="85"/>
         <source>The answer is that in the program on top, the LEDs will only be red once if the back sensors stay uncovered. They won&apos;t change back after changing to light blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Antwort ist, dass im Programm oben die Lichter nur einmal rot werden wenn die hinteren Sensoren aufgedeckt bleiben. Sie ändern sich nicht mehr zu hellblau.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="100"/>
         <source>That&apos;s exactly what the screen wants.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das ist doch genau das was der Bildschirm will.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="113"/>
         <source>I&apos;ll give it the answer now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich werde ihm jetzt die Antwort geben.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="126"/>
         <source>The screen lights up, accepting the answer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Bildschirm blitzt auf und nimmt die Antwort an.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.03.qml" line="139"/>
         <source>They wait for more instructions from the screen.</source>
-        <translation type="unfinished"></translation>
+        <translation>sie warten auf mehr Anweisungen vom Bildschirm.</translation>
     </message>
 </context>
 <context>
@@ -3413,82 +3537,82 @@
     <message>
         <location filename="../exercises/E15.04.qml" line="17"/>
         <source>Help me finish this program, please.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte hilf mir dieses Programm fertig zu machen, bitte.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="31"/>
         <source>We need to make it so that when the middle front sensor detects something and both sensors beside it don&apos;t detect anything, the top LEDs become red and the bottom LEDs become blue. </source>
-        <translation type="unfinished"></translation>
+        <translation>Wir müssen ein Programm machen dass die oberen Lichter zu rot und die unteren Lichter zu blau ändert wenn der mittlere Sensor vorne zugedeckt ist und die beiden Sensoren nebendran aufgedeckt sind.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="45"/>
         <source>But when the leftmost and rightmost sensors in front detect something but all the sensors in between do not, the top LEDs should become green and the bottom LEDs light blue!</source>
-        <translation type="unfinished"></translation>
+        <translation>Aber wenn die linkesten und rechtesten Sensoren vorne zugedeckt sind und alle anderen Sensoren dazwischen nicht, dann werden die oberen Lichter grün und die unteren hellblau.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="61"/>
         <source>We need to make it so that when the middle front sensor detects something and both sensors beside it don&apos;t detect anything, the top LEDs become red and the bottom LEDs become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wir müssen ein Programm machen dass die oberen Lichter zu rot und die unteren Lichter zu blau ändert wenn der mittlere Sensor vorne zugedeckt ist und die beiden Sensoren nebendran aufgedeckt sind.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="72"/>
         <source>But when the leftmost and rightmost sensors in front detect something and all the sensors in between do not, the top LEDs should become green and the bottom LEDs light blue!</source>
-        <translation type="unfinished"></translation>
+        <translation>Aber wenn die linkesten und rechtesten Sensoren vorne zugedeckt sind und alle anderen Sensoren dazwischen nicht, dann werden die oberen Lichter grün und die unteren hellblau.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="134"/>
         <source>Let&apos;s test it out right away!</source>
-        <translation type="unfinished"></translation>
+        <translation>Testen wirs gleich aus!</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="139"/>
         <source>That&apos;s not quite right, is it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Das stimmt nicht ganz, oder?</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="143"/>
         <source>I&apos;ll take another look at it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich schaue es mir nochmals an.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="147"/>
         <source>Ada changes the program a little bit.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada ändert das Programm ein bisschen.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="151"/>
         <source>Hopefully, this is better?</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoffentlich, ist das besser.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="155"/>
         <source>Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bist du dir sicher?</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="159"/>
         <source>We can try it and see?</source>
-        <translation type="unfinished"></translation>
+        <translation>Wir könntens einfach versuchen und schauen was passiert?</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="174"/>
         <source>The pillars come out of the ground and Ada waits nervoursly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Säule kommen aus dem Boden und Ada wartet ganz nervös.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="187"/>
         <source>They go back into the ground and the screen shows that it was okay.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Säulen gehen wieder zurück in den Boden. Der Bildschirm zeigt dass alles in Ordnung war.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="200"/>
         <source>Ada breathes a sigh of relief.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada seufzt vor Erleichterung.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.04.qml" line="213"/>
         <source>The screen lights up again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Bildschirm blinkt wieder.</translation>
     </message>
 </context>
 <context>
@@ -3496,78 +3620,78 @@
     <message>
         <location filename="../exercises/E15.05.qml" line="17"/>
         <source>This one looks difficult.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieses sieht schwierig aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.05.qml" line="31"/>
         <source>Let&apos;s see... We need to make a program that does all this stuff:</source>
-        <translation type="unfinished"></translation>
+        <translation>Schauen wir mal.. Wir brauchen ein Programm das all das Zeug macht:</translation>
     </message>
     <message>
         <location filename="../exercises/E15.05.qml" line="45"/>
         <location filename="../exercises/E15.05.qml" line="75"/>
         <source>When the middle front sensor detects something and both sensors beside it don&apos;t detect anything, the top LEDs become red and the bottom LEDs become blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die oberen Lichter werden zu rot und die unteren Lichter zu blau geändert wenn der mittlere Sensor vorne zugedeckt ist und die beiden Sensoren nebendran aufgedeckt sind.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.05.qml" line="59"/>
         <source>But when the leftmost and rightmost sensors in front detect something but all the sensors in between do not, the top LEDs should become green and the bottom LEDs light blue!</source>
-        <translation type="unfinished"></translation>
+        <translation>Aber wenn die linkesten und rechtesten Sensoren vorne zugedeckt sind und alle anderen Sensoren dazwischen nicht, dann werden die oberen Lichter grün und die unteren hellblau.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.05.qml" line="86"/>
         <source>But when the leftmost and rightmost sensors in front detect something but all the sensors in between do not, the top LEDs should become green and the bottom LEDs light blue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aber wenn die linkesten und rechtesten Sensoren vorne zugedeckt sind und alle anderen Sensoren dazwischen nicht, dann werden die oberen Lichter grün und die unteren hellblau.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.05.qml" line="147"/>
         <source>Awesome, let&apos;s try it out right away!</source>
-        <translation type="unfinished"></translation>
+        <translation>Super! Probieren wirs gleich aus!</translation>
     </message>
     <message>
         <location filename="../exercises/E15.05.qml" line="151"/>
         <source>Ada pushes the button and waits for the screen to react.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada drückt den Knopf und wartet bis der Bildschirm was macht.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.05.qml" line="155"/>
         <source>The screen shows that the program was ok so she and Thymio cheer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Bildschirm zeigt dass das Programm in Ordnung war. Ada und Thymio jubeln.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.05.qml" line="160"/>
         <source>Let&apos;s try it out.</source>
-        <translation type="unfinished">Probieren wir es aus.</translation>
+        <translation>Probieren wir es aus.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.05.qml" line="164"/>
         <source>Are you sure that&apos;s a good idea?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bist du dir sicher dass das eine gute Idee ist?</translation>
     </message>
     <message>
         <location filename="../exercises/E15.05.qml" line="168"/>
         <source>Yes!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja!</translation>
     </message>
     <message>
         <location filename="../exercises/E15.05.qml" line="172"/>
         <source>Ada pushes the button and the pillars come out of the ground.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ada drückt den Knopf und die Säulen kommen aus dem Boden.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.05.qml" line="176"/>
         <source>The lights flash red.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotes Licht kommt vom Bildschirm.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.05.qml" line="180"/>
         <source>Okay, so maybe it wasn&apos;t such a good idea.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok, dann war es doch keine so gute Idee.</translation>
     </message>
     <message>
         <location filename="../exercises/E15.05.qml" line="195"/>
         <source>More things appear on the screen.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mehr Sachen tauchen auf dem Bildschirm auf.</translation>
     </message>
 </context>
 <context>
@@ -3706,11 +3830,11 @@
     </message>
     <message>
         <source>Ask Ada What to Do</source>
-        <translation type="vanished">Frag Ada was zu tun ist</translation>
+        <translation>Frag Ada was zu tun ist</translation>
     </message>
     <message>
         <source>Return to Main Menu</source>
-        <translation type="vanished">Zurück zum Hauptmenü</translation>
+        <translation>Zurück zum Hauptmenü</translation>
     </message>
 </context>
 <context>
@@ -3722,11 +3846,11 @@
     </message>
     <message>
         <source>Ask Ada What to Do</source>
-        <translation type="vanished">Frag Ada was zu tun ist</translation>
+        <translation>Frag Ada was zu tun ist</translation>
     </message>
     <message>
         <source>Return to Main Menu</source>
-        <translation type="vanished">Zurück zum Hauptmenü</translation>
+        <translation>Zurück zum Hauptmenü</translation>
     </message>
 </context>
 <context>
@@ -3744,17 +3868,17 @@
     </message>
     <message>
         <source>Upload to Remote</source>
-        <translation type="vanished">Hochladen</translation>
+        <translation>Hochladen</translation>
     </message>
     <message>
         <location filename="../VplInterface.qml" line="63"/>
         <source>Send to Ada</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu Ada Schicken</translation>
     </message>
     <message>
         <location filename="../VplInterface.qml" line="99"/>
         <source>Ask Ada what to do</source>
-        <translation type="unfinished"></translation>
+        <translation>Frag Ada was zu tun ist</translation>
     </message>
     <message>
         <location filename="../VplInterface.qml" line="174"/>
@@ -3826,7 +3950,7 @@
     </message>
     <message>
         <source>Hello? is anyone there?</source>
-        <translation type="vanished">Hallo? Ist da jemand?</translation>
+        <translation>Hallo? Ist da jemand?</translation>
     </message>
     <message>
         <location filename="../TranslationArchive.qml" line="354"/>
@@ -4018,7 +4142,7 @@
     <message>
         <location filename="../story/story2.qml" line="109"/>
         <source>It seems like something in this place has caused some of my systems to malfunction. There are many things I can&apos;t do on my own anymore.</source>
-        <translation>Es scheint dass irgendetwas hier einen Teil meiner System unterbrochen hat. Ich kann viele Dinger nicht mehr selber machen. </translation>
+        <translation>Es scheint dass irgendetwas hier einen Teil meiner Systeme unterbrochen hat. Ich kann viele Dinger nicht mehr selber machen. </translation>
     </message>
     <message>
         <location filename="../story/story2.qml" line="124"/>
@@ -4153,7 +4277,7 @@
     <message>
         <location filename="../story/story2.qml" line="514"/>
         <source>All islands here in Levigo float. Wow, Earth must be really different.</source>
-        <translation>Hier in LEvigo schweben alle Insel. Wow, die Erde muss ganz schön anders sein.</translation>
+        <translation>Hier in Levigo schweben alle Insel. Wow, die Erde muss ganz schön anders sein.</translation>
     </message>
     <message>
         <location filename="../story/story2.qml" line="529"/>
@@ -4373,7 +4497,7 @@
     </message>
     <message>
         <source>Look at their eyes!</source>
-        <translation type="vanished">Sieh dir ihre Augen an!</translation>
+        <translation>Sieh dir ihre Augen an!</translation>
     </message>
     <message>
         <location filename="../story/story3.qml" line="247"/>
@@ -5003,7 +5127,7 @@
     </message>
     <message>
         <source>Yes, will you bring us back to the village.</source>
-        <translation type="vanished">Ja, bringst du uns zurück zum Dorf?</translation>
+        <translation>Ja, bringst du uns zurück zum Dorf?</translation>
     </message>
     <message>
         <location filename="../story/story5.qml" line="543"/>

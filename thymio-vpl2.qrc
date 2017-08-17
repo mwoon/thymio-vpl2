@@ -244,6 +244,9 @@
         <file>exercises/E43.03.qml</file>
         <file>exercises/E43.04.qml</file>
         <file>exercises/E43.05.qml</file>
+        <file>assets/ada.png</file>
+        <file>assets/ruby.png</file>
+        <file>assets/thymio.png</file>
     </qresource>
     <qresource prefix="/">
         <file>aseba.cpp</file>

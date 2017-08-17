@@ -34,12 +34,23 @@ Rectangle {
 
             text: "Placeholder Name"
             font.pointSize: 16
+            onTextChanged: {
+                if(text === "Ada") {
+                    speakerImage.source = "assets/ada.png";
+                } else if (text === "Thymio" || text === "10LKFPS-UWLTHYMIO" || text === "Robot") {
+                    speakerImage.source = "assets/thymio.png";
+                } else if (text === "Ruby") {
+                    speakerImage.source = "assets/ruby.png";
+                } else {
+                    speakerImage.source = "";
+                }
+            }
         }
         Text {
             id: dialoguetext
 
             Layout.leftMargin: 25
-            Layout.rightMargin: 25
+            Layout.rightMargin: parent.height
             Layout.topMargin: parent.height / 16
             Layout.fillHeight: true
             Layout.fillWidth: true //Need this to ensure that the width of the text box does not spill over parent width
@@ -49,5 +60,13 @@ Rectangle {
             wrapMode: Text.WordWrap
 
         }
+    }
+
+    Image {
+        id: speakerImage
+        anchors.right: parent.right
+        height: parent.height
+        width: parent.height
+        source: "assets/ada.png"
     }
 }

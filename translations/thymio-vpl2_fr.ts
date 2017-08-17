@@ -2195,6 +2195,130 @@
     </message>
 </context>
 <context>
+    <name>E11.03</name>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="18"/>
+        <source>These two programs are very similar.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="33"/>
+        <source>But it would be weird if they are the same.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="47"/>
+        <location filename="../exercises/E11.03.qml" line="188"/>
+        <source>What do you think the difference is?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="56"/>
+        <location filename="../exercises/E11.03.qml" line="197"/>
+        <source>In the program on top, If the second sensor on the left stays covered, Thymio will not change his top LEDs to green if the left most sensor is uncovered.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="57"/>
+        <location filename="../exercises/E11.03.qml" line="198"/>
+        <source>They are the same.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="58"/>
+        <location filename="../exercises/E11.03.qml" line="199"/>
+        <source>In the program on top, Thymio will only change his top LEDs to green once.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="59"/>
+        <location filename="../exercises/E11.03.qml" line="200"/>
+        <source>In the program on top, Thymio will never change his top LEDs to green.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="60"/>
+        <location filename="../exercises/E11.03.qml" line="201"/>
+        <source>In the program below, Thymio will only change his LEDs to green if the second sensor from the left is uncovered and then covered again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="61"/>
+        <location filename="../exercises/E11.03.qml" line="202"/>
+        <source>In the program on top, it is possible for Thymio to change his top LEDs to green even if the second sensor from the left stays covered.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="84"/>
+        <location filename="../exercises/E11.03.qml" line="225"/>
+        <source>Ah! That&apos;s how it is. Because in the first program, the green top color action only reacts to the second sensor from the left and doesn&apos;t care about the one all the way on the left.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="89"/>
+        <location filename="../exercises/E11.03.qml" line="230"/>
+        <source>Are you sure?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="93"/>
+        <location filename="../exercises/E11.03.qml" line="234"/>
+        <source>No, the difference is that in the program on top, If the second sensor on the left stays covered, the top LEDs will not change to green if the left most sensor becomes uncovered.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="97"/>
+        <location filename="../exercises/E11.03.qml" line="238"/>
+        <source>Because in the first program, the green top color action only reacts to the second sensor from the left and doesn&apos;t care about the one all the way on the left.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="113"/>
+        <source>While Thymio and Ada discuss the program, Ruby lands on the cliff to get a closer look.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="127"/>
+        <source>As soon as Ada notices him, he flies away again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="141"/>
+        <source>Ada looks at the program again, making sure she understands it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="159"/>
+        <source>I think one of these two programs will match what it says on the screen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="174"/>
+        <source>But they are very similar.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="254"/>
+        <source>Ok, so from what we know now, we should take the program below to match what it says on the screen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="268"/>
+        <source>Ada loads the program.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="282"/>
+        <source>The pillars come out again and Thymio changes colors to match the sensors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../exercises/E11.03.qml" line="296"/>
+        <source>Once more, the screen changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>E11.04</name>
     <message>
         <location filename="../exercises/E11.04.qml" line="18"/>
