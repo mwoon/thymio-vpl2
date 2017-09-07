@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- storyteller.cpp -->
+  <title>StoryTeller Class | Qt </title>
+<link rel="stylesheet" type="text/css" href="style/style.css"/>
+</head>
+<body>
+<li>StoryTeller</li>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">StoryTeller Class</h1>
+<!-- $$$StoryTeller-brief -->
+<p>The <a href="storyteller.html">StoryTeller</a> class serves as a gateway between front and backend. <a href="#details">More...</a></p>
+<!-- @@@StoryTeller -->
+<ul>
+<li><a href="storyteller-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="storyteller.html#StoryTeller">StoryTeller</a></b>(QObject *<i>parent</i> = 0)</td></tr>
+</table></div>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="storyteller.html#advanceScript">advanceScript</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="storyteller.html#appendToLog">appendToLog</a></b>(QString <i>toLog</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="storyteller.html#completeExercise">completeExercise</a></b>(const double <i>result</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="storyteller.html#lastGenerated">lastGenerated</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="storyteller.html#resetScript">resetScript</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="storyteller.html#returnExerciseFolder">returnExerciseFolder</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="storyteller.html#simulateFixedSuccessByTypeOfExercise">simulateFixedSuccessByTypeOfExercise</a></b>(const double <i>prob1</i>, const double <i>prob2</i>, const double <i>prob3</i>, const double <i>prob4</i>, const double <i>prob5</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="storyteller.html#simulateIncreasePerTrial">simulateIncreasePerTrial</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="storyteller.html#simulateIptSc">simulateIptSc</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="storyteller.html#simulateWithFailPercent">simulateWithFailPercent</a></b>(const double <i>percent</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="storyteller.html#writeLogToFile">writeLogToFile</a></b>(QString <i>fileName</i>)</td></tr>
+</table></div>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="storyteller.html#segmentGenerated">segmentGenerated</a></b>(const QString &amp;<i>newText</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$StoryTeller-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="storyteller.html">StoryTeller</a> class serves as a gateway between front and backend.</p>
+<p>The <a href="storyteller.html">StoryTeller</a> class manages the script of the game and decides the next action in the game. It chooses between the next story block and staying in an exercise block, resets the script when the game is reset.</p>
+<p>Additionally, various behaviours for simulating the a user of the game are in this class. These functions generate a score according to each of their specifications.</p>
+<p>Finally, the <a href="storyteller.html">StoryTeller</a> also does some bookkeeping by holding and writing logs of the exercises and corresponding scores into files.</p>
+</div>
+<!-- @@@StoryTeller -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$StoryTeller[overload1]$$$StoryTellerQObject* -->
+<h3 class="fn" id="StoryTeller"><a name="StoryTeller"></a>StoryTeller::<span class="name">StoryTeller</span>(<span class="type">QObject</span> *<i>parent</i> = 0)</h3>
+<p>Sets up a storyteller object by initialising the script and variables.</p>
+<!-- @@@StoryTeller -->
+<!-- $$$advanceScript[overload1]$$$advanceScript -->
+<h3 class="fn" id="advanceScript"><a name="advanceScript"></a><code>[slot] </code><span class="type">QString</span> StoryTeller::<span class="name">advanceScript</span>()</h3>
+<p>StoryTeller::advanceScript decides the next section of the story after the current one is finished.</p>
+<p>Is used whenever <a href="qml-gameinterface.html">GameInterface</a> has exhausted its current list of actions and requests the next one. It decides if the story should progress after an exercise or another exercise should be solved before the story will move on. If an exercise should be chosen, one will be selected from Zpdes.</p>
+<!-- @@@advanceScript -->
+<!-- $$$appendToLog[overload1]$$$appendToLogQString -->
+<h3 class="fn" id="appendToLog"><a name="appendToLog"></a><code>[slot] </code><span class="type">void</span> StoryTeller::<span class="name">appendToLog</span>(<span class="type">QString</span> <i>toLog</i>)</h3>
+<p>StoryTeller::appendToLog appends a QString to the log which is written to file upon resetting of the game.</p>
+<!-- @@@appendToLog -->
+<!-- $$$completeExercise[overload1]$$$completeExerciseconstdouble -->
+<h3 class="fn" id="completeExercise"><a name="completeExercise"></a><code>[slot] </code><span class="type">void</span> StoryTeller::<span class="name">completeExercise</span>(const <span class="type">double</span> <i>result</i>)</h3>
+<p>StoryTeller::completeExercise adjusts the state of the story according to the outcome of the exercise.</p>
+<p>Increments the exercise counts, forwards the result to Zpdes and appends the result to the log.</p>
+<!-- @@@completeExercise -->
+<!-- $$$lastGenerated[overload1]$$$lastGenerated -->
+<h3 class="fn" id="lastGenerated"><a name="lastGenerated"></a><code>[slot] </code><span class="type">QString</span> StoryTeller::<span class="name">lastGenerated</span>()</h3>
+<p>StoryTeller::lastGenerated returns the last string sent to the game.</p>
+<p>This function returns the string representation of the last json object sent to the <a href="qml-gameinterface.html">GameInterface</a>.</p>
+<p>It is used mainly for the simulations as a stopping condition and to set the probability of succeeding.</p>
+<!-- @@@lastGenerated -->
+<!-- $$$resetScript[overload1]$$$resetScript -->
+<h3 class="fn" id="resetScript"><a name="resetScript"></a><code>[slot] </code><span class="type">void</span> StoryTeller::<span class="name">resetScript</span>()</h3>
+<p>StoryTeller::resetScript resets the game so it can be played from the beginning.</p>
+<p>Resets all the variables.</p>
+<p>This is called when returning to <a href="qml-homescreen.html">HomeScreen</a>.</p>
+<!-- @@@resetScript -->
+<!-- $$$returnExerciseFolder[overload1]$$$returnExerciseFolder -->
+<h3 class="fn" id="returnExerciseFolder"><a name="returnExerciseFolder"></a><code>[slot] </code><span class="type">QString</span> StoryTeller::<span class="name">returnExerciseFolder</span>()</h3>
+<p>StoryTeller::returnExerciseFolder returns the folder name where exercises are stored.</p>
+<p>For android devices, the folder where additional project files are stored is in a different location than on desktop.</p>
+<p>returns the name of the folder where exercises are stored</p>
+<!-- @@@returnExerciseFolder -->
+<!-- $$$segmentGenerated[overload1]$$$segmentGeneratedconstQString& -->
+<h3 class="fn" id="segmentGenerated"><a name="segmentGenerated"></a><code>[signal] </code><span class="type">void</span> StoryTeller::<span class="name">segmentGenerated</span>(const <span class="type">QString</span> &amp;<i>newText</i>)</h3>
+<p>Is called when a new story segment is generated by <a href="storyteller.html#advanceScript">advanceScript</a>.</p>
+<p><a href="qml-gameinterface.html">GameInterface</a> handles this signal by loading the corresponding file.</p>
+<!-- @@@segmentGenerated -->
+<!-- $$$simulateFixedSuccessByTypeOfExercise[overload1]$$$simulateFixedSuccessByTypeOfExerciseconstdoubleconstdoubleconstdoubleconstdoubleconstdouble -->
+<h3 class="fn" id="simulateFixedSuccessByTypeOfExercise"><a name="simulateFixedSuccessByTypeOfExercise"></a><code>[slot] </code><span class="type">void</span> StoryTeller::<span class="name">simulateFixedSuccessByTypeOfExercise</span>(const <span class="type">double</span> <i>prob1</i>, const <span class="type">double</span> <i>prob2</i>, const <span class="type">double</span> <i>prob3</i>, const <span class="type">double</span> <i>prob4</i>, const <span class="type">double</span> <i>prob5</i>)</h3>
+<p>Used to simulate playthroughs of the game.</p>
+<p>Fixed success rate by type of exercise.</p>
+<p>Probabilities provided are the probabilities to fail exercises of that type. For example, prob1 = 0.3 means that a type 1 exercise has 30% chance of failing.</p>
+<!-- @@@simulateFixedSuccessByTypeOfExercise -->
+<!-- $$$simulateIncreasePerTrial[overload1]$$$simulateIncreasePerTrial -->
+<h3 class="fn" id="simulateIncreasePerTrial"><a name="simulateIncreasePerTrial"></a><code>[slot] </code><span class="type">void</span> StoryTeller::<span class="name">simulateIncreasePerTrial</span>()</h3>
+<p>Used to simulate playthroughs of the game.</p>
+<p>Simulates a student who increases his chance of success for a type of exercise with each successful exercise by 0.1 and with each failed exercise by 0.05.</p>
+<!-- @@@simulateIncreasePerTrial -->
+<!-- $$$simulateIptSc[overload1]$$$simulateIptSc -->
+<h3 class="fn" id="simulateIptSc"><a name="simulateIptSc"></a><code>[slot] </code><span class="type">void</span> StoryTeller::<span class="name">simulateIptSc</span>()</h3>
+<p>Used to simulate playthroughs of the game.</p>
+<p>Simulates a student who increases his chance of success for a type of exercise with each successful exercise by 0.1 and with each failed exercise by 0.05.</p>
+<p>Additionally, the chance of success is scaled by the complexity of the exercise. 0.7 for medium exercises and 0.5 for hard exercises.</p>
+<!-- @@@simulateIptSc -->
+<!-- $$$simulateWithFailPercent[overload1]$$$simulateWithFailPercentconstdouble -->
+<h3 class="fn" id="simulateWithFailPercent"><a name="simulateWithFailPercent"></a><code>[slot] </code><span class="type">void</span> StoryTeller::<span class="name">simulateWithFailPercent</span>(const <span class="type">double</span> <i>percent</i>)</h3>
+<p>Used to simulate playthroughs of the game.</p>
+<p>Student passes an exercise with 30%.</p>
+<!-- @@@simulateWithFailPercent -->
+<!-- $$$writeLogToFile[overload1]$$$writeLogToFileQString -->
+<h3 class="fn" id="writeLogToFile"><a name="writeLogToFile"></a><code>[slot] </code><span class="type">void</span> StoryTeller::<span class="name">writeLogToFile</span>(<span class="type">QString</span> <i>fileName</i>)</h3>
+<p>A Helper function to write logs to file.</p>
+<p>This is used to save the playthrough logs to disk to be evaluated further.</p>
+<p>It was adapted from this tutorial for file io with Qt: http://expletive-deleted.com/2015/02/26/file-io-in-qt5/</p>
+<!-- @@@writeLogToFile -->
+</div>
+</body>
+</html>

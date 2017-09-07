@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Type5Exercise.qml -->
+  <title>Type5Exercise QML Type | Qt </title>
+<link rel="stylesheet" type="text/css" href="style/style.css"/>
+</head>
+<body>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Type5Exercise QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Type5Exercise-brief -->
+<p><a href="qml-type5exercise.html">Type5Exercise</a> defines the layout and logic for an exercise of type 5. <a href="#details">More...</a></p>
+<!-- @@@Type5Exercise -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import  </td></tr></table></div><ul>
+<li><a href="qml-type5exercise-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-type5exercise.html#checkfor-prop">checkfor</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#description-prop">description</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#method-prop">method</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#next-prop">next</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#sIdx-prop">sIdx</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#scene-prop">scene</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#simulationIsRunning-prop">simulationIsRunning</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#solution-prop">solution</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#special-prop">special</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#storyList-prop">storyList</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#storyStack-prop">storyStack</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#submitted-prop">submitted</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#submittedCode-prop">submittedCode</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#totalScore-prop">totalScore</a></b></b> : real</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-type5exercise.html#checkColor-method">checkColor</a></b></b>(<i>coloration</i>, <i>color</i>)</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#completeExercise-method">completeExercise</a></b></b>(<i>prog</i>)</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#handleDialogue-method">handleDialogue</a></b></b>(<i>speaker</i>, <i>text</i>)</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#handleScene-method">handleScene</a></b></b>(<i>scene</i>)</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#nextSimulation-method">nextSimulation</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#showDescription-method">showDescription</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-type5exercise.html#updateStory-method">updateStory</a></b></b>()</li>
+</ul>
+<!-- $$$Type5Exercise-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>Type 5 exercises are programming exercises where players have to create a VPL program starting with an empty program. A task description is given before the exercise is started but can be reviewed again by clicking the button labelled &quot;Ask Ada what to do&quot;.</p>
+<p>This component is loaded from <a href="qml-gameinterface.html">GameInterface</a> which also sets its properties to define an exercise.</p>
+<!-- @@@Type5Exercise -->
+<h2>Property Documentation</h2>
+<!-- $$$checkfor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="checkfor-prop">
+<td class="tblQmlPropNode"><p>
+<a name="checkfor-prop"></a><span class="name">checkfor</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>If <code>method</code> is set to <i>fixed</i>, this property should store an array of javaobjects specifying what the user submitted code should contain.</p>
+</div></div><!-- @@@checkfor -->
+<br/>
+<!-- $$$description -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="description-prop">
+<td class="tblQmlPropNode"><p>
+<a name="description-prop"></a><span class="name">description</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Used to hold the exercise description. The descriptions are in the same format as other dialogue story content.</p>
+</div></div><!-- @@@description -->
+<br/>
+<!-- $$$method -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="method-prop">
+<td class="tblQmlPropNode"><p>
+<a name="method-prop"></a><span class="name">method</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property stores the method that should be used to evaluate the code submitted by a student.</p>
+<p>It should be set to <i>sim</i> or <i>fixed</i>.</p>
+</div></div><!-- @@@method -->
+<br/>
+<!-- $$$next -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="next-prop">
+<td class="tblQmlPropNode"><p>
+<a name="next-prop"></a><span class="name">next</span> : <span class="type">bool</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The dialogue is advanced when <code>next</code> is set to true.</p>
+<p>This is used within an exercise to explain the layout or for the characters to talk about the task.</p>
+</div></div><!-- @@@next -->
+<br/>
+<!-- $$$sIdx -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="sIdx-prop">
+<td class="tblQmlPropNode"><p>
+<a name="sIdx-prop"></a><span class="name">sIdx</span> : <span class="type">int</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The index of the simulation that is currently being run.</p>
+</div></div><!-- @@@sIdx -->
+<br/>
+<!-- $$$scene -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="scene-prop">
+<td class="tblQmlPropNode"><p>
+<a name="scene-prop"></a><span class="name">scene</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property stores all details relevant for the simulations. Scene should be a JSON array where each item is an object describing 1 simulation.</p>
+</div></div><!-- @@@scene -->
+<br/>
+<!-- $$$simulationIsRunning -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="simulationIsRunning-prop">
+<td class="tblQmlPropNode"><p>
+<a name="simulationIsRunning-prop"></a><span class="name">simulationIsRunning</span> : <span class="type">bool</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Boolean to check if the simulation is still running. If it is still running, the exercise should not close yet.</p>
+</div></div><!-- @@@simulationIsRunning -->
+<br/>
+<!-- $$$solution -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="solution-prop">
+<td class="tblQmlPropNode"><p>
+<a name="solution-prop"></a><span class="name">solution</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property holds a sample solution of VPL code in string format.</p>
+<p>If no other method for code correction is given, a one to one comparison with the user submitted code is done with this sample solution.</p>
+</div></div><!-- @@@solution -->
+<br/>
+<!-- $$$special -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="special-prop">
+<td class="tblQmlPropNode"><p>
+<a name="special-prop"></a><span class="name">special</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property stores any special steps that should be taken before any simulation is run.</p>
+<p>For example, to simulate the color changing when sensor values change, a line of code making the motor move forwards could be added so the sensor values in the simulation will eventually change. This makes it easier to ensure that the color is not just changing by default in the beginning but really reacting to the sensor value change.</p>
+</div></div><!-- @@@special -->
+<br/>
+<!-- $$$storyList -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="storyList-prop">
+<td class="tblQmlPropNode"><p>
+<a name="storyList-prop"></a><span class="name">storyList</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property holds the story content passed to the exercise from <a href="qml-gameinterface.html">GameInterface</a>.</p>
+<p>It is not yet formatted to be displayed.</p>
+</div></div><!-- @@@storyList -->
+<br/>
+<!-- $$$storyStack -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="storyStack-prop">
+<td class="tblQmlPropNode"><p>
+<a name="storyStack-prop"></a><span class="name">storyStack</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property holds the script to be played when the exercise is loaded. It is similar to <code>storyStack</code> in <a href="qml-gameinterface.html">GameInterface</a>.</p>
+<p>When <a href="qml-type1exercise.html">Type1Exercise</a> has finished loading, this array is initialised using the contents from <code>storyList</code>.</p>
+</div></div><!-- @@@storyStack -->
+<br/>
+<!-- $$$submitted -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="submitted-prop">
+<td class="tblQmlPropNode"><p>
+<a name="submitted-prop"></a><span class="name">submitted</span> : <span class="type">bool</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property stores whether the user has already submitted the code.</p>
+<p>Should be obsolete but was used in earlier versions to verify that simulations are running because the user has submitted their code.</p>
+</div></div><!-- @@@submitted -->
+<br/>
+<!-- $$$submittedCode -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="submittedCode-prop">
+<td class="tblQmlPropNode"><p>
+<a name="submittedCode-prop"></a><span class="name">submittedCode</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property stores a copy of the code a user submitted.</p>
+<p>It is used to pass on to <a href="storyteller.html">StoryTeller</a> for logging purposes and to reset the code if multiple simulations are run and the code needs to be extended to be properly simulated.</p>
+</div></div><!-- @@@submittedCode -->
+<br/>
+<!-- $$$totalScore -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="totalScore-prop">
+<td class="tblQmlPropNode"><p>
+<a name="totalScore-prop"></a><span class="name">totalScore</span> : <span class="type">real</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The total score of the student.</p>
+<p>This score can be increased after each simulation run.</p>
+</div></div><!-- @@@totalScore -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$checkColor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="checkColor-method">
+<td class="tblQmlFuncNode"><p>
+<a name="checkColor-method"></a><span class="name">checkColor</span>(<i>coloration</i>, <i>color</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>A function used to decide if the given RGB value in <code>coloration</code> match the color textual color given in <code>color</code>.</p>
+<p>The colors are matched based on some intervals defined by hand. available <code>colors</code> are: <i>red</i>, <i>green</i>, <i>blue</i>, <i>pink</i>, <i>light</i> blue, <i>yellow</i>, <i>orange</i>.</p>
+<p>Returns true or false depending on if the color matched or not.</p>
+</div></div><!-- @@@checkColor -->
+<br/>
+<!-- $$$completeExercise -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="completeExercise-method">
+<td class="tblQmlFuncNode"><p>
+<a name="completeExercise-method"></a><span class="name">completeExercise</span>(<i>prog</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function evaluates the submitted code based on the <code>method</code> for a particular exercise and closes the exercise to return back to the game.</p>
+</div></div><!-- @@@completeExercise -->
+<br/>
+<!-- $$$handleDialogue -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="handleDialogue-method">
+<td class="tblQmlFuncNode"><p>
+<a name="handleDialogue-method"></a><span class="name">handleDialogue</span>(<i>speaker</i>, <i>text</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function sets the speaker and dialogue to be shown within an exercise.</p>
+</div></div><!-- @@@handleDialogue -->
+<br/>
+<!-- $$$handleScene -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="handleScene-method">
+<td class="tblQmlFuncNode"><p>
+<a name="handleScene-method"></a><span class="name">handleScene</span>(<i>scene</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function is used when multiple story actions should happen at the same time. See also: <code>handleScene</code> function in <a href="qml-gameinterface.html">GameInterface</a>.</p>
+</div></div><!-- @@@handleScene -->
+<br/>
+<!-- $$$nextSimulation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="nextSimulation-method">
+<td class="tblQmlFuncNode"><p>
+<a name="nextSimulation-method"></a><span class="name">nextSimulation</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function completes one simulation as described by an item in <code>scene</code>.</p>
+</div></div><!-- @@@nextSimulation -->
+<br/>
+<!-- $$$showDescription -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="showDescription-method">
+<td class="tblQmlFuncNode"><p>
+<a name="showDescription-method"></a><span class="name">showDescription</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function causes the description to be shown to the player again in dialogue format.</p>
+</div></div><!-- @@@showDescription -->
+<br/>
+<!-- $$$updateStory -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="updateStory-method">
+<td class="tblQmlFuncNode"><p>
+<a name="updateStory-method"></a><span class="name">updateStory</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function is used to display the next action in the exercise explanation.</p>
+<p>See also: <code>updateStory</code> in <a href="qml-gameinterface.html">GameInterface</a> .</p>
+<p>When the <a href="qml-type5exercise.html#storyStack-prop">storyStack</a> becomes empty, the <a href="qml-dialoguebox.html">DialogueBox</a> is hidden and deactivated.</p>
+</div></div><!-- @@@updateStory -->
+<br/>
+</body>
+</html>

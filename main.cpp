@@ -4,8 +4,7 @@
 #include <QQmlContext>
 #include <QtDebug>
 #include "thymio-vpl2.h"
-#include "zpdes.h"
-#include "storyteller.h"
+#include "game/storyteller.h"
 #include "simulator.h"
 
 int main(int argc, char *argv[])
@@ -32,7 +31,7 @@ int main(int argc, char *argv[])
     Simulator* simulator{new Simulator()};
     engine.rootContext()->setContextProperty("simulator", simulator);
 
-    engine.load(QUrl(QStringLiteral("qrc:/its-game/Startup.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/its-game/game/Startup.qml")));
 
 
 

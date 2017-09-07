@@ -88,17 +88,17 @@
 <context>
     <name>DifficultyFeedback</name>
     <message>
-        <location filename="../DifficultyFeedback.qml" line="30"/>
+        <location filename="../game/DifficultyFeedback.qml" line="30"/>
         <source>How difficult was the task for you?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../DifficultyFeedback.qml" line="41"/>
+        <location filename="../game/DifficultyFeedback.qml" line="41"/>
         <source>Too easy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../DifficultyFeedback.qml" line="119"/>
+        <location filename="../game/DifficultyFeedback.qml" line="119"/>
         <source>Too hard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3693,7 +3693,7 @@
 <context>
     <name>GameInterface</name>
     <message>
-        <location filename="../GameInterface.qml" line="24"/>
+        <location filename="../game/GameInterface.qml" line="24"/>
         <source>Thymio Game Prototype</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3701,12 +3701,12 @@
 <context>
     <name>GameSimulator</name>
     <message>
-        <location filename="../GameSimulator.qml" line="278"/>
+        <location filename="../game/GameSimulator.qml" line="278"/>
         <source>Cancel</source>
         <translation type="unfinished">Abbrechen</translation>
     </message>
     <message>
-        <location filename="../GameSimulator.qml" line="287"/>
+        <location filename="../game/GameSimulator.qml" line="287"/>
         <source>Save</source>
         <translation type="unfinished">Speichern</translation>
     </message>
@@ -3758,7 +3758,7 @@
 <context>
     <name>Startup</name>
     <message>
-        <location filename="../Startup.qml" line="9"/>
+        <location filename="../game/Startup.qml" line="9"/>
         <source>Thymio Game Prototype</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3766,17 +3766,17 @@
 <context>
     <name>Type1Exercise</name>
     <message>
-        <location filename="../Type1Exercise.qml" line="98"/>
+        <location filename="../game/Type1Exercise.qml" line="98"/>
         <source>What does this program do?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Type1Exercise.qml" line="182"/>
+        <location filename="../game/Type1Exercise.qml" line="182"/>
         <source>Clear Program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Type1Exercise.qml" line="188"/>
+        <location filename="../game/Type1Exercise.qml" line="188"/>
         <source>Back to Ada and Thymio</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3784,12 +3784,12 @@
 <context>
     <name>Type2Exercise</name>
     <message>
-        <location filename="../Type2Exercise.qml" line="181"/>
+        <location filename="../game/Type2Exercise.qml" line="181"/>
         <source>Clear Program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Type2Exercise.qml" line="187"/>
+        <location filename="../game/Type2Exercise.qml" line="187"/>
         <source>Back to Ada and Thymio</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3797,17 +3797,17 @@
 <context>
     <name>Type3Exercise</name>
     <message>
-        <location filename="../Type3Exercise.qml" line="148"/>
+        <location filename="../game/Type3Exercise.qml" line="148"/>
         <source>What is the difference between these two?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Type3Exercise.qml" line="232"/>
+        <location filename="../game/Type3Exercise.qml" line="232"/>
         <source>Clear Program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Type3Exercise.qml" line="238"/>
+        <location filename="../game/Type3Exercise.qml" line="238"/>
         <source>Back to Ada and Thymio</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3815,12 +3815,12 @@
 <context>
     <name>Type4Exercise</name>
     <message>
-        <location filename="../Type4Exercise.qml" line="45"/>
+        <location filename="../game/Type4Exercise.qml" line="45"/>
         <source>Clear Program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Type4Exercise.qml" line="51"/>
+        <location filename="../game/Type4Exercise.qml" line="51"/>
         <source>Reload Program</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3828,7 +3828,7 @@
 <context>
     <name>Type5Exercise</name>
     <message>
-        <location filename="../Type5Exercise.qml" line="38"/>
+        <location filename="../game/Type5Exercise.qml" line="38"/>
         <source>Clear Program</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3836,83 +3836,83 @@
 <context>
     <name>VplInterface</name>
     <message>
-        <location filename="../VplInterface.qml" line="13"/>
-        <location filename="../VplInterface.qml" line="358"/>
+        <location filename="../game/VplInterface.qml" line="13"/>
+        <location filename="../game/VplInterface.qml" line="358"/>
         <source>Thymio VPL Mobile Preview</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="27"/>
+        <location filename="../game/VplInterface.qml" line="27"/>
         <source>autosave</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="63"/>
+        <location filename="../game/VplInterface.qml" line="63"/>
         <source>Send to Ada</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="99"/>
+        <location filename="../game/VplInterface.qml" line="99"/>
         <source>Ask Ada what to do</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="174"/>
+        <location filename="../game/VplInterface.qml" line="174"/>
         <source>load program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="185"/>
+        <location filename="../game/VplInterface.qml" line="185"/>
         <source>save program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="196"/>
+        <location filename="../game/VplInterface.qml" line="196"/>
         <source>new program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="207"/>
+        <location filename="../game/VplInterface.qml" line="207"/>
         <source>switch color theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="231"/>
+        <location filename="../game/VplInterface.qml" line="231"/>
         <source>about</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="252"/>
+        <location filename="../game/VplInterface.qml" line="252"/>
         <source>return to main menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="263"/>
+        <location filename="../game/VplInterface.qml" line="263"/>
         <source>simulate exercise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="366"/>
+        <location filename="../game/VplInterface.qml" line="366"/>
         <source>&lt;p&gt;&lt;a href=&quot;http://stephane.magnenat.net&quot;&gt;Stéphane Magnenat&lt;/a&gt;, &lt;a href=&quot;http://sampla.ch&quot;&gt;Martin Voelkle&lt;/a&gt;,&lt;br/&gt;&lt;a href=&quot;http://mariamari-a.com&quot;&gt;Maria Beltran&lt;/a&gt; and contributors.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="367"/>
+        <location filename="../game/VplInterface.qml" line="367"/>
         <source>&lt;p&gt;© 2015–2017 EPFL, ETH Zürich and Mobsya&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="368"/>
+        <location filename="../game/VplInterface.qml" line="368"/>
         <source>&lt;p&gt;This project is open source under &lt;a href=&quot;https://github.com/aseba-community/thymio-vpl2/blob/master/LICENSE.txt&quot;&gt;LGPL&lt;/a&gt;.&lt;br/&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="369"/>
+        <location filename="../game/VplInterface.qml" line="369"/>
         <source>See file &lt;a href=&quot;https://github.com/aseba-community/thymio-vpl2/blob/master/AUTHORS.md&quot;&gt;AUTHORS.md&lt;/a&gt; in the &lt;a href=&quot;https://github.com/aseba-community/thymio-vpl2&quot;&gt;source code&lt;/a&gt;&lt;br/&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../VplInterface.qml" line="370"/>
+        <location filename="../game/VplInterface.qml" line="370"/>
         <source>for a detailed list of contributions.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3920,7 +3920,7 @@
 <context>
     <name>general</name>
     <message>
-        <location filename="../HomeScreen.qml" line="85"/>
+        <location filename="../game/HomeScreen.qml" line="85"/>
         <source>Game</source>
         <translation type="unfinished"></translation>
     </message>

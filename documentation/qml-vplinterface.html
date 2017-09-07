@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- VplInterface.qml -->
+  <title>VplInterface QML Type | Qt </title>
+<link rel="stylesheet" type="text/css" href="style/style.css"/>
+</head>
+<body>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">VplInterface QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$VplInterface-brief -->
+<p><a href="qml-vplinterface.html">VplInterface</a> represents the vpl screen. <a href="#details">More...</a></p>
+<!-- @@@VplInterface -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import  </td></tr></table></div><ul>
+<li><a href="qml-vplinterface-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-vplinterface.html#autosaveName-prop">autosaveName</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-vplinterface.html#code-prop">code</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-vplinterface.html#editor-prop">editor</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-vplinterface.html#linkRichTextStyle-prop">linkRichTextStyle</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-vplinterface.html#menu-prop">menu</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-vplinterface.html#thymio-prop">thymio</a></b></b> : var</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-vplinterface.html#setQuestionButton-method">setQuestionButton</a></b></b>(<i>func</i>)</li>
+<li class="fn"><b><b><a href="qml-vplinterface.html#setUploadButton-method">setUploadButton</a></b></b>(<i>func</i>)</li>
+</ul>
+<!-- $$$VplInterface-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p><a href="qml-vplinterface.html">VplInterface</a> is an adapted version of the VPL. The adaptations from the original vpl center around menu option changes. All functionality provided through components remains the same and should not break if the components were to be updated.</p>
+<!-- @@@VplInterface -->
+<h2>Property Documentation</h2>
+<!-- $$$autosaveName -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="autosaveName-prop">
+<td class="tblQmlPropNode"><p>
+<a name="autosaveName-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">autosaveName</span> : <span class="type">string</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Default save name for code created in VPL.</p>
+<p>Is the same in the original VPL and is not used in any special way by the game.</p>
+</div></div><!-- @@@autosaveName -->
+<br/>
+<!-- $$$code -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="code-prop">
+<td class="tblQmlPropNode"><p>
+<a name="code-prop"></a><span class="name">code</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property stores a VPL code in string format.</p>
+<p>It is used to remember the given code of an exercise of type 4. This allows the exercise to be reset from the menu.</p>
+</div></div><!-- @@@code -->
+<br/>
+<!-- $$$editor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="editor-prop">
+<td class="tblQmlPropNode"><p>
+<a name="editor-prop"></a><span class="name">editor</span> : <span class="type">alias</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Represents the vplEditor.</p>
+<p>The editor was made accessible from outside to accomodate exercises of type 1 2 and 3 which use the editor without the event and action block lists.</p>
+<p>It is also used to force the editor to save its code before an exercise is simulated if some code has to be injected before a sensible simulation can be conducted.</p>
+</div></div><!-- @@@editor -->
+<br/>
+<!-- $$$linkRichTextStyle -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="linkRichTextStyle-prop">
+<td class="tblQmlPropNode"><p>
+<a name="linkRichTextStyle-prop"></a><span class="name">linkRichTextStyle</span> : <span class="type">string</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Property used by the VPL. Is not used by the game.</p>
+</div></div><!-- @@@linkRichTextStyle -->
+<br/>
+<!-- $$$menu -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="menu-prop">
+<td class="tblQmlPropNode"><p>
+<a name="menu-prop"></a><span class="name">menu</span> : <span class="type">alias</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Represents the model for the menu items in the top left corner.</p>
+<p>As certain exercise types require different options in the menu, <a href="qml-vplinterface.html">VplInterface</a> offers this property so the menu can be adapted easily from outside.</p>
+</div></div><!-- @@@menu -->
+<br/>
+<!-- $$$thymio -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="thymio-prop">
+<td class="tblQmlPropNode"><p>
+<a name="thymio-prop"></a><span class="name">thymio</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The Thymio object.</p>
+<p>It is made accessible from outside to allow exercises of type 4 and 5 to start simulations.</p>
+</div></div><!-- @@@thymio -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$setQuestionButton -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setQuestionButton-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setQuestionButton-method"></a><span class="name">setQuestionButton</span>(<i>func</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function makes the &quot;Ask Ada what to do&quot; button active and visible in the editor.</p>
+<p>The button allows the player to make the game show the task for an exercise again. It is activated at the beginning of type 4 and 5 exercises.</p>
+</div></div><!-- @@@setQuestionButton -->
+<br/>
+<!-- $$$setUploadButton -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setUploadButton-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setUploadButton-method"></a><span class="name">setUploadButton</span>(<i>func</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function makes the &quot;Send to Ada&quot; button active and visible in the editor.</p>
+<p>The button allows an exercise to be submitted for evaluation to the game. It is activated at the beginning of type 4 and 5 exercises.</p>
+</div></div><!-- @@@setUploadButton -->
+<br/>
+</body>
+</html>

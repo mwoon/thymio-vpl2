@@ -70,19 +70,19 @@ QMAKE_CXXFLAGS += $$ASEBA_CXXFLAGS
 DEFINES += $$ASEBA_DEFINES
 CONFIG += c++14 object_parallel_to_source
 HEADERS += $$PWD/aseba.h \
-    $$PWD/zpdes.h \
-    $$PWD/activity.h \
-    $$PWD/scriptblock.h \
-    $$PWD/storyteller.h \
+    $$PWD/game/zpdes.h \
+    $$PWD/game/activity.h \
+    $$PWD/game/scriptblock.h \
+    $$PWD/game/storyteller.h \
 	$$PWD/simulator.h
 SOURCES += \
 	$$ASEBA_SOURCES \
 	$$PWD/aseba.cpp \
 	$$PWD/thymio-vpl2.cpp \
-    $$PWD/zpdes.cpp \
-    $$PWD/activity.cpp \
-    $$PWD/scriptblock.cpp \
-    $$PWD/storyteller.cpp \
+    $$PWD/game/zpdes.cpp \
+    $$PWD/game/activity.cpp \
+    $$PWD/game/scriptblock.cpp \
+    $$PWD/game/storyteller.cpp \
 	$$PWD/simulator.cpp
 lupdate_only{
 SOURCES = \
@@ -98,17 +98,20 @@ INCLUDEPATH += $$ASEBA_INCLUDE
 LIBS += $$ASEBA_LIBS
 
 DISTFILES += \
-    $$PWD/GameInterface.qml \
-    $$PWD/HomeScreen.qml \
-    $$PWD/SimulatorTitleBar.qml \
-    $$PWD/GameTitleBar.qml \
-    $$PWD/MenuDrawer.qml \
-    $$PWD/DialogueBox.qml \
-    $$PWD/Type1Exercise.qml \
-    $$PWD/Type2Exercise.qml \
-    $$PWD/Type3Exercise.qml \
-    $$PWD/Type4Exercise.qml \
-    $$PWD/Type5Exercise.qml \
+    $$PWD/game/GameInterface.qml \
+    $$PWD/game/HomeScreen.qml \
+    $$PWD/game/SimulatorTitleBar.qml \
+    $$PWD/game/GameTitleBar.qml \
+    $$PWD/game/MenuDrawer.qml \
+    $$PWD/game/DialogueBox.qml \
+    $$PWD/game/Type1Exercise.qml \
+    $$PWD/game/Type2Exercise.qml \
+    $$PWD/game/Type3Exercise.qml \
+    $$PWD/game/Type4Exercise.qml \
+    $$PWD/game/Type5Exercise.qml \
     $$PWD/assets/island_1.png \
-    $$PWD/DifficultyFeedback.qml \
-    $$PWD/exercises/E04.01
+    $$PWD/game/DifficultyFeedback.qml \
+    $$PWD/exercises/E04.01 \
+    $$PWD/game/VplInterface.qml \
+    $$PWD/game/Startup.qml \
+    $$PWD/game/GameSimulator.qml

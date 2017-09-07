@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- GameInterface.qml -->
+  <title>GameInterface QML Type | Qt </title>
+<link rel="stylesheet" type="text/css" href="style/style.css"/>
+</head>
+<body>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">GameInterface QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$GameInterface-brief -->
+<p><a href="qml-gameinterface.html">GameInterface</a> contains the logic of the main game. <a href="#details">More...</a></p>
+<!-- @@@GameInterface -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import  </td></tr></table></div><ul>
+<li><a href="qml-gameinterface-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-gameinterface.html#askForFeedback-prop">askForFeedback</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#lastScore-prop">lastScore</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#lastStory-prop">lastStory</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#next-prop">next</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#storyObject-prop">storyObject</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#storyStack-prop">storyStack</a></b></b> : var</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-gameinterface.html#closeExerciseWindow-method">closeExerciseWindow</a></b></b>(<i>score</i>)</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#closeFeedbackWindow-method">closeFeedbackWindow</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#finishStoryObjectCreation-method">finishStoryObjectCreation</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#handleBgColor-method">handleBgColor</a></b></b>(<i>color</i>)</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#handleBgImage-method">handleBgImage</a></b></b>(<i>scene</i>)</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#handleDialogue-method">handleDialogue</a></b></b>(<i>speaker</i>, <i>text</i>)</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#handleEx-method">handleEx</a></b></b>(<i>content</i>)</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#handleFeedback-method">handleFeedback</a></b></b>(<i>options</i>)</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#handleScene-method">handleScene</a></b></b>(<i>scene</i>)</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#handleText-method">handleText</a></b></b>(<i>text</i>)</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#storyPartAction-method">storyPartAction</a></b></b>(<i>part</i>)</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#toggleDialogueBox-method">toggleDialogueBox</a></b></b>(<i>truefalse</i>)</li>
+<li class="fn"><b><b><a href="qml-gameinterface.html#updateStory-method">updateStory</a></b></b>()</li>
+</ul>
+<!-- $$$GameInterface-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p><a href="qml-gameinterface.html">GameInterface</a> contains the logic of the main game. It reads story and exercise files and shows their contents to the user in the blocks defined in the files.</p>
+<!-- @@@GameInterface -->
+<h2>Property Documentation</h2>
+<!-- $$$askForFeedback -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="askForFeedback-prop">
+<td class="tblQmlPropNode"><p>
+<a name="askForFeedback-prop"></a><span class="name">askForFeedback</span> : <span class="type">bool</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Used to control if the game should ask the player how difficult they found an exercise right after it it solved.</p>
+<p>Set to true to enable asking for feedback.</p>
+<p>By default it is false.</p>
+</div></div><!-- @@@askForFeedback -->
+<br/>
+<!-- $$$lastScore -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="lastScore-prop">
+<td class="tblQmlPropNode"><p>
+<a name="lastScore-prop"></a><span class="name">lastScore</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Stores the score of the last exercise.</p>
+<p>Used to decide what text to show after an exercise.</p>
+</div></div><!-- @@@lastScore -->
+<br/>
+<!-- $$$lastStory -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="lastStory-prop">
+<td class="tblQmlPropNode"><p>
+<a name="lastStory-prop"></a><span class="name">lastStory</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Stores the last story sequence loaded.</p>
+<p>Used when loading exercises to decide which version of the exercise to load.</p>
+</div></div><!-- @@@lastStory -->
+<br/>
+<!-- $$$next -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="next-prop">
+<td class="tblQmlPropNode"><p>
+<a name="next-prop"></a><span class="name">next</span> : <span class="type">bool</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The game proceeds to the next action on the stack when <code>next</code> is set to true.</p>
+<p>For example, when a user clicks on the screen during a story section or when a user answers an exercise question.</p>
+</div></div><!-- @@@next -->
+<br/>
+<!-- $$$storyObject -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="storyObject-prop">
+<td class="tblQmlPropNode"><p>
+<a name="storyObject-prop"></a><span class="name">storyObject</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Is a temporary object used to instantiate the QtObject holding the next story or exercise Component.</p>
+</div></div><!-- @@@storyObject -->
+<br/>
+<!-- $$$storyStack -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="storyStack-prop">
+<td class="tblQmlPropNode"><p>
+<a name="storyStack-prop"></a><span class="name">storyStack</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Stores the next actions to be taken by the game.</p>
+<p>All the contents of a file is pushed to this stack when a story or exercise file is read.</p>
+</div></div><!-- @@@storyStack -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$closeExerciseWindow -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="closeExerciseWindow-method">
+<td class="tblQmlFuncNode"><p>
+<a name="closeExerciseWindow-method"></a><span class="name">closeExerciseWindow</span>(<i>score</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function is used to close an exercise popup and continue to the next action.</p>
+</div></div><!-- @@@closeExerciseWindow -->
+<br/>
+<!-- $$$closeFeedbackWindow -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="closeFeedbackWindow-method">
+<td class="tblQmlFuncNode"><p>
+<a name="closeFeedbackWindow-method"></a><span class="name">closeFeedbackWindow</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function closes a <a href="qml-difficultyfeedback.html">DifficultyFeedback</a> popup and ensures that the story advances next.</p>
+</div></div><!-- @@@closeFeedbackWindow -->
+<br/>
+<!-- $$$finishStoryObjectCreation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="finishStoryObjectCreation-method">
+<td class="tblQmlFuncNode"><p>
+<a name="finishStoryObjectCreation-method"></a><span class="name">finishStoryObjectCreation</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function is called as soon as <code>storyObject</code> was properly instantiated.</p>
+<p>It processes the story or exercise and adds their parts to the <code>storyStack</code>.</p>
+</div></div><!-- @@@finishStoryObjectCreation -->
+<br/>
+<!-- $$$handleBgColor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="handleBgColor-method">
+<td class="tblQmlFuncNode"><p>
+<a name="handleBgColor-method"></a><span class="name">handleBgColor</span>(<i>color</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function sets the background color of <a href="qml-gameinterface.html">GameInterface</a>.</p>
+<p>This function was mostly used for early testing. As there is usually a background image, the background color is not visible under normal circumstances.</p>
+</div></div><!-- @@@handleBgColor -->
+<br/>
+<!-- $$$handleBgImage -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="handleBgImage-method">
+<td class="tblQmlFuncNode"><p>
+<a name="handleBgImage-method"></a><span class="name">handleBgImage</span>(<i>scene</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function is used to set the background image. Simple animations can also be defined when changing the background.</p>
+</div></div><!-- @@@handleBgImage -->
+<br/>
+<!-- $$$handleDialogue -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="handleDialogue-method">
+<td class="tblQmlFuncNode"><p>
+<a name="handleDialogue-method"></a><span class="name">handleDialogue</span>(<i>speaker</i>, <i>text</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function sets the <a href="qml-dialoguebox.html">DialogueBox</a> properties <code>speakerName</code> and <code>dialogue</code>.</p>
+<p>The new texts are immefiately shown to the player.</p>
+</div></div><!-- @@@handleDialogue -->
+<br/>
+<!-- $$$handleEx -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="handleEx-method">
+<td class="tblQmlFuncNode"><p>
+<a name="handleEx-method"></a><span class="name">handleEx</span>(<i>content</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function handles the loading of exercises.</p>
+<p>Depending on the type of exercise, different parameters are passed to the corresponding exercise components.</p>
+</div></div><!-- @@@handleEx -->
+<br/>
+<!-- $$$handleFeedback -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="handleFeedback-method">
+<td class="tblQmlFuncNode"><p>
+<a name="handleFeedback-method"></a><span class="name">handleFeedback</span>(<i>options</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function is used to display story content that is dependent on the outcome of the previous exercise.</p>
+</div></div><!-- @@@handleFeedback -->
+<br/>
+<!-- $$$handleScene -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="handleScene-method">
+<td class="tblQmlFuncNode"><p>
+<a name="handleScene-method"></a><span class="name">handleScene</span>(<i>scene</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function is used to display story content when a few actions should be taken simultaneously.</p>
+<p>For example, the background and dialogue could change at the same time or the new dialogue should additionally be logged.</p>
+</div></div><!-- @@@handleScene -->
+<br/>
+<!-- $$$handleText -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="handleText-method">
+<td class="tblQmlFuncNode"><p>
+<a name="handleText-method"></a><span class="name">handleText</span>(<i>text</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function is used to append data to the log.</p>
+<p>It can be used to track what parts of a story or exercise have already been shown to the user.</p>
+</div></div><!-- @@@handleText -->
+<br/>
+<!-- $$$storyPartAction -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="storyPartAction-method">
+<td class="tblQmlFuncNode"><p>
+<a name="storyPartAction-method"></a><span class="name">storyPartAction</span>(<i>part</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function checks what kind of action the next part represents and forwards it to the corresponding function to handle it.</p>
+<p>These functions are one of:</p>
+<ul>
+<li><a href="qml-gameinterface.html#handleText-method">handleText</a>,</li>
+<li><a href="qml-gameinterface.html#handleBgColor-method">handleBgColor</a>,</li>
+<li><a href="qml-gameinterface.html#handleScene-method">handleScene</a>,</li>
+<li><a href="qml-gameinterface.html#handleEx-method">handleEx</a>,</li>
+<li><a href="qml-gameinterface.html#handleBgImage-method">handleBgImage</a>,</li>
+<li><a href="qml-gameinterface.html#handleDialogue-method">handleDialogue</a>,</li>
+<li><a href="qml-gameinterface.html#handleFeedback-method">handleFeedback</a></li>
+</ul>
+</div></div><!-- @@@storyPartAction -->
+<br/>
+<!-- $$$toggleDialogueBox -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="toggleDialogueBox-method">
+<td class="tblQmlFuncNode"><p>
+<a name="toggleDialogueBox-method"></a><span class="name">toggleDialogueBox</span>(<i>truefalse</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Toggles the visibility of the <a href="qml-dialoguebox.html">DialogueBox</a></p>
+<p>It is used to hide the <a href="qml-dialoguebox.html">DialogueBox</a> during exercises and to show it again afterwards.</p>
+</div></div><!-- @@@toggleDialogueBox -->
+<br/>
+<!-- $$$updateStory -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="updateStory-method">
+<td class="tblQmlFuncNode"><p>
+<a name="updateStory-method"></a><span class="name">updateStory</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>If <code>storyStack</code> is not empty the next section is displayed otherwise a new section is requested from <a href="storyteller.html">StoryTeller</a>.</p>
+</div></div><!-- @@@updateStory -->
+<br/>
+</body>
+</html>

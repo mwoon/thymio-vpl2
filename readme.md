@@ -1,3 +1,9 @@
+#Thymio ITS Game
+
+The Thymio ITS game is built on top of the [Thymio VPL Mobile](https://github.com/aseba-community/thymio-vpl2). The compilation instructions are exactly the same and can be found below.
+
+The following is taken directly from the [Thymio VPL Mobile](https://github.com/aseba-community/thymio-vpl2): 
+
 # Thymio VPL Mobile
 
 A phone and tablet Visual Programming Environment for the Thymio II robot, by Stéphane Magnenat, Martin Voelkle and Maria Beltrán and contributors.

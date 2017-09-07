@@ -2,31 +2,8 @@
     <qresource prefix="/its-game">
         <file>translations/thymio-vpl2_de_CH.qm</file>
         <file>translations/thymio-vpl2_de_DE.qm</file>
-        <file>Startup.qml</file>
-        <file>VplInterface.qml</file>
-        <file>GameInterface.qml</file>
-        <file>HomeScreen.qml</file>
-        <file>GameSimulator.qml</file>
-        <file>SimulatorTitleBar.qml</file>
-        <file>GameTitleBar.qml</file>
-        <file>MenuDrawer.qml</file>
-        <file>DialogueBox.qml</file>
-        <file>activity.cpp</file>
-        <file>activity.h</file>
-        <file>scriptblock.cpp</file>
-        <file>scriptblock.h</file>
-        <file>storyteller.cpp</file>
-        <file>storyteller.h</file>
-        <file>zpdes.cpp</file>
-        <file>zpdes.h</file>
         <file>assets/clouds.png</file>
-        <file>Type1Exercise.qml</file>
-        <file>Type2Exercise.qml</file>
-        <file>Type3Exercise.qml</file>
-        <file>Type4Exercise.qml</file>
-        <file>Type5Exercise.qml</file>
         <file>assets/island_1.png</file>
-        <file>DifficultyFeedback.qml</file>
         <file>exercises/lightdark.png</file>
         <file>exercises/darklight.png</file>
         <file>exercises/E04.01.qml</file>
@@ -247,6 +224,23 @@
         <file>assets/ada.png</file>
         <file>assets/ruby.png</file>
         <file>assets/thymio.png</file>
+        <file>game/storyteller.cpp</file>
+        <file>game/storyteller.h</file>
+        <file>game/GameSimulator.qml</file>
+        <file>game/DialogueBox.qml</file>
+        <file>game/DifficultyFeedback.qml</file>
+        <file>game/GameInterface.qml</file>
+        <file>game/GameTitleBar.qml</file>
+        <file>game/HomeScreen.qml</file>
+        <file>game/MenuDrawer.qml</file>
+        <file>game/SimulatorTitleBar.qml</file>
+        <file>game/Startup.qml</file>
+        <file>game/Type1Exercise.qml</file>
+        <file>game/Type2Exercise.qml</file>
+        <file>game/Type3Exercise.qml</file>
+        <file>game/Type4Exercise.qml</file>
+        <file>game/Type5Exercise.qml</file>
+        <file>game/VplInterface.qml</file>
     </qresource>
     <qresource prefix="/">
         <file>aseba.cpp</file>

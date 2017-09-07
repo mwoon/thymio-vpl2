@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Type2Exercise.qml -->
+  <title>Type2Exercise QML Type | Qt </title>
+<link rel="stylesheet" type="text/css" href="style/style.css"/>
+</head>
+<body>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Type2Exercise QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Type2Exercise-brief -->
+<p><a href="qml-type2exercise.html">Type2Exercise</a> defines the layout and logic for an exercise of type 2. <a href="#details">More...</a></p>
+<!-- @@@Type2Exercise -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import  </td></tr></table></div><ul>
+<li><a href="qml-type2exercise-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-type2exercise.html#answerList-prop">answerList</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-type2exercise.html#next-prop">next</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-type2exercise.html#question-prop">question</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-type2exercise.html#scoreList-prop">scoreList</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-type2exercise.html#storyList-prop">storyList</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-type2exercise.html#storyStack-prop">storyStack</a></b></b> : var</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-type2exercise.html#closePopup-method">closePopup</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-type2exercise.html#completeExercise-method">completeExercise</a></b></b>(<i>score</i>)</li>
+<li class="fn"><b><b><a href="qml-type2exercise.html#handleDialogue-method">handleDialogue</a></b></b>(<i>speaker</i>, <i>text</i>)</li>
+<li class="fn"><b><b><a href="qml-type2exercise.html#handleScene-method">handleScene</a></b></b>(<i>scene</i>)</li>
+<li class="fn"><b><b><a href="qml-type2exercise.html#shuffleOptions-method">shuffleOptions</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-type2exercise.html#updateStory-method">updateStory</a></b></b>()</li>
+</ul>
+<!-- $$$Type2Exercise-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>Type 2 exercises give a description of a program and show the player 6 VPL programs to choose from. Players can access the VPL to try programs out for themselves using the button in the upper right corner.</p>
+<p>This component is loaded from <a href="qml-gameinterface.html">GameInterface</a> which also sets its properties to define an exercise.</p>
+<!-- @@@Type2Exercise -->
+<h2>Property Documentation</h2>
+<!-- $$$answerList -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="answerList-prop">
+<td class="tblQmlPropNode"><p>
+<a name="answerList-prop"></a><span class="name">answerList</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property holds a list of VPL code in string format. These serve as the answers players can choose from.</p>
+</div></div><!-- @@@answerList -->
+<br/>
+<!-- $$$next -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="next-prop">
+<td class="tblQmlPropNode"><p>
+<a name="next-prop"></a><span class="name">next</span> : <span class="type">bool</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The dialogue is advanced when <code>next</code> is set to true.</p>
+<p>This is used within an exercise to explain the layout or for the characters to talk about the task.</p>
+</div></div><!-- @@@next -->
+<br/>
+<!-- $$$question -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="question-prop">
+<td class="tblQmlPropNode"><p>
+<a name="question-prop"></a><span class="name">question</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property holds the program description that should match the correct answer in <code>answerList</code>.</p>
+</div></div><!-- @@@question -->
+<br/>
+<!-- $$$scoreList -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="scoreList-prop">
+<td class="tblQmlPropNode"><p>
+<a name="scoreList-prop"></a><span class="name">scoreList</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property holds a value for each item in <code>answerList</code>.</p>
+<p>The values correspond to the score given to the player for choosing the item in <code>answerList</code> with the matching index.</p>
+</div></div><!-- @@@scoreList -->
+<br/>
+<!-- $$$storyList -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="storyList-prop">
+<td class="tblQmlPropNode"><p>
+<a name="storyList-prop"></a><span class="name">storyList</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property holds the story content passed to the exercise from <a href="qml-gameinterface.html">GameInterface</a>.</p>
+<p>It is not yet formatted to be displayed.</p>
+</div></div><!-- @@@storyList -->
+<br/>
+<!-- $$$storyStack -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="storyStack-prop">
+<td class="tblQmlPropNode"><p>
+<a name="storyStack-prop"></a><span class="name">storyStack</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This property holds the script to be played when the exercise is loaded. It is similar to <code>storyStack</code> in <a href="qml-gameinterface.html">GameInterface</a>.</p>
+<p>When <a href="qml-type1exercise.html">Type1Exercise</a> has finished loading, this array is initialised using the contents from <code>storyList</code>.</p>
+</div></div><!-- @@@storyStack -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$closePopup -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="closePopup-method">
+<td class="tblQmlFuncNode"><p>
+<a name="closePopup-method"></a><span class="name">closePopup</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function is called to close the in exercise VPL editor.</p>
+</div></div><!-- @@@closePopup -->
+<br/>
+<!-- $$$completeExercise -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="completeExercise-method">
+<td class="tblQmlFuncNode"><p>
+<a name="completeExercise-method"></a><span class="name">completeExercise</span>(<i>score</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function closes the exercise window when an answer is given by the player and sends the result to the <a href="storyteller.html">StoryTeller</a>.</p>
+</div></div><!-- @@@completeExercise -->
+<br/>
+<!-- $$$handleDialogue -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="handleDialogue-method">
+<td class="tblQmlFuncNode"><p>
+<a name="handleDialogue-method"></a><span class="name">handleDialogue</span>(<i>speaker</i>, <i>text</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function sets the speaker and dialogue to be shown within an exercise.</p>
+</div></div><!-- @@@handleDialogue -->
+<br/>
+<!-- $$$handleScene -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="handleScene-method">
+<td class="tblQmlFuncNode"><p>
+<a name="handleScene-method"></a><span class="name">handleScene</span>(<i>scene</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function is used when multiple story actions should happen at the same time. See also: <code>handleScene</code> function in <a href="qml-gameinterface.html">GameInterface</a>.</p>
+</div></div><!-- @@@handleScene -->
+<br/>
+<!-- $$$shuffleOptions -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="shuffleOptions-method">
+<td class="tblQmlFuncNode"><p>
+<a name="shuffleOptions-method"></a><span class="name">shuffleOptions</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function shuffles the two arrays <code>answerList</code> and <code>scoreList</code> so that the indices still match between each list.</p>
+<p>It is used to randomize the answer order.</p>
+<p>Adapted from: https://bost.ocks.org/mike/shuffle/</p>
+</div></div><!-- @@@shuffleOptions -->
+<br/>
+<!-- $$$updateStory -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="updateStory-method">
+<td class="tblQmlFuncNode"><p>
+<a name="updateStory-method"></a><span class="name">updateStory</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This function is used to display the next action in the exercise explanation.</p>
+<p>See also: <code>updateStory</code> in <a href="qml-gameinterface.html">GameInterface</a> .</p>
+<p>When the <a href="qml-type2exercise.html#storyStack-prop">storyStack</a> becomes empty, the <a href="qml-dialoguebox.html">DialogueBox</a> is hidden and deactivated.</p>
+</div></div><!-- @@@updateStory -->
+<br/>
+</body>
+</html>

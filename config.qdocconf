@@ -1,0 +1,14 @@
+outputdir   = documentation
+outputformats = HTML
+
+HTML.headerstyles = "<link rel=\"stylesheet\" type=\"text/css\" href=\"style/style.css\"/>\n"
+HTML.stylesheets = docTemplate/style.css 
+
+sources.fileextensions = "*.cpp *.qdoc *.qml"
+headers.fileextensions = "*.h *.qml"
+
+headerdirs  =	game \
+		docTemplate
+
+sourcedirs  = 	game \
+		docTemplate

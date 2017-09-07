@@ -1,0 +1,45 @@
+body{
+   font-family: Verdana, Tahoma, sans-serif !important;
+   font-size: 14px;
+   max-width: 80%;
+   margin: auto;
+}
+
+h1, h2, h3 {
+   color: black;
+}
+
+pre {
+    padding: 15px;
+}
+
+div.sidebar {
+    float: right;
+}
+
+div.qmlproto, .func h3 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+pre, div.qmlproto, .func h3{
+    font-family: "Courier New";
+    font-size: 20px;
+    background-color: #F2F2F2;
+}
+
+.qmldoc, .func p{
+    margin-left: 2em;
+}
+
+hr {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+p.header {
+    margin-bottom: -1em;
+}
+p.footer {
+    text-align: right;
+    margin-top: -1em;
+}
