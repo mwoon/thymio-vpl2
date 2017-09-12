@@ -217,7 +217,7 @@ Page {
 
             if(newStorySequence.activity)  {
                 file = "qrc:/its-game/exercises/" + newStorySequence.activity[0] + ".qml";
-                //file = "exercises/" + "E08.03" + ".qml";
+                file = "qrc:/its-game/exercises/" + "E08.02" + ".qml";
 
             }
 

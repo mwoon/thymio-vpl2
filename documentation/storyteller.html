@@ -71,7 +71,7 @@
 <!-- $$$advanceScript[overload1]$$$advanceScript -->
 <h3 class="fn" id="advanceScript"><a name="advanceScript"></a><code>[slot] </code><span class="type">QString</span> StoryTeller::<span class="name">advanceScript</span>()</h3>
 <p>StoryTeller::advanceScript decides the next section of the story after the current one is finished.</p>
-<p>Is used whenever <a href="qml-gameinterface.html">GameInterface</a> has exhausted its current list of actions and requests the next one. It decides if the story should progress after an exercise or another exercise should be solved before the story will move on. If an exercise should be chosen, one will be selected from Zpdes.</p>
+<p>Is used whenever <a href="qml-gameinterface.html">GameInterface</a> has exhausted its current list of actions and requests the next one. It decides if the story should progress after an exercise or another exercise should be solved before the story will move on. If an exercise should be chosen, one will be selected from <a href="zpdes.html">Zpdes</a>.</p>
 <!-- @@@advanceScript -->
 <!-- $$$appendToLog[overload1]$$$appendToLogQString -->
 <h3 class="fn" id="appendToLog"><a name="appendToLog"></a><code>[slot] </code><span class="type">void</span> StoryTeller::<span class="name">appendToLog</span>(<span class="type">QString</span> <i>toLog</i>)</h3>
@@ -80,7 +80,7 @@
 <!-- $$$completeExercise[overload1]$$$completeExerciseconstdouble -->
 <h3 class="fn" id="completeExercise"><a name="completeExercise"></a><code>[slot] </code><span class="type">void</span> StoryTeller::<span class="name">completeExercise</span>(const <span class="type">double</span> <i>result</i>)</h3>
 <p>StoryTeller::completeExercise adjusts the state of the story according to the outcome of the exercise.</p>
-<p>Increments the exercise counts, forwards the result to Zpdes and appends the result to the log.</p>
+<p>Increments the exercise counts, forwards the result to <a href="zpdes.html">Zpdes</a> and appends the result to the log.</p>
 <!-- @@@completeExercise -->
 <!-- $$$lastGenerated[overload1]$$$lastGenerated -->
 <h3 class="fn" id="lastGenerated"><a name="lastGenerated"></a><code>[slot] </code><span class="type">QString</span> StoryTeller::<span class="name">lastGenerated</span>()</h3>

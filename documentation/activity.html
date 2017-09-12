@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- activity.cpp -->
+  <title>Activity Class | Qt </title>
+<link rel="stylesheet" type="text/css" href="style/style.css"/>
+</head>
+<body>
+<li>Activity</li>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Activity Class</h1>
+<ul>
+<li><a href="activity-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="activity.html#Activity">Activity</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="activity.html#Activity-1">Activity</a></b>(std::string <i>id</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="activity.html#Activity-2">Activity</a></b>(std::string <i>id</i>, double <i>at</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="activity.html#Activity-3">Activity</a></b>(std::string <i>id</i>, double <i>at</i>, std::string <i>desc</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="activity.html#Activity-4">Activity</a></b>(std::string <i>id</i>, double <i>at</i>, std::string <i>desc</i>, std::list&lt;std::string&gt; <i>exs</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> double </td><td class="memItemRight bottomAlign"><b><a href="activity.html#getAverageSuccess">getAverageSuccess</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="activity.html#setDescription">setDescription</a></b>(std::string <i>desc</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="activity.html#updateBanditLevel">updateBanditLevel</a></b>(double <i>result</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$Activity-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The Activity class encapsulates an item in the exercise graph of the ZPDES algorithm.</p>
+<p>The following are default values:</p>
+<ul>
+<li>id: none</li>
+<li>bandit level / learning rate: 0.5</li>
+<li>activation threshold: 0</li>
+<li>description: none</li>
+</ul>
+<p>As of the implementation when this documentation was written, only the id and bandit level are relevant for the zpdes.</p>
+</div>
+<!-- @@@Activity -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$Activity[overload1]$$$Activity -->
+<h3 class="fn" id="Activity"><a name="Activity"></a>Activity::<span class="name">Activity</span>()</h3>
+<p>Creates a default Activity with no id and learning rate 0.5</p>
+<!-- @@@Activity -->
+<!-- $$$Activity$$$Activitystd::string -->
+<h3 class="fn" id="Activity-1"><a name="Activity-1"></a>Activity::<span class="name">Activity</span>(<span class="type">std::string</span> <i>id</i>)</h3>
+<p>Creates a default Activity with the given id and learning rate 0.5</p>
+<!-- @@@Activity -->
+<!-- $$$Activity$$$Activitystd::stringdouble -->
+<h3 class="fn" id="Activity-2"><a name="Activity-2"></a>Activity::<span class="name">Activity</span>(<span class="type">std::string</span> <i>id</i>, <span class="type">double</span> <i>at</i>)</h3>
+<p>Creates a default Activity with the given id and learning rate 0.5&#x2e; the parameter <code>at</code> sets the activation threshold.</p>
+<!-- @@@Activity -->
+<!-- $$$Activity$$$Activitystd::stringdoublestd::string -->
+<h3 class="fn" id="Activity-3"><a name="Activity-3"></a>Activity::<span class="name">Activity</span>(<span class="type">std::string</span> <i>id</i>, <span class="type">double</span> <i>at</i>, <span class="type">std::string</span> <i>desc</i>)</h3>
+<p>Creates a default Activity with the given id and learning rate 0.5&#x2e; the parameter <code>at</code> sets the activation threshold. <code>desc</code> sets a description for the object. This is the constructor used in the <a href="zpdes.html">Zpdes</a>.</p>
+<!-- @@@Activity -->
+<!-- $$$Activity$$$Activitystd::stringdoublestd::stringstd::list<std::string> -->
+<h3 class="fn" id="Activity-4"><a name="Activity-4"></a>Activity::<span class="name">Activity</span>(<span class="type">std::string</span> <i>id</i>, <span class="type">double</span> <i>at</i>, <span class="type">std::string</span> <i>desc</i>, <span class="type">std::list</span>&lt;<span class="type">std::string</span>&gt; <i>exs</i>)</h3>
+<p>Creates a default Activity with the given id and learning rate 0.5&#x2e; the parameter <code>at</code> sets the activation threshold. <code>desc</code> sets a description for the object. <code>exs</code> specifies a list of exercises in this activity, however this can be omitted as it can be included in the id of the activity.</p>
+<!-- @@@Activity -->
+<!-- $$$getAverageSuccess[overload1]$$$getAverageSuccess -->
+<h3 class="fn" id="getAverageSuccess"><a name="getAverageSuccess"></a><span class="type">double</span> Activity::<span class="name">getAverageSuccess</span>()</h3>
+<p>Returns the average success of this activity based on the number of times it has been played and the scores.</p>
+<!-- @@@getAverageSuccess -->
+<!-- $$$setDescription[overload1]$$$setDescriptionstd::string -->
+<h3 class="fn" id="setDescription"><a name="setDescription"></a><span class="type">void</span> Activity::<span class="name">setDescription</span>(<span class="type">std::string</span> <i>desc</i>)</h3>
+<p>Sets a new description for the activity.</p>
+<!-- @@@setDescription -->
+<!-- $$$updateBanditLevel[overload1]$$$updateBanditLeveldouble -->
+<h3 class="fn" id="updateBanditLevel"><a name="updateBanditLevel"></a><span class="type">void</span> Activity::<span class="name">updateBanditLevel</span>(<span class="type">double</span> <i>result</i>)</h3>
+<p>Updates the bandit level / learning rate of the activity based on the last d*2 activities (d = 5 as of this writing).</p>
+<!-- @@@updateBanditLevel -->
+</div>
+</body>
+</html>

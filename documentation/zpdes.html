@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- zpdes.cpp -->
+  <title>Zpdes Class | Qt </title>
+<link rel="stylesheet" type="text/css" href="style/style.css"/>
+</head>
+<body>
+<li>Zpdes</li>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Zpdes Class</h1>
+<ul>
+<li><a href="zpdes-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="zpdes.html#Zpdes">Zpdes</a></b>(QObject *<i>parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> std::string </td><td class="memItemRight bottomAlign"><b><a href="zpdes.html#chooseActivity">chooseActivity</a></b>(std::list&lt;std::string&gt; <i>availables</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="zpdes.html#resetZpdes">resetZpdes</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="zpdes.html#setLastActivity">setLastActivity</a></b>(std::string <i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> std::string </td><td class="memItemRight bottomAlign"><b><a href="zpdes.html#updateZpd">updateZpd</a></b>(const double <i>result</i>)</td></tr>
+</table></div>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="zpdes.html#activityGenerated">activityGenerated</a></b>(const QString &amp;<i>newText</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="zpdes.html#rewarded">rewarded</a></b>(const QString &amp;<i>newText</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$Zpdes-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The Zpdes class encompasses all functions of the ITS. It maintains the state of the activity graphs, chooses exercises and updates the bandit levels of activities.</p>
+<p>Activities are the elements the ITS manages while exercises are concrete tasks resulting from choosing the activities.</p>
+<p>The ITS maintains 3 activity graphs: One each for Type, Complexity and Category of the exercises.</p>
+</div>
+<!-- @@@Zpdes -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$Zpdes[overload1]$$$ZpdesQObject* -->
+<h3 class="fn" id="Zpdes"><a name="Zpdes"></a>Zpdes::<span class="name">Zpdes</span>(<span class="type">QObject</span> *<i>parent</i> = 0)</h3>
+<p>Default constructs an instance of Zpdes.</p><!-- @@@Zpdes -->
+<!-- $$$activityGenerated[overload1]$$$activityGeneratedconstQString& -->
+<h3 class="fn" id="activityGenerated"><a name="activityGenerated"></a><code>[signal] </code><span class="type">void</span> Zpdes::<span class="name">activityGenerated</span>(const <span class="type">QString</span> &amp;<i>newText</i>)</h3>
+<p>Notifies listeners that an activity has been chosen.</p>
+<p>No longer used as all frontend communication proceeds through <a href="storyteller.html">StoryTeller</a>.</p>
+<!-- @@@activityGenerated -->
+<!-- $$$chooseActivity[overload1]$$$chooseActivitystd::list<std::string> -->
+<h3 class="fn" id="chooseActivity"><a name="chooseActivity"></a><span class="type">std::string</span> Zpdes::<span class="name">chooseActivity</span>(<span class="type">std::list</span>&lt;<span class="type">std::string</span>&gt; <i>availables</i>)</h3>
+<p>Chooses an exercise based on the available exercises at the current point in the story. <code>is</code> a list of available exercises</p>
+<!-- @@@chooseActivity -->
+<!-- $$$resetZpdes[overload1]$$$resetZpdes -->
+<h3 class="fn" id="resetZpdes"><a name="resetZpdes"></a><span class="type">void</span> Zpdes::<span class="name">resetZpdes</span>()</h3>
+<p>Resets the Zpdes algorithm, deleting bandit levels / learning rates and resetting the activity graphs.</p>
+<!-- @@@resetZpdes -->
+<!-- $$$rewarded[overload1]$$$rewardedconstQString& -->
+<h3 class="fn" id="rewarded"><a name="rewarded"></a><code>[signal] </code><span class="type">void</span> Zpdes::<span class="name">rewarded</span>(const <span class="type">QString</span> &amp;<i>newText</i>)</h3>
+<p>Notifies listeners that the update of the learning rates and ZPD has been completed.</p>
+<p>No longer used as all frontend communication proceeds through <a href="storyteller.html">StoryTeller</a>.</p>
+<!-- @@@rewarded -->
+<!-- $$$setLastActivity[overload1]$$$setLastActivitystd::string -->
+<h3 class="fn" id="setLastActivity"><a name="setLastActivity"></a><span class="type">void</span> Zpdes::<span class="name">setLastActivity</span>(<span class="type">std::string</span> <i>name</i>)</h3>
+<p>Sets the values for the last activity.</p>
+<p>Only for setting last activity for tutorials since these are not selected directly through the algorithm.</p>
+<!-- @@@setLastActivity -->
+<!-- $$$updateZpd[overload1]$$$updateZpdconstdouble -->
+<h3 class="fn" id="updateZpd"><a name="updateZpd"></a><span class="type">std::string</span> Zpdes::<span class="name">updateZpd</span>(const <span class="type">double</span> <i>result</i>)</h3>
+<p>Updates the bandit levels / learning rates for the three activity graphs and updates the zpd.</p>
+<!-- @@@updateZpd -->
+</div>
+</body>
+</html>

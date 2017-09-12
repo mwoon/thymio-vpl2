@@ -289,7 +289,7 @@
             <qmlmethod threadsafety="unspecified" name="setUploadButton" fullname="VplInterface::setUploadButton" href="qml-vplinterface.html#setUploadButton-method" status="active" access="public"/>
         </qmlclass>
         <page name="index.html" href="index.html" status="active" location="index.qdoc" filepath="/home/marie/thymio-its/thymio-vpl2/docTemplate/index.qdoc" lineno="1" subtype="page" title="Index" fulltitle="Index" subtitle=""/>
-        <class threadsafety="unspecified" name="Activity" href="activity.html" status="internal" access="private" location="activity.h" filepath="/home/marie/thymio-its/thymio-vpl2/game/activity.h" lineno="11">
+        <class threadsafety="unspecified" name="Activity" href="activity.html" status="active" access="public" location="activity.h" filepath="/home/marie/thymio-its/thymio-vpl2/game/activity.h" lineno="11">
             <function threadsafety="unspecified" name="Activity" fullname="Activity::Activity" href="activity.html#Activity" status="active" access="public" location="activity.h" filepath="/home/marie/thymio-its/thymio-vpl2/game/activity.h" lineno="20" virtual="non" meta="constructor" const="false" static="false" overload="false" delete="false" default="false" final="false" override="false" type="" signature="Activity()"/>
             <function threadsafety="unspecified" name="Activity" fullname="Activity::Activity" href="activity.html#Activity-1" status="active" access="public" location="activity.h" filepath="/home/marie/thymio-its/thymio-vpl2/game/activity.h" lineno="21" virtual="non" meta="constructor" const="false" static="false" overload="false" delete="false" default="false" final="false" override="false" type="" signature="Activity(std::string id)">
                 <parameter left="std::string" right="" name="id" default=""/>
@@ -313,8 +313,8 @@
             <function threadsafety="unspecified" name="setDescription" fullname="Activity::setDescription" href="activity.html#setDescription" status="active" access="public" location="activity.h" filepath="/home/marie/thymio-its/thymio-vpl2/game/activity.h" lineno="35" virtual="non" meta="plain" const="false" static="false" overload="false" delete="false" default="false" final="false" override="false" type="void" signature="void setDescription(std::string desc)">
                 <parameter left="std::string" right="" name="desc" default=""/>
             </function>
-            <function threadsafety="unspecified" name="updateBanditLevel" fullname="Activity::updateBanditLevel" href="activity.html#updateBanditLevel" status="active" access="public" location="activity.h" filepath="/home/marie/thymio-its/thymio-vpl2/game/activity.h" lineno="34" virtual="non" meta="plain" const="false" static="false" overload="false" delete="false" default="false" final="false" override="false" type="void" signature="void updateBanditLevel(double reward)">
-                <parameter left="double" right="" name="reward" default=""/>
+            <function threadsafety="unspecified" name="updateBanditLevel" fullname="Activity::updateBanditLevel" href="activity.html#updateBanditLevel" status="active" access="public" location="activity.h" filepath="/home/marie/thymio-its/thymio-vpl2/game/activity.h" lineno="34" virtual="non" meta="plain" const="false" static="false" overload="false" delete="false" default="false" final="false" override="false" type="void" signature="void updateBanditLevel(double result)">
+                <parameter left="double" right="" name="result" default=""/>
             </function>
             <variable threadsafety="unspecified" name="activated" fullname="Activity::activated" href="activity.html#activated-var" status="active" access="public" location="activity.h" filepath="/home/marie/thymio-its/thymio-vpl2/game/activity.h" lineno="32" type="bool = false" static="false"/>
             <variable threadsafety="unspecified" name="activationThreshold" fullname="Activity::activationThreshold" href="activity.html#activationThreshold-var" status="active" access="public" location="activity.h" filepath="/home/marie/thymio-its/thymio-vpl2/game/activity.h" lineno="29" type="double" static="false"/>
@@ -382,7 +382,7 @@
                 <parameter left="QString" right="" name="fileName" default=""/>
             </function>
         </class>
-        <class threadsafety="unspecified" name="Zpdes" href="zpdes.html" status="internal" access="private" location="zpdes.h" filepath="/home/marie/thymio-its/thymio-vpl2/game/zpdes.h" lineno="12">
+        <class threadsafety="unspecified" name="Zpdes" href="zpdes.html" status="active" access="public" location="zpdes.h" filepath="/home/marie/thymio-its/thymio-vpl2/game/zpdes.h" lineno="12">
             <function threadsafety="unspecified" name="Zpdes" fullname="Zpdes::Zpdes" href="zpdes.html#Zpdes" status="active" access="public" location="zpdes.h" filepath="/home/marie/thymio-its/thymio-vpl2/game/zpdes.h" lineno="17" virtual="non" meta="constructor" const="false" static="false" overload="false" delete="false" default="false" final="false" override="false" type="" signature="Zpdes(QObject *parent)">
                 <parameter left="QObject *" right="" name="parent" default="0"/>
             </function>

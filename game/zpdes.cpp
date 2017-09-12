@@ -1,9 +1,24 @@
 #include "game/zpdes.h"
+
+/*!
+ \class Zpdes
+
+ The Zpdes class encompasses all functions of the ITS. It maintains the state of the activity graphs, chooses exercises and updates the bandit levels of activities.
+
+ Activities are the elements the ITS manages while exercises are concrete tasks resulting from choosing the activities.
+
+ The ITS maintains 3 activity graphs: One each for Type, Complexity and Category of the exercises.
+*/
+
 Zpdes::Zpdes(QObject *parent) : QObject(parent)
 {
     //initialize all activities
     initializeActivities();
 }
+
+/*!
+ Initializes the activity graphs for the three dimensions category, type and complexity.
+*/
 
 void Zpdes::initializeActivities() {
 
@@ -32,6 +47,10 @@ void Zpdes::initializeActivities() {
     categoryActivities.push_back(std::make_shared<Activity>(Activity("E16E20E17E45E18E41E42E19E44E24E43E22E46E21E40E47E23", 0.8, "motor")));
     qDebug() << QString::fromStdString("finished initialization");
 }
+
+/*!
+  Chooses an exercise based on the available exercises at the current point in the story. \c is a list of available exercises
+*/
 
 std::string Zpdes::chooseActivity(std::list<std::string> availables) {
 
@@ -141,6 +160,9 @@ std::string Zpdes::chooseActivity(std::list<std::string> availables) {
     return description;
 }
 
+/*!
+  Updates the bandit levels / learning rates for the three activity graphs and updates the zpd.
+ */
 std::string Zpdes::updateZpd(const double result){
 
     //Ask activity to update its bandit level of major and minor
@@ -162,6 +184,9 @@ std::string Zpdes::updateZpd(const double result){
     return logText.str();
 }
 
+/*!
+    Resets the Zpdes algorithm, deleting bandit levels / learning rates and resetting the activity graphs.
+*/
 
 void Zpdes::resetZpdes() {
     //clear all acitivities and reinitialize
@@ -171,6 +196,9 @@ void Zpdes::resetZpdes() {
     initializeActivities();
 }
 
+/*!
+    Given a ZPD, i.e. a list of exercises that can be chosen, select one randomly based on the learning rates of each activity.
+*/
 unsigned Zpdes::activityFromZpd(std::list<std::shared_ptr<Activity> > &zpd) {
 
     double totalBanditLevel{0};
@@ -197,7 +225,11 @@ unsigned Zpdes::activityFromZpd(std::list<std::shared_ptr<Activity> > &zpd) {
     return index;
 }
 
-//only for setting last activity for tutorials
+/*!
+  Sets the values for the last activity.
+
+  Only for setting last activity for tutorials since these are not selected directly through the algorithm.
+*/
 void Zpdes::setLastActivity(std::string name) {
 
     for(auto it = minorActivities.begin(); it != minorActivities.end(); it++) {
@@ -252,3 +284,19 @@ std::string Zpdes::getJsonStory(std::list<std::string> beforeAc, std::list<std::
     //qDebug() << QString::fromStdString(jsonStr);
     return jsonStr;
 }
+
+/*!
+   \fn void Zpdes::activityGenerated(const QString& newText)
+
+   Notifies listeners that an activity has been chosen.
+
+   No longer used as all frontend communication proceeds through \l StoryTeller.
+*/
+
+/*!
+  \fn void Zpdes::rewarded(const QString& newText)
+
+  Notifies listeners that the update of the learning rates and ZPD has been completed.
+
+  No longer used as all frontend communication proceeds through \l StoryTeller.
+*/
